@@ -92,7 +92,7 @@ class Document
 
     /**
      *
-     * @ORM\ManyToOne(targetEntity="doc\PlatformBundle\Entity\Formation", inversedBy="tuto_documents")
+     * @ORM\ManyToOne(targetEntity="doc\PlatformBundle\Entity\Tutoriel", inversedBy="tuto_documents")
      * @ORM\JoinColumn(nullable=true)
      * @var integer
      */

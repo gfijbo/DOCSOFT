@@ -24,20 +24,6 @@
 					{{ tuto.getTutoDetails()}}
 				</p>
 
-				<h3>Documents:</h3>
-				{# pour afficher les documents liés à ce tutoriel #}
-				{% if tuto.getTutoDocuments() %}
-					<ul>
-						{% for doc in tuto.getTutoDocuments() %}
-							<li>
-								&nbsp; {{ doc.getDocumentName() }}
-								<a class="fa fa-info-circle" style="font-size:24px; color:orange"
-								   href="{{ asset('/document/download/') }}{{doc.getId()}}"
-								   target=_blank /></a>
-							</li>
-						{% endfor %}
-					</ul>
-				{% endif %}
 				<h3>Commentaires:</h3>
 				{# si l'utilisateur est connecté, affichage du formulaire pour
 				ajouter un commentaire #}
@@ -75,6 +61,31 @@
 						{% endif %}
 					{% endfor %}
 				</ul>
+				<h3>Documents:</h3>
+				{# pour afficher les documents liés à cette formation #}
+				{% if tuto.getTutoDocuments() %}
+					<ul>
+					{% for doc in tuto.getTutoDocuments() %}
+					<li>
+    					&nbsp; {{ doc.getDocumentName() }}
+						<a class="fa fa-info-circle" style="font-size:24px; color:orange"
+							href="{{ asset('/document/download/') }}{{doc.getId()}}"
+						target=_blank /></a>
+						</li>
+					{% endfor %}
+					</ul>
+					<table class="table table-striped">
+		                {{ form_start(forma) }}
+						<tr>
+							<td>S&eacute;lectionner un document</td>
+							<td>{{ form_row(forma.documentFile) }}</td>
+							<td><input class="btn btn-success" type="submit" value="Ajouter" /></td>
+							<td><a class="btn btn-success"
+							href="{{ asset('/document/see') }}">Voir les documents</a></td>
+			                {{ form_end(forma) }}
+						</tr>
+					</table>
+				{% endif %}
 			</div>
 		</div>
 	</div>

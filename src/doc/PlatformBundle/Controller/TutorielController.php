@@ -11,6 +11,7 @@ use Symfony\Component\HttpFoundation\Response;
 use doc\PlatformBundle\Entity\Document;
 use doc\PlatformBundle\Form\TutorielType;
 use Symfony\Component\HttpFoundation\File\File;
+use doc\PlatformBundle\Form\DocumentType;
 
 
 class TutorielController extends Controller
@@ -98,12 +99,26 @@ class TutorielController extends Controller
      * @Route("/tutoriel/see/{id}",name="seeTutoriel")
      */
 
-    public function seeTutorielAction($id){
+    public function seeTutorielAction($id, Request $request){
         $repository = $this->getdoctrine()
             ->getManager()
             ->getRepository('docPlatformBundle:Tutoriel');
 
         $tutoriel = $repository->find($id);
+        $repository = $this->getdoctrine()
+        ->getManager()
+        ->getRepository('docPlatformBundle:Document');
+        $doc = new Document();
+        
+        $docTuto = $this->createForm(DocumentType::class, $doc);
+        $docTuto->handleRequest($request);
+        if ($docTuto->isSubmitted() && $docTuto->isValid()) {
+            $doc->setTuto_ref($tutoriel);
+            $doc->setUser($this->getUser());
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($doc);
+            $em->flush();
+        }
         $menu = "Tutoriel";
         $urlPage = "tutoriel";
         $page = "Voir un tutoriel ";
@@ -111,6 +126,7 @@ class TutorielController extends Controller
         $html = $this->render('docPlatformBundle:Tutoriel:seeTutoriel.html.twig', array(
             'tuto' => $tutoriel,
             'page' => $page,
+            'forma'=> $docTuto->createView(),
             'menu' => $menu,
             'urlPage' => $urlPage,
             'compteur' => count($_SESSION['listAlerts']),
