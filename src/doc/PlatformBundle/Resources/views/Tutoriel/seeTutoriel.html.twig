@@ -57,7 +57,7 @@
 						{% if app.user == com.getUser() %}
 							<form action="/modcom" method="post">
 								<input type="hidden" name="com" value="{{ com.getId() }}">
-								<input type="hidden" name="forms" value="{{ tuto.getId() }}">
+								<input type="hidden" name="tutos" value="{{ tuto.getId() }}">
 								<li class="list-group-item list-group-item-info">
 									<h4>{{ com.getUser() }} : {{ com.getUpdatedAt()|date('H:i:s d-m-y')}}</h4>
 								</li>

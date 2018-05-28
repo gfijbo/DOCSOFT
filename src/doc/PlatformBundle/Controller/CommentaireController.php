@@ -27,6 +27,9 @@ class CommentaireController extends Controller
         if (isset($_POST['forms'])) {
             $forms = $_POST['forms'];
         }
+        if (isset($_POST['tutos'])) {
+            $tutos = $_POST['tutos'];
+        }
 
         // récupération du dossier_agent correspondant à l'id
         if (isset($champs)) {
@@ -42,6 +45,12 @@ class CommentaireController extends Controller
                 ->getRepository('docPlatformBundle:Formation');
             $form = $repository->find($forms);
         }
+        if (isset($tutos)) {
+            $repository = $this->getdoctrine()
+            ->getManager()
+            ->getRepository('docPlatformBundle:Tutoriel');
+            $tuto = $repository->find($tutos);
+        }
         
         if (! empty(trim($text))) {
             // création du nouveau commentaire
@@ -56,6 +65,9 @@ class CommentaireController extends Controller
             if (isset($forms)) {
                 $com->setForm_ref($form);
             }
+            if (isset($tutos)) {
+                $com->setTuto_ref($tuto);
+            }
             $em = $this->getDoctrine()->getManager();
             $em->persist($com);
             $em->flush();
@@ -69,6 +81,9 @@ class CommentaireController extends Controller
             }
             if (isset($forms)) {
                 $_SESSION['forms'] = $forms;
+            }
+            if (isset($tutos)) {
+                $_SESSION['tutos'] = $tutos;
             }
             $_SESSION['doc'] = null;
             return $this->redirectToRoute('operation', array());
@@ -85,6 +100,11 @@ class CommentaireController extends Controller
                 'id' => $forms
             ));
         }
+        if (isset($tuto)) {
+            return $this->redirectToRoute('seeTutoriel', array(
+                'id' => $tutos
+            ));
+        }
         return $this->redirectToRoute('core_homepage');
     }
 
@@ -99,8 +119,12 @@ class CommentaireController extends Controller
         $coms = $_POST['com'];
         if (isset($_POST['champs'])) {
             $champs = $_POST['champs'];
-        } elseif (isset($_POST['forms'])) {
+        }
+        if (isset($_POST['forms'])) {
             $forms = $_POST['forms'];
+        }
+        if (isset($_POST['tutos'])) {
+            $tutos = $_POST['tutos'];
         }
         // récupération du commentaire
         $repository = $this->getdoctrine()
@@ -126,6 +150,9 @@ class CommentaireController extends Controller
             if (isset($forms)) {
                 $_SESSION['forms'] = $forms;
             }
+            if (isset($tutos)) {
+                $_SESSION['tutos'] = $tutos;
+            }
 
             $_SESSION['doc'] = null;
             return $this->redirectToRoute('operation', array());
@@ -138,6 +165,11 @@ class CommentaireController extends Controller
         if (isset($_SESSION['forms'])) {
             return $this->redirectToRoute('seeFormation', array(
                 'id' => $forms
+            ));
+        }
+        if (isset($_SESSION['tutos'])) {
+            return $this->redirectToRoute('seeFormation', array(
+                'id' => $tutos
             ));
         }
         return $this->redirectToRoute('core_homepage');
