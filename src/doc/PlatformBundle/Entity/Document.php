@@ -98,6 +98,46 @@ class Document
      */
     private $tuto_ref;
 
+    /**
+     * @return number
+     */
+    public function getForm_ref()
+    {
+        return $this->form_ref;
+    }
+
+    /**
+     * @return number
+     */
+    public function getTuto_ref()
+    {
+        return $this->tuto_ref;
+    }
+
+    /**
+     * @param DateTime $updatedAt
+     */
+    public function setUpdatedAt($updatedAt)
+    {
+        $this->updatedAt = $updatedAt;
+    }
+
+    /**
+     * @param number $form_ref
+     */
+    public function setForm_ref($form_ref)
+    {
+        $this->form_ref = $form_ref;
+    }
+
+    /**
+     * @param number $tuto_ref
+     */
+    public function setTuto_ref($tuto_ref)
+    {
+        $this->tuto_ref = $tuto_ref;
+    }
+
     public function setDocumentFile(?File $doc = null): void
     {
         $this->documentFile = $doc;

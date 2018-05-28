@@ -7,6 +7,8 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
 use doc\PlatformBundle\Entity\Formation;
 use doc\PlatformBundle\Form\FormationType;
+use doc\PlatformBundle\Entity\Document;
+use doc\PlatformBundle\Form\DocumentType;
 
 class FormationController extends Controller
 {
@@ -54,18 +56,33 @@ class FormationController extends Controller
     /**
      * @Route("/formation/see/{id}",name="seeFormation")
      */
-    public function seeFormationAction($id){
+    public function seeFormationAction($id, Request $request){
         $repository = $this->getdoctrine()
         ->getManager()
         ->getRepository('docPlatformBundle:Formation');
         
         $formation = $repository->find($id);
+        
+        $repository = $this->getdoctrine()
+        ->getManager()
+        ->getRepository('docPlatformBundle:Document');
+        $doc = new Document();
+        $docForm = $this->createForm(DocumentType::class, $doc);
+        $docForm->handleRequest($request);
+        if ($docForm->isSubmitted() && $docForm->isValid()) {
+            $doc->setForm_ref($formation);
+            $doc->setUser($this->getUser());
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($doc);
+            $em->flush();
+        }
         $menu = "Formation";
         $urlPage = "formation";
         $page = "Voir une formation ";
         
        $html = $this->render('docPlatformBundle:Formation:seeFormation.html.twig', array(
             'form' => $formation,
+            'forma' =>$docForm->createView(),
             'page' => $page,
             'menu' => $menu,
             'urlPage' => $urlPage,
