@@ -19,7 +19,7 @@ class TutorielType extends AbstractType
         $builder
             ->add('nomTuto', TextType::class, array('label'=> 'Nom du tutoriel'))
             ->add('tutoDetails', TextType::class, array('label' =>'Descriptif'))
-            ->add('save', SubmitType::class)
+            ->add('Ajouter', SubmitType::class)
             ->getForm();
     }
 

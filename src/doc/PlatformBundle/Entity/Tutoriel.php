@@ -131,8 +131,4 @@ class Tutoriel
     {
         $this->tutoDocuments = $tutoDocuments;
     }
-
-
-
-
   }

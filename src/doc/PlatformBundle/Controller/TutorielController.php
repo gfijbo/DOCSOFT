@@ -33,25 +33,36 @@ class TutorielController extends Controller
     }
 
     /**
-     * @Route("/tutoriel/add",name="addTutoriel")
+     * @Route("/tutoriel/add",name="addTutorielTutoriel")
      */
     public function addTutorielAction(Request $request){
         $menu = "Tutoriel";
         $urlPage = "tutoriel";
+        $page ="Ajouter un tutoriel";
         $tutoriel = new Tutoriel();
-        $form = $this->createForm(TutorielType::class, $tutoriel);
-        $form->handleRequest($request);
+        $tuto = $this->createForm(TutorielType::class, $tutoriel);
+        $tuto->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) {
-            $tutoriel = $form->getData();
+        if ($tuto->isSubmitted() && $tuto->isValid()) {
+            $tutoriel = $tuto->getData();
             $em = $this->getDoctrine()->getManager();
             $em->persist($tutoriel);
             $em->flush();
+
+            $id = $tutoriel->getId();
+            return $this->redirectToRoute("seeTutoriel", array(
+                'id'=>$id,
+                'compteur' => count($_SESSION['listAlerts']),
+                'listAlerts' => $_SESSION['listAlerts']
+            ));
+
+
         }
         $html = $this->render('docPlatformBundle:Tutoriel:addTutoriel.html.twig', array(
             'menu' => $menu,
             'urlPage' => $urlPage,
-            'form' => $form->createView(),
+            'tuto' => $tuto->createView(),
+            'page' => $page,
             'compteur' => count($_SESSION['listAlerts']),
             'listAlerts' => $_SESSION['listAlerts']
         ));
@@ -65,14 +76,14 @@ class TutorielController extends Controller
         $repository = $this->getdoctrine()
             ->getManager()
             ->getRepository('docPlatformBundle:Tutoriel');
-
         $listTuto = $repository->findAll();
+
         $menu = "Tutoriel";
         $urlPage = "tutoriel";
         $page = "Voir un tutoriel ";
         $listTutoriel = $this->get('knp_paginator')->paginate($listTuto, $request->query->get('page', 1), 5);
 
-       $html =  $this->render('docPlatformBundle:Tutoriel:see.html.twig', array(
+        $html =  $this->render('docPlatformBundle:Tutoriel:see.html.twig', array(
             'listTuto' => $listTutoriel,
             'page' => $page,
             'menu' => $menu,
@@ -110,18 +121,64 @@ class TutorielController extends Controller
 
 
     /**
-     * @Route("/tutoriel/mod",name="modtutoriel")
+     * @Route("/tutoriel/mod",name="modTutoriel")
      */
-    public function modtutorielAction(){
+    public function modTutorielAction(){
+        $menu = "Tutoriel";
+        $urlPage = "tutoriel";
+        $html = $this->render('docPlatformBundle:Tutoriel:modTutoriel.html.twig', array(
+            'menu' => $menu,
+            'urlPage' => $urlPage,
+            'compteur' => count($_SESSION['listAlerts']),
+            'listAlerts' => $_SESSION['listAlerts']
+        ));
+        return $html;
+    }
+
+    /**
+     * @Route("/tutoriel/del",name="deleteTutoriels")
+     */
+    public function deleteTutorielsAction(Request $request){
+        $menu = "Tutoriel";
+        $urlPage = "tutoriel";
+        $page ="Supprimer un tutoriel";
+        $repository = $this->getdoctrine()
+            ->getManager()
+            ->getRepository('docPlatformBundle:Tutoriel');
+
+        $listTuto = $repository->findAll();
+        $listTutoriel = $this->get('knp_paginator')->paginate($listTuto, $request->query->get('page', 1), 5);
+        $html = $this->render('docPlatformBundle:Tutoriel:deleteTutoriel.html.twig', array(
+            'menu' => $menu,
+            'urlPage' => $urlPage,
+            'listTuto' => $listTutoriel,
+            'page' => $page,
+            'compteur' => count($_SESSION['listAlerts']),
+            'listAlerts' => $_SESSION['listAlerts']
+        ));
+        return $html;
 
     }
 
     /**
-     * @Route("/tutoriel/delete",name="deleteTutoriel")
+     * @Route("/tutoriel/del/{id}",name="deleteTutoriel")
      */
-    public function deleteTutorielAction(){
+    public function deleteTutorielAction($id, Request $request){
+        $repository = $this->getdoctrine()
+            ->getManager()
+            ->getRepository('docPlatformBundle:Tutoriel');
+
+        $tutoriel = $repository->find($id);
+        $em = $this->getDoctrine()->getManager();
+        $em->remove($tutoriel);
+        $em->flush();
+
+        return $this->redirectToRoute("deleteTutoriels", array(
+            'compteur' => count($_SESSION['listAlerts']),
+            'listAlerts' => $_SESSION['listAlerts']
+        ));
+
 
     }
-
 
 }
