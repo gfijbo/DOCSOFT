@@ -91,7 +91,7 @@ class DocumentController extends Controller
             $response = new Response();
             $response->setContent(file_get_contents($chemin . "/" . $fichier));
             $response->headers->set('Content-Type', $doc->getDocumentMimeType() // type mime du fichier
-            ); // Affiche le pdf au lieux de le t�l�charger
+            ); // Affiche le pdf au lieux de le télécharger
             $response->headers->set('Content-disposition', 'filename=' . $fichier);
 
             return $response;

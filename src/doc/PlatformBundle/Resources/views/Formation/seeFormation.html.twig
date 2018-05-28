@@ -48,6 +48,7 @@
 						</li>
 					{% endfor %}
 					</ul>
+					{% if app.user %}
 					<table class="table table-striped">
 		                {{ form_start(forma) }}
 						<tr>
@@ -59,6 +60,7 @@
 			                {{ form_end(forma) }}
 						</tr>
 					</table>
+					{% endif %}
 				{% endif %}
 				<h3>Commentaires:</h3>
 				{# si l'utilisateur est connecté, affichage du formulaire pour
