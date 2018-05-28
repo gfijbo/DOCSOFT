@@ -46,13 +46,13 @@ class Formation
 
     /**
      *
-     * @ORM\OneToMany(targetEntity="doc\PlatformBundle\Entity\Commentaire", mappedBy="form_ref")
+     * @ORM\OneToMany(targetEntity="doc\PlatformBundle\Entity\Commentaire", mappedBy="form_ref", cascade={"remove"})
      */
     private $form_commentaires;
 
     /**
      *
-     * @ORM\OneToMany(targetEntity="doc\PlatformBundle\Entity\Document", mappedBy="form_ref")
+     * @ORM\OneToMany(targetEntity="doc\PlatformBundle\Entity\Document", mappedBy="form_ref", cascade={"remove"})
      */
     private $form_documents;
 

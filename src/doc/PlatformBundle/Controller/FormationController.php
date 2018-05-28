@@ -39,7 +39,7 @@ class FormationController extends Controller
         $page = "Voir une formation ";
         $listFormation = $this->get('knp_paginator')->paginate($listform, $request->query->get('page', 1), 5);
         
-        return $this->render('docPlatformBundle:Formation:see.html.twig', array(
+        $html = $this->render('docPlatformBundle:Formation:see.html.twig', array(
             'listform' => $listFormation,
             'page' => $page,
             'menu' => $menu,
@@ -47,6 +47,7 @@ class FormationController extends Controller
             'compteur' => count($_SESSION['listAlerts']),
             'listAlerts' => $_SESSION['listAlerts']
         ));
+        return $html;
         
     }
     
@@ -63,7 +64,7 @@ class FormationController extends Controller
         $urlPage = "formation";
         $page = "Voir une formation ";
         
-        return $this->render('docPlatformBundle:Formation:seeFormation.html.twig', array(
+       $html = $this->render('docPlatformBundle:Formation:seeFormation.html.twig', array(
             'form' => $formation,
             'page' => $page,
             'menu' => $menu,
@@ -71,7 +72,7 @@ class FormationController extends Controller
             'compteur' => count($_SESSION['listAlerts']),
             'listAlerts' => $_SESSION['listAlerts']
         ));
-        
+        return $html;
     }
     
     /**
@@ -92,12 +93,13 @@ class FormationController extends Controller
             $em->flush();
             
             $id = $formation->getId();
-            return $this->redirectToRoute("seeFormation", array(
+            $html = $this->redirectToRoute("seeFormation", array(
                 'id'=>$id,
                 'compteur' => count($_SESSION['listAlerts']),
                 'listAlerts' => $_SESSION['listAlerts']
             ));
             
+            return $html;
             
         }
         $html = $this->render('docPlatformBundle:Formation:addFormation.html.twig', array(

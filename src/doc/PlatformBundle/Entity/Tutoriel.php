@@ -34,13 +34,13 @@ class Tutoriel
 
     /**
      *
-     * @ORM\OneToMany(targetEntity="doc\PlatformBundle\Entity\Commentaire", mappedBy="tuto_ref")
+     * @ORM\OneToMany(targetEntity="doc\PlatformBundle\Entity\Commentaire", mappedBy="tuto_ref", cascade={"remove"})
      */
     private $tutoCommentaires;
 
     /**
      *
-     * @ORM\OneToMany(targetEntity="doc\PlatformBundle\Entity\Document", mappedBy="tuto_ref")
+     * @ORM\OneToMany(targetEntity="doc\PlatformBundle\Entity\Document", mappedBy="tuto_ref", cascade={"remove"})
      */
     private $tutoDocuments;
 
