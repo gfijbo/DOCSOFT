@@ -105,6 +105,7 @@ class TutorielController extends Controller
             ->getRepository('docPlatformBundle:Tutoriel');
 
         $tutoriel = $repository->find($id);
+        
         $repository = $this->getdoctrine()
         ->getManager()
         ->getRepository('docPlatformBundle:Document');
