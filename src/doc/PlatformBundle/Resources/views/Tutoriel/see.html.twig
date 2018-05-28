@@ -1,0 +1,46 @@
+{% extends "CoreBundle::abst.html.twig" %}
+
+{% block title %}
+{{ parent() }}
+{% endblock %}
+
+{% block stylesheets %}
+{{ parent() }}
+{% endblock %}
+
+{% block body %}
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8 col-lg-12">
+				<h1>Consulter les tutoriels</h1>
+<<<<<<< Updated upstream
+				<table class="table table-striped">
+					<thead>
+					<tr>
+						<td>Nom du tutoriel</td>
+						<td>Détail</td>
+					</tr>
+					</thead>
+					<tbody>
+					{% for tuto in listTuto%}
+						<tr>
+							<td><p>{{ tuto.getNomTuto() }}</p></td>
+							<td><p>{{ tuto.getTutoDetails() }}</p></td>
+							<td><a class="fa fa-info-circle" style="font-size:30px;color:orange" href="/tutoriel/see/{{ tuto.getId() }}"></a></td>
+						</tr>
+					{% endfor %}
+					</tbody>
+				</table>
+=======
+>>>>>>> Stashed changes
+			</div>
+		</div>
+	</div>
+</body>
+
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+{% endblock %}

@@ -1,0 +1,30 @@
+{# src/doc/PlatformBundle/Resources/views/Advert/index.html.twig #}
+
+{% extends "docPlatformBundle::layout.html.twig" %}
+
+{% block title %}
+   {{ parent() }}
+{% endblock %}
+
+{% block docplatform_body %}
+
+    <h2>Liste des champs</h2>
+
+    <ul>
+        {% for advert in listAdverts %}
+         {% if listAdverts is empty %}
+            <li>Pas (encore !) de champs</li>
+        {% else %}
+            <li>
+                <a href="{{ path('doc_platform_view', {'id': advert.id}) }}">
+                    {{ advert.title }}
+               	</a>
+                par {{ advert.author }},
+                le {{ advert.date|date('d/m/Y') }}
+            </li>
+       
+        {% endif %}
+        {% endfor %}
+    </ul>
+
+{% endblock %}

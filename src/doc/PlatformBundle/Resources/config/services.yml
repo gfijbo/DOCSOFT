@@ -1,0 +1,7 @@
+services:
+    doc_platform.antispam:
+        class: doc\PlatformBundle\Antispam\docAntispam
+        arguments:
+            - "@mailer"
+            - %locale%
+            - 50

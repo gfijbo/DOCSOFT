@@ -1,0 +1,38 @@
+{% block ongletsTop %}
+<ul class="navbar-nav ml-auto">
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle mr-lg-2" id="alertsDropdown"
+            href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fa fa-fw fa-bell"></i>
+            {% if app.user %} Bienvenue {{ app.user.username }} {% endif %}
+        </a>
+        
+    {# Onglet du bloc des alerts #}
+    {{ include ("CoreBundle::alerts.html.twig") }}
+    {# Fin du bloc des alertes #}
+    
+    {# Onglet de recherche du site #}
+    <li class="nav-item">
+        <form class="form-inline my-2 my-lg-0 mr-lg-2" action="/search" method="post">
+            <div class="input-group"> <input class="form-control" type="text" placeholder="Rechercher..." name='data'>
+                <span class="input-group-btn">
+                <input type="hidden" name="search" value="all"/>
+                    <button class="btn btn-primary" type="submit">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </span>
+            </div>
+        </form>
+    </li> {# Fin de l'onglet de recherche #}
+    {# Onglet de connexion/deconnexion des utilisateurs #}
+    <li class="nav-item">
+        {% if app.user %}
+            <a class="nav-link" data-toggle="modal" data-target="#exampleModal1">
+                <i class="fa fa-fw fa fa-power-off"></i>D&eacute;connexion
+            </a>
+        {% else %}
+            <a class="nav-link" data-toggle="modal" data-target="#exampleModal"> <i class="fa fa-fw fa-sign-in"></i>Connexion</a>
+        {% endif %}
+    </li> {# Fin de l'onglet de connexion/deconnexion #}
+</ul>
+{% endblock %}

@@ -1,0 +1,76 @@
+{# doc/PlatformBundle/Resources/views/product.html.twig #}
+{% extends "CoreBundle::abst.html.twig" %}
+
+{% block title %}
+{{ parent() }}
+{% endblock %}
+
+{% block stylesheets %}
+{{ parent() }}
+{% endblock %}
+
+{% block body %}
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8 col-lg-12">
+				<h1>Voir les documents</h1>
+				<table class="table table-striped">
+					<thead>
+						<tr>
+							<td>Nom</td>
+							<td colspan="2">Taille</td>
+						</tr>
+					</thead>
+					<tbody>
+						{% for document in listDocs %}
+						<tr>
+							<td><p>
+									{{ document.getDocumentName() }}
+									{% if document.getDocumentMimeType() == "text/plain" %}
+									<i class="fa fa-file-text-o float-right"
+										style="font-size: 24px"></i>
+									{% elseif document.getDocumentMimeType() =="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" %}
+									<i class="fa fa-file-excel-o float-right"
+										style="font-size: 24px"></i>
+									{% elseif document.getDocumentMimeType() =="application/pdf" %}
+									<i class="fa fa-file-pdf-o float-right" style="font-size: 24px"></i>
+									{% elseif document.getDocumentMimeType() =="image/jpeg" %}
+									<i class="fa fa-file-photo-o float-right"
+										style="font-size: 24px"></i>
+									{% elseif document.getDocumentMimeType() =="application/vnd.openxmlformats-officedocument.wordprocessingml.document" %}
+									<i class="fa fa-file-word-o float-right"
+										style="font-size: 24px"></i>
+									{% elseif document.getDocumentMimeType() =="application/x-zip-compressed" %}
+									<i class="fa fa-file-archive-o float-right"
+										style="font-size: 24px"></i>
+									{% else %}
+									<i class="fa fa-file-o float-right" style="font-size: 24px"></i>
+									{% endif %}
+								</p></td>
+							<td colspan="2">
+								{% if document.getDocumentSize() > 10000 %}
+										{{ (document.getDocumentSize()/1000000) |round(2, 'floor')  }} Mo
+								{% else %}
+									{{ document.getDocumentSize() }} octets
+								{% endif %}
+							</td>
+							<td><a class="btn btn-info"
+								href="{{ asset('/document/download/') }}{{document.getId()}}"
+								target=_blank />Voir</a></td>
+						</tr>
+						{% endfor %}
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div class="pagination justify-content-center">
+			{{ knp_pagination_render(listDocs) }}
+		</div>
+	</div>
+
+	{% endblock %}
+
+	{% block javascripts %}
+	{{ parent() }}
+	{% endblock %}

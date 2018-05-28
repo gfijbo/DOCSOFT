@@ -1,0 +1,41 @@
+doc_platform_home:
+    path:     /{page}
+    defaults:
+        _controller: docPlatformBundle:Advert:index
+        page:       1
+    requirements:
+        page: \d*
+
+
+
+doc_platform_view:
+    path:     /advert/{id}
+    defaults:
+        _controller: docPlatformBundle:Advert:view
+    requirements:
+        id: \d+
+        
+
+doc_platform_add:
+    path:     /add
+    defaults:
+        _controller: docPlatformBundle:Advert:add
+
+
+
+doc_platform_edit:
+    path:       /edit/{id}
+    defaults:
+        _controller: docPlatformBundle:Advert:edit
+    requirements:
+        id: \d+
+app:
+    resource: "@docPlatformBundle/Controller"
+    type:     annotation
+
+doc_platform_delete:
+    path:       /delete/{id}
+    defaults:
+        _controller: docPlatformBundle:Advert:delete
+    requirements:
+        id: \d+

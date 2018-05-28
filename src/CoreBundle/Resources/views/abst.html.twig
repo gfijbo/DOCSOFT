@@ -1,0 +1,101 @@
+{# app/Resources/views/abst.html.twig #}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    {% block title %}
+        <title>DOCUMENTATION ASTRE RH</title>
+    {% endblock %}
+    {# block de stylsheets #}
+    {{ include("CoreBundle::stylesheets.html.twig") }}
+    {# fin block de stylsheets #}
+</head>
+
+<body class="fixed-nav sticky-footer grad_menu" id="page-top">
+
+<nav class="navbar navbar-expand-lg fixed-top grad_nav" id="mainNav">
+    <a class="navbar-brand" href="{{ path('core_homepage') }}">DOCSOFT</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button"
+            data-toggle="collapse" data-target="#navbarResponsive"
+            aria-controls="navbarResponsive" aria-expanded="false"
+            aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+    {# block des onglets à gauche #}
+        {{ include("CoreBundle::ongletsLeft.html.twig") }}
+    {# fin du block des onglets à gauche #}
+    
+    {# block des onglets en haut #}
+        {{ include("CoreBundle::ongletsTop.html.twig") }}
+	{# fin du block des onglets en haut #}
+    </div>
+</nav>
+
+
+<div class="content-wrapper">
+    <div class="container-fluid ">
+        <!-- Breadcrumbs-->
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{{ path('core_homepage') }}">DOCSOFT</a></li>
+            {% if menu is defined and urlPage is defined %}
+                <li class="breadcrumb-item active"><a href="{{ path('core_homepage') }}{{ urlPage }}">{{ menu }}</a></li>
+                {% elseif menu is defined %}
+                    <li class="breadcrumb-item active"><a href="{{ path('core_homepage') }}">{{ menu }}</a>
+            {% endif %}
+            {% if page is defined %}
+                <li class="breadcrumb-item active">{{ page }}</li>
+                {% elseif page is defined %}
+                    <li class="breadcrumb-item active">{{ page }}</li>
+                {% else %}
+                    <li class="breadcrumb-item active">Accueil</li>
+            {% endif %}
+        </ol>
+        {% block body %}
+        {% endblock %}
+        <!-- /.container-fluid-->
+        <!-- /.content-wrapper-->
+        <footer class="sticky-footer">
+            <div class="container">
+                <div class="text-center">
+                    <small><img src="{{ asset('favicon.ico') }}" height="25"
+                                width="25"/>Copyright © www.docsoft.fr 2018
+                    </small>
+                </div>
+            </div>
+        </footer>
+        <!-- Scroll to Top Button-->
+        <a class="scroll-to-top rounded" href="#page-top"> <i class="fa fa-angle-up"></i></a>
+        {# block des boutons de connexion et de déconnexion #}
+        {{ include("CoreBundle::cnx_dec.html.twig") }}
+    </div>
+
+{# Block LavaScript #}
+{% block javascripts %}
+    <!-- Bootstrap core JavaScript-->
+    <script src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>
+    <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <!-- Core plugin JavaScript-->
+    <script src="{{ asset('vendor/jquery-easing/jquery.easing.min.js') }}"></script>
+    <!-- Page level plugin JavaScript-->
+    <script src="{{ asset('vendor/chart.js/Chart.min.js') }}"></script>
+    <script src="{{ asset('vendor/datatables/jquery.dataTables.js') }}"></script>
+    <script src="{{ asset('vendor/datatables/dataTables.bootstrap4.js') }}"></script>
+    <!-- Custom scripts for all pages-->
+    <script src="{{ asset('js/sb-admin.min.js') }}"></script>
+    <!-- Custom scripts for this page-->
+    <script src="{{ asset('js/sb-admin-datatables.min.js') }}"></script>
+    <script src="{{ asset('js/sb-admin-charts.min.js') }}"></script>
+    <!--<script src="{{ asset('js/dropzone.js') }}></script>-->
+{% endblock %} {# Fin Block LavaScript #}
+
+</div>
+</body>
+
+</html>

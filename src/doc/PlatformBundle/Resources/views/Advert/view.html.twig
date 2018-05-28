@@ -1,0 +1,33 @@
+{# src/doc/PlatformBundle/Resources/view/Advert/view.html.twig #}
+
+{% extends "docPlatformBundle::layout.html.twig" %}
+
+{% block title %}
+  Gestion de Champs - {{ parent() }}
+{% endblock %}
+
+{% block docplatform_body %}
+
+  <h2>{{ advert.title }}</h2>
+  <i>Par {{ advert.author }}, le {{ advert.date|date('d/m/Y') }}</i>
+
+  <div class="">
+      {{ advert.content }}
+  </div>
+
+  <p>
+    <a href="{{ path('doc_platform_home') }}" class="btn btn-default">
+      <i class="fa fa-chevron-left"></i>
+      Retour &agrave; la liste
+    </a>
+    <a href="{{ path('doc_platform_edit', {'id': advert.id}) }}" class="btn btn-default">
+      <i class="fa fa-edit"></i>
+      Modifier le champ
+    </a>
+    <a href="{{ path('doc_platform_delete', {'id': advert.id}) }}" class="btn btn-danger">
+      <i class="fa fa-trash"></i>
+      Supprimer le champ
+    </a>
+  </p>
+
+{% endblock %}

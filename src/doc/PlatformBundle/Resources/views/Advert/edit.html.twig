@@ -1,0 +1,26 @@
+{# src/doc/PlatformBundle/Resources/views/Advert/edit.html.twig #}
+
+{% extends "docPlatformBundle::layout.html.twig" %}
+
+{% block title %}
+    {{ parent() }}
+{% endblock %}
+
+{% block docplatform_body %}
+
+    <h2>Modifier un Champ</h2>
+
+    {{ include("docPlatformBundle:Advert:form.html.twig") }}
+
+    <p>
+        Vous &eacute;ditez un champ d&eacute;j&agrave; existant.
+    </p>
+
+    <p>
+        <a href="{{ path('doc_platform_view', {'id': advert.id}) }}" class="btn btn-default">
+            <i class="glyphicon glyphicon-chevron-left"></i>
+            Retour
+        </a>
+    </p>
+
+{% endblock %}

@@ -1,0 +1,33 @@
+{# src/CoreBundle/views/uploader.html.twig #}
+
+{% block title %}Ajouter des fichiers au dossier{% endblock %}
+ 
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset("css/dropzone.css") }}">
+{% endblock %}
+ <img src="{{ vich_uploader_asset(documentFile, 'file') }}" alt="{{ documentFile.name }}" />
+ 
+{% block body %}
+    <div class="dropzone my-dropzone" id="form_snippet_image" action="{{path('uploadDocs')}}"></div>
+{% endblock %}
+ 
+{% block javascripts %}
+    <script type="text/javascript" src="{{ asset("js/dropzone.js") }}"></script>
+ 
+   <script type="text/javascript">
+            $(document).ready(function(){
+                var _actionToDropZone = $("#form_snippet_image").attr('action');
+ 
+                Dropzone.autoDiscover = false;
+                var myDropzone = new Dropzone("#form_snippet_image", {url: _actionToDropZone});
+ 
+                myDropzone.on("addedfile", function(file) {
+                    console.log('"OK"');
+                });
+            });
+    </script>
+{% endblock %}
+
+
+
+

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <link rel="stylesheet" href="{{ asset('css/paraHide.css') }}" />
+      <link rel="stylesheet" href="{{ asset('css/folderHover.css') }}" />
+      <title>Page 1</title>
+  </head>
+  <body>
+    <h1>Salut {{ nom }} !</h1>
+    <button class="accordion">Section 1</button>
+    <div class="panel">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+
+    <button class="accordion">Section 2</button>
+    <div class="panel">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+
+    <button class="accordion">Section 3</button>
+    <div class="panel">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+    <a href="http://localhost:8000/app_dev.php/platform/advert/5">NEXT =></a><br>
+    <img id="img" onmouseout="this.src='{{ asset("ressources/big-folder.png") }}'" onmouseover="this.src='{{ asset("ressources/little-folder.png") }}'" class="hover"  src="{{ asset('ressources/big-folder.png') }}" onclick="window.location.href='http://localhost:8000/app_dev.php/platform/add'">
+    <script src="{{ asset('js/paraHide.js') }}"></script>
+  </body>
+</html>

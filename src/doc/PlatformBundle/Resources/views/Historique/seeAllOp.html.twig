@@ -1,0 +1,59 @@
+{# doc/PlatformBundle/Resources/views/Historique/seeAllOp.html.twig #}
+{% extends "CoreBundle::abst.html.twig" %}
+
+{% block title %}
+{{ parent() }}
+{% endblock %}
+
+{% block stylesheets %}
+{{ parent() }}
+{% endblock %}
+
+{% block body %}
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8 col-lg-12">
+				<h1>Voir les alertes :</h1>
+				<table class="table table-striped">
+					<thead>
+						<tr>
+							<td>Action</td>
+							<td>Utilisateur</td>
+							<td colspan="2">Date</td>
+							<td></td>
+						</tr>
+					</thead>
+					<tbody>
+						{% for op in listeOps %}
+						<tr>
+							<td><p>
+									{% if op.getActionName()=="ajout_document" or op.getActionName()=="modification_document" or op.getActionName()== "suppression_document" %}
+									<i class="fa fa-file-o" style="font-size: 24px"></i>
+									{% elseif op.getActionName()=="ajout_commentaire" %}
+									<i class="fa fa-stack-exchange" style="font-size: 24px"></i>
+									{% endif %}
+									&nbsp; {{ op.getActionName() }}
+								</p></td>
+							<td colspan="2">{{ op.getUserName() }}</td>
+							<td><p>
+									{{ op.getUpdatedAt()| date('d-m-Y  H:i:s') }}
+								</p></td>
+							<td><a class="btn btn-info"
+								href="{{ asset('/seeOp/') }}{{op.getId()}}" />Voir</a></td>
+						</tr>
+						{% endfor %}
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div class="pagination justify-content-center">
+			{{ knp_pagination_render(listeOps) }}
+		</div>
+	</div>
+
+	{% endblock %}
+
+	{% block javascripts %}
+	{{ parent() }}
+	{% endblock %}

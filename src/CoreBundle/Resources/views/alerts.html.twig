@@ -1,0 +1,29 @@
+{%  block alerts %}
+<div class="dropdown-menu" aria-labelledby="alertsDropdown">
+	<h6 class="dropdown-header">Nouvelles Alertes:</h6>
+	<div class="dropdown-divider"></div>
+	{% if listAlerts is defined %}
+	    {% for alert in listAlerts|slice(0,5)%}
+			<div class="dropdown-divider"></div>
+				<a class="dropdown-item" href="/seeOp/{{ alert.getId() }}">
+				{% if alert.getActionName() == "Ajout d'un document" or alert.getActionName() == "Ajout d'un commentaire" %}
+					<span class="text-success">
+					<strong> <i class="fa fa-long-arrow-up fa-fw"></i>
+				{% elseif alert.getActionName() == "Modification d'un document" or alert.getActionName() == "Modification d'un commentaire" %}
+					<span class="text-info">
+					<strong> <i class="fa fa-long-arrow-up fa-fw"></i>
+				{% else %}
+					<span class="text-danger">
+					<strong> <i class="fa fa-long-arrow-down fa-fw"></i>
+				{% endif %}
+				    {{ alert.getActionName() }} 
+					</strong>
+				</span> <span class="small float-right text-muted">{{ alert.getUpdatedAt()| date('H:i:s d-m-y')}}</span>
+				<div class="dropdown-message small">{{ alert.getCommentaire() }} {{ alert.getDocumentName() }}</div>
+				</a>
+				<div class="dropdown-divider"></div>
+		{%  endfor %}
+	{%  endif %}
+	<a class="dropdown-item small" href="http://localhost:8000/historique/allOp">Voir les alertes</a>
+</div></li>
+{% endblock %}

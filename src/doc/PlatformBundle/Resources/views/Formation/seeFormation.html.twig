@@ -1,0 +1,98 @@
+{% extends "CoreBundle::abst.html.twig" %}
+
+{% block title %}
+{{ parent() }}
+{% endblock %}
+
+{% block stylesheets %}
+{{ parent() }}
+{% endblock %}
+
+{% block body %}
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8 col-lg-12">
+				<h1>Consulter une formation</h1>
+				<h3>Nom de la formation:</h3>
+				<p>
+					{{ form.getNomForm() }}
+				</p>
+				
+				<h3>Début de la formation:</h3>
+				<p>
+                    {{ form.getDateDebut()|localizeddate('none','none','fr',null,'EEEE d MMMM Y')|title }}
+                    </strong> à {{ form.getDateDebut()|date(' H:i')}}
+				</p>
+				
+				<h3>Fin de la formation:</h3>
+				<p>
+					{{ form.getDateFin()|localizeddate('none','none','fr',null,'EEEE d MMMM Y')|title }}
+                    </strong> à {{ form.getDateFin()|date(' H:i')}}
+				</p>
+				
+				<h3>Détails:</h3>
+				<p>
+					{{ form.getFormDetails() }}
+				</p>
+				<h3>Documents:</h3>
+				{# pour afficher les documents liés à cette formation #}
+				{% if form.getForm_documents() %}
+					<ul>
+					{% for doc in form.getForm_documents() %}
+					<li>
+    					&nbsp; {{ doc.getDocumentName() }}
+						<a class="fa fa-info-circle" style="font-size:24px; color:orange"
+							href="{{ asset('/document/download/') }}{{doc.getId()}}"
+						target=_blank /></a>
+						</li>
+					{% endfor %}
+					</ul>
+				{% endif %}
+				<h3>Commentaires:</h3>
+				{# si l'utilisateur est connecté, affichage du formulaire pour
+				ajouter un commentaire #}
+				{% if app.user %}
+				<form action="/addcom" method="post">
+					<input type="hidden" name="forms" value="{{ form.getId() }}">
+					<textarea name="nom" row="4" cols="60" onclick="this.value ='';" placeholder="Veuillez entrer votre commentaire ici"></textarea>
+					<input type="submit" class="button btn-success"
+						href="{{ asset('/addcom') }}" value="Ajouter le commentaire"></a>
+				</form>
+				{% endif %}
+				<br>
+				{# affichage de tous les commentaires du champ #}
+				<ul class="list-group">
+				{% for com in form.getForm_commentaires() %}
+				
+				{% if app.user == com.getUser() %}
+				<form action="/modcom" method="post">
+					<input type="hidden" name="com" value="{{ com.getId() }}">
+					<input type="hidden" name="forms" value="{{ form.getId() }}">
+					<li class="list-group-item list-group-item-info">
+						<h4>{{ com.getUser() }} : {{ com.getUpdatedAt()|date('H:i:s d-m-y')}}</h4>
+					</li>
+					<textarea name="nom" row="4" cols="60">{{ com.getCommentaire() }} </textarea>
+					<input type="submit" class="button btn-success"
+						href="{{ asset('/modcom') }}" value="Modifier le commentaire">
+				</form>
+				{% else %}
+				<li class="list-group-item list-group-item-info">
+					<h4>{{ com.getUser() }} : {{ com.getUpdatedAt()|date('H:i:s d-m-y')}}</h4>
+				</li>
+				<li class="list-group-item">
+					<p>{{ com.getCommentaire()}}</p>
+				</li>
+				{% endif %}
+				{% endfor %}
+				</ul>
+			</div>
+		</div>
+	</div>
+</body>
+
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+{% endblock %}

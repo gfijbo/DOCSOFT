@@ -1,0 +1,99 @@
+{% extends "CoreBundle::abst.html.twig" %}
+
+{% block title %}
+{{ parent() }}
+{% endblock %}
+
+{% block stylesheets %}
+{{ parent() }}
+{% endblock %}
+
+{% block body %}
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8 col-lg-12">
+
+				<h1>Consulter une alerte :</h1>
+				<div id={{op.getId() }}>
+					<!-- <br>
+                **************************************************************************************************************************
+                <br>-->
+				</div>
+				<h3>Action:</h3>
+				<p>
+					{{ op.getActionName() }}
+				</p>
+
+				{% if op.getUserName() %}
+				<h3>Utilisateur:</h3>
+				<p>
+					{{ op.getUserName() }}
+				</p>
+				{% else %}
+				{% endif %}
+
+				{% if op.getDocumentName() %}
+				<h3>Document:</h3>
+				<p>
+					{{ op.getDocumentName() }}
+					{% if op.getDocumentMimeType() == "text/plain" %}
+					<i class="fa fa-file-text-o" style="font-size: 24px"></i>
+					{% elseif op.getDocumentMimeType() =="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" %}
+					<i class="fa fa-file-excel-o" style="font-size: 24px"></i>
+					{% elseif op.getDocumentMimeType() =="application/pdf" %}
+					<i class="fa fa-file-pdf-o" style="font-size: 24px"></i>
+					{% elseif op.getDocumentMimeType() =="image/jpeg" %}
+					<i class="fa fa-file-photo-o" style="font-size: 24px"></i>
+					{% elseif op.getDocumentMimeType() =="application/vnd.openxmlformats-officedocument.wordprocessingml.document" %}
+					<i class="fa fa-file-word-o" style="font-size: 24px"></i>
+					{% elseif op.getDocumentMimeType() =="application/x-zip-compressed" %}
+					<i class="fa fa-file-archive-o" style="font-size: 24px"></i>
+					{% else %}
+					<i class="fa fa-file-o" style="font-size: 24px"></i>
+					{% endif %}
+				</p>
+				</td>
+				</p>
+				{% else %}
+				{% endif %}
+
+				{% if op.getDocumentSize() > 0 %}
+				<h3>Taille:</h3>
+				{% if op.getDocumentSize() > 10000 %}
+				<p>
+					{{ (op.getDocumentSize()/1000000) |round(2, 'floor')  }}
+					Mo
+				</p>
+				{% else %}<p>
+				{{ op.getDocumentSize() }}
+				octets</p>
+				{% endif %}
+				{% endif %}
+
+				{% if op.getCommentaire() %}
+				<h3>Commentaire:</h3>
+				<p>
+					{{ op.getCommentaire() }}
+				</p>
+				{% else %}
+				{% endif %}
+
+				{% if op.getUpdatedAt() %}
+				<h3>Date de mise &agrave; jour:</h3>
+				<p>
+					{{ op.getUpdatedAt()| date('d-m-Y  H:i:s') }}
+				</p>
+				{% else %}
+				{% endif %}
+
+				<br>
+
+			</div>
+		</div>
+	</div>
+
+	{% endblock %}
+	{% block javascripts %}
+	{{ parent() }}
+	{% endblock %}

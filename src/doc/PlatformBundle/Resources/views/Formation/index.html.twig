@@ -1,0 +1,48 @@
+{# src/doc/PlateformBundle/views/Formation/index.html.twig #}
+
+{% extends "CoreBundle::abst.html.twig" %}
+
+{% block title %}
+{{ parent() }}
+{% endblock %}
+{% block stylesheets %}
+{{ parent() }}
+{% endblock %}
+{% block body %}
+<div class="container">
+	<div class="row">
+		<div class="col-md-8 col-lg-12">
+			<h1>Gestion des formations</h1>
+			<table
+				class="table table-sm table-responsive-sm table-active table-bordered">
+				<tr class="table-active">
+					<th colspan="3" align="center">Menu
+					</td>
+				</tr>
+				<tr>
+					<td><a class="dropdown-item"
+						href="{{ asset('/formation/see') }}">Voir les formations</a></td>
+				</tr>
+				<tr>
+					<td><a class="dropdown-item"
+						href="{{ asset('/formation/add') }}">Ajouter une formation</a></td>
+				</tr>
+				<tr>
+					<td><a class="dropdown-item"
+						href="{{ asset('/formation/mod') }}">Modifier les formations</a></td>
+				</tr>
+				<tr>
+					<td><a class="dropdown-item"
+						href="{{ asset('/formation/del') }}">Supprimer les formations</a></td>
+				</tr>
+			</table>
+		</div>
+		<div></div>
+
+		{% block docplatform_body %}
+		{% endblock %}
+	</div>
+	{% endblock %}
+	{% block javascripts %}
+	{{ parent() }}
+	{% endblock %}

@@ -1,0 +1,17 @@
+{# app/Resources/views/formation.html.twig #}
+
+{#Onglets pour FORMATION #}
+{% block li5 %}
+<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Menu Levels">
+	<a class="nav-link nav-link-collapse collapsed" data-toggle="collapse"
+	href="#collapseMulti25" data-parent="#exampleAccordion">
+		<i class="fa fa-fw fa-book"></i>
+		<span class="nav-link-text">Formations</span>
+	</a>
+	<ul class="sidenav-second-level collapse" id="collapseMulti25">
+				<li><a href="/formation/see">Voir les formations</a></li>
+				<li><a href="/formation/add">Ajouter une formation</a></li>
+				<li><a href="/formation/mod">Modifier une formation</a></li>
+				<li><a href="/formation/del">Supprimer une formation</a></li>
+	</ul></li>
+{% endblock %}

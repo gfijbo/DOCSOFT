@@ -1,0 +1,60 @@
+{# doc/PlatformBundle/Resources/views/Historique/seeAllOp.html.twig #}
+{% extends "CoreBundle::abst.html.twig" %}
+
+{% block title %}
+{{ parent() }}
+{% endblock %}
+
+{% block stylesheets %}
+{{ parent() }}
+{% endblock %}
+
+{% block body %}
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8 col-lg-12"></div>
+			<h1>{% if data is not empty %}
+			{{ data }} : 
+			{% endif %}{{ nb }} résultat(s) trouvé(s)</h1>
+			
+			
+				<table class="table">
+					<tbody>
+					    {% set test1 = '(' %}
+						{% set test2 = ')' %}
+						{% set test = test1~data~test2 %}
+						{% for result in results %}
+						{% if result.champ  %}
+						    {%  set url = '/seechamp/' %}
+						{% elseif result.document_name %}
+							{%  set url = '/document/download/' %}
+						{% endif %}
+						
+						<tr>
+							<td><p>{{ result.onglet }} / {{ result.page }} : 
+							{# permet d'entourer la chaîne recherchée par des parenthèses #}
+							<a href="{{ url }}{{ result.id }}">
+							<strong>{{ result.champ|replace({(data):(test),
+							(data)|upper:(test)|upper,
+							(data)|lower:(test)|lower,
+							(data)|title:(test)|title}) }}
+							{{ result.document_name| replace({(data):(test),
+                            (data)|upper:(test)|upper,
+							(data)|lower:(test)|lower,
+							(data)|title:(test)|title}) }}</strong></a></p></td>
+						</tr>
+						{% endfor %}
+					</tbody>
+				</table>
+		</div>
+		<div class="pagination justify-content-center">
+			{{ knp_pagination_render(results) }}
+		</div>
+	</div>
+	
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+{% endblock %}

@@ -1,0 +1,51 @@
+h1 {
+	background: #ffc966;
+	font-size: 25px;
+	font-weight: bold;
+	text-align: center;
+	width: auto;
+}
+
+h3 {
+	/* background: #ffc966; */
+	color: #798933;
+	font-size: 20px;
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+h4{
+	font-size: 12px;
+	font-weight: bold;
+}
+h5{
+	background: #ffc966;
+}
+p {
+	font-size: 15px;
+	font-style: italic;
+	text-align: justify;
+}
+
+.spacer {
+	margin-top: 15%;
+	margin-left: 30%;
+	margin-right: 30%;
+}
+
+a:hover, a:focus, a {
+	color: black;
+}
+
+.grad_nav {
+	background: linear-gradient(to top left, #ffc966, #ffaa55);
+	width: auto;
+	height: auto;
+}
+
+.grad_menu {
+	background: linear-gradient(to top left, #DCDCDC, #F5F5F5);
+	width: auto;
+	height: auto;
+}
+;

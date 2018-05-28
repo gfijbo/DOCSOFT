@@ -1,0 +1,37 @@
+{# doc/PlatformBundle/Resources/views/user/layout.html.twig #}
+{% extends "CoreBundle::abst.html.twig" %}
+
+{% block title %}
+    {{ parent() }}
+{% endblock %}
+
+{% block stylesheets %}
+{{ parent() }}
+{% endblock %}
+
+{% block body %}
+    <body>
+        {% if app.request.hasPreviousSession %}
+            {% for type, messages in app.session.flashbag.all() %}
+            <div class="alert alert-{{ type }}">
+               <ul>
+                {% for message in messages %}
+                    <li>
+                        {{ message }}
+                    </li>
+                    </div>
+                {% endfor %}
+            {% endfor %}
+            </ul>
+        {% endif %}
+
+        <div>
+            {% block fos_user_content %}
+            {% endblock fos_user_content %}
+        </div>
+    </body>
+{% endblock %}
+
+{% block javascripts %} 
+{{ parent() }}
+{% endblock %}

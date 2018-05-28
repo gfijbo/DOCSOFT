@@ -1,0 +1,19 @@
+{# app/Resources/views/traitement.html.twig #}
+{# Onglets pour TRAITEMENTS #}
+{% block li4 %}
+<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Menu Levels">
+	<a class="nav-link nav-link-collapse collapsed" data-toggle="collapse"
+	href="#collapseMulti20" data-parent="#exampleAccordion">
+		<i class="fa fa-fw fa fa-cog"></i>
+		<span class="nav-link-text">Traitement</span>
+	</a>
+	<ul class="sidenav-second-level collapse" id="collapseMulti20">
+		<li><a class="nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti21">Sous-Menu 1</a>
+			<ul class="sidenav-third-level collapse" id="collapseMulti21">
+				<li><a href="#">Sous-Menu 1</a></li>
+				<li><a href="#">Sous-Menu 2</a></li>
+				<li><a href="#">Sous-Menu 3</a></li>
+			</ul>
+		</li>
+	</ul></li>
+{% endblock %}
