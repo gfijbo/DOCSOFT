@@ -61,30 +61,33 @@ class TutorielController extends Controller
     /**
      * @Route("/tutoriel/see", name="seeTutoriels")
      */
-    public function seeTutorielsAction(){
+    public function seeTutorielsAction(Request $request){
         $repository = $this->getdoctrine()
             ->getManager()
             ->getRepository('docPlatformBundle:Tutoriel');
-        $tutoriel = $repository->findAll();
+
+        $listTuto = $repository->findAll();
         $menu = "Tutoriel";
         $urlPage = "tutoriel";
-        $page = "Voir un tutoriel";
+        $page = "Voir un tutoriel ";
+        $listTutoriel = $this->get('knp_paginator')->paginate($listTuto, $request->query->get('page', 1), 5);
 
-        return $this->render('docPlatformBundle:Tutoriel:see.html.twig', array(
-            'form' => $tutoriel,
+       $html =  $this->render('docPlatformBundle:Tutoriel:see.html.twig', array(
+            'listTuto' => $listTutoriel,
             'page' => $page,
             'menu' => $menu,
             'urlPage' => $urlPage,
             'compteur' => count($_SESSION['listAlerts']),
             'listAlerts' => $_SESSION['listAlerts']
         ));
-
+        return $html;
     }
 
     /**
      * @Route("/tutoriel/see/{id}",name="seeTutoriel")
      */
-    public function seeTutorielAction(){
+
+    public function seeTutorielAction($id){
         $repository = $this->getdoctrine()
             ->getManager()
             ->getRepository('docPlatformBundle:Tutoriel');
@@ -92,18 +95,19 @@ class TutorielController extends Controller
         $tutoriel = $repository->find($id);
         $menu = "Tutoriel";
         $urlPage = "tutoriel";
-        $page = "Voir un tutoriel";
+        $page = "Voir un tutoriel ";
 
-        return $this->render('docPlatformBundle:Formation:see.html.twig', array(
-            'form' => $tutoriel,
+        $html = $this->render('docPlatformBundle:Tutoriel:seeTutoriel.html.twig', array(
+            'tuto' => $tutoriel,
             'page' => $page,
             'menu' => $menu,
             'urlPage' => $urlPage,
             'compteur' => count($_SESSION['listAlerts']),
             'listAlerts' => $_SESSION['listAlerts']
         ));
-
+        return $html;
     }
+
 
     /**
      * @Route("/tutoriel/mod",name="modtutoriel")

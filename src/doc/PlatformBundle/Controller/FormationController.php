@@ -164,11 +164,12 @@ class FormationController extends Controller
         $em->remove($formation);
         $em->flush();
         
-        return $this->redirectToRoute("deleteFormations", array(
+        $html = $this->redirectToRoute("deleteFormations", array(
             'compteur' => count($_SESSION['listAlerts']),
             'listAlerts' => $_SESSION['listAlerts']
         ));
         
+        return $html;
         
     }
 }
