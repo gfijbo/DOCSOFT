@@ -5,6 +5,7 @@ namespace doc\PlatformBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use doc\PlatformBundle\Entity\Commentaire;
+
 class CommentaireController extends Controller
 {
 
@@ -15,12 +16,15 @@ class CommentaireController extends Controller
     public function indexAction()
     {
         // récupération du commentaire
-        $text = $_POST['nom'];
+        if(isset($_POST['nom'])){
+            $text = $_POST['nom'];
+        }
         // récupération de l'id du champ du dossier_agent s'il existe
         if (isset($_POST['champs'])) {
             $champs = $_POST['champs'];
-        // récupération de l'id de la formation si elle existe
-        } elseif (isset($_POST['forms'])) {
+            // récupération de l'id de la formation si elle existe
+        }
+        if (isset($_POST['forms'])) {
             $forms = $_POST['forms'];
         }
 
@@ -30,14 +34,16 @@ class CommentaireController extends Controller
                 ->getManager()
                 ->getRepository('docPlatformBundle:DossierAgent');
             $champ = $repository->find($champs);
-        // récupération de la formation correspondant à l'id
-        } elseif (isset($forms)) {
+            // récupération de la formation correspondant à l'id
+        }
+        if (isset($forms)) {
             $repository = $this->getdoctrine()
                 ->getManager()
                 ->getRepository('docPlatformBundle:Formation');
             $form = $repository->find($forms);
         }
-        if ($text) {
+        
+        if (! empty(trim($text))) {
             // création du nouveau commentaire
             $com = new Commentaire();
             $com->setCommentaire($text);
@@ -46,7 +52,8 @@ class CommentaireController extends Controller
             if (isset($champs)) {
                 $com->setDossierAgentRef($champ);
                 // ajout de la formation dans le commentaire
-            } elseif (isset($forms)) {
+            }
+            if (isset($forms)) {
                 $com->setForm_ref($form);
             }
             $em = $this->getDoctrine()->getManager();
@@ -54,25 +61,31 @@ class CommentaireController extends Controller
             $em->flush();
             $type = "add_com";
             $id = $com->getId();
+           
             $_SESSION['com'] = $id;
             $_SESSION['type'] = $type;
             if (isset($champs)) {
                 $_SESSION['champs'] = $champs;
-            } elseif (isset($forms)) {
+            }
+            if (isset($forms)) {
                 $_SESSION['forms'] = $forms;
             }
             $_SESSION['doc'] = null;
             return $this->redirectToRoute('operation', array());
         }
+        
         if (isset($champ)) {
+            
             return $this->redirectToRoute('seechamp', array(
                 'id' => $champs
             ));
-        } elseif (isset($form)) {
+        }
+        if (isset($form)) {
             return $this->redirectToRoute('seeFormation', array(
-                'id' => $form
+                'id' => $forms
             ));
         }
+        return $this->redirectToRoute('core_homepage');
     }
 
     /**
@@ -96,7 +109,7 @@ class CommentaireController extends Controller
         if (isset($coms)) {
             $com = $repository->find($coms);
         }
-        if ($text) {
+        if (! empty(trim($text))) {
             // modification du commentaire
             $com->setCommentaire($text);
             $em = $this->getDoctrine()->getManager();
@@ -106,25 +119,27 @@ class CommentaireController extends Controller
             $id = $com->getId();
             $_SESSION['com'] = $id;
             $_SESSION['type'] = $type;
-            
+
             if (isset($champs)) {
                 $_SESSION['champs'] = $champs;
-                
-            } elseif (isset($forms)) {
+            }
+            if (isset($forms)) {
                 $_SESSION['forms'] = $forms;
             }
-            
+
             $_SESSION['doc'] = null;
             return $this->redirectToRoute('operation', array());
         }
-        if (isset($_SESSION['champs'])){
+        if (isset($_SESSION['champs'])) {
             return $this->redirectToRoute('seechamp', array(
                 'id' => $champs
             ));
-        }elseif(isset($_SESSION['forms'])){
+        }
+        if (isset($_SESSION['forms'])) {
             return $this->redirectToRoute('seeFormation', array(
-            'id' => $forms
+                'id' => $forms
             ));
         }
+        return $this->redirectToRoute('core_homepage');
     }
 }
