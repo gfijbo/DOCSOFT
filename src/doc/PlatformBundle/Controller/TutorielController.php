@@ -194,7 +194,7 @@ class TutorielController extends Controller
             $listTutoriel = $this->get('knp_paginator')->paginate($listTuto, $request->query->get('page', 1), 5);
 
             $html = $this->render('docPlatformBundle:Tutoriel:modTutoriels.html.twig', array(
-                'listform' => $listTutoriel,
+                'listTuto' => $listTutoriel,
                 'page' => $page,
                 'menu' => $menu,
                 'urlPage' => $urlPage,
