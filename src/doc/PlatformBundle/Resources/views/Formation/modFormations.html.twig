@@ -32,7 +32,6 @@
 							{{ form.getDateFin()|date(' H:i')}}</p></td>
 							<td><a class="fa fa-info-circle" style="font-size:30px;color:orange" href="/formation/see/{{ form.getId() }}"></a></td>
 							<td><a class="fa fa-edit" style="font-size:30px;color:orange" href="/formation/mod/{{ form.getId() }}"></a></td>
-							<td><a class="material-icons" style="font-size:30px;color:red" href="/formation/del/{{ form.getId() }}">delete</a></td>
 						</tr>
 						{% endfor %}
 					</tbody>
