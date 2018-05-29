@@ -239,14 +239,16 @@ class DocumentController extends Controller
             ->getRepository('docPlatformBundle:Document');
         $doc = $repository->find($id);
 
-        if ($_SESSION['type'] != "del_doc") {
+        if (!isset ($_SESSION['type'])) {
+            $_SESSION['type'] = "";
+        }
 
+        if ($_SESSION['type'] != "del_doc") {
             $_SESSION['type'] = "del_doc";
             $_SESSION['com'] = '';
             $_SESSION['doc'] = $doc;
             $_SESSION['id'] = $id;
-
-            return $this->redirectToRoute('operation', array());
+            return $this->redirectToRoute('operation');
         }
         $this->get('kernel')->getRootDir() . '/../web/uploads/documents/';
         // delete linked mediaEntity
