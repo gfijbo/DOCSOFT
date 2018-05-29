@@ -1,0 +1,33 @@
+{% extends "CoreBundle::abst.html.twig" %}
+
+{% block title %}
+{{ parent() }}
+{% endblock %}
+
+{% block stylesheets %}
+{{ parent() }}
+{% endblock %}
+
+{% block body %}
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8 col-lg-12">
+				<h1>Modifier une formation </h1>
+				{{ form_start(form) }}
+				{{ form_row(form.nomForm) }}
+				{{ form_row(form.formDetails) }}
+				{{ form_row(form.date_debut) }}
+				{{ form_row(form.date_fin) }}
+				{{ form_row(form.Ajouter, {'label':"Modifier"}) }}
+				{{ form_end(form) }}
+			</div>
+		</div>
+	</div>
+</body>
+
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+{% endblock %}

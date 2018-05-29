@@ -129,16 +129,80 @@ class FormationController extends Controller
         ));
         return $html;
     }
-    
     /**
-     * @Route("/formation/mod",name="modFormation")
+     * @Route("/formation/mod", name="seeModFormations")
      */
-    public function modFormationAction(){
+    public function modFormationsAction(Request $request){
+        $repository = $this->getdoctrine()
+        ->getManager()
+        ->getRepository('docPlatformBundle:Formation');
+        
+        $listform = $repository->findAll();
         $menu = "Formation";
         $urlPage = "formation";
+        $page = "Voir une formation ";
+        $listFormation = $this->get('knp_paginator')->paginate($listform, $request->query->get('page', 1), 5);
+        
+        $html = $this->render('docPlatformBundle:Formation:modFormations.html.twig', array(
+            'listform' => $listFormation,
+            'page' => $page,
+            'menu' => $menu,
+            'urlPage' => $urlPage,
+            'compteur' => count($_SESSION['listAlerts']),
+            'listAlerts' => $_SESSION['listAlerts']
+        ));
+        return $html;
+        
+    }
+    
+    /**
+     * @Route("/formation/mod/{id}",name="modFormation")
+     */
+    public function modFormationAction($id, Request $request){
+        $menu = "Formation";
+        $urlPage = "formation";
+        $page = "Modifier une formation";
+        $repository = $this->getdoctrine()
+        ->getManager()
+        ->getRepository('docPlatformBundle:Formation');
+        
+        $formation = $repository->find($id);
+        $form = $this->createForm(FormationType::class, $formation);
+        $form->handleRequest($request);
+        
+        if ($form->isSubmitted() && $form->isValid()) {
+            $formation = $form->getData();
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($formation);
+            $em->flush();
+            
+            $id = $formation->getId();
+            
+            $listform = $repository->findAll();
+            $menu = "Formation";
+            $urlPage = "formation";
+            $page = "Voir une formation ";
+            $listFormation = $this->get('knp_paginator')->paginate($listform, $request->query->get('page', 1), 5);
+            
+            $html = $this->render('docPlatformBundle:Formation:modFormations.html.twig', array(
+                'listform' => $listFormation,
+                'page' => $page,
+                'menu' => $menu,
+                'urlPage' => $urlPage,
+                'compteur' => count($_SESSION['listAlerts']),
+                'listAlerts' => $_SESSION['listAlerts']
+            ));
+            return $html;
+            
+        }
+        
         $html = $this->render('docPlatformBundle:Formation:modFormation.html.twig', array(
             'menu' => $menu,
             'urlPage' => $urlPage,
+            'page' => $page,
+            'id' =>$id,
+            'form' =>$form->createView(),
+            'forma' =>$formation,
             'compteur' => count($_SESSION['listAlerts']),
             'listAlerts' => $_SESSION['listAlerts']
             ));
