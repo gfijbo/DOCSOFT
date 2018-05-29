@@ -98,7 +98,7 @@ class FormationController extends Controller
     public function addFormationAction(Request $request){
         $menu = "Formation";
         $urlPage = "formation";
-        $page ="Ajouter une formation";
+        $page = "Ajouter une formation";
         $formation = new Formation();
         $form = $this->createForm(FormationType::class, $formation);
         $form->handleRequest($request);
@@ -128,31 +128,6 @@ class FormationController extends Controller
             'listAlerts' => $_SESSION['listAlerts']
         ));
         return $html;
-    }
-    /**
-     * @Route("/formation/mod", name="seeModFormations")
-     */
-    public function modFormationsAction(Request $request){
-        $repository = $this->getdoctrine()
-        ->getManager()
-        ->getRepository('docPlatformBundle:Formation');
-        
-        $listform = $repository->findAll();
-        $menu = "Formation";
-        $urlPage = "formation";
-        $page = "Voir une formation ";
-        $listFormation = $this->get('knp_paginator')->paginate($listform, $request->query->get('page', 1), 5);
-        
-        $html = $this->render('docPlatformBundle:Formation:modFormations.html.twig', array(
-            'listform' => $listFormation,
-            'page' => $page,
-            'menu' => $menu,
-            'urlPage' => $urlPage,
-            'compteur' => count($_SESSION['listAlerts']),
-            'listAlerts' => $_SESSION['listAlerts']
-        ));
-        return $html;
-        
     }
     
     /**
@@ -184,11 +159,7 @@ class FormationController extends Controller
             $page = "Voir une formation ";
             $listFormation = $this->get('knp_paginator')->paginate($listform, $request->query->get('page', 1), 5);
             
-            $html = $this->render('docPlatformBundle:Formation:modFormations.html.twig', array(
-                'listform' => $listFormation,
-                'page' => $page,
-                'menu' => $menu,
-                'urlPage' => $urlPage,
+            $html = $this->redirectToRoute('seeFormations', array(
                 'compteur' => count($_SESSION['listAlerts']),
                 'listAlerts' => $_SESSION['listAlerts']
             ));
@@ -210,31 +181,6 @@ class FormationController extends Controller
     }
     
     /**
-     * @Route("/formation/del",name="deleteFormations")
-     */
-    public function deleteFormationsAction(Request $request){
-        $menu = "Formation";
-        $urlPage = "formation";
-        $page ="Supprimer une formation";
-        $repository = $this->getdoctrine()
-        ->getManager()
-        ->getRepository('docPlatformBundle:Formation');
-        
-        $listform = $repository->findAll();
-        $listFormation = $this->get('knp_paginator')->paginate($listform, $request->query->get('page', 1), 5);
-        $html = $this->render('docPlatformBundle:Formation:deleteFormation.html.twig', array(
-            'menu' => $menu,
-            'urlPage' => $urlPage,
-            'listform' => $listFormation,
-            'page' => $page,
-            'compteur' => count($_SESSION['listAlerts']),
-            'listAlerts' => $_SESSION['listAlerts']
-            ));
-        return $html;
-        
-    }
-    
-    /**
      * @Route("/formation/del/{id}",name="deleteFormation")
      */
     public function deleteFormationAction(Request $request, $id){
@@ -247,7 +193,7 @@ class FormationController extends Controller
         $em->remove($formation);
         $em->flush();
         
-        $html = $this->redirectToRoute("deleteFormations", array(
+        $html = $this->redirectToRoute("seeFormations", array(
             'compteur' => count($_SESSION['listAlerts']),
             'listAlerts' => $_SESSION['listAlerts']
         ));
