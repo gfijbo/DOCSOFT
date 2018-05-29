@@ -242,12 +242,15 @@ class DocumentController extends Controller
             $_SESSION['type'] = "";
         }
 
-        if ($_SESSION['type'] != "del_doc") {
+        if (!isset ($_SESSION['type'])) {
+            $_SESSION['type'] = "";
+        }
 
+        if ($_SESSION['type'] != "del_doc") {
             $_SESSION['type'] = "del_doc";
             $_SESSION['com'] = '';
             $_SESSION['doc'] = $doc;
-           // $_SESSION['id'] = $id;
+            $_SESSION['id'] = $id;
 
             return $this->redirectToRoute('operation');
         }
