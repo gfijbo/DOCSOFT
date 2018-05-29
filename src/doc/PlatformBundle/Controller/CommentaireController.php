@@ -22,36 +22,38 @@ class CommentaireController extends Controller
         // récupération de l'id du champ du dossier_agent s'il existe
         if (isset($_POST['champs'])) {
             $champs = $_POST['champs'];
-            // récupération de l'id de la formation si elle existe
         }
+        // récupération de l'id de la formation si elle existe
         if (isset($_POST['forms'])) {
             $forms = $_POST['forms'];
         }
+        // récupération de l'id du tutoriel s'il existe
         if (isset($_POST['tutos'])) {
             $tutos = $_POST['tutos'];
         }
-
         // récupération du dossier_agent correspondant à l'id
         if (isset($champs)) {
             $repository = $this->getdoctrine()
                 ->getManager()
                 ->getRepository('docPlatformBundle:DossierAgent');
             $champ = $repository->find($champs);
-            // récupération de la formation correspondant à l'id
+           
         }
+        // récupération de la formation correspondant à l'id
         if (isset($forms)) {
             $repository = $this->getdoctrine()
                 ->getManager()
                 ->getRepository('docPlatformBundle:Formation');
             $form = $repository->find($forms);
         }
+        // récupération du tutoriel correspondant à l'id
         if (isset($tutos)) {
             $repository = $this->getdoctrine()
             ->getManager()
             ->getRepository('docPlatformBundle:Tutoriel');
             $tuto = $repository->find($tutos);
         }
-        
+        //si le commentaire n'est pas vide
         if (! empty(trim($text))) {
             // création du nouveau commentaire
             $com = new Commentaire();
@@ -60,11 +62,12 @@ class CommentaireController extends Controller
             // ajout du champ dans le commentaire
             if (isset($champs)) {
                 $com->setDossierAgentRef($champ);
-                // ajout de la formation dans le commentaire
+            // ajout de la formation dans le commentaire
             }
             if (isset($forms)) {
                 $com->setForm_ref($form);
             }
+            // ajout du tutoriel dans le commentaire
             if (isset($tutos)) {
                 $com->setTuto_ref($tuto);
             }
@@ -76,6 +79,7 @@ class CommentaireController extends Controller
            
             $_SESSION['com'] = $id;
             $_SESSION['type'] = $type;
+            
             if (isset($champs)) {
                 $_SESSION['champs'] = $champs;
             }
@@ -88,18 +92,20 @@ class CommentaireController extends Controller
             $_SESSION['doc'] = null;
             return $this->redirectToRoute('operation', array());
         }
-        
+        //s'il s'agit d'un commentaire sur un champ, on visualise le champ commenté
         if (isset($champ)) {
             
             return $this->redirectToRoute('seechamp', array(
                 'id' => $champs
             ));
         }
+        //s'il s'agit d'un commentaire sur une formation, on visualise la formation commenté
         if (isset($form)) {
             return $this->redirectToRoute('seeFormation', array(
                 'id' => $forms
             ));
         }
+        //s'il s'agit d'un commentaire sur un tutoriel, on visualise le tutoriel commenté
         if (isset($tuto)) {
             return $this->redirectToRoute('seeTutoriel', array(
                 'id' => $tutos

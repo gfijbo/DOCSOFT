@@ -138,8 +138,6 @@ class DocumentController extends Controller
             $document->setDocumentMimeType($fileMimeType);
             $document->setUser($user);
 
-            // $listeDocuments = $this->get('knp_paginator')->paginate($listDocs, $request->query->get('page', 1)/*le numero de la page a afficher*/,
-            // 5); // nombre d'element par page
             for ($i = 0; $i < sizeof($listDocs); $i ++) {
                 // si le fichier existe deja, modifie le fichier
                 if ($listDocs[$i]->getDocumentName() == $fileName) {
@@ -158,11 +156,6 @@ class DocumentController extends Controller
                     $_SESSION['doc'] = $id;
                     $_SESSION['id'] = '';
                     // cas de remplacement de fichier
-                    /*
-                     * return $this->redirectToRoute('seeDocs', array(
-                     * 'listDocs' => $doc
-                     * ));
-                     */
 
                     return $this->redirectToRoute('operation', array(
                         'compteur' => count($_SESSION['listAlerts']),
@@ -181,14 +174,6 @@ class DocumentController extends Controller
             $_SESSION['doc'] = $doc;
             $_SESSION['id'] = '';
 
-            // $listeDocuments = $this->get('knp_paginator')->paginate($listDocs, $request->query->get('page', 1)/*le numero de la page a afficher*/,
-            // 5); // nombre d'element par page // affiche le fichier ajoute seul s'il n'est pas present
-            // return $this->render('docPlatformBundle:Document:see.html.twig', array(
-            // 'listDocs' => $listeDocuments,
-            // 'page' => $page,
-            // 'menu' => $menu,
-            // 'urlPage' => $urlPage
-            // ));
             return $this->redirectToRoute('operation', array());
         }
         // affiche la page du formulaire d'insertion de fichier
