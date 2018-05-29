@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="18efa3f5-76d7-4be9-8938-ab82b8c0db5a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/doc/PlatformBundle/Resources/views/Tutoriel/modTutoriels.html.twig" />
+      <change type="DELETED" beforePath="C:\wamp\www\Symfony\src\doc\PlatformBundle\Resources\views\Tutoriel\deleteTutoriel.html.twig" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\Symfony\src\doc\PlatformBundle\Resources\views\Tutoriel\modTutoriels.html.twig" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/doc/PlatformBundle/Controller/TutorielController.php" afterPath="$PROJECT_DIR$/src/doc/PlatformBundle/Controller/TutorielController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -20,30 +21,50 @@
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
+  <component name="DockManager">
+    <window id="1">
+      <content type="file-editors">
+        <state>
+          <leaf>
+            <file leaf-file-name="FormationController.php" pinned="false" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/src/doc/PlatformBundle/Controller/FormationController.php">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state vertical-scroll-proportion="0.15422885">
+                    <caret line="137" column="25" selection-start-line="137" selection-start-column="25" selection-end-line="137" selection-end-column="25" />
+                    <folding />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+          </leaf>
+        </state>
+      </content>
+    </window>
+  </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
     <favorites_list name="Symfony" />
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="modTutoriels.html.twig" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/doc/PlatformBundle/Resources/views/Tutoriel/modTutoriels.html.twig">
+      <file leaf-file-name="TutorielController.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/doc/PlatformBundle/Controller/TutorielController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5168919">
-              <caret line="27" column="36" selection-start-line="27" selection-start-column="36" selection-end-line="27" selection-end-column="36" />
-              <folding />
+            <state vertical-scroll-proportion="0.76765376">
+              <caret line="175" column="14" selection-start-line="175" selection-start-column="14" selection-end-line="175" selection-end-column="14" />
+              <folding>
+                <element signature="e#109#148#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TutorielController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/doc/PlatformBundle/Controller/TutorielController.php">
+      <file leaf-file-name="abst.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/CoreBundle/Resources/views/abst.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="9.945455">
-              <caret line="151" column="71" selection-start-line="151" selection-start-column="71" selection-end-line="151" selection-end-column="71" />
-              <folding>
-                <element signature="e#109#148#0#PHP" expanded="true" />
-              </folding>
+            <state vertical-scroll-proportion="-21.5">
+              <caret line="45" column="71" selection-start-line="45" selection-start-column="58" selection-end-line="45" selection-end-column="71" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -116,8 +137,8 @@
         <option value="$PROJECT_DIR$/src/doc/PlatformBundle/Resources/views/Tutoriel/see.html.twig" />
         <option value="$PROJECT_DIR$/src/doc/PlatformBundle/Resources/views/Tutoriel/modTutoriel.html.twig" />
         <option value="$PROJECT_DIR$/src/CoreBundle/Resources/views/tutoriel.html.twig" />
-        <option value="$PROJECT_DIR$/src/doc/PlatformBundle/Controller/TutorielController.php" />
         <option value="$PROJECT_DIR$/src/doc/PlatformBundle/Resources/views/Tutoriel/modTutoriels.html.twig" />
+        <option value="$PROJECT_DIR$/src/doc/PlatformBundle/Controller/TutorielController.php" />
       </list>
     </option>
   </component>
@@ -432,6 +453,32 @@
               <option name="myItemId" value="Resources" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Symfony" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Symfony" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CoreBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
@@ -485,9 +532,9 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="UPDATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/CoreBundle/Resources/views/formation.html.twig</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/src/doc/PlatformBundle/Controller/FormationController.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/doc/PlatformBundle/Resources/views/Formation/deleteFormation.html.twig</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/doc/PlatformBundle/Resources/views/Tutoriel/deleteTutoriel.html.twig</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/doc/PlatformBundle/Resources/views/Formation/see.html.twig</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Created" />
@@ -495,8 +542,6 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="CREATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/doc/PlatformBundle/Resources/views/Formation/modFormation.html.twig</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/doc/PlatformBundle/Resources/views/Formation/modFormations.html.twig</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Deleted" />
@@ -504,6 +549,8 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="true" />
           <option name="myId" value="REMOVED_FROM_REPOSITORY" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/doc/PlatformBundle/Resources/views/Formation/deleteFormation.html.twig</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/doc/PlatformBundle/Resources/views/Formation/modFormations.html.twig</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Restored" />
@@ -696,7 +743,13 @@
       <option name="project" value="LOCAL" />
       <updated>1527602793966</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="commit tuto">
+      <created>1527604568904</created>
+      <option name="number" value="00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1527604568904</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -709,7 +762,8 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32861635" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.30686694" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32939914" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.10085837" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -720,7 +774,6 @@
       <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32861635" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -788,13 +841,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.8694158">
           <caret line="52" column="14" selection-start-line="52" selection-start-column="14" selection-end-line="52" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/CoreBundle/Resources/views/abst.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7302405">
-          <caret line="45" column="71" selection-start-line="45" selection-start-column="58" selection-end-line="45" selection-end-column="71" />
         </state>
       </provider>
     </entry>
@@ -959,13 +1005,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/doc/PlatformBundle/Resources/views/Formation/deleteFormation.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8799172">
-          <caret line="25" column="31" selection-start-line="25" selection-start-column="31" selection-end-line="25" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/CoreBundle/Resources/views/formation.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1045,30 +1084,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/doc/PlatformBundle/Resources/views/Formation/modFormations.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.45945945">
-          <caret line="31" column="28" selection-start-line="0" selection-start-column="0" selection-end-line="50" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/doc/PlatformBundle/Controller/FormationController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.5743244">
-          <caret line="203" column="26" selection-start-line="203" selection-start-column="21" selection-end-line="203" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/doc/PlatformBundle/Resources/views/Tutoriel/modTutoriel.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5168919">
-          <caret line="18" column="34" selection-start-line="18" selection-start-column="34" selection-end-line="18" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/doc/PlatformBundle/Resources/views/Tutoriel/see.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-17.576923">
@@ -1085,29 +1100,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/doc/PlatformBundle/Resources/views/Tutoriel/deleteTutoriel.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6959459">
-          <caret line="29" column="42" selection-start-line="29" selection-start-column="42" selection-end-line="29" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/doc/PlatformBundle/Entity/Tutoriel.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6317568">
           <caret line="88" column="34" selection-start-line="88" selection-start-column="20" selection-end-line="88" selection-end-column="34" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/doc/PlatformBundle/Controller/TutorielController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="9.945455">
-          <caret line="151" column="71" selection-start-line="151" selection-start-column="71" selection-end-line="151" selection-end-column="71" />
-          <folding>
-            <element signature="e#109#148#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1127,11 +1124,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/doc/PlatformBundle/Resources/views/Tutoriel/modTutoriels.html.twig">
+    <entry file="file://$PROJECT_DIR$/src/CoreBundle/Resources/views/abst.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5168919">
-          <caret line="27" column="36" selection-start-line="27" selection-start-column="36" selection-end-line="27" selection-end-column="36" />
+        <state vertical-scroll-proportion="-21.5">
+          <caret line="45" column="71" selection-start-line="45" selection-start-column="58" selection-end-line="45" selection-end-column="71" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/doc/PlatformBundle/Controller/FormationController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.15422885">
+          <caret line="137" column="25" selection-start-line="137" selection-start-column="25" selection-end-line="137" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/doc/PlatformBundle/Controller/TutorielController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.76765376">
+          <caret line="175" column="14" selection-start-line="175" selection-start-column="14" selection-end-line="175" selection-end-column="14" />
+          <folding>
+            <element signature="e#109#148#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

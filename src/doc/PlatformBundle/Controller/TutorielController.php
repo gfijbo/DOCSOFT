@@ -136,34 +136,6 @@ class TutorielController extends Controller
         return $html;
     }
 
-
-    /**
-     * @Route("/tutoriel/mod", name="seeModTutoriels")
-     */
-    public function ModTutorielsAction(Request $request){
-        $repository = $this->getdoctrine()
-            ->getManager()
-            ->getRepository('docPlatformBundle:Tutoriel');
-
-        $listform = $repository->findAll();
-        $menu = "Formation";
-        $urlPage = "formation";
-        $page = "Voir une formation ";
-        $listFormation = $this->get('knp_paginator')->paginate($listform, $request->query->get('page', 1), 5);
-
-        $html = $this->render('docPlatformBundle:Formation:modFormations.html.twig', array(
-            'listform' => $listFormation,
-            'page' => $page,
-            'menu' => $menu,
-            'urlPage' => $urlPage,
-            'compteur' => count($_SESSION['listAlerts']),
-            'listAlerts' => $_SESSION['listAlerts']
-        ));
-        return $html;
-
-    }
-
-
     /**
      * @Route("/tutoriel/mod/{id}",name="modTutoriel")
      */
@@ -193,18 +165,13 @@ class TutorielController extends Controller
             $page = "Voir un tutoriel ";
             $listTutoriel = $this->get('knp_paginator')->paginate($listTuto, $request->query->get('page', 1), 5);
 
-            $html = $this->render('docPlatformBundle:Tutoriel:modTutoriels.html.twig', array(
-                'listTuto' => $listTutoriel,
-                'page' => $page,
-                'menu' => $menu,
-                'urlPage' => $urlPage,
+            $html = $this->redirectToRoute('seeTutoriels', array(
                 'compteur' => count($_SESSION['listAlerts']),
                 'listAlerts' => $_SESSION['listAlerts']
             ));
             return $html;
 
         }
-
         $html = $this->render('docPlatformBundle:Tutoriel:modTutoriel.html.twig', array(
             'menu' => $menu,
             'urlPage' => $urlPage,
@@ -231,7 +198,7 @@ class TutorielController extends Controller
         $em->remove($tutoriel);
         $em->flush();
 
-        return $this->redirectToRoute("deleteTutoriels", array(
+        return $this->redirectToRoute("seeTutoriels", array(
             'compteur' => count($_SESSION['listAlerts']),
             'listAlerts' => $_SESSION['listAlerts']
         ));
