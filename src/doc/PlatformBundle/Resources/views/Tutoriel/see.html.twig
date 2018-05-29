@@ -27,6 +27,10 @@
 							<td><p>{{ tuto.getNomTuto() }}</p></td>
 							<td><p>{{ tuto.getTutoDetails() }}</p></td>
 							<td><a class="fa fa-info-circle" style="font-size:30px;color:orange" href="/tutoriel/see/{{ tuto.getId() }}"></a></td>
+							{% if app.user %}
+								<td><a class="fa fa fa-edit" style="font-size:30px;color:orange" href="/tutoriel/mod/{{ tuto.getId() }}"></a></td>
+								<td><a class="fa fa-trash" style="font-size:30px;color:orange" href="/tutoriel/del/{{ tuto.getId() }}"></a></td>
+							{% endif %}
 						</tr>
 					{% endfor %}
 					</tbody>

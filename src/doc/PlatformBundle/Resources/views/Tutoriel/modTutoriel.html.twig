@@ -1,0 +1,31 @@
+{% extends "CoreBundle::abst.html.twig" %}
+
+{% block title %}
+    {{ parent() }}
+{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+{% endblock %}
+
+{% block body %}
+    <body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-lg-12">
+                <h1>Modifier un tutoriel </h1>
+                {{ form_start(form) }}
+                {{ form_row(form.nomTuto) }}
+                {{ form_row(form.tutoDetails) }}
+                {{ form_row(form.Ajouter, {'label':"Modifier"}) }}
+                {{ form_end(form) }}
+            </div>
+        </div>
+    </div>
+    </body>
+
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+{% endblock %}

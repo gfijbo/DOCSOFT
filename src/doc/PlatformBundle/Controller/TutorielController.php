@@ -138,43 +138,84 @@ class TutorielController extends Controller
 
 
     /**
-     * @Route("/tutoriel/mod",name="modTutoriel")
+     * @Route("/tutoriel/mod", name="seeModTutoriels")
      */
-    public function modTutorielAction(){
-        $menu = "Tutoriel";
-        $urlPage = "tutoriel";
-        $html = $this->render('docPlatformBundle:Tutoriel:modTutoriel.html.twig', array(
-            'menu' => $menu,
-            'urlPage' => $urlPage,
-            'compteur' => count($_SESSION['listAlerts']),
-            'listAlerts' => $_SESSION['listAlerts']
-        ));
-        return $html;
-    }
-
-    /**
-     * @Route("/tutoriel/del",name="deleteTutoriels")
-     */
-    public function deleteTutorielsAction(Request $request){
-        $menu = "Tutoriel";
-        $urlPage = "tutoriel";
-        $page ="Supprimer un tutoriel";
+    public function ModTutorielsAction(Request $request){
         $repository = $this->getdoctrine()
             ->getManager()
             ->getRepository('docPlatformBundle:Tutoriel');
 
-        $listTuto = $repository->findAll();
-        $listTutoriel = $this->get('knp_paginator')->paginate($listTuto, $request->query->get('page', 1), 5);
-        $html = $this->render('docPlatformBundle:Tutoriel:deleteTutoriel.html.twig', array(
+        $listform = $repository->findAll();
+        $menu = "Formation";
+        $urlPage = "formation";
+        $page = "Voir une formation ";
+        $listFormation = $this->get('knp_paginator')->paginate($listform, $request->query->get('page', 1), 5);
+
+        $html = $this->render('docPlatformBundle:Formation:modFormations.html.twig', array(
+            'listform' => $listFormation,
+            'page' => $page,
             'menu' => $menu,
             'urlPage' => $urlPage,
-            'listTuto' => $listTutoriel,
-            'page' => $page,
             'compteur' => count($_SESSION['listAlerts']),
             'listAlerts' => $_SESSION['listAlerts']
         ));
         return $html;
 
+    }
+
+
+    /**
+     * @Route("/tutoriel/mod/{id}",name="modTutoriel")
+     */
+    public function modTutorielAction($id, Request $request){
+        $menu = "Tutoriel";
+        $urlPage = "tutoriel";
+        $page = "Modifier un tutoriel";
+        $repository = $this->getdoctrine()
+            ->getManager()
+            ->getRepository('docPlatformBundle:Tutoriel');
+
+        $tutoriel = $repository->find($id);
+        $form = $this->createForm(TutorielType::class, $tutoriel);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $tutoriel = $form->getData();
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($tutoriel);
+            $em->flush();
+
+            $id = $tutoriel->getId();
+
+            $listTuto = $repository->findAll();
+            $menu = "Tutoriel";
+            $urlPage = "tutoriel";
+            $page = "Voir un tutoriel ";
+            $listTutoriel = $this->get('knp_paginator')->paginate($listTuto, $request->query->get('page', 1), 5);
+
+            $html = $this->render('docPlatformBundle:Tutoriel:modTutoriels.html.twig', array(
+                'listform' => $listTutoriel,
+                'page' => $page,
+                'menu' => $menu,
+                'urlPage' => $urlPage,
+                'compteur' => count($_SESSION['listAlerts']),
+                'listAlerts' => $_SESSION['listAlerts']
+            ));
+            return $html;
+
+        }
+
+        $html = $this->render('docPlatformBundle:Tutoriel:modTutoriel.html.twig', array(
+            'menu' => $menu,
+            'urlPage' => $urlPage,
+            'page' => $page,
+            'id' =>$id,
+            'form' =>$form->createView(),
+            'forma' =>$tutoriel,
+            'compteur' => count($_SESSION['listAlerts']),
+            'listAlerts' => $_SESSION['listAlerts']
+        ));
+        return $html;
     }
 
     /**
