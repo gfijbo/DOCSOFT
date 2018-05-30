@@ -60,7 +60,7 @@ a:hover, a {
 	<div class="container">
 		<div class="row">
 			<div class="col-md-8 col-lg-12">
-				<h1>Documentation Dossier Agent</h1>
+				<h1>{{ menu }} : {{ page }}</h1>
 
 				<table
 					class="table table-sm table-responsive-sm table-active table-bordered">
@@ -71,7 +71,7 @@ a:hover, a {
 					<tr>
 						{% for doss in listDoss %}
 						<td><a class="dropdown-item" href="#{{doss.getId() }}">{{ doss.getChamp() }}</a></td>
-						{% if doss.getId()%3 == 0 %}
+						{% if loop.index%3 == 0 %}
 					</tr>
 					<tr>
 						{% endif %}

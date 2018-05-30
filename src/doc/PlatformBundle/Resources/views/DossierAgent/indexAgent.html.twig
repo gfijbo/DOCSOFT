@@ -1,4 +1,4 @@
-{# src/doc/PlateformBundle/views/DossierAgent/indexAgent.html.twig #}
+{# doc/PlatformBundle/Resources/views/product.html.twig #}
 {% extends "CoreBundle::abst.html.twig" %}
 
 {% block title %}
@@ -17,7 +17,7 @@
 				<a class="btn btn-success" href="{{ asset(urlPdf) }}"
 					target=_blank>Imprimer</a>
 	
-				<h1>Documentation Dossier Agent : Etat Civil</h1>
+				<h1>{{ menu }} : {{ page }}</h1>
 				<table
 					class="table table-sm table-responsive-sm table-active table-bordered">
 					<tr class="table-active">
@@ -27,7 +27,7 @@
 						{% for doss in listDoss %}
 						<td><a class="dropdown-item"
 							href="/seechamp/{{doss.getId() }}">{{ doss.getChamp() }}</a></td>
-						{% if doss.getId()%3 == 0 %}
+						{% if loop.index%3 == 0 %}
 					</tr>
 					<tr>
 						{% endif %}
