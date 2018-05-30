@@ -1,5 +1,4 @@
 <?php
-
 // src\doc\PlatformBundle\Controller\TutorielController.php
 namespace doc\PlatformBundle\Controller;
 

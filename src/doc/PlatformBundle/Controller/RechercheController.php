@@ -1,5 +1,5 @@
 <?php
-// src\doc\PlatformBundle\Controller\DossierAgentController.php
+// src\doc\PlatformBundle\Controller\RechercheController.php
 namespace doc\PlatformBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;

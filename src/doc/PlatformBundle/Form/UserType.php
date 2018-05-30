@@ -1,4 +1,5 @@
 <?php
+// src\doc\PlatformBundle\Form\UserType.php
 namespace doc\PlatformBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
