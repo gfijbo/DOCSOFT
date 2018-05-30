@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="18efa3f5-76d7-4be9-8938-ab82b8c0db5a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/doc/PlatformBundle/Form/DocumentType.php" afterPath="$PROJECT_DIR$/src/doc/PlatformBundle/Form/DocumentType.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/doc/PlatformBundle/Form/FormationType.php" afterPath="$PROJECT_DIR$/src/doc/PlatformBundle/Form/FormationType.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/doc/PlatformBundle/Controller/HistoriqueController.php" afterPath="$PROJECT_DIR$/src/doc/PlatformBundle/Controller/HistoriqueController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/doc/PlatformBundle/Controller/RechercheController.php" afterPath="$PROJECT_DIR$/src/doc/PlatformBundle/Controller/RechercheController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/doc/PlatformBundle/Controller/TutorielController.php" afterPath="$PROJECT_DIR$/src/doc/PlatformBundle/Controller/TutorielController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/doc/PlatformBundle/Form/TutorielType.php" afterPath="$PROJECT_DIR$/src/doc/PlatformBundle/Form/TutorielType.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/doc/PlatformBundle/Form/UserType.php" afterPath="$PROJECT_DIR$/src/doc/PlatformBundle/Form/UserType.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/doc/PlatformBundle/Resources/views/Document/delete.html.twig" afterPath="$PROJECT_DIR$/src/doc/PlatformBundle/Resources/views/Document/delete.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CoreBundle/Resources/views/tutoriel.html.twig" afterPath="$PROJECT_DIR$/src/CoreBundle/Resources/views/tutoriel.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Symfony.iws" />
@@ -63,21 +58,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="layout.html.twig" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/doc/PlatformBundle/Resources/views/views/layout.html.twig">
+      <file leaf-file-name="DocumentController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/doc/PlatformBundle/Controller/DocumentController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state vertical-scroll-proportion="12.423077">
+              <caret line="23" column="71" selection-start-line="23" selection-start-column="71" selection-end-line="23" selection-end-column="71" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DocumentController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/doc/PlatformBundle/Controller/DocumentController.php">
+      <file leaf-file-name="tutoriel.html.twig" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/CoreBundle/Resources/views/tutoriel.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.115385">
-              <caret line="23" column="71" selection-start-line="23" selection-start-column="71" selection-end-line="23" selection-end-column="71" />
+            <state vertical-scroll-proportion="0.05808656">
+              <caret line="3" column="15" selection-start-line="3" selection-start-column="15" selection-end-line="3" selection-end-column="15" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ongletsLeft.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/CoreBundle/Resources/views/ongletsLeft.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-20.26923">
+              <caret line="31" column="1" selection-start-line="31" selection-start-column="1" selection-end-line="36" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -151,7 +156,6 @@
         <option value="$PROJECT_DIR$/src/doc/PlatformBundle/Controller/CommentaireController.php" />
         <option value="$PROJECT_DIR$/src/doc/PlatformBundle/Entity/Commentaire.php" />
         <option value="$PROJECT_DIR$/src/doc/PlatformBundle/Resources/views/Tutoriel/see.html.twig" />
-        <option value="$PROJECT_DIR$/src/CoreBundle/Resources/views/tutoriel.html.twig" />
         <option value="$PROJECT_DIR$/src/doc/PlatformBundle/Resources/views/Tutoriel/modTutoriels.html.twig" />
         <option value="$PROJECT_DIR$/src/doc/PlatformBundle/Controller/FormationController.php" />
         <option value="$PROJECT_DIR$/src/doc/PlatformBundle/Controller/DocumentController.php" />
@@ -182,6 +186,7 @@
         <option value="$PROJECT_DIR$/src/doc/PlatformBundle/Controller/RechercheController.php" />
         <option value="$PROJECT_DIR$/src/doc/PlatformBundle/Controller/TutorielController.php" />
         <option value="$PROJECT_DIR$/src/doc/PlatformBundle/Resources/views/views/layout.html.twig" />
+        <option value="$PROJECT_DIR$/src/CoreBundle/Resources/views/tutoriel.html.twig" />
       </list>
     </option>
   </component>
@@ -339,7 +344,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
+              <option name="myItemId" value="Document" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -384,6 +389,32 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="CoreBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Symfony" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Symfony" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CoreBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -590,14 +621,20 @@
       <option name="project" value="LOCAL" />
       <updated>1527673827157</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="commit noms fichiers">
+      <created>1527674571039</created>
+      <option name="number" value="00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1527674571039</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="1358" y="-8" width="1296" height="1040" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.39296874" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.39296874" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32861635" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32861635" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
@@ -738,25 +775,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/CoreBundle/Resources/views/ongletsLeft.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6924067">
-          <caret line="33" column="30" selection-start-line="33" selection-start-column="30" selection-end-line="33" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/doc/PlatformBundle/Entity/Tutoriel.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6317568">
           <caret line="88" column="34" selection-start-line="88" selection-start-column="20" selection-end-line="88" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/CoreBundle/Resources/views/tutoriel.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.40202704">
-          <caret line="14" column="4" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
           <folding />
         </state>
       </provider>
@@ -929,14 +951,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/doc/PlatformBundle/Controller/DocumentController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.115385">
-          <caret line="23" column="71" selection-start-line="23" selection-start-column="71" selection-end-line="23" selection-end-column="71" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/doc/PlatformBundle/Controller/DossierAgentController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-15.692307">
@@ -1025,6 +1039,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/doc/PlatformBundle/Resources/views/views/layout.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/doc/PlatformBundle/Controller/TutorielController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1035,10 +1057,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/doc/PlatformBundle/Resources/views/views/layout.html.twig">
+    <entry file="file://$PROJECT_DIR$/src/doc/PlatformBundle/Controller/DocumentController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state vertical-scroll-proportion="12.423077">
+          <caret line="23" column="71" selection-start-line="23" selection-start-column="71" selection-end-line="23" selection-end-column="71" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CoreBundle/Resources/views/ongletsLeft.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-20.26923">
+          <caret line="31" column="1" selection-start-line="31" selection-start-column="1" selection-end-line="36" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CoreBundle/Resources/views/tutoriel.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.05808656">
+          <caret line="3" column="15" selection-start-line="3" selection-start-column="15" selection-end-line="3" selection-end-column="15" />
           <folding />
         </state>
       </provider>
