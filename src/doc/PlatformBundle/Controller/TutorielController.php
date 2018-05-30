@@ -79,9 +79,9 @@ class TutorielController extends Controller
             ->getRepository('docPlatformBundle:Tutoriel');
         $listTuto = $repository->findAll();
 
-        $menu = "Tutoriel";
+        $menu = "Tutoriels";
         $urlPage = "tutoriel";
-        $page = "Voir un tutoriel ";
+        $page = "Liste des tutoriels";
         $listTutoriel = $this->get('knp_paginator')->paginate($listTuto, $request->query->get('page', 1), 5);
 
         $html =  $this->render('docPlatformBundle:Tutoriel:seeTutoriels.html.twig', array(
