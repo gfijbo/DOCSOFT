@@ -13,7 +13,7 @@ class DossierAgentController extends Controller
      *
      * @Route("/dossieragent", name="seedossieragent")
      */
-    public function indexAction()
+    public function indexAgentAction()
     {
         $menu = "Dossier Agent";
         $page = "Etat Civil";
@@ -24,7 +24,7 @@ class DossierAgentController extends Controller
             ->getRepository('docPlatformBundle:DossierAgent');
 
         $listDoss = $repository->findAll();
-        $html = $this->render('docPlatformBundle:DossierAgent:index.html.twig', array(
+        $html = $this->render('docPlatformBundle:DossierAgent:indexAgent.html.twig', array(
             'listDoss' => $listDoss,
             'page' => $page,
             'menu' => $menu,

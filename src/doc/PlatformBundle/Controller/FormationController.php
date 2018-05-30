@@ -15,10 +15,10 @@ class FormationController extends Controller
     /**
      * @Route("/formation",name="menuFormation")
      */
-    public function indexAction(){
+    public function indexFormationAction(){
         $menu = "Formation";
         $urlPage = "formation";
-        $html = $this->render('docPlatformBundle:Formation:index.html.twig', array(
+        $html = $this->render('docPlatformBundle:Formation:indexFormation.html.twig', array(
             'menu' => $menu,
             'urlPage' => $urlPage,
             'compteur' => count($_SESSION['listAlerts']),
@@ -41,7 +41,7 @@ class FormationController extends Controller
         $page = "Voir une formation ";
         $listFormation = $this->get('knp_paginator')->paginate($listform, $request->query->get('page', 1), 5);
         
-        $html = $this->render('docPlatformBundle:Formation:see.html.twig', array(
+        $html = $this->render('docPlatformBundle:Formation:seeFormations.html.twig', array(
             'listform' => $listFormation,
             'page' => $page,
             'menu' => $menu,

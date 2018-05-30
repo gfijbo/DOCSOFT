@@ -17,11 +17,11 @@ class DocumentController extends Controller
      *
      * @Route("/document", name="docs")
      */
-    public function indexAction()
+    public function indexDocumentAction()
     {
         $menu = "Documents";
         $urlPage = "document";
-        $html = $this->render('docPlatformBundle:Document:index.html.twig', array(
+        $html = $this->render('docPlatformBundle:Document:indexDocument.html.twig', array(
             'menu' => $menu,
             'urlPage' => $urlPage,
             'compteur' => count($_SESSION['listAlerts']),

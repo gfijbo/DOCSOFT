@@ -20,11 +20,11 @@ class TutorielController extends Controller
      *
      * @Route("/tutoriel", name="menuTutoriel")
      */
-    public function indexAction()
+    public function indexTutorielAction()
     {
         $menu = "Tutoriels";
         $urlPage = "tutoriel";
-        $html = $this->render('docPlatformBundle:Tutoriel:index.html.twig', array(
+        $html = $this->render('docPlatformBundle:Tutoriel:indexTutoriel.html.twig', array(
             'menu' => $menu,
             'urlPage' => $urlPage,
             'compteur' => count($_SESSION['listAlerts']),
@@ -34,7 +34,7 @@ class TutorielController extends Controller
     }
 
     /**
-     * @Route("/tutoriel/add",name="addTutorielTutoriel")
+     * @Route("/tutoriel/add",name="addlTutoriel")
      */
     public function addTutorielAction(Request $request){
         $menu = "Tutoriel";
@@ -84,7 +84,7 @@ class TutorielController extends Controller
         $page = "Voir un tutoriel ";
         $listTutoriel = $this->get('knp_paginator')->paginate($listTuto, $request->query->get('page', 1), 5);
 
-        $html =  $this->render('docPlatformBundle:Tutoriel:see.html.twig', array(
+        $html =  $this->render('docPlatformBundle:Tutoriel:seeTutoriels.html.twig', array(
             'listTuto' => $listTutoriel,
             'page' => $page,
             'menu' => $menu,
@@ -158,7 +158,6 @@ class TutorielController extends Controller
             $em->flush();
 
             $id = $tutoriel->getId();
-
             $listTuto = $repository->findAll();
             $menu = "Tutoriel";
             $urlPage = "tutoriel";
