@@ -1,4 +1,4 @@
-{# src/doc/PlateformBundle/views/DossierAgent/indexAgent.html.twig #}
+{# doc/PlatformBundle/Resources/views/product.html.twig #}
 {% extends "CoreBundle::abst.html.twig" %}
 
 {% block title %}
@@ -14,9 +14,9 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-8 col-lg-12">
-				<a class="btn btn-success" href="{{ asset('/dossieragent/pdf') }}"
+				<a class="btn btn-success" href="{{ asset(urlPdf) }}"
 					target=_blank>Imprimer</a>
-
+	
 				<h1>Documentation Dossier Agent : Etat Civil</h1>
 				<table
 					class="table table-sm table-responsive-sm table-active table-bordered">
