@@ -266,13 +266,11 @@ class DossierAgentController extends Controller
             ->getRepository('docPlatformBundle:DossierAgent');
 
         $doss = $repository->find($id);
-        $menu = "Dossier Agent";
-        $urlPage = "dossieragent";
-        $page = "Etat Civil ";
+        $menu = "Documentation";
+        $urlPage = "menu";
 
         return $this->render('docPlatformBundle:DossierAgent:seeChamp.html.twig', array(
             'doss' => $doss,
-            'page' => $page,
             'menu' => $menu,
             'urlPage' => $urlPage,
             'compteur' => count($_SESSION['listAlerts']),

@@ -23,6 +23,8 @@ class Onglet
     /**
      *
      * @ORM\Column(type="string")
+     * @ORM\OneToOne(targetEntity="Page", inversedBy="onglet_ref")
+     * @ORM\JoinColumn(name="onglet_ref", referencedColumnName="onglet")
      * @var string
      */
     private $onglet;

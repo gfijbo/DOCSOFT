@@ -37,7 +37,7 @@ class DossierAgent
     private $page_ref;
 
     /**
-     *
+     * 
      * @ORM\Column(type="string")
      * @var string
      */

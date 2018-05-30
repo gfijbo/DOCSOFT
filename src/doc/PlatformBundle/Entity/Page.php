@@ -34,6 +34,14 @@ class Page
      */
     private $url;
     /**
+     *
+     * @ORM\Column(type="string")
+     * @ORM\OneToOne(targetEntity="Onglet", mappedBy="onglet")
+     * @var integer
+     */
+    private $onglet_ref;
+    
+    /**
      * @return mixed
      */
     public function getId()
