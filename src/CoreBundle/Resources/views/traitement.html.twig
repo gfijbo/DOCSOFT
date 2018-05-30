@@ -1,19 +1,19 @@
 {# app/Resources/views/traitement.html.twig #}
 {# Onglets pour TRAITEMENTS #}
 {% block li4 %}
-{# {% for onglet in listOnglets %}#}
-{# <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Menu Levels">#}
-{# 	<a class="nav-link nav-link-collapse collapsed" data-toggle="collapse"#}
-{# 	href="#collapseMulti{{ loop.index }}" data-parent="#exampleAccordion">#}
-{# 		<i class="fa fa-fw fa fa-cog"></i>#}
-{# 		<span class="nav-link-text">{{ onglet.getOnglet() }}</span>#}
-{# 	</a>#}
-{# 	<ul class="sidenav-second-level collapse" id="collapseMulti{{ loop.index }}">#}
-{# 		<li><a class="nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti{{ loop.index+10 }}">Sous-Menu 1</a>#}
-{# 			<ul class="sidenav-third-level collapse" id="collapseMulti{{ loop.index+10 }}">#}
-{# 				<li><a href="#">Sous-Menu 1</a></li>#}
-{# 			</ul>#}
-{# 		</li>#}
-{# 	</ul></li>#}
-{# {% endfor %}#}
+{% for onglet in listOnglets %}
+<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Menu Levels">
+	<a class="nav-link nav-link-collapse collapsed" data-toggle="collapse"
+	href="#collapseMulti{{ loop.index }}" data-parent="#exampleAccordion">
+		<i class="fa fa-fw fa fa-cog"></i>
+		<span class="nav-link-text">{{ onglet.getOnglet() }}</span>
+	</a>
+	<ul class="sidenav-second-level collapse" id="collapseMulti{{ loop.index }}">
+		<li><a class="nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti{{ loop.index+10 }}">Sous-Menu 1</a>
+			<ul class="sidenav-third-level collapse" id="collapseMulti{{ loop.index+10 }}">
+				<li><a href="#">Sous-Menu 1</a></li>
+			</ul>
+		</li>
+	</ul></li>
+{% endfor %}
 {% endblock %}

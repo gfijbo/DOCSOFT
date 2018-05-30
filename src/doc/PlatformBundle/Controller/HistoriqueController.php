@@ -164,6 +164,7 @@ class HistoriqueController extends Controller
             'page' => $page,
             'menu' => $menu,
             'urlPage' => $urlPage,
+            'listOnglets' => $_SESSION['listOnglets'],
             'compteur' => count($_SESSION['listAlerts']),
             'listAlerts' => $_SESSION['listAlerts']
         ));
@@ -191,6 +192,7 @@ class HistoriqueController extends Controller
             'page' => $page,
             'menu' => $menu,
             'urlPage' => $urlPage,
+            'listOnglets' => $_SESSION['listOnglets'],
             'compteur' => count($_SESSION['listAlerts']),
             'listAlerts' => $_SESSION['listAlerts']
         ));

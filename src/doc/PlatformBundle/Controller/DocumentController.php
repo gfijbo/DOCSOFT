@@ -24,6 +24,7 @@ class DocumentController extends Controller
         $html = $this->render('docPlatformBundle:Document:indexDocument.html.twig', array(
             'menu' => $menu,
             'urlPage' => $urlPage,
+            'listOnglets' => $_SESSION['listOnglets'],
             'compteur' => count($_SESSION['listAlerts']),
             'listAlerts' => $_SESSION['listAlerts']
         ));
@@ -51,6 +52,7 @@ class DocumentController extends Controller
             'page' => $page,
             'menu' => $menu,
             'urlPage' => $urlPage,
+            'listOnglets' => $_SESSION['listOnglets'],
             'compteur' => count($_SESSION['listAlerts']),
             'listAlerts' => $_SESSION['listAlerts']
         ));
@@ -70,6 +72,7 @@ class DocumentController extends Controller
         $listDoc = $repository->find($id);
         return $this->render('docPlatformBundle:Document:voirDoc.html.twig', array(
             'listDocs' => $listDoc,
+            'listOnglets' => $_SESSION['listOnglets'],
             'compteur' => count($_SESSION['listAlerts']),
             'listAlerts' => $_SESSION['listAlerts']
         ));
@@ -98,6 +101,7 @@ class DocumentController extends Controller
         }
         return $this->render('docPlatformBundle:Document:voirDoc.html.twig', array(
             'doc' => $doc,
+            'listOnglets' => $_SESSION['listOnglets'],
             'compteur' => count($_SESSION['listAlerts']),
             'listAlerts' => $_SESSION['listAlerts']
         ));
@@ -159,6 +163,7 @@ class DocumentController extends Controller
 
                     return $this->redirectToRoute('operation', array(
                         'compteur' => count($_SESSION['listAlerts']),
+                        'listOnglets' => $_SESSION['listOnglets'],
                         'listAlerts' => $_SESSION['listAlerts']
                     ));
                 }
@@ -182,6 +187,7 @@ class DocumentController extends Controller
             'page' => $page,
             'menu' => $menu,
             'urlPage' => $urlPage,
+            'listOnglets' => $_SESSION['listOnglets'],
             'compteur' => count($_SESSION['listAlerts']),
             'listAlerts' => $_SESSION['listAlerts']
         ));
@@ -208,6 +214,7 @@ class DocumentController extends Controller
             'page' => $page,
             'menu' => $menu,
             'urlPage' => $urlPage,
+            'listOnglets' => $_SESSION['listOnglets'],
             'compteur' => count($_SESSION['listAlerts']),
             'listAlerts' => $_SESSION['listAlerts']
         ));
@@ -253,6 +260,7 @@ class DocumentController extends Controller
            5); // nombre d'element par page
         return $this->redirectToRoute("deleteDocs", array(
             'listDocs' => $listeDocuments,
+            'listOnglets' => $_SESSION['listOnglets'],
             'compteur' => count($_SESSION['listAlerts']),
             'listAlerts' => $_SESSION['listAlerts']
         ));

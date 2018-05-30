@@ -33,6 +33,7 @@ class DossierAgentController extends Controller
             'menu' => $menu,
             'urlPage' => $urlPage,
             'urlPdf' => $urlPdf,
+            'listOnglets' => $_SESSION['listOnglets'],
             'compteur' => count($_SESSION['listAlerts']),
             'listAlerts' => $_SESSION['listAlerts']
         ));
@@ -95,6 +96,7 @@ class DossierAgentController extends Controller
             'menu' => $menu,
             'urlPage' => $urlPage,
             'urlPdf' => $urlPdf,
+            'listOnglets' => $_SESSION['listOnglets'],
             'compteur' => count($_SESSION['listAlerts']),
             'listAlerts' => $_SESSION['listAlerts']
         ));
@@ -156,6 +158,7 @@ class DossierAgentController extends Controller
             'menu' => $menu,
             'urlPage' => $urlPage,
             'urlPdf' => $urlPdf,
+            'listOnglets' => $_SESSION['listOnglets'],
             'compteur' => count($_SESSION['listAlerts']),
             'listAlerts' => $_SESSION['listAlerts']
         ));
@@ -219,6 +222,7 @@ class DossierAgentController extends Controller
             'menu' => $menu,
             'urlPage' => $urlPage,
             'urlPdf' =>$urlPdf,
+            'listOnglets' => $_SESSION['listOnglets'],
             'compteur' => count($_SESSION['listAlerts']),
             'listAlerts' => $_SESSION['listAlerts']
         ));
@@ -273,6 +277,7 @@ class DossierAgentController extends Controller
             'doss' => $doss,
             'menu' => $menu,
             'urlPage' => $urlPage,
+            'listOnglets' => $_SESSION['listOnglets'],
             'compteur' => count($_SESSION['listAlerts']),
             'listAlerts' => $_SESSION['listAlerts']
         ));
