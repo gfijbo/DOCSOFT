@@ -2,11 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="18efa3f5-76d7-4be9-8938-ab82b8c0db5a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/doc/PlatformBundle/Controller/FormationController.php" afterPath="$PROJECT_DIR$/src/doc/PlatformBundle/Controller/FormationController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CoreBundle/Resources/views/formation.html.twig" afterPath="$PROJECT_DIR$/src/CoreBundle/Resources/views/formation.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/doc/PlatformBundle/Resources/views/Formation/indexFormation.html.twig" afterPath="$PROJECT_DIR$/src/doc/PlatformBundle/Resources/views/Formation/indexFormation.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/doc/PlatformBundle/Resources/views/Formation/seeFormations.html.twig" afterPath="$PROJECT_DIR$/src/doc/PlatformBundle/Resources/views/Formation/seeFormations.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/doc/PlatformBundle/Resources/views/Tutoriel/seeTutoriels.html.twig" afterPath="$PROJECT_DIR$/src/doc/PlatformBundle/Resources/views/Tutoriel/seeTutoriels.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Symfony.iws" />
@@ -64,8 +59,8 @@
       <file leaf-file-name="FormationController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/doc/PlatformBundle/Controller/FormationController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.38724375">
-              <caret line="38" column="27" selection-start-line="38" selection-start-column="27" selection-end-line="38" selection-end-column="27" />
+            <state vertical-scroll-proportion="0.32915717">
+              <caret line="35" column="55" selection-start-line="35" selection-start-column="55" selection-end-line="35" selection-end-column="55" />
               <folding />
             </state>
           </provider>
@@ -636,7 +631,13 @@
       <option name="project" value="LOCAL" />
       <updated>1527675203433</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="commit changement menu gauche">
+      <created>1527677185052</created>
+      <option name="number" value="00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1527677185052</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -682,7 +683,8 @@
     <MESSAGE value="commit tuto" />
     <MESSAGE value="commit index," />
     <MESSAGE value="commit noms fichiers" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit noms fichiers" />
+    <MESSAGE value="commit changement menu gauche" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit changement menu gauche" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1085,8 +1087,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/doc/PlatformBundle/Controller/FormationController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.38724375">
-          <caret line="38" column="27" selection-start-line="38" selection-start-column="27" selection-end-line="38" selection-end-column="27" />
+        <state vertical-scroll-proportion="0.32915717">
+          <caret line="35" column="55" selection-start-line="35" selection-start-column="55" selection-end-line="35" selection-end-column="55" />
           <folding />
         </state>
       </provider>
