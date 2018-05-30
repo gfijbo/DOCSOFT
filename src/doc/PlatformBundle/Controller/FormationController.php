@@ -36,9 +36,9 @@ class FormationController extends Controller
         ->getRepository('docPlatformBundle:Formation');
         
         $listform = $repository->findAll();
-        $menu = "Formation";
+        $menu = "Formations";
         $urlPage = "formation";
-        $page = "Voir une formation ";
+        $page = " Liste de Formations ";
         $listFormation = $this->get('knp_paginator')->paginate($listform, $request->query->get('page', 1), 5);
         
         $html = $this->render('docPlatformBundle:Formation:seeFormations.html.twig', array(
