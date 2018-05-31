@@ -21,6 +21,7 @@ class FormationController extends Controller
         $html = $this->render('docPlatformBundle:Formation:indexFormation.html.twig', array(
             'menu' => $menu,
             'urlPage' => $urlPage,
+            'listOnglets' => $_SESSION['listOnglets'],
             'compteur' => count($_SESSION['listAlerts']),
             'listAlerts' => $_SESSION['listAlerts']
         ));
@@ -46,6 +47,7 @@ class FormationController extends Controller
             'page' => $page,
             'menu' => $menu,
             'urlPage' => $urlPage,
+            'listOnglets' => $_SESSION['listOnglets'],
             'compteur' => count($_SESSION['listAlerts']),
             'listAlerts' => $_SESSION['listAlerts']
         ));
@@ -86,6 +88,7 @@ class FormationController extends Controller
             'page' => $page,
             'menu' => $menu,
             'urlPage' => $urlPage,
+            'listOnglets' => $_SESSION['listOnglets'],
             'compteur' => count($_SESSION['listAlerts']),
             'listAlerts' => $_SESSION['listAlerts']
         ));
@@ -112,6 +115,7 @@ class FormationController extends Controller
             $id = $formation->getId();
             $html = $this->redirectToRoute("seeFormation", array(
                 'id'=>$id,
+                'listOnglets' => $_SESSION['listOnglets'],
                 'compteur' => count($_SESSION['listAlerts']),
                 'listAlerts' => $_SESSION['listAlerts']
             ));
@@ -124,6 +128,7 @@ class FormationController extends Controller
             'urlPage' => $urlPage,
             'form' => $form->createView(),
             'page' => $page,
+            'listOnglets' => $_SESSION['listOnglets'],
             'compteur' => count($_SESSION['listAlerts']),
             'listAlerts' => $_SESSION['listAlerts']
         ));
@@ -161,6 +166,7 @@ class FormationController extends Controller
             
             $html = $this->redirectToRoute('seeFormations', array(
                 'compteur' => count($_SESSION['listAlerts']),
+                'listOnglets' => $_SESSION['listOnglets'],
                 'listAlerts' => $_SESSION['listAlerts']
             ));
             return $html;
@@ -174,6 +180,7 @@ class FormationController extends Controller
             'id' =>$id,
             'form' =>$form->createView(),
             'forma' =>$formation,
+            'listOnglets' => $_SESSION['listOnglets'],
             'compteur' => count($_SESSION['listAlerts']),
             'listAlerts' => $_SESSION['listAlerts']
             ));
@@ -195,6 +202,7 @@ class FormationController extends Controller
         
         $html = $this->redirectToRoute("seeFormations", array(
             'compteur' => count($_SESSION['listAlerts']),
+            'listOnglets' => $_SESSION['listOnglets'],
             'listAlerts' => $_SESSION['listAlerts']
         ));
         

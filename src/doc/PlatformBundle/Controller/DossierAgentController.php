@@ -33,6 +33,7 @@ class DossierAgentController extends Controller
             'menu' => $menu,
             'urlPage' => $urlPage,
             'urlPdf' => $urlPdf,
+            'listOnglets' => $_SESSION['listOnglets'],
             'compteur' => count($_SESSION['listAlerts']),
             'listAlerts' => $_SESSION['listAlerts']
         ));
@@ -95,6 +96,7 @@ class DossierAgentController extends Controller
             'menu' => $menu,
             'urlPage' => $urlPage,
             'urlPdf' => $urlPdf,
+            'listOnglets' => $_SESSION['listOnglets'],
             'compteur' => count($_SESSION['listAlerts']),
             'listAlerts' => $_SESSION['listAlerts']
         ));
@@ -156,6 +158,7 @@ class DossierAgentController extends Controller
             'menu' => $menu,
             'urlPage' => $urlPage,
             'urlPdf' => $urlPdf,
+            'listOnglets' => $_SESSION['listOnglets'],
             'compteur' => count($_SESSION['listAlerts']),
             'listAlerts' => $_SESSION['listAlerts']
         ));
@@ -219,6 +222,7 @@ class DossierAgentController extends Controller
             'menu' => $menu,
             'urlPage' => $urlPage,
             'urlPdf' =>$urlPdf,
+            'listOnglets' => $_SESSION['listOnglets'],
             'compteur' => count($_SESSION['listAlerts']),
             'listAlerts' => $_SESSION['listAlerts']
         ));
@@ -266,15 +270,14 @@ class DossierAgentController extends Controller
             ->getRepository('docPlatformBundle:DossierAgent');
 
         $doss = $repository->find($id);
-        $menu = "Dossier Agent";
-        $urlPage = "dossieragent";
-        $page = "Etat Civil ";
+        $menu = "Documentation";
+        $urlPage = "menu";
 
         return $this->render('docPlatformBundle:DossierAgent:seeChamp.html.twig', array(
             'doss' => $doss,
-            'page' => $page,
             'menu' => $menu,
             'urlPage' => $urlPage,
+            'listOnglets' => $_SESSION['listOnglets'],
             'compteur' => count($_SESSION['listAlerts']),
             'listAlerts' => $_SESSION['listAlerts']
         ));

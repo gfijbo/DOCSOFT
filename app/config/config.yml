@@ -111,7 +111,7 @@ knp_paginator:
 knp_snappy:
     pdf:
         enabled:    true
-        binary:     "\"C:\\Program Files\\wkhtmltopdf\\bin\\wkhtmltopdf.exe\"" #/usr/local/bin/wkhtmltopdf
+        binary:     "\"%kernel.project_dir%\\web\\vendor\\wkhtmltopdf\\bin\\wkhtmltopdf.exe\"" #/usr/local/bin/wkhtmltopdf
         options:     
             no-outline: true
             page-size: LETTER
@@ -119,7 +119,7 @@ knp_snappy:
             encoding: UTF-8
     image:
         enabled:    true
-        binary:     "\"C:\\Program Files\\wkhtmltopdf\\bin\\wkhtmltoimage.exe\"" #/usr/local/bin/wkhtmltoimage
+        binary:     "\"%kernel.project_dir%\\web\\vendor\\wkhtmltopdf\\bin\\wkhtmltoimage.exe\"" #/usr/local/bin/wkhtmltoimage
         options:    []
     
         

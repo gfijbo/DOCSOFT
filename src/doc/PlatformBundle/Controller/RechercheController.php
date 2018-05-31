@@ -24,6 +24,7 @@ class RechercheController extends Controller
             'page' => $page,
             'menu' => $menu,
             'urlPage' => $urlPage,
+            'listOnglets' => $_SESSION['listOnglets'],
             'compteur' => count($_SESSION['listAlerts']),
             'listAlerts' => $_SESSION['listAlerts']
         ));
@@ -94,6 +95,7 @@ class RechercheController extends Controller
             'urlPage' => $urlPage,
             'menu' => $menu,
             'data' => $data,
+            'listOnglets' => $_SESSION['listOnglets'],
             'compteur' => count($_SESSION['listAlerts']),
             'listAlerts' => $_SESSION['listAlerts']
         ));
@@ -132,6 +134,7 @@ class RechercheController extends Controller
             'menu' => $menu,
             'data' => $data,
             'urlPage' => $urlPage,
+            'listOnglets' => $_SESSION['listOnglets'],
             'compteur' => count($_SESSION['listAlerts']),
             'listAlerts' => $_SESSION['listAlerts']
         ));
@@ -188,6 +191,7 @@ class RechercheController extends Controller
             'page' => $page,
             'menu' => $menu,
             'data' => $data,
+            'listOnglets' => $_SESSION['listOnglets'],
             'occ' => $occ,
             'nbocc' => count($occ),
             'urlPage' => $urlPage,

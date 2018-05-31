@@ -26,6 +26,7 @@ class TutorielController extends Controller
         $html = $this->render('docPlatformBundle:Tutoriel:indexTutoriel.html.twig', array(
             'menu' => $menu,
             'urlPage' => $urlPage,
+            'listOnglets' => $_SESSION['listOnglets'],
             'compteur' => count($_SESSION['listAlerts']),
             'listAlerts' => $_SESSION['listAlerts']
         ));
@@ -52,6 +53,7 @@ class TutorielController extends Controller
             $id = $tutoriel->getId();
             return $this->redirectToRoute("seeTutoriel", array(
                 'id'=>$id,
+                'listOnglets' => $_SESSION['listOnglets'],
                 'compteur' => count($_SESSION['listAlerts']),
                 'listAlerts' => $_SESSION['listAlerts']
             ));
@@ -63,6 +65,7 @@ class TutorielController extends Controller
             'urlPage' => $urlPage,
             'tuto' => $tuto->createView(),
             'page' => $page,
+            'listOnglets' => $_SESSION['listOnglets'],
             'compteur' => count($_SESSION['listAlerts']),
             'listAlerts' => $_SESSION['listAlerts']
         ));
@@ -88,6 +91,7 @@ class TutorielController extends Controller
             'page' => $page,
             'menu' => $menu,
             'urlPage' => $urlPage,
+            'listOnglets' => $_SESSION['listOnglets'],
             'compteur' => count($_SESSION['listAlerts']),
             'listAlerts' => $_SESSION['listAlerts']
         ));
@@ -129,6 +133,7 @@ class TutorielController extends Controller
             'forma'=> $docTuto->createView(),
             'menu' => $menu,
             'urlPage' => $urlPage,
+            'listOnglets' => $_SESSION['listOnglets'],
             'compteur' => count($_SESSION['listAlerts']),
             'listAlerts' => $_SESSION['listAlerts']
         ));
@@ -165,6 +170,7 @@ class TutorielController extends Controller
 
             $html = $this->redirectToRoute('seeTutoriels', array(
                 'compteur' => count($_SESSION['listAlerts']),
+                'listOnglets' => $_SESSION['listOnglets'],
                 'listAlerts' => $_SESSION['listAlerts']
             ));
             return $html;
@@ -177,6 +183,7 @@ class TutorielController extends Controller
             'id' =>$id,
             'form' =>$form->createView(),
             'forma' =>$tutoriel,
+            'listOnglets' => $_SESSION['listOnglets'],
             'compteur' => count($_SESSION['listAlerts']),
             'listAlerts' => $_SESSION['listAlerts']
         ));
@@ -198,6 +205,7 @@ class TutorielController extends Controller
 
         return $this->redirectToRoute("seeTutoriels", array(
             'compteur' => count($_SESSION['listAlerts']),
+            'listOnglets' => $_SESSION['listOnglets'],
             'listAlerts' => $_SESSION['listAlerts']
         ));
 

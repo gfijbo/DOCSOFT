@@ -22,7 +22,7 @@ class DossierAgent
 
     /**
      *
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="integer",nullable=true)
      * @ORM\OneToOne(targetEntity="Onglet", inversedBy="id")
      * @ORM\JoinColumn(name="onglet_id", referencedColumnName="id")
      */
@@ -30,7 +30,7 @@ class DossierAgent
 
     /**
      *
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="integer", nullable=true)
      * @ORM\OneToOne(targetEntity="Page", inversedBy="id")
      * @ORM\JoinColumn(name="page_id", referencedColumnName="id")
      */
@@ -38,35 +38,35 @@ class DossierAgent
 
     /**
      *
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="string", nullable=true)
      * @var string
      */
     private $champ;
 
     /**
      *
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="string", nullable=true)
      * @var string
      */
     private $origine;
 
     /**
      *
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="string", nullable=true)
      * @var string
      */
     private $format;
 
     /**
      *
-     * @ORM\Column(type="string", length=5000)
+     * @ORM\Column(type="string", length=5000, nullable=true)
      * @var string
      */
     private $libelle;
 
     /**
      *
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="integer", nullable=true)
      * @var int
      */
     private $num_ordre;
@@ -79,14 +79,14 @@ class DossierAgent
 
     /**
      *
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="string", nullable=true)
      * @var string
      */
     private $typ_don;
 
     /**
      *
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="string", nullable=true)
      * @var string
      */
     private $descr_typ_don;

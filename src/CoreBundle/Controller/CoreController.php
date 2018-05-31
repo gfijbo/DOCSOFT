@@ -14,16 +14,17 @@ class CoreController extends Controller
         if(!isset($_SESSION)){
             session_start();
         }
-        if (isset($_SESSION['listAlerts'])) {
+        if (isset($_SESSION['listAlerts']) && isset($_SESSION['listOnglets'])) {
             $filename = "CoreBundle:Core:home.html.twig";
             $html = $this->render($filename, array(
                 'page' => $page,
                 'compteur' => count($_SESSION['listAlerts']),
                 'listAlerts' => $_SESSION['listAlerts'],
+                'listOnglets' => $_SESSION['listOnglets'],
                 'alert' => ''
             ));
         } else {
-            $html = $this->redirectToRoute('alloperation');
+            $html = $this->redirectToRoute('allOnglets');
         }
 
         return $html;

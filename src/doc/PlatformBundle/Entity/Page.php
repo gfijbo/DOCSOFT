@@ -34,6 +34,46 @@ class Page
      */
     private $url;
     /**
+     *
+     * @ORM\Column(type="integer")
+     * @ORM\OneToOne(targetEntity="Onglet", mappedBy="id")
+     * @var integer
+     */
+    private $onglet_ref;
+    
+    /**
+     * @return string
+     */
+    public function getUrl()
+    {
+        return $this->url;
+    }
+
+    /**
+     * @return number
+     */
+    public function getOnglet_ref()
+    {
+        return $this->onglet_ref;
+    }
+
+    /**
+     * @param string $url
+     */
+    public function setUrl($url)
+    {
+        $this->url = $url;
+    }
+
+    /**
+     * @param number $onglet_ref
+     */
+    public function setOnglet_ref($onglet_ref)
+    {
+        $this->onglet_ref = $onglet_ref;
+    }
+
+    /**
      * @return mixed
      */
     public function getId()
