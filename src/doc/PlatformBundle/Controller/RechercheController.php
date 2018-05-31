@@ -276,6 +276,7 @@ class RechercheController extends Controller
         . "AND o.id = '6' "
         . " AND f.nom_form LIKE '%" . $data . "%'".
         "UNION ".
+        // pour récupérer les tutoriels correspondants à la recherche
         "SELECT t.id, null as champ , null as document_name, null as nom_form, t.nom_tuto, p.page, o.onglet "
         . "FROM tutoriel AS t, page AS p, onglet AS o "
         . "WHERE p.id = '9' "
@@ -287,7 +288,7 @@ class RechercheController extends Controller
             ->prepare($sql);
         $stmt->execute([]);
         $results = $stmt->fetchAll();
-        if(empty($results) ||empty($data)){
+        if(empty($results) || empty($data)){
             $occ = "";
         }else{
             for($i=0; $i<count($results);$i++){
