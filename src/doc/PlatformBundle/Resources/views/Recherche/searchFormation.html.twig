@@ -1,0 +1,42 @@
+{# doc/PlatformBundle/Resources/views/Historique/seeAllOp.html.twig #}
+{% extends "CoreBundle::abst.html.twig" %}
+
+{% block title %}
+{{ parent() }}
+{% endblock %}
+
+{% block stylesheets %}
+{{ parent() }}
+{% endblock %}
+
+{% block body %}
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8 col-lg-12"></div>
+			<h1>{% if data is not empty %}
+			{{ data }} : 
+			{% endif %}{{ nb }} r&eacute;sultat(s) trouv&eacute;(s)</h1>
+			
+				<table class="table">
+					
+					<tbody>
+						{% for result in results %}
+						<tr>
+							<td><p>{{ result.onglet }} / {{ result.page }} : 
+							<a href="/formation/see/{{ result.id }}">{{ result.nom_form }}</a></p></td>
+						</tr>
+						{% endfor %}
+					</tbody>
+				</table>
+		</div>
+		<div class="pagination justify-content-center">
+			{{ knp_pagination_render(results) }}
+		</div>
+	</div>
+	
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+{% endblock %}

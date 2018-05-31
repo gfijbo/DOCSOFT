@@ -29,6 +29,10 @@
 						    {%  set url = '/seechamp/' %}
 						{% elseif result.document_name %}
 							{%  set url = '/document/download/' %}
+						{% elseif result.nom_form %}
+							{%  set url = '/formation/see/' %}
+						{% elseif result.nom_tuto %}
+							{%  set url = '/tutoriel/see/' %}
 						{% endif %}
 						
 						<tr>
@@ -40,6 +44,14 @@
 							(data)|lower:(test)|lower,
 							(data)|title:(test)|title}) }}
 							{{ result.document_name| replace({(data):(test),
+                            (data)|upper:(test)|upper,
+							(data)|lower:(test)|lower,
+							(data)|title:(test)|title}) }}
+							{{ result.nom_form| replace({(data):(test),
+                            (data)|upper:(test)|upper,
+							(data)|lower:(test)|lower,
+							(data)|title:(test)|title}) }}
+							{{ result.nom_tuto| replace({(data):(test),
                             (data)|upper:(test)|upper,
 							(data)|lower:(test)|lower,
 							(data)|title:(test)|title}) }}</strong></a></p></td>

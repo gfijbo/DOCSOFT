@@ -164,7 +164,6 @@ class DocumentController extends Controller
                     return $this->redirectToRoute('operation', array(
                         'compteur' => count($_SESSION['listAlerts']),
                         'listOnglets' => $_SESSION['listOnglets'],
-                        'listPages' => $_SESSION['listPages'],
                         'listAlerts' => $_SESSION['listAlerts']
                     ));
                 }
