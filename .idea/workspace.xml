@@ -2,10 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="18efa3f5-76d7-4be9-8938-ab82b8c0db5a" name="Default" comment="">
-      <change type="DELETED" beforePath="C:\wamp\www\Symfony\src\doc\PlatformBundle\Resources\views\Document\deleteDocument.html.twig" afterPath="" />
-      <change type="MOVED" beforePath="C:\wamp\www\Symfony\src\doc\PlatformBundle\Resources\views\Document\voirDoc.html.twig" afterPath="$PROJECT_DIR$/src/doc/PlatformBundle/Resources/views/Document/seeDocuments.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/doc/PlatformBundle/Controller/DocumentController.php" afterPath="$PROJECT_DIR$/src/doc/PlatformBundle/Controller/DocumentController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/doc/PlatformBundle/Controller/HistoriqueController.php" afterPath="$PROJECT_DIR$/src/doc/PlatformBundle/Controller/HistoriqueController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Symfony.iws" />
@@ -68,21 +64,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HistoriqueController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="HistoriqueController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/doc/PlatformBundle/Controller/HistoriqueController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7405498">
+            <state vertical-scroll-proportion="-16.576923">
               <caret line="76" column="31" selection-start-line="76" selection-start-column="31" selection-end-line="76" selection-end-column="31" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="seeDocuments.html.twig" pinned="false" current-in-tab="false">
+      <file leaf-file-name="seeDocuments.html.twig" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/doc/PlatformBundle/Resources/views/Document/seeDocuments.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-21.576923">
-              <caret line="63" column="113" selection-start-line="63" selection-start-column="113" selection-end-line="63" selection-end-column="113" />
+            <state vertical-scroll-proportion="0.62355214">
+              <caret line="49" column="46" selection-start-line="49" selection-start-column="46" selection-end-line="49" selection-end-column="46" />
               <folding />
             </state>
           </provider>
@@ -576,23 +572,9 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="UPDATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/.buildpath</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/config/config.yml</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/CoreBundle/Controller/CoreController.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/CoreBundle/Resources/views/gestion.html.twig</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/CoreBundle/Resources/views/ongletsLeft.html.twig</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/CoreBundle/Resources/views/traitement.html.twig</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/doc/PlatformBundle/Controller/DocumentController.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/doc/PlatformBundle/Controller/DossierAgentController.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/doc/PlatformBundle/Controller/FormationController.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/doc/PlatformBundle/Controller/HistoriqueController.php</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/src/doc/PlatformBundle/Controller/RechercheController.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/doc/PlatformBundle/Controller/TutorielController.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/doc/PlatformBundle/Entity/DossierAgent.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/doc/PlatformBundle/Entity/Onglet.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/doc/PlatformBundle/Entity/Page.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/doc/PlatformBundle/Resources/views/DossierAgent/pdfChamp.html.twig</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/doc/PlatformBundle/Resources/views/DossierAgent/seeChamp.html.twig</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/doc/PlatformBundle/Resources/views/Recherche/search.html.twig</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/doc/PlatformBundle/Resources/views/Recherche/searchMenu.html.twig</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Created" />
@@ -600,16 +582,8 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="CREATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/doc/PlatformBundle/Controller/MenuController.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/vendor/wkhtmltopdf/bin/wkhtmltoimage.exe</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/vendor/wkhtmltopdf/bin/wkhtmltopdf.exe</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/vendor/wkhtmltopdf/bin/wkhtmltox.dll</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/vendor/wkhtmltopdf/include/wkhtmltox/dllbegin.inc</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/vendor/wkhtmltopdf/include/wkhtmltox/dllend.inc</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/vendor/wkhtmltopdf/include/wkhtmltox/image.h</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/vendor/wkhtmltopdf/include/wkhtmltox/pdf.h</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/vendor/wkhtmltopdf/lib/wkhtmltox.lib</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/vendor/wkhtmltopdf/uninstall.exe</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/doc/PlatformBundle/Resources/views/Recherche/searchFormation.html.twig</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/doc/PlatformBundle/Resources/views/Recherche/searchTutoriel.html.twig</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Deleted" />
@@ -911,7 +885,13 @@
       <option name="project" value="LOCAL" />
       <updated>1527774850266</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="commit document">
+      <created>1527781920342</created>
+      <option name="number" value="00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1527781920342</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -925,7 +905,7 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32939914" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.10193133" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.10062893" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -959,7 +939,8 @@
     <MESSAGE value="commit noms fichiers" />
     <MESSAGE value="commit changement menu gauche" />
     <MESSAGE value="commit document del" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit document del" />
+    <MESSAGE value="commit document" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit document" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1335,14 +1316,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/doc/PlatformBundle/Resources/views/Document/seeDocuments.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-21.576923">
-          <caret line="63" column="113" selection-start-line="63" selection-start-column="113" selection-end-line="63" selection-end-column="113" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/doc/PlatformBundle/Controller/DocumentController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-9.254545">
@@ -1353,8 +1326,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/doc/PlatformBundle/Controller/HistoriqueController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7405498">
+        <state vertical-scroll-proportion="-16.576923">
           <caret line="76" column="31" selection-start-line="76" selection-start-column="31" selection-end-line="76" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/doc/PlatformBundle/Resources/views/Document/seeDocuments.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.62355214">
+          <caret line="49" column="46" selection-start-line="49" selection-start-column="46" selection-end-line="49" selection-end-column="46" />
           <folding />
         </state>
       </provider>
