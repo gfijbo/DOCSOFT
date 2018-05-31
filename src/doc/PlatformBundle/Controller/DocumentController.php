@@ -33,10 +33,10 @@ class DocumentController extends Controller
 
     /**
      *
-     * @Route("/document/see", name="seeDocs")
+     * @Route("/document/see", name="seeDocuments")
      */
 
-    public function voirDocAction(Request $request)
+    public function seeDocumentAction(Request $request)
     {
         $menu = "Documents";
         $page = "Consulter un document";
@@ -47,7 +47,7 @@ class DocumentController extends Controller
             ->getRepository('docPlatformBundle:Document');
         $listDocs = $repository->findAll();
         $listeDocuments = $this->get('knp_paginator')->paginate($listDocs, $request->query->get('page', 1), 5);
-        $html = $this->render('docPlatformBundle:Document:voirDoc.html.twig', array(
+        $html = $this->render('docPlatformBundle:Document:seeDocuments.html.twig', array(
             'listDocs' => $listeDocuments,
             'page' => $page,
             'menu' => $menu,
@@ -70,7 +70,7 @@ class DocumentController extends Controller
             ->getRepository('docPlatformBundle:Document');
 
         $listDoc = $repository->find($id);
-        return $this->render('docPlatformBundle:Document:voirDoc.html.twig', array(
+        return $this->render('docPlatformBundle:Document:seeDocuments.html.twig', array(
             'listDocs' => $listDoc,
             'listOnglets' => $_SESSION['listOnglets'],
             'compteur' => count($_SESSION['listAlerts']),
@@ -164,7 +164,6 @@ class DocumentController extends Controller
                     return $this->redirectToRoute('operation', array(
                         'compteur' => count($_SESSION['listAlerts']),
                         'listOnglets' => $_SESSION['listOnglets'],
-                        'listPages' => $_SESSION['listPages'],
                         'listAlerts' => $_SESSION['listAlerts']
                     ));
                 }
@@ -196,7 +195,7 @@ class DocumentController extends Controller
 
     /**
      *
-     * @Route("/document/del", name="deleteDocument", requirements={"id"="\d+"})
+     * @Route("/document/del", name="delDocument", requirements={"id"="\d+"})
      */
     public function deleteAction(Request $request)
     {
@@ -210,7 +209,7 @@ class DocumentController extends Controller
         $listDocs = $repository->findAll();
         $listeDocuments = $this->get('knp_paginator')->paginate($listDocs, $request->query->get('page', 1)/*le numero de la page a afficher*/,
             5); // nombre d'element par page
-        return $this->render('docPlatformBundle:Document:deleteDocument.html.twig', array(
+        return $this->render('docPlatformBundle:Document:seeDocuments.html.twig', array(
             'listDocs' => $listeDocuments,
             'page' => $page,
             'menu' => $menu,
@@ -259,7 +258,7 @@ class DocumentController extends Controller
         $_SESSION['type'] = "";
         $listeDocuments = $this->get('knp_paginator')->paginate($listDocs, $request->query->get('page', 1)/*le numero de la page a afficher*/,
            5); // nombre d'element par page
-        return $this->redirectToRoute("deleteDocument", array(
+        return $this->redirectToRoute("seeDocuments", array(
             'listDocs' => $listeDocuments,
             'listOnglets' => $_SESSION['listOnglets'],
             'compteur' => count($_SESSION['listAlerts']),

@@ -55,10 +55,10 @@ class HistoriqueController extends Controller
             }
         }
         if (isset($_SESSION['majop']) && $_SESSION['majop'] == 'doc') {
-            $html = $this->redirectToRoute('seeDocs', array());
+            $html = $this->redirectToRoute('seeDocuments', array());
         }
         if (isset($_SESSION['majop']) && $_SESSION['majop'] == 'del_doc') {
-            $html = $this->redirectToRoute('deleteDoc', array(
+            $html = $this->redirectToRoute('delDocument', array(
                 'id' => $_SESSION['id']
             ));
         }
