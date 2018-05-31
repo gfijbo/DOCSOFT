@@ -1,45 +1,45 @@
 {% block ongletsLeft %}
 <!-- Onglets Left -->
 <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
-    <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Accueil">
-        <a class="nav-link" href="{{ path('core_homepage') }}">
-            <i class="fa fa-fw fa-home "></i>
-            <span class="nav-link-text">Accueil</span>
-        </a>
-    </li>
-    <!--Onglets pour DOCUMENTS -->
-    {% block li1 %}
-        {{ include("CoreBundle::gestion.html.twig") }}
-    {% endblock %}
-    {% block li2 %}
-        {{ include("CoreBundle::documents.html.twig") }}
-    {% endblock %}
-    <!--Onglets pour REFERENTIEL -->
-    {% block li3 %}
-        {{ include("CoreBundle::referentiel.html.twig") }}
-    {% endblock %}
+{#     <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Accueil">#}
+{#         <a class="nav-link" href="{{ path('core_homepage') }}">#}
+{#             <i class="fa fa-fw fa-home "></i>#}
+{#             <span class="nav-link-text">Accueil</span>#}
+{#         </a>#}
+{#     </li>#}
+{#     <!--Onglets pour DOCUMENTS -->#}
+{#     {% block li1 %}#}
+{#         {{ include("CoreBundle::gestion.html.twig") }}#}
+{#     {% endblock %}#}
+{#     {% block li2 %}#}
+{#         {{ include("CoreBundle::documents.html.twig") }}#}
+{#     {% endblock %}#}
+{#     <!--Onglets pour REFERENTIEL -->#}
+{#     {% block li3 %}#}
+{#         {{ include("CoreBundle::referentiel.html.twig") }}#}
+{#     {% endblock %}#}
     <!--  Onglets pour TRAITEMENTS -->
     {% block li4 %}
         {{ include("CoreBundle::traitement.html.twig") }}
     {% endblock %}
-    {% block li5 %}
-        {{ include("CoreBundle::formation.html.twig") }}
-    {% endblock %}
-    {% block li6 %}
-        {{ include("CoreBundle::tutoriel.html.twig") }}
-    {% endblock %}
+{#     {% block li5 %}#}
+{#         {{ include("CoreBundle::formation.html.twig") }}#}
+{#     {% endblock %}#}
+{#     {% block li6 %}#}
+{#         {{ include("CoreBundle::tutoriel.html.twig") }}#}
+{#     {% endblock %}#}
 
-    <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Link">
-        <a class="nav-link" href="https://www.gfi.world/fr/">
-            <i class="fa fa-fw fa-internet-explorer"></i>
-            <span class="nav-link-text">GFI</span>
-        </a>
-    </li>
-    <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Link">
-        <a class="nav-link" href="http://forumastrerh.gfi.fr/">
-            <i class="fa fa-fw fa fa-users"></i>
-            <span class="nav-link-text">Forum Astre RH</span>
-        </a>
-    </li>
+{#     <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Link">#}
+{#         <a class="nav-link" href="https://www.gfi.world/fr/">#}
+{#             <i class="fa fa-fw fa-internet-explorer"></i>#}
+{#             <span class="nav-link-text">GFI</span>#}
+{#         </a>#}
+{#     </li>#}
+{#     <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Link">#}
+{#         <a class="nav-link" href="http://forumastrerh.gfi.fr/">#}
+{#             <i class="fa fa-fw fa fa-users"></i>#}
+{#             <span class="nav-link-text">Forum Astre RH</span>#}
+{#         </a>#}
+{#     </li>#}
 </ul><!-- Fin Onglets Left -->
 {% endblock %}

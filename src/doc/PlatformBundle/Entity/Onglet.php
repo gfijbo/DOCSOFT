@@ -3,6 +3,7 @@
 namespace doc\PlatformBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  *
@@ -28,6 +29,13 @@ class Onglet
      * @var string
      */
     private $onglet;
+    
+    /**
+     *
+     * @ORM\OneToMany(targetEntity="doc\PlatformBundle\Entity\Page", mappedBy="onglet_ref")
+     */    
+    private $pages;
+    
     /**
      * @return mixed
      */
@@ -51,7 +59,28 @@ class Onglet
     {
         $this->onglet = $onglet;
     }
+    
+    public function __construct(){
+        $this->pages = new ArrayCollection();
+    }
+    /**
+     * @return \Doctrine\Common\Collections\ArrayCollection
+     */
+    public function getPages()
+    {
+        return $this->pages;
+    }
 
+    /**
+     * @param \Doctrine\Common\Collections\ArrayCollection $pages
+     */
+    public function setPages($pages)
+    {
+        $this->pages = $pages;
+    }
     
-    
+    public function addPage($page){
+        $this->pages->add($page);
+    }
+   
 }

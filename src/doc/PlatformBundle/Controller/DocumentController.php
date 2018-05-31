@@ -164,6 +164,7 @@ class DocumentController extends Controller
                     return $this->redirectToRoute('operation', array(
                         'compteur' => count($_SESSION['listAlerts']),
                         'listOnglets' => $_SESSION['listOnglets'],
+                        'listPages' => $_SESSION['listPages'],
                         'listAlerts' => $_SESSION['listAlerts']
                     ));
                 }
@@ -188,6 +189,7 @@ class DocumentController extends Controller
             'menu' => $menu,
             'urlPage' => $urlPage,
             'listOnglets' => $_SESSION['listOnglets'],
+            'listPages' => $_SESSION['listPages'],
             'compteur' => count($_SESSION['listAlerts']),
             'listAlerts' => $_SESSION['listAlerts']
         ));
@@ -215,6 +217,7 @@ class DocumentController extends Controller
             'menu' => $menu,
             'urlPage' => $urlPage,
             'listOnglets' => $_SESSION['listOnglets'],
+            'listPages' => $_SESSION['listPages'],
             'compteur' => count($_SESSION['listAlerts']),
             'listAlerts' => $_SESSION['listAlerts']
         ));
@@ -261,6 +264,7 @@ class DocumentController extends Controller
         return $this->redirectToRoute("deleteDocs", array(
             'listDocs' => $listeDocuments,
             'listOnglets' => $_SESSION['listOnglets'],
+            'listPages' => $_SESSION['listPages'],
             'compteur' => count($_SESSION['listAlerts']),
             'listAlerts' => $_SESSION['listAlerts']
         ));
