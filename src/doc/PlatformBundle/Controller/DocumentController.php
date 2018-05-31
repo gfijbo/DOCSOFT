@@ -109,9 +109,9 @@ class DocumentController extends Controller
 
     /**
      *
-     * @Route("/document/upload", name="uploadDocs")
+     * @Route("/document/add", name="addDocument")
      */
-    public function newAction(Request $request)
+    public function addDocumentAction(Request $request)
     {
         $menu = "Documents";
         $page = "Ajouter un document";
@@ -183,13 +183,12 @@ class DocumentController extends Controller
             return $this->redirectToRoute('operation', array());
         }
         // affiche la page du formulaire d'insertion de fichier
-        return $this->render('docPlatformBundle:Document:upload.html.twig', array(
+        return $this->render('docPlatformBundle:Document:addDocument.html.twig', array(
             'form' => $form->createView(),
             'page' => $page,
             'menu' => $menu,
             'urlPage' => $urlPage,
             'listOnglets' => $_SESSION['listOnglets'],
-            'listPages' => $_SESSION['listPages'],
             'compteur' => count($_SESSION['listAlerts']),
             'listAlerts' => $_SESSION['listAlerts']
         ));
@@ -197,7 +196,7 @@ class DocumentController extends Controller
 
     /**
      *
-     * @Route("/document/delete", name="deleteDocs", requirements={"id"="\d+"})
+     * @Route("/document/del", name="deleteDocument", requirements={"id"="\d+"})
      */
     public function deleteAction(Request $request)
     {
@@ -211,13 +210,12 @@ class DocumentController extends Controller
         $listDocs = $repository->findAll();
         $listeDocuments = $this->get('knp_paginator')->paginate($listDocs, $request->query->get('page', 1)/*le numero de la page a afficher*/,
             5); // nombre d'element par page
-        return $this->render('docPlatformBundle:Document:delete.html.twig', array(
+        return $this->render('docPlatformBundle:Document:deleteDocument.html.twig', array(
             'listDocs' => $listeDocuments,
             'page' => $page,
             'menu' => $menu,
             'urlPage' => $urlPage,
             'listOnglets' => $_SESSION['listOnglets'],
-            'listPages' => $_SESSION['listPages'],
             'compteur' => count($_SESSION['listAlerts']),
             'listAlerts' => $_SESSION['listAlerts']
         ));
@@ -261,10 +259,9 @@ class DocumentController extends Controller
         $_SESSION['type'] = "";
         $listeDocuments = $this->get('knp_paginator')->paginate($listDocs, $request->query->get('page', 1)/*le numero de la page a afficher*/,
            5); // nombre d'element par page
-        return $this->redirectToRoute("deleteDocs", array(
+        return $this->redirectToRoute("deleteDocument", array(
             'listDocs' => $listeDocuments,
             'listOnglets' => $_SESSION['listOnglets'],
-            'listPages' => $_SESSION['listPages'],
             'compteur' => count($_SESSION['listAlerts']),
             'listAlerts' => $_SESSION['listAlerts']
         ));
