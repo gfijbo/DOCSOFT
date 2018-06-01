@@ -37,6 +37,28 @@ class Onglet
     private $pages;
     
     /**
+     * @ORM\Column(type="string")
+     * @var string
+     */
+    private $glyphicon;
+    
+    /**
+     * @return string
+     */
+    public function getGlyphicon()
+    {
+        return $this->glyphicon;
+    }
+
+    /**
+     * @param string $glyphicon
+     */
+    public function setGlyphicon($glyphicon)
+    {
+        $this->glyphicon = $glyphicon;
+    }
+
+    /**
      * @return mixed
      */
     public function getId()
@@ -77,10 +99,6 @@ class Onglet
     public function setPages($pages)
     {
         $this->pages = $pages;
-    }
-    
-    public function addPage($page){
-        $this->pages->add($page);
     }
    
 }
