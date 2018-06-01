@@ -23,56 +23,56 @@ class Historique
 
     /**
      *
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="string",nullable=true)
      *
      */
     private $actionName;
 
     /**
      *
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="string",nullable=true)
      *
      */
     private $userName;
 
     /**
      *
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255,nullable=true )
      * @var string
      */
     private $documentName;
     
     /**
      *
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255,nullable=true)
      * @var string
      */
     private $formationName;
     
     /**
      *
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      * @var string
      */
     private $tutorielName;
     
     /**
      *
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="integer", nullable=true)
      * @var integer
      */
     private $documentSize;
 
     /**
      *
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      * @var string
      */
     private $documentMimeType;
 
     /**
      *
-     * @ORM\Column(type="string", length=5000)
+     * @ORM\Column(type="string", length=5000, nullable=true)
      * @var string
      */
     private $commentaire;
