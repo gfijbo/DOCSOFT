@@ -19,7 +19,7 @@
 				    {{ alert.getActionName() }} 
 					</strong>
 				</span> <span class="small float-right text-muted">{{ alert.getUpdatedAt()| date('H:i:s d-m-y')}}</span>
-				<div class="dropdown-message small">{{ alert.getCommentaire() }} {{ alert.getDocumentName() }}</div>
+				<div class="dropdown-message small">{{ alert.getCommentaire() }} {{ alert.getDocumentName() }} {{ alert.getFormationName() }}{{ alert.getTutorielName() }}</div>
 				</a>
 				<div class="dropdown-divider"></div>
 		{%  endfor %}

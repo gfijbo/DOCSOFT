@@ -41,7 +41,21 @@ class Historique
      * @var string
      */
     private $documentName;
-
+    
+    /**
+     *
+     * @ORM\Column(type="string", length=255)
+     * @var string
+     */
+    private $formationName;
+    
+    /**
+     *
+     * @ORM\Column(type="string", length=255)
+     * @var string
+     */
+    private $tutorielName;
+    
     /**
      *
      * @ORM\Column(type="integer")
@@ -194,6 +208,39 @@ class Historique
     public function setCommentaire($commentaire)
     {
         $this->commentaire = $commentaire;
+    }
+
+    
+    /**
+     * @return string
+     */
+    public function getFormationName()
+    {
+        return $this->formationName;
+    }
+
+    /**
+     * @return string
+     */
+    public function getTutorielName()
+    {
+        return $this->tutorielName;
+    }
+
+    /**
+     * @param string $formationName
+     */
+    public function setFormationName($formationName)
+    {
+        $this->formationName = $formationName;
+    }
+
+    /**
+     * @param string $tutorielName
+     */
+    public function setTutorielName($tutorielName)
+    {
+        $this->tutorielName = $tutorielName;
     }
 
     public function __construct()
