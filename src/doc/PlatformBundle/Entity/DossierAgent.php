@@ -78,20 +78,6 @@ class DossierAgent
     private $commentaires;
 
     /**
-     *
-     * @ORM\Column(type="string", nullable=true)
-     * @var string
-     */
-    private $typ_don;
-
-    /**
-     *
-     * @ORM\Column(type="string", nullable=true)
-     * @var string
-     */
-    private $descr_typ_don;
-
-    /**
      * DossierAgent constructor.
      *
      * @param
@@ -185,24 +171,6 @@ class DossierAgent
 
     /**
      *
-     * @return string
-     */
-    public function getTyp_don()
-    {
-        return $this->typ_don;
-    }
-
-    /**
-     *
-     * @return string
-     */
-    public function getDescr_typ_don()
-    {
-        return $this->descr_typ_don;
-    }
-
-    /**
-     *
      * @param string $onglet
      */
     public function setOnglet_ref($onglet)
@@ -262,24 +230,6 @@ class DossierAgent
     public function setNum_ordre($num_ordre)
     {
         $this->num_ordre = $num_ordre;
-    }
-
-    /**
-     *
-     * @param string $typ_don
-     */
-    public function setTyp_don($typ_don)
-    {
-        $this->typ_don = $typ_don;
-    }
-
-    /**
-     *
-     * @param string $descr_typ_don
-     */
-    public function setDescr_typ_don($descr_typ_don)
-    {
-        $this->descr_typ_don = $descr_typ_don;
     }
 
     public function getDossierAgent()
