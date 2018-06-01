@@ -14,9 +14,11 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-8 col-lg-12">
+				{% if app.user %}
 				<a class="btn btn-success"  href="{{ asset('/document/add') }}"
 						>Ajouter un document</a>
 				<br><br>
+				{% endif %}
 				<h1>Liste des documents</h1>
 				<table class="table table-striped">
 					<thead>
@@ -61,7 +63,9 @@
 							<td><a class="btn btn-info"
 								href="{{ asset('/document/download/') }}{{document.getId()}}"
 								target=_blank />Voir</a></td>
+							{% if app.user %}
 							<td><a class="fa fa-trash" style="font-size:30px;color:orange" href="/document/delete/{{ document.getId() }}"></a></td>
+							{% endif %}
 						</tr>
 						{% endfor %}
 					</tbody>
