@@ -111,14 +111,18 @@ class FormationController extends Controller
             $em = $this->getDoctrine()->getManager();
             $em->persist($formation);
             $em->flush();
+            $type = "add_form";
             
             $id = $formation->getId();
-            $html = $this->redirectToRoute("seeFormation", array(
+            $_SESSION['forms'] = $id;
+            $_SESSION['type'] = $type;
+            $html = $this->redirectToRoute("operation");
+           /*  $html = $this->redirectToRoute("seeFormation", array(
                 'id'=>$id,
                 'listOnglets' => $_SESSION['listOnglets'],
                 'compteur' => count($_SESSION['listAlerts']),
                 'listAlerts' => $_SESSION['listAlerts']
-            ));
+            )); */
             
             return $html;
             

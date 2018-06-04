@@ -74,7 +74,7 @@ class HistoriqueController extends Controller
     {
         $type = $_SESSION['type'];
         // si document est défini
-        if ($_SESSION['doc']) {
+        if (isset($_SESSION['doc'])) {
             $repository = $this->getdoctrine()
                 ->getManager()
                 ->getRepository('docPlatformBundle:Document');
@@ -89,7 +89,7 @@ class HistoriqueController extends Controller
             $documentSize = 0;
             $documentMimeType = '';
         }
-        if ($_SESSION['com']) {
+        if (isset($_SESSION['com'])) {
             $repository = $this->getdoctrine()
                 ->getManager()
                 ->getRepository('docPlatformBundle:Commentaire');
@@ -98,6 +98,35 @@ class HistoriqueController extends Controller
             $commentaire = $commentaire->getCommentaire();
         } else {
             $commentaire = '';
+        }
+        
+        if (isset($_SESSION['forms'])) {
+            $repository = $this->getdoctrine()
+            ->getManager()
+            ->getRepository('docPlatformBundle:Formation');
+            
+            $formation = $repository->find($_SESSION['forms']);
+            $formName = $formation->getNomForm();
+            $formDeb = $formation->getDateDebut();
+            $formFin = $formation->getDateFin();
+            $formDetails = $formation->getFormDetails();
+        } else {
+            $formName = '';
+            $formDeb = null;
+            $formFin = null;
+        }
+        
+        if (isset($_SESSION['tutos'])) {
+            $repository = $this->getdoctrine()
+            ->getManager()
+            ->getRepository('docPlatformBundle:Tutoriel');
+            
+            $tutoriel = $repository->find($_SESSION['tutos']);
+            $tutoName = $tutoriel->getNomTuto();
+            $tutoDetails = $tutoriel->getTutoDetails();
+        } else {
+            $tutoName = '';
+            $tutoDetails = '';
         }
         switch ($type) {
             case "add_doc":
@@ -115,6 +144,24 @@ class HistoriqueController extends Controller
             case "mod_com":
                 $action = "Modification d'un commentaire";
                 break;
+            case "add_form":
+                $action = "Ajout d'une formation";
+                break;
+            case "mod_form":
+                $action = "Modification d'une formation";
+                break;
+            case "del_form":
+                $action = "Suppression d'une formation";
+                break;
+            case "add_tuto":
+                $action = "Ajout d'un tutoriel";
+                break;
+            case "mod_tuto":
+                $action = "Modification d'un tutoriel";
+                break;
+            case "del_tuto":
+                $action = "Suppression d'un tutoriel";
+                break;
             default:
                 $action = "Opération inconnue";
         }
@@ -125,22 +172,28 @@ class HistoriqueController extends Controller
         $his->setDocumentMimeType($documentMimeType);
         $his->setUserName($this->getUser());
         $his->setCommentaire($commentaire);
+        $his->setFormationName($formName);
+        $his->setFormationDetails($formDetails);
+        $his->setFormationDateDebut($formDeb);
+        $his->setFormationDateFin($formFin);
+        $his->setTutorielName($tutoName);
+        $his->setTutorielDetails($tutoDetails);
         $em = $this->getDoctrine()->getManager();
         $em->persist($his);
         $em->flush();
 
+        
+        
         if ($commentaire != null) {
             $_SESSION['majop'] = 'com';
-            $html = $this->redirectToRoute('alloperation');
         }
         if ($document != null && $_SESSION['type'] != "del_doc") {
             $_SESSION['majop'] = 'doc';
-            $html = $this->redirectToRoute('alloperation');
         }
         if ($document != null && $_SESSION['type'] == "del_doc") {
             $_SESSION['majop'] = 'del_doc';
-            $html = $this->redirectToRoute('alloperation');
         }
+        $html = $this->redirectToRoute('alloperation');
         return $html;
     }
 
@@ -165,7 +218,6 @@ class HistoriqueController extends Controller
             'menu' => $menu,
             'urlPage' => $urlPage,
             'listOnglets' => $_SESSION['listOnglets'],
-            'listPages' => $_SESSION['listPages'],
             'compteur' => count($_SESSION['listAlerts']),
             'listAlerts' => $_SESSION['listAlerts']
         ));

@@ -28,9 +28,11 @@
 						{% for op in listeOps %}
 						<tr>
 							<td><p>
-									{% if op.getActionName()=="ajout_document" or op.getActionName()=="modification_document" or op.getActionName()== "suppression_document" %}
+									{% if op.getActionName()=="Ajout document" 
+									or op.getActionName()=="Modification document" 
+									or op.getActionName()== "Suppression document" %}
 									<i class="fa fa-file-o" style="font-size: 24px"></i>
-									{% elseif op.getActionName()=="ajout_commentaire" %}
+									{% elseif op.getActionName()=="Ajout commentaire" %}
 									<i class="fa fa-stack-exchange" style="font-size: 24px"></i>
 									{% endif %}
 									&nbsp; {{ op.getActionName() }}

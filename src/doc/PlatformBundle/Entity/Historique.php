@@ -51,10 +51,38 @@ class Historique
     
     /**
      *
+     * @ORM\Column(type="date",nullable=true)
+     * @var string
+     */
+    private $formationDateDebut;
+    
+    /**
+     *
+     * @ORM\Column(type="date",nullable=true)
+     * @var string
+     */
+    private $formationDateFin;
+    
+    /**
+     *
+     * @ORM\Column(type="string", length=255,nullable=true)
+     * @var string
+     */
+    private $formationDetails;
+    
+    /**
+     *
      * @ORM\Column(type="string", length=255, nullable=true)
      * @var string
      */
     private $tutorielName;
+    
+    /**
+     *
+     * @ORM\Column(type="string", length=255, nullable=true)
+     * @var string
+     */
+    private $tutorielDetails;
     
     /**
      *
@@ -83,6 +111,70 @@ class Historique
      * @var \DateTime
      */
     private $updatedAt;
+
+    /**
+     * @return string
+     */
+    public function getFormationDateDebut()
+    {
+        return $this->formationDateDebut;
+    }
+
+    /**
+     * @return string
+     */
+    public function getFormationDateFin()
+    {
+        return $this->formationDateFin;
+    }
+
+    /**
+     * @return string
+     */
+    public function getFormationDetails()
+    {
+        return $this->formationDetails;
+    }
+
+    /**
+     * @return string
+     */
+    public function getTutorielDetails()
+    {
+        return $this->tutorielDetails;
+    }
+
+    /**
+     * @param string $formationDateDebut
+     */
+    public function setFormationDateDebut($formationDateDebut)
+    {
+        $this->formationDateDebut = $formationDateDebut;
+    }
+
+    /**
+     * @param string $formationDateFin
+     */
+    public function setFormationDateFin($formationDateFin)
+    {
+        $this->formationDateFin = $formationDateFin;
+    }
+
+    /**
+     * @param string $formationDetails
+     */
+    public function setFormationDetails($formationDetails)
+    {
+        $this->formationDetails = $formationDetails;
+    }
+
+    /**
+     * @param string $tutorielDetails
+     */
+    public function setTutorielDetails($tutorielDetails)
+    {
+        $this->tutorielDetails = $tutorielDetails;
+    }
 
     /**
      *

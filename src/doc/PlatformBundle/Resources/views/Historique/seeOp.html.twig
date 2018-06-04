@@ -25,14 +25,6 @@
 					{{ op.getActionName() }}
 				</p>
 
-				{% if op.getUserName() %}
-				<h3>Utilisateur:</h3>
-				<p>
-					{{ op.getUserName() }}
-				</p>
-				{% else %}
-				{% endif %}
-
 				{% if op.getDocumentName() %}
 				<h3>Document:</h3>
 				<p>
@@ -78,11 +70,64 @@
 				</p>
 				{% else %}
 				{% endif %}
+				{% if op.getFormationName() %}
+				<h3>Formation:</h3>
+				<p>
+					{{ op.getFormationName() }}
+				</p>
+				{% else %}
+				{% endif %}
+				{% if op.getFormationDetails() %}
+				<h3>Détails:</h3>
+				<p>
+					{{ op.getFormationDetails() }}
+				</p>
+				{% else %}
+				{% endif %}
+				{% if op.getFormationDateDebut() %}
+				<h3>Date de début:</h3>
+				<p>
+					{{ op.getFormationDateDebut()|localizeddate('none','none','fr',null,'EEEE d MMMM Y')|title }}
+					à {{ op.getFormationDateDebut()|date(' H:i')}}
+				</p>
+				{% else %}
+				{% endif %}
+				{% if op.getFormationDateFin() %}
+				<h3>Date de fin:</h3>
+				<p>
+					{{ op.getFormationDateFin()|localizeddate('none','none','fr',null,'EEEE d MMMM Y')|title }}
+					à {{ op.getFormationDateFin()|date(' H:i')}}
+				</p>
+				{% else %}
+				{% endif %}
+				{% if op.getTutorielName() %}
+				<h3>Tutoriel:</h3>
+				<p>
+					{{ op.getTutorielName() }}
+				</p>
+				{% else %}
+				{% endif %}
+				
+				{% if op.getTutorielDetails() %}
+				<h3>Détails:</h3>
+				<p>
+					{{ op.getTutorielDetails() }}
+				</p>
+				{% else %}
+				{% endif %}
 
 				{% if op.getUpdatedAt() %}
 				<h3>Date de mise &agrave; jour:</h3>
 				<p>
 					{{ op.getUpdatedAt()| date('d-m-Y  H:i:s') }}
+				</p>
+				{% else %}
+				{% endif %}
+				
+				{% if op.getUserName() %}
+				<h3>Utilisateur:</h3>
+				<p>
+					{{ op.getUserName() }}
 				</p>
 				{% else %}
 				{% endif %}

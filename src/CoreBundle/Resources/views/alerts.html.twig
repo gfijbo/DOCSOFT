@@ -6,10 +6,16 @@
 	    {% for alert in listAlerts|slice(0,5)%}
 			<div class="dropdown-divider"></div>
 				<a class="dropdown-item" href="/seeOp/{{ alert.getId() }}">
-				{% if alert.getActionName() == "Ajout d'un document" or alert.getActionName() == "Ajout d'un commentaire" %}
+				{% if alert.getActionName() == "Ajout d'un document" 
+				or alert.getActionName() == "Ajout d'un commentaire"  
+				or alert.getActionName() == "Ajout d'une formation" 
+				or alert.getActionName() == "Ajout d'un tutoriel" %}
 					<span class="text-success">
 					<strong> <i class="fa fa-long-arrow-up fa-fw"></i>
-				{% elseif alert.getActionName() == "Modification d'un document" or alert.getActionName() == "Modification d'un commentaire" %}
+				{% elseif alert.getActionName() == "Modification d'un document" 
+				or alert.getActionName() == "Modification d'un commentaire" 
+				or alert.getActionName() == "Modification d'une formation" 
+				or alert.getActionName() == "Modification d'un tutoriel"%}
 					<span class="text-info">
 					<strong> <i class="fa fa-long-arrow-up fa-fw"></i>
 				{% else %}
