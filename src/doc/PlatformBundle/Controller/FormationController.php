@@ -73,7 +73,7 @@ class FormationController extends Controller
         $docForm->handleRequest($request);
         if ($docForm->isSubmitted() && $docForm->isValid()) {
             $doc->setForm_ref($formation);
-            $doc->setUser($this->getUser());
+            $doc->setUser($this->getUser());            
             $em = $this->getDoctrine()->getManager();
             $em->persist($doc);
             $em->flush();
@@ -117,12 +117,6 @@ class FormationController extends Controller
             $_SESSION['forms'] = $id;
             $_SESSION['type'] = $type;
             $html = $this->redirectToRoute("operation");
-           /*  $html = $this->redirectToRoute("seeFormation", array(
-                'id'=>$id,
-                'listOnglets' => $_SESSION['listOnglets'],
-                'compteur' => count($_SESSION['listAlerts']),
-                'listAlerts' => $_SESSION['listAlerts']
-            )); */
             
             return $html;
             
@@ -161,18 +155,17 @@ class FormationController extends Controller
             $em->flush();
             
             $id = $formation->getId();
+            $type = "mod_form";
+            $_SESSION['forms'] = $id;
+            $_SESSION['type'] = $type;
             
-            $listform = $repository->findAll();
-            $menu = "Formation";
-            $urlPage = "formation";
-            $page = "Voir une formation ";
-            $listFormation = $this->get('knp_paginator')->paginate($listform, $request->query->get('page', 1), 5);
+            $html = $this->redirectToRoute('operation');
             
-            $html = $this->redirectToRoute('seeFormations', array(
+           /*  $html = $this->redirectToRoute('seeFormations', array(
                 'compteur' => count($_SESSION['listAlerts']),
                 'listOnglets' => $_SESSION['listOnglets'],
                 'listAlerts' => $_SESSION['listAlerts']
-            ));
+            )); */
             return $html;
             
         }
@@ -200,10 +193,18 @@ class FormationController extends Controller
         ->getRepository('docPlatformBundle:Formation');
         
         $formation = $repository->find($id);
+        if(!isset($_SESSION['type'])){
+            $_SESSION['type'] = 'del_form';
+            $_SESSION['id'] = $id;
+            $_SESSION['forms'] = $id;
+            
+            return $this->redirectToRoute('operation');
+        }
+        
         $em = $this->getDoctrine()->getManager();
         $em->remove($formation);
         $em->flush();
-        
+        unset($_SESSION['type']);
         $html = $this->redirectToRoute("seeFormations", array(
             'compteur' => count($_SESSION['listAlerts']),
             'listOnglets' => $_SESSION['listOnglets'],

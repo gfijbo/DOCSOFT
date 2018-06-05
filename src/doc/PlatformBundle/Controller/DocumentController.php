@@ -156,7 +156,7 @@ class DocumentController extends Controller
                     $doc->setUser($user);
                     $em->flush();
                     $_SESSION['type'] = "mod_doc";
-                    $_SESSION['com'] = '';
+                    unset($_SESSION['com']);
                     $_SESSION['doc'] = $id;
                     $_SESSION['id'] = '';
                     // cas de remplacement de fichier
@@ -233,11 +233,7 @@ class DocumentController extends Controller
         if(!isset($_SESSION['type'])){
             $_SESSION['type'] = "";
         }
-
-        if (!isset ($_SESSION['type'])) {
-            $_SESSION['type'] = "";
-        }
-
+        
         if ($_SESSION['type'] != "del_doc") {
             $_SESSION['type'] = "del_doc";
             $_SESSION['com'] = '';

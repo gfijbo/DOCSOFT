@@ -49,14 +49,14 @@ class TutorielController extends Controller
             $em = $this->getDoctrine()->getManager();
             $em->persist($tutoriel);
             $em->flush();
+            $type = "add_tuto";
 
             $id = $tutoriel->getId();
-            return $this->redirectToRoute("seeTutoriel", array(
-                'id'=>$id,
-                'listOnglets' => $_SESSION['listOnglets'],
-                'compteur' => count($_SESSION['listAlerts']),
-                'listAlerts' => $_SESSION['listAlerts']
-            ));
+            $_SESSION['tutos'] = $id;
+            $_SESSION['type'] = $type;
+            $html = $this->redirectToRoute("operation");
+            
+            return $html;
 
 
         }
@@ -160,19 +160,13 @@ class TutorielController extends Controller
             $em = $this->getDoctrine()->getManager();
             $em->persist($tutoriel);
             $em->flush();
-
+            $type="mod_tuto";
             $id = $tutoriel->getId();
-            $listTuto = $repository->findAll();
-            $menu = "Tutoriel";
-            $urlPage = "tutoriel";
-            $page = "Voir un tutoriel ";
-            $listTutoriel = $this->get('knp_paginator')->paginate($listTuto, $request->query->get('page', 1), 5);
 
-            $html = $this->redirectToRoute('seeTutoriels', array(
-                'compteur' => count($_SESSION['listAlerts']),
-                'listOnglets' => $_SESSION['listOnglets'],
-                'listAlerts' => $_SESSION['listAlerts']
-            ));
+            $_SESSION['tutos'] = $id;
+            $_SESSION['type'] = $type;
+            $html = $this->redirectToRoute("operation");
+            
             return $html;
 
         }
@@ -199,9 +193,17 @@ class TutorielController extends Controller
             ->getRepository('docPlatformBundle:Tutoriel');
 
         $tutoriel = $repository->find($id);
+        if(!isset($_SESSION['type'])){
+            $_SESSION['type'] = 'del_tuto';
+            $_SESSION['id'] = $id;
+            $_SESSION['tutos'] = $id;
+            
+            return $this->redirectToRoute('operation');
+        }
         $em = $this->getDoctrine()->getManager();
         $em->remove($tutoriel);
         $em->flush();
+        unset($_SESSION['type']);
 
         return $this->redirectToRoute("seeTutoriels", array(
             'compteur' => count($_SESSION['listAlerts']),

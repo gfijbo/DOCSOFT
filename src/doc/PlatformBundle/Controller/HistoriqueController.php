@@ -28,41 +28,55 @@ class HistoriqueController extends Controller
         if (isset($_SESSION['majop']) && $_SESSION['majop'] == 'com') {
             if (isset($_SESSION['champs'])) {
                 $champs = $_SESSION['champs'];
-                $_SESSION['champs'] = null;
+                unset($_SESSION['champs']);
                 $html = $this->redirectToRoute('seechamp', array(
                     'id' => $champs
                 ));
             }
-        }
-        if (isset($_SESSION['majop']) && $_SESSION['majop'] == 'com') {
-            if (isset($_SESSION['forms'])) {
-
-                $form = $_SESSION['forms'];
-                $_SESSION['forms'] = null;
+            elseif (isset($_SESSION['forms'])) {
+                
+                $forms = $_SESSION['forms'];
+                unset($_SESSION['forms']);
                 $html = $this->redirectToRoute('seeFormation', array(
-                    'id' => $form
+                    'id' => $forms
                 ));
             }
-        }
-        if (isset($_SESSION['majop']) && $_SESSION['majop'] == 'com') {
-            if (isset($_SESSION['tutos'])) {
-
+            elseif (isset($_SESSION['tutos'])) {
+                
                 $tuto = $_SESSION['tutos'];
-                $_SESSION['tutos'] = null;
+                unset($_SESSION['tutos']);
                 $html = $this->redirectToRoute('seeTutoriel', array(
                     'id' => $tuto
                 ));
             }
         }
+      
         if (isset($_SESSION['majop']) && $_SESSION['majop'] == 'doc') {
+            unset($_SESSION['majop']);
+            
             $html = $this->redirectToRoute('seeDocuments', array());
         }
-        if (isset($_SESSION['majop']) && $_SESSION['majop'] == 'del_doc') {
+       /*  if (isset($_SESSION['majop']) && $_SESSION['majop'] == 'del_doc') {
+            unset($_SESSION['majop']);
             $html = $this->redirectToRoute('deleteDoc', array(
                 'id' => $_SESSION['id']
             ));
+            die('coucou6');
+        } */
+        if (isset($_SESSION['majop']) && $_SESSION['majop'] == 'form') {
+            unset($_SESSION['majop']);
+            $html = $this->redirectToRoute('seeFormations', array(
+                'id' => $_SESSION['id']
+            ));
         }
-
+        
+        if (isset($_SESSION['majop']) && $_SESSION['majop'] == 'tuto') {
+            unset($_SESSION['majop']);
+            $html = $this->redirectToRoute('seeTutoriels', array(
+                'id' => $_SESSION['id']
+            ));
+        }
+        unset($_SESSION['majop']);
         return $html;
     }
 
@@ -74,7 +88,7 @@ class HistoriqueController extends Controller
     {
         $type = $_SESSION['type'];
         // si document est défini
-        if (isset($_SESSION['doc'])) {
+        if (isset($_SESSION['doc'])&& !empty($_SESSION['doc'])) {
             $repository = $this->getdoctrine()
                 ->getManager()
                 ->getRepository('docPlatformBundle:Document');
@@ -83,40 +97,46 @@ class HistoriqueController extends Controller
             $documentName = $document->getDocumentName();
             $documentSize = $document->getDocumentSize();
             $documentMimeType = $document->getDocumentMimeType();
+            unset($_SESSION['doc']);
         } else {
             $document = '';
             $documentName = '';
             $documentSize = 0;
             $documentMimeType = '';
         }
-        if (isset($_SESSION['com'])) {
+        if (isset($_SESSION['com']) && !empty($_SESSION['com'])) {
             $repository = $this->getdoctrine()
                 ->getManager()
                 ->getRepository('docPlatformBundle:Commentaire');
 
             $commentaire = $repository->find($_SESSION['com']);
             $commentaire = $commentaire->getCommentaire();
+            unset($_SESSION['com']);
         } else {
             $commentaire = '';
         }
         
-        if (isset($_SESSION['forms'])) {
+        if (isset($_SESSION['forms']) && !empty($_SESSION['forms'])) {
             $repository = $this->getdoctrine()
             ->getManager()
             ->getRepository('docPlatformBundle:Formation');
-            
             $formation = $repository->find($_SESSION['forms']);
             $formName = $formation->getNomForm();
             $formDeb = $formation->getDateDebut();
             $formFin = $formation->getDateFin();
             $formDetails = $formation->getFormDetails();
+            $documentName = '';
+            $documentSize = 0;
+            $documentMimeType = '';
+            unset($_SESSION['forms']);
         } else {
             $formName = '';
             $formDeb = null;
             $formFin = null;
+            $formDetails = '';
         }
         
-        if (isset($_SESSION['tutos'])) {
+        if (isset($_SESSION['tutos']) && !empty($_SESSION['tutos'])) {
             $repository = $this->getdoctrine()
             ->getManager()
             ->getRepository('docPlatformBundle:Tutoriel');
@@ -124,6 +144,10 @@ class HistoriqueController extends Controller
             $tutoriel = $repository->find($_SESSION['tutos']);
             $tutoName = $tutoriel->getNomTuto();
             $tutoDetails = $tutoriel->getTutoDetails();
+            $documentName = '';
+            $documentSize = 0;
+            $documentMimeType = '';
+            unset($_SESSION['tutos']);
         } else {
             $tutoName = '';
             $tutoDetails = '';
@@ -181,18 +205,20 @@ class HistoriqueController extends Controller
         $em = $this->getDoctrine()->getManager();
         $em->persist($his);
         $em->flush();
-
-        
         
         if ($commentaire != null) {
             $_SESSION['majop'] = 'com';
         }
-        if ($document != null && $_SESSION['type'] != "del_doc") {
+        if ($document == null && ($_SESSION['type'] == "del_form" || $_SESSION['type'] == "add_form" || $_SESSION['type'] == "mod_form")) {
+            $_SESSION['majop'] = 'form';
+        }
+        if ($document == null && ($_SESSION['type'] == "del_tuto"||$_SESSION['type'] == "add_tuto"||$_SESSION['type'] == "mod_tuto")) {
+            $_SESSION['majop'] = 'tuto';
+        }
+        if ($document != null && ($_SESSION['type'] == "add_doc" || $_SESSION['type'] == "mod_doc" || $_SESSION['type'] == "del_doc")) {
             $_SESSION['majop'] = 'doc';
         }
-        if ($document != null && $_SESSION['type'] == "del_doc") {
-            $_SESSION['majop'] = 'del_doc';
-        }
+        
         $html = $this->redirectToRoute('alloperation');
         return $html;
     }
