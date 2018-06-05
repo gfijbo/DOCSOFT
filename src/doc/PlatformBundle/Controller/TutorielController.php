@@ -185,7 +185,7 @@ class TutorielController extends Controller
     }
 
     /**
-     * @Route("/tutoriel/del/{id}",name="deleteTutoriel")
+     * @Route("/tutoriel/del/{id}",name="deleteTutoriel", requirements={"id"="\d+"})
      */
     public function deleteTutorielAction($id, Request $request){
         $repository = $this->getdoctrine()
@@ -194,24 +194,20 @@ class TutorielController extends Controller
 
         $tutoriel = $repository->find($id);
         if(!isset($_SESSION['type'])){
+            $_SESSION['type'] = "";
+        }
+        if($_SESSION['type']!= 'del_tuto'){
             $_SESSION['type'] = 'del_tuto';
             $_SESSION['id'] = $id;
-            $_SESSION['tutos'] = $id;
+            $_SESSION['tutos'] = $tutoriel;
             
             return $this->redirectToRoute('operation');
         }
         $em = $this->getDoctrine()->getManager();
         $em->remove($tutoriel);
         $em->flush();
-        unset($_SESSION['type']);
 
-        return $this->redirectToRoute("seeTutoriels", array(
-            'compteur' => count($_SESSION['listAlerts']),
-            'listOnglets' => $_SESSION['listOnglets'],
-            'listAlerts' => $_SESSION['listAlerts']
-        ));
-
-
+        return $this->redirectToRoute("alloperation");
     }
 
 }

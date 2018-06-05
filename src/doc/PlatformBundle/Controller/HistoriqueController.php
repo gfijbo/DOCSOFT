@@ -23,8 +23,8 @@ class HistoriqueController extends Controller
             'updatedAt' => 'desc'
         ));
         $_SESSION['listAlerts'] = $listAlerts;
+        //die($_SESSION['type']);
         $html = $this->redirectToRoute('core_homepage');
-        
         if (isset($_SESSION['majop']) && $_SESSION['majop'] == 'com') {
             if (isset($_SESSION['champs'])) {
                 $champs = $_SESSION['champs'];
@@ -33,48 +33,25 @@ class HistoriqueController extends Controller
                     'id' => $champs
                 ));
             }
-            elseif (isset($_SESSION['forms'])) {
-                
-                $forms = $_SESSION['forms'];
-                unset($_SESSION['forms']);
-                $html = $this->redirectToRoute('seeFormation', array(
-                    'id' => $forms
-                ));
-            }
-            elseif (isset($_SESSION['tutos'])) {
-                
-                $tuto = $_SESSION['tutos'];
-                unset($_SESSION['tutos']);
-                $html = $this->redirectToRoute('seeTutoriel', array(
-                    'id' => $tuto
-                ));
-            }
         }
       
-        if (isset($_SESSION['majop']) && $_SESSION['majop'] == 'doc') {
+        if (isset($_SESSION['majop']) && $_SESSION['majop'] == 'doc' || $_SESSION['type'] == 'del_doc') {
             unset($_SESSION['majop']);
+            unset($_SESSION['type']);
             
-            $html = $this->redirectToRoute('seeDocuments', array());
+            $html = $this->redirectToRoute('seeDocuments');
         }
-       /*  if (isset($_SESSION['majop']) && $_SESSION['majop'] == 'del_doc') {
+     
+        if (isset($_SESSION['majop']) && $_SESSION['majop'] == 'form' || $_SESSION['type'] =='del_form') {
             unset($_SESSION['majop']);
-            $html = $this->redirectToRoute('deleteDoc', array(
-                'id' => $_SESSION['id']
-            ));
-            die('coucou6');
-        } */
-        if (isset($_SESSION['majop']) && $_SESSION['majop'] == 'form') {
-            unset($_SESSION['majop']);
-            $html = $this->redirectToRoute('seeFormations', array(
-                'id' => $_SESSION['id']
-            ));
+            unset($_SESSION['type']);
+            $html = $this->redirectToRoute('seeFormations');
         }
         
-        if (isset($_SESSION['majop']) && $_SESSION['majop'] == 'tuto') {
+        if (isset($_SESSION['majop']) && $_SESSION['majop'] == 'tuto' || $_SESSION['type'] =='del_tuto') {
             unset($_SESSION['majop']);
-            $html = $this->redirectToRoute('seeTutoriels', array(
-                'id' => $_SESSION['id']
-            ));
+            unset($_SESSION['type']);
+            $html = $this->redirectToRoute('seeTutoriels');
         }
         unset($_SESSION['majop']);
         return $html;
@@ -209,14 +186,31 @@ class HistoriqueController extends Controller
         if ($commentaire != null) {
             $_SESSION['majop'] = 'com';
         }
-        if ($document == null && ($_SESSION['type'] == "del_form" || $_SESSION['type'] == "add_form" || $_SESSION['type'] == "mod_form")) {
+   
+        if ($document == null && ($_SESSION['type'] == "add_form" || $_SESSION['type'] == "mod_form")) {
             $_SESSION['majop'] = 'form';
         }
-        if ($document == null && ($_SESSION['type'] == "del_tuto"||$_SESSION['type'] == "add_tuto"||$_SESSION['type'] == "mod_tuto")) {
+    
+        if ($document == null && ($_SESSION['type'] == "add_tuto" ||$_SESSION['type'] == "mod_tuto")) {
             $_SESSION['majop'] = 'tuto';
         }
-        if ($document != null && ($_SESSION['type'] == "add_doc" || $_SESSION['type'] == "mod_doc" || $_SESSION['type'] == "del_doc")) {
+      
+        if ($document != null && ($_SESSION['type'] == "add_doc" || $_SESSION['type'] == "mod_doc")) {
             $_SESSION['majop'] = 'doc';
+        }
+        
+        if($_SESSION['type'] == 'del_doc'){
+            return $this->redirectToRoute('deleteDoc', array(
+                'id' =>$_SESSION['id']));
+        }
+        if($_SESSION['type'] == 'del_tuto'){
+            return $this->redirectToRoute('deleteTutoriel', array(
+                'id' =>$_SESSION['id']));
+        }
+        
+        if($_SESSION['type'] == 'del_form'){
+            return $this->redirectToRoute('deleteFormation', array(
+                'id' =>$_SESSION['id']));
         }
         
         $html = $this->redirectToRoute('alloperation');

@@ -229,6 +229,7 @@ class DocumentController extends Controller
         $repository = $this->getdoctrine()
             ->getManager()
             ->getRepository('docPlatformBundle:Document');
+        
         $doc = $repository->find($id);
         if(!isset($_SESSION['type'])){
             $_SESSION['type'] = "";
@@ -236,7 +237,7 @@ class DocumentController extends Controller
         
         if ($_SESSION['type'] != "del_doc") {
             $_SESSION['type'] = "del_doc";
-            $_SESSION['com'] = '';
+            unset($_SESSION['com']);
             $_SESSION['doc'] = $doc;
             $_SESSION['id'] = $id;
 
@@ -247,18 +248,7 @@ class DocumentController extends Controller
         $em = $this->getDoctrine()->getManager();
         $em->remove($doc);
         $em->flush();
-        $repository = $this->getdoctrine()
-            ->getManager()
-            ->getRepository('docPlatformBundle:Document');
-        $listDocs = $repository->findAll();
-        $_SESSION['type'] = "";
-        $listeDocuments = $this->get('knp_paginator')->paginate($listDocs, $request->query->get('page', 1)/*le numero de la page a afficher*/,
-           5); // nombre d'element par page
-        return $this->redirectToRoute("seeDocuments", array(
-            'listDocs' => $listeDocuments,
-            'listOnglets' => $_SESSION['listOnglets'],
-            'compteur' => count($_SESSION['listAlerts']),
-            'listAlerts' => $_SESSION['listAlerts']
-        ));
+        
+        return $this->redirectToRoute('alloperation');
     }
 }

@@ -185,7 +185,7 @@ class FormationController extends Controller
     }
     
     /**
-     * @Route("/formation/del/{id}",name="deleteFormation")
+     * @Route("/formation/del/{id}",name="deleteFormation", requirements={"id"="\d+"})
      */
     public function deleteFormationAction(Request $request, $id){
         $repository = $this->getdoctrine()
@@ -194,9 +194,12 @@ class FormationController extends Controller
         
         $formation = $repository->find($id);
         if(!isset($_SESSION['type'])){
+            $_SESSION['type'] ="";
+        }
+        if($_SESSION['type'] != 'del_form'){
             $_SESSION['type'] = 'del_form';
             $_SESSION['id'] = $id;
-            $_SESSION['forms'] = $id;
+            $_SESSION['forms'] = $formation;
             
             return $this->redirectToRoute('operation');
         }
@@ -204,14 +207,7 @@ class FormationController extends Controller
         $em = $this->getDoctrine()->getManager();
         $em->remove($formation);
         $em->flush();
-        unset($_SESSION['type']);
-        $html = $this->redirectToRoute("seeFormations", array(
-            'compteur' => count($_SESSION['listAlerts']),
-            'listOnglets' => $_SESSION['listOnglets'],
-            'listAlerts' => $_SESSION['listAlerts']
-        ));
         
-        return $html;
-        
+        return $this->redirectToRoute('alloperation');
     }
 }
