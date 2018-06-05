@@ -37,17 +37,23 @@ class HistoriqueController extends Controller
             }
         }
       
-        if (isset($_SESSION['majop']) && $_SESSION['majop'] == 'doc' || $_SESSION['type'] == 'del_doc') {
+        if (isset($_SESSION['majop']) 
+            && $_SESSION['majop'] == 'doc' 
+            || $_SESSION['type'] == 'del_doc') {
             unset($_SESSION['majop']);            
             $html = $this->redirectToRoute('seeDocuments');
         }
      
-        if (isset($_SESSION['majop']) && $_SESSION['majop'] == 'form' || $_SESSION['type'] =='del_form') {
+        if (isset($_SESSION['majop']) 
+            && $_SESSION['majop'] == 'form' 
+            || $_SESSION['type'] =='del_form') {
             unset($_SESSION['majop']);
             $html = $this->redirectToRoute('seeFormations');
         }
         
-        if (isset($_SESSION['majop']) && $_SESSION['majop'] == 'tuto' || $_SESSION['type'] =='del_tuto') {
+        if (isset($_SESSION['majop']) 
+            && $_SESSION['majop'] == 'tuto' 
+            || $_SESSION['type'] =='del_tuto') {
             unset($_SESSION['majop']);
             $html = $this->redirectToRoute('seeTutoriels');
         }
