@@ -23,7 +23,9 @@ class HistoriqueController extends Controller
             'updatedAt' => 'desc'
         ));
         $_SESSION['listAlerts'] = $listAlerts;
-        //die($_SESSION['type']);
+        if(!isset($_SESSION['type'])){
+            $_SESSION['type'] ='';
+        }
         $html = $this->redirectToRoute('core_homepage');
         if (isset($_SESSION['majop']) && $_SESSION['majop'] == 'com') {
             if (isset($_SESSION['champs'])) {
@@ -36,24 +38,21 @@ class HistoriqueController extends Controller
         }
       
         if (isset($_SESSION['majop']) && $_SESSION['majop'] == 'doc' || $_SESSION['type'] == 'del_doc') {
-            unset($_SESSION['majop']);
-            unset($_SESSION['type']);
-            
+            unset($_SESSION['majop']);            
             $html = $this->redirectToRoute('seeDocuments');
         }
      
         if (isset($_SESSION['majop']) && $_SESSION['majop'] == 'form' || $_SESSION['type'] =='del_form') {
             unset($_SESSION['majop']);
-            unset($_SESSION['type']);
             $html = $this->redirectToRoute('seeFormations');
         }
         
         if (isset($_SESSION['majop']) && $_SESSION['majop'] == 'tuto' || $_SESSION['type'] =='del_tuto') {
             unset($_SESSION['majop']);
-            unset($_SESSION['type']);
             $html = $this->redirectToRoute('seeTutoriels');
         }
         unset($_SESSION['majop']);
+        unset($_SESSION['type']);
         return $html;
     }
 
