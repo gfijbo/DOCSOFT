@@ -37,4 +37,87 @@ class MenuController extends Controller{
         return $html;
     }
     
+    /**
+     *
+     * @Route("/menudoc/{id}", name="menuDoc")
+     */
+    public function MenuDocAction($id)
+    {
+        $menu = "Gestion";
+        $page = "Documentation";
+        $urlPage = "menudoc/".$id;
+        $urlPdf = '';
+        
+        $repository = $this->getdoctrine()
+        ->getManager()
+        ->getRepository('docPlatformBundle:Page');
+        
+        $listPages = $repository->findBy(
+            array('onglet_ref' => $id));
+        $html = $this->render('docPlatformBundle:DossierAgent:menuDoc.html.twig', array(
+            'listDoss' => $listPages,
+            'page' => $page,
+            'menu' => $menu,
+            'urlPage' => $urlPage,
+            'urlPdf' => $urlPdf,
+            'listOnglets' => $_SESSION['listOnglets'],
+            'compteur' => count($_SESSION['listAlerts']),
+            'listAlerts' => $_SESSION['listAlerts']
+        ));
+        
+        return $html;
+    }
+    
+    /**
+     *
+     * @Route("/document", name="docs")
+     */
+    public function indexDocumentAction()
+    {
+        $menu = "Documents";
+        $urlPage = "document";
+        $html = $this->render('docPlatformBundle:Document:indexDocument.html.twig', array(
+            'menu' => $menu,
+            'urlPage' => $urlPage,
+            'listOnglets' => $_SESSION['listOnglets'],
+            'compteur' => count($_SESSION['listAlerts']),
+            'listAlerts' => $_SESSION['listAlerts']
+        ));
+        return $html;
+    }
+    
+    /**
+     * @Route("/formation",name="menuFormation")
+     */
+    public function indexFormationAction(){
+        $menu = "Formation";
+        $urlPage = "formation";
+        $html = $this->render('docPlatformBundle:Formation:indexFormation.html.twig', array(
+            'menu' => $menu,
+            'urlPage' => $urlPage,
+            'listOnglets' => $_SESSION['listOnglets'],
+            'compteur' => count($_SESSION['listAlerts']),
+            'listAlerts' => $_SESSION['listAlerts']
+        ));
+        return $html;
+    }
+    
+    /**
+     *
+     * @Route("/tutoriel", name="menuTutoriel")
+     */
+    public function indexTutorielAction()
+    {
+        $menu = "Tutoriels";
+        $urlPage = "tutoriel";
+        $html = $this->render('docPlatformBundle:Tutoriel:indexTutoriel.html.twig', array(
+            'menu' => $menu,
+            'urlPage' => $urlPage,
+            'listOnglets' => $_SESSION['listOnglets'],
+            'compteur' => count($_SESSION['listAlerts']),
+            'listAlerts' => $_SESSION['listAlerts']
+        ));
+        return $html;
+    }
+    
 }

@@ -12,22 +12,7 @@ use doc\PlatformBundle\Form\DocumentType;
 
 class FormationController extends Controller
 {
-    /**
-     * @Route("/formation",name="menuFormation")
-     */
-    public function indexFormationAction(){
-        $menu = "Formation";
-        $urlPage = "formation";
-        $html = $this->render('docPlatformBundle:Formation:indexFormation.html.twig', array(
-            'menu' => $menu,
-            'urlPage' => $urlPage,
-            'listOnglets' => $_SESSION['listOnglets'],
-            'compteur' => count($_SESSION['listAlerts']),
-            'listAlerts' => $_SESSION['listAlerts']
-        ));
-        return $html;
-    }
-    
+       
     /**
      * @Route("/formation/see", name="seeFormations")
      */

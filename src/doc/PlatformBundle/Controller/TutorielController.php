@@ -16,24 +16,6 @@ use doc\PlatformBundle\Form\DocumentType;
 class TutorielController extends Controller
 {
     /**
-     *
-     * @Route("/tutoriel", name="menuTutoriel")
-     */
-    public function indexTutorielAction()
-    {
-        $menu = "Tutoriels";
-        $urlPage = "tutoriel";
-        $html = $this->render('docPlatformBundle:Tutoriel:indexTutoriel.html.twig', array(
-            'menu' => $menu,
-            'urlPage' => $urlPage,
-            'listOnglets' => $_SESSION['listOnglets'],
-            'compteur' => count($_SESSION['listAlerts']),
-            'listAlerts' => $_SESSION['listAlerts']
-        ));
-        return $html;
-    }
-
-    /**
      * @Route("/tutoriel/add",name="addlTutoriel")
      */
     public function addTutorielAction(Request $request){

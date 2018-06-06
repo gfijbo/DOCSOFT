@@ -5,30 +5,24 @@
     {% block li%}
       {% if listOnglets is defined %}
     {% for onglet in listOnglets %}
-        {% if (onglet.getPages()|length) > 1 %}
-        	<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Menu Levels">
-        	<a class="nav-link nav-link-collapse collapsed" data-toggle="collapse"
-        	href="#collapseMulti{{ loop.index }}" data-parent="#exampleAccordion">
-        		<i class="{{ onglet.getGlyphicon() }}"></i>
-        		<span class="nav-link-text">{{ onglet.getOnglet() }}</span>
-        	</a>
-        	<ul class="sidenav-second-level collapse" id="collapseMulti{{ loop.index }}">
-        	{% for page in onglet.getPages() %}
-        		<li><a href="{{ page.getUrl() }}">{{ page.getPage()}}</a>
-        		</li>
-        	{% endfor %}
-        	</ul>
-        {% else %}
-        	{% for page in onglet.getPages() %}
+    {% if (onglet.getPages()|length) >1 %}
         	<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Link">
-        <a class="nav-link" href="{{ page.getUrl() }}">
+        <a class="nav-link" href="/menudoc/{{ onglet.getId() }}">
             <i class="{{ onglet.getGlyphicon() }}"></i>
-            <span class="nav-link-text">{{ page.getPage()}}</span>
+            <span class="nav-link-text">{{ onglet.getOnglet()}}</span>
         </a>
     </li>
-        	{% endfor %}	
-        	
-        {% endif %}
+    {% else %}
+    {% for page in onglet.getPages() %}
+    <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Link">
+    	
+        <a class="nav-link" href="{{ page.getUrl() }}">
+            <i class="{{ onglet.getGlyphicon() }}"></i>
+            <span class="nav-link-text">{{ onglet.getOnglet()}}</span>
+        </a>
+    </li>
+    {% endfor %}
+    {% endif %}
     {% endfor %}
   </ul>
 {% endif %}

@@ -10,46 +10,13 @@ class DossierAgentController extends Controller
 {
     /**
      *
-     * @Route("/menudoc", name="menuDoc")
-     */
-    public function MenuDocAction()
-    {
-        $menu = "Menu";
-        $page = "Documentation";
-        $urlPage = "menudoc";
-        $urlPdf = '';
-        
-        $repository = $this->getdoctrine()
-        ->getManager()
-        ->getRepository('docPlatformBundle:DossierAgent');
-        
-        $listDoss = $repository->findBy(
-            array('onglet_ref' => '2','page_ref' => '2')
-            );
-        $html = $this->render('docPlatformBundle:DossierAgent:menuDoc.html.twig', array(
-            'listDoss' => $listDoss,
-            'page' => $page,
-            'menu' => $menu,
-            'urlPage' => $urlPage,
-            'urlPdf' => $urlPdf,
-            'listOnglets' => $_SESSION['listOnglets'],
-            'compteur' => count($_SESSION['listAlerts']),
-            'listAlerts' => $_SESSION['listAlerts']
-        ));
-        
-        return $html;
-    }
-    
-    
-    /**
-     *
      * @Route("/identite/etatcivil", name="seeIdentiteEtatcivil")
      */
     public function IdentiteEtatcivilAction()
     {
         $menu = "Gestion";
         $page = "Identité / Etat Civil";
-        $urlPage = "identite/etatcivil";
+        $urlPage = "menudoc/2";
         $urlPdf = "identite/etatcivil/pdf";
 
         $repository = $this->getdoctrine()
@@ -112,7 +79,7 @@ class DossierAgentController extends Controller
     {
         $menu = "Gestion";
         $page = "Organisme / Agent";
-        $urlPage = "organisme/agent";
+        $urlPage = "menudoc/3";
         $urlPdf = "organisme/agent/pdf";
         
         $repository = $this->getdoctrine()
@@ -174,7 +141,7 @@ class DossierAgentController extends Controller
     {
         $menu = "Gestion";
         $page = "Organisme / Affectation";
-        $urlPage = "organisme/affectation";
+        $urlPage = "menudoc/3";
         $urlPdf = "organisme/affectation/pdf";
         
         $repository = $this->getdoctrine()
@@ -238,7 +205,7 @@ class DossierAgentController extends Controller
     {
         $menu = "Gestion";
         $page = "Carrière / Situation";
-        $urlPage = "carriere/situation";
+        $urlPage = "menudoc/4";
         $urlPdf = "carriere/situation/pdf";
         
         $repository = $this->getdoctrine()
@@ -299,7 +266,7 @@ class DossierAgentController extends Controller
     {
         $menu = "Gestion";
         $page = "Abscences / Maladies";
-        $urlPage = "abscences/maladies";
+        $urlPage = "menudoc/5";
         $urlPdf = "abscences/maladies/pdf";
         
         $repository = $this->getdoctrine()
@@ -362,7 +329,7 @@ class DossierAgentController extends Controller
     {
         $menu = "Gestion";
         $page = "Rémunération / Eléments";
-        $urlPage = "remuneration/elements";
+        $urlPage = "menudoc/6";
         $urlPdf = "remuneration/elements/pdf";
         
         $repository = $this->getdoctrine()
@@ -429,7 +396,7 @@ class DossierAgentController extends Controller
 
         $doss = $repository->find($id);
         $menu = "Documentation";
-        $urlPage = "menudoc";
+        $urlPage = "";
 
         return $this->render('docPlatformBundle:DossierAgent:seeChamp.html.twig', array(
             'doss' => $doss,

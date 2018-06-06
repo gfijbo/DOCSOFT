@@ -13,23 +13,7 @@ use Symfony\Component\HttpFoundation\File\File;
 
 class DocumentController extends Controller
 {
-    /**
-     *
-     * @Route("/document", name="docs")
-     */
-    public function indexDocumentAction()
-    {
-        $menu = "Documents";
-        $urlPage = "document";
-        $html = $this->render('docPlatformBundle:Document:indexDocument.html.twig', array(
-            'menu' => $menu,
-            'urlPage' => $urlPage,
-            'listOnglets' => $_SESSION['listOnglets'],
-            'compteur' => count($_SESSION['listAlerts']),
-            'listAlerts' => $_SESSION['listAlerts']
-        ));
-        return $html;
-    }
+   
 
     /**
      *
