@@ -120,7 +120,7 @@ class DossierAgentController extends Controller
         ->getRepository('docPlatformBundle:DossierAgent');
         
         $listDoss = $repository->findBy(
-            array('onglet_ref' => '2','page_ref' => '6')
+            array('onglet_ref' => '3','page_ref' => '6')
             );
         $html = $this->render('docPlatformBundle:DossierAgent:indexAgent.html.twig', array(
             'listDoss' => $listDoss,
@@ -150,7 +150,7 @@ class DossierAgentController extends Controller
         ->getRepository('docPlatformBundle:DossierAgent');
         
         $listDoss = $repository->findBy(
-            array('onglet_ref' => '2','page_ref' => '6')
+            array('onglet_ref' => '3','page_ref' => '6')
             );
         $snappy = $this->get("knp_snappy.pdf");
         
@@ -182,7 +182,7 @@ class DossierAgentController extends Controller
         ->getRepository('docPlatformBundle:DossierAgent');
         
         $listDoss = $repository->findBy(
-            array('onglet_ref' => '2','page_ref' => '7')
+            array('onglet_ref' => '3','page_ref' => '7')
             );
         $html = $this->render('docPlatformBundle:DossierAgent:indexAgent.html.twig', array(
             'listDoss' => $listDoss,
@@ -213,7 +213,7 @@ class DossierAgentController extends Controller
         ->getRepository('docPlatformBundle:DossierAgent');
         
         $listDoss = $repository->findBy(
-            array('onglet_ref' => '2','page_ref' => '7')
+            array('onglet_ref' => '3','page_ref' => '7')
             );
         $snappy = $this->get("knp_snappy.pdf");
         
@@ -246,7 +246,7 @@ class DossierAgentController extends Controller
         ->getRepository('docPlatformBundle:DossierAgent');
         
         $listDoss = $repository->findBy(
-            array('onglet_ref' => '2','page_ref' => '8')
+            array('onglet_ref' => '4','page_ref' => '8')
             );
         $html = $this->render('docPlatformBundle:DossierAgent:indexAgent.html.twig', array(
             'listDoss' => $listDoss,
@@ -276,7 +276,7 @@ class DossierAgentController extends Controller
         ->getRepository('docPlatformBundle:DossierAgent');
         
         $listDoss = $repository->findBy(
-            array('onglet_ref' => '2','page_ref' => '8')
+            array('onglet_ref' => '4','page_ref' => '8')
             );
         $snappy = $this->get("knp_snappy.pdf");
         
@@ -291,6 +291,132 @@ class DossierAgentController extends Controller
             'Content-Disposition' => 'inline; filename="' . $filename . '.pdf"'
         ));
     }
+    /**
+     *
+     * @Route("/abscences/maladies", name="seeAbscencesMaladies")
+     */
+    public function SeeAbscencesMaladiesAction()
+    {
+        $menu = "Gestion";
+        $page = "Abscences / Maladies";
+        $urlPage = "abscences/maladies";
+        $urlPdf = "abscences/maladies/pdf";
+        
+        $repository = $this->getdoctrine()
+        ->getManager()
+        ->getRepository('docPlatformBundle:DossierAgent');
+        
+        $listDoss = $repository->findBy(
+            array('onglet_ref' => '5','page_ref' => '13')
+            );
+        $html = $this->render('docPlatformBundle:DossierAgent:indexAgent.html.twig', array(
+            'listDoss' => $listDoss,
+            'page' => $page,
+            'menu' => $menu,
+            'urlPage' => $urlPage,
+            'urlPdf' =>$urlPdf,
+            'listOnglets' => $_SESSION['listOnglets'],
+            'compteur' => count($_SESSION['listAlerts']),
+            'listAlerts' => $_SESSION['listAlerts']
+        ));
+        
+        return $html;
+    }
+    
+    /**
+     *
+     * @Route("/abscences/maladies/pdf", name="seeAbscencesMaladiesPdf")
+     */
+    public function SeeAbscencesMaladiesPdfAction()
+    {
+        $snappy = $this->get('knp_snappy.pdf');
+        $filename = 'myFirstSnappyPDF';
+        $menu = "Gestion";
+        $page = "Abscences / Maladies";
+        $repository = $this->getdoctrine()
+        ->getManager()
+        ->getRepository('docPlatformBundle:DossierAgent');
+        
+        $listDoss = $repository->findBy(
+            array('onglet_ref' => '4','page_ref' => '8')
+            );
+        $snappy = $this->get("knp_snappy.pdf");
+        
+        $html = $this->renderView('docPlatformBundle:DossierAgent:pdf.html.twig', array(
+            'listDoss' => $listDoss,
+            'page' => $page,
+            'menu' => $menu
+        ));
+        
+        return new Response($snappy->getOutputFromHtml($html), 200, array(
+            'Content-Type' => 'application/pdf',
+            'Content-Disposition' => 'inline; filename="' . $filename . '.pdf"'
+        ));
+    }
+    
+    /**
+     *
+     * @Route("/remuneration/elements", name="seeRemunerationElements")
+     */
+    public function SeeRemunerationElementsAction()
+    {
+        $menu = "Gestion";
+        $page = "Rémunération / Eléments";
+        $urlPage = "remuneration/elements";
+        $urlPdf = "remuneration/elements/pdf";
+        
+        $repository = $this->getdoctrine()
+        ->getManager()
+        ->getRepository('docPlatformBundle:DossierAgent');
+        
+        $listDoss = $repository->findBy(
+            array('onglet_ref' => '6','page_ref' => '14')
+            );
+        $html = $this->render('docPlatformBundle:DossierAgent:indexAgent.html.twig', array(
+            'listDoss' => $listDoss,
+            'page' => $page,
+            'menu' => $menu,
+            'urlPage' => $urlPage,
+            'urlPdf' =>$urlPdf,
+            'listOnglets' => $_SESSION['listOnglets'],
+            'compteur' => count($_SESSION['listAlerts']),
+            'listAlerts' => $_SESSION['listAlerts']
+        ));
+        
+        return $html;
+    }
+    
+    /**
+     *
+     * @Route("/remuneration/elements/pdf", name="seeRemunerationElementsPdf")
+     */
+    public function seeRemunerationElementsPdfAction()
+    {
+        $snappy = $this->get('knp_snappy.pdf');
+        $filename = 'myFirstSnappyPDF';
+        $menu = "Gestion";
+        $page = "Rémunération / Eléments";
+        $repository = $this->getdoctrine()
+        ->getManager()
+        ->getRepository('docPlatformBundle:DossierAgent');
+        
+        $listDoss = $repository->findBy(
+            array('onglet_ref' => '6','page_ref' => '14')
+            );
+        $snappy = $this->get("knp_snappy.pdf");
+        
+        $html = $this->renderView('docPlatformBundle:DossierAgent:pdf.html.twig', array(
+            'listDoss' => $listDoss,
+            'page' => $page,
+            'menu' => $menu
+        ));
+        
+        return new Response($snappy->getOutputFromHtml($html), 200, array(
+            'Content-Type' => 'application/pdf',
+            'Content-Disposition' => 'inline; filename="' . $filename . '.pdf"'
+        ));
+    }
+    
     /**
      *
      * @Route("/seechamp/{id}", name="seechamp")
