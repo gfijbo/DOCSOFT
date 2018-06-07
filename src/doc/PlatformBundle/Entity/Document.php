@@ -14,7 +14,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  * @ORM\Table(name="document")
  * @ORM\Entity
  */
-class Document
+class Document implements \Serializable
 {
 
     /**
@@ -238,5 +238,29 @@ class Document
     {
         $this->user = $user;
     }
+    public function serialize()
+    {
+      /*   return serialize(array(
+            $this->documentFile,
+            $this->documentMimeType,
+            $this->documentName,
+            $this->documentSize,
+            $this->updatedAt
+        ));
+         */
+    }
+
+    public function unserialize($serialized)
+    {
+       /*  list(
+            $this->documentFile,
+            $this->documentMimeType,
+            $this->documentName,
+            $this->documentSize,
+            $this->updatedAt,
+            $this->id
+            ) = unserialize($serialized,['allowed_classes' => false]); */
+    }
+
 }
 

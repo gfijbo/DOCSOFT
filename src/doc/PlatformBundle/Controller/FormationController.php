@@ -62,6 +62,13 @@ class FormationController extends Controller
             $em = $this->getDoctrine()->getManager();
             $em->persist($doc);
             $em->flush();
+            /* $_SESSION['type'] = "add_doc_form";
+            $_SESSION['com'] = '';
+            $_SESSION['doc'] = $doc;
+            $_SESSION['id'] = '';
+            $_SESSION['forms'] = $id;
+            
+            return $this->redirectToRoute('operation', array());*/
         }
         $menu = "Formation";
         $urlPage = "formation";

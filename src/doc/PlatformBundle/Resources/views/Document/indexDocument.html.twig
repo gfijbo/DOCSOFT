@@ -23,6 +23,7 @@
 					<td><a class="dropdown-item"
 						href="{{ asset('/document/see') }}">Voir les documents</a></td>
 				</tr>
+				{% if app.user %}
 				<tr>
 					<td><a class="dropdown-item"
 						href="{{ asset('/document/add') }}">Ajouter un document</a></td>
@@ -31,6 +32,7 @@
 					<td><a class="dropdown-item"
 						href="{{ asset('/document/see') }}">Supprimer les documents</a></td>
 				</tr>
+				{% endif %}
 			</table>
 		</div>
 		<div></div>

@@ -57,6 +57,24 @@ class HistoriqueController extends Controller
             unset($_SESSION['majop']);
             $html = $this->redirectToRoute('seeTutoriels');
         }
+       /*  if (isset($_SESSION['majop']) && $_SESSION['majop'] == 'doc_form') {
+            if (isset($_SESSION['forms'])) {
+                $form = $_SESSION['forms'];
+                unset($_SESSION['forms']);
+                $html = $this->redirectToRoute('seeFormation', array(
+                    'id' => $form
+                ));
+            }
+        } */
+       /*  if (isset($_SESSION['majop']) && $_SESSION['majop'] == 'doc_tuto') {
+            if (isset($_SESSION['tutos'])) {
+                $tuto = $_SESSION['tutos'];
+                unset($_SESSION['tutos']);
+                $html = $this->redirectToRoute('seeTutoriel', array(
+                    'id' => $tuto
+                ));
+            }
+        } */
         unset($_SESSION['majop']);
         unset($_SESSION['type']);
         return $html;
@@ -168,6 +186,12 @@ class HistoriqueController extends Controller
             case "del_tuto":
                 $action = "Suppression d'un tutoriel";
                 break;
+            case "add_doc_form":
+                $action = "Ajout d'un document dans une formation";
+                break;
+            case "add_doc_tuto":
+                $action = "Ajout d'un document dans un tutoriel";
+                break;
             default:
                 $action = "Opération inconnue";
         }
@@ -204,6 +228,13 @@ class HistoriqueController extends Controller
             $_SESSION['majop'] = 'doc';
         }
         
+        if($document != null && $_SESSION['type'] == "add_doc_form"){
+            $_SESSION['majop'] = 'doc_form';
+        }
+        
+        if($document != null && $_SESSION['type'] == "add_doc_form"){
+            $_SESSION['majop'] = 'doc_tuto';
+        }
         if($_SESSION['type'] == 'del_doc'){
             return $this->redirectToRoute('deleteDoc', array(
                 'id' =>$_SESSION['id']));

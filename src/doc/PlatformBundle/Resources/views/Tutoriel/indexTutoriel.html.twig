@@ -23,6 +23,7 @@
 					<td><a class="dropdown-item"
 						href="{{ asset('/tutoriel/see') }}">Voir les tutoriels</a></td>
 				</tr>
+				{% if app.user %}
 				<tr>
 					<td><a class="dropdown-item"
 						href="{{ asset('/tutoriel/add') }}">Ajouter un tutoriel</a></td>
@@ -35,6 +36,7 @@
 					<td><a class="dropdown-item"
 						href="{{ asset('/tutoriel/see') }}">Supprimer les tutoriels</a></td>
 				</tr>
+				{% endif %}
 			</table>
 		</div>
 		<div></div>

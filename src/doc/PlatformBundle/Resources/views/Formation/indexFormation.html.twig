@@ -23,6 +23,7 @@
 					<td><a class="dropdown-item"
 						href="{{ asset('/formation/see') }}">Voir les formations</a></td>
 				</tr>
+				{% if app.user %}
 				<tr>
 					<td><a class="dropdown-item"
 						href="{{ asset('/formation/add') }}">Ajouter une formation</a></td>
@@ -35,6 +36,7 @@
 					<td><a class="dropdown-item"
 						href="{{ asset('/formation/see') }}">Supprimer les formations</a></td>
 				</tr>
+				{% endif %}
 			</table>
 		</div>
 		<div></div>
