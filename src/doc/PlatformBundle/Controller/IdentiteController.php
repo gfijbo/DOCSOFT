@@ -15,7 +15,7 @@ class IdentiteController extends Controller
     public function IdentiteEtatcivilAction()
     {
         $menu = "Gestion";
-        $page = "Identité / Etat Civil";
+        $page = "IdentitÃ© / Etat Civil";
         $urlPage = "menudoc/2";
         $urlPdf = "identite/etatcivil/pdf";
 
@@ -49,7 +49,7 @@ class IdentiteController extends Controller
         $snappy = $this->get('knp_snappy.pdf');
         $filename = 'myFirstSnappyPDF';
         $menu = "Gestion";
-        $page = "Identité / Etat Civil";
+        $page = "IdentitÃ© / Etat Civil";
         $repository = $this->getdoctrine()
             ->getManager()
             ->getRepository('docPlatformBundle:DossierAgent');

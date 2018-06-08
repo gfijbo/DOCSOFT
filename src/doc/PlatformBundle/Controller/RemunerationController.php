@@ -17,7 +17,7 @@ class RemunerationController extends Controller
     public function SeeRemunerationElementsAction()
     {
         $menu = "Gestion";
-        $page = "Rémunération / Eléments";
+        $page = "RÃ©munÃ©ration / ElÃ©ments";
         $urlPage = "menudoc/6";
         $urlPdf = "remuneration/elements/pdf";
 
@@ -51,7 +51,7 @@ class RemunerationController extends Controller
         $snappy = $this->get('knp_snappy.pdf');
         $filename = 'myFirstSnappyPDF';
         $menu = "Gestion";
-        $page = "Rémunération / Eléments";
+        $page = "Rï¿½munï¿½ration / Elï¿½ments";
         $repository = $this->getdoctrine()
             ->getManager()
             ->getRepository('docPlatformBundle:DossierAgent');

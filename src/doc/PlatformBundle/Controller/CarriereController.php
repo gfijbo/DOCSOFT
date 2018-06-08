@@ -15,7 +15,7 @@ class CarriereController extends Controller
     public function CarriereSituationAction()
     {
         $menu = "Gestion";
-        $page = "Carrière / Situation";
+        $page = "CarriÃ¨re / Situation";
         $urlPage = "menudoc/4";
         $urlPdf = "carriere/situation/pdf";
 
@@ -49,7 +49,7 @@ class CarriereController extends Controller
         $snappy = $this->get('knp_snappy.pdf');
         $filename = 'myFirstSnappyPDF';
         $menu = "Gestion";
-        $page = "Carrière / Situation";
+        $page = "CarriÃ¨re / Situation";
         $repository = $this->getdoctrine()
             ->getManager()
             ->getRepository('docPlatformBundle:DossierAgent');
