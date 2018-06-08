@@ -496,7 +496,7 @@ class RemunerationController extends Controller
         ->getRepository('docPlatformBundle:DossierAgent');
         
         $listDoss = $repository->findBy(
-            array('onglet_ref' => '6', 'page_ref' => '59'),array('num_ordre' => 'asc')
+            array('onglet_ref' => '6', 'page_ref' => '63'),array('num_ordre' => 'asc')
             );
         $snappy = $this->get("knp_snappy.pdf");
         
