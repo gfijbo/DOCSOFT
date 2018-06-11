@@ -388,14 +388,14 @@ class RemunerationController extends Controller
     
     /**
      *
-     * @Route("/remuneration/mesbull", name="seeRemunerationMesbull")
+     * @Route("/remuneration/mesbul", name="seeRemunerationMesbul")
      */
     public function SeeRemunerationMesbullAction()
     {
         $menu = "Gestion";
         $page = "Rémunération / Mess. bulletin";
         $urlPage = "menudoc/6";
-        $urlPdf = "remuneration/mesbull/pdf";
+        $urlPdf = "remuneration/mesbul/pdf";
         
         $repository = $this->getdoctrine()
         ->getManager()
@@ -420,7 +420,7 @@ class RemunerationController extends Controller
     
     /**
      *
-     * @Route("/remuneration/mesbull/pdf", name="seeRemunerationMesbullPdf")
+     * @Route("/remuneration/mesbul/pdf", name="seeRemunerationMesbulPdf")
      */
     public function seeRemunerationMesbullpdfAction()
     {
