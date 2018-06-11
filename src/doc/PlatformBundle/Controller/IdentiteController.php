@@ -55,7 +55,7 @@ class IdentiteController extends Controller
             ->getRepository('docPlatformBundle:DossierAgent');
 
         $listDoss = $repository->findBy(
-            array('onglet_ref' => '2', 'page_ref' => '2'),array('num_ordre' => 'asc')
+            array('onglet_ref' => '2', 'page_ref' => '2'), array('num_ordre' => 'asc')
         );
         $snappy = $this->get("knp_snappy.pdf");
 
@@ -118,7 +118,7 @@ class IdentiteController extends Controller
             ->getRepository('docPlatformBundle:DossierAgent');
 
         $listDoss = $repository->findBy(
-            array('onglet_ref' => '2', 'page_ref' => '13'),array('num_ordre' => 'asc')
+            array('onglet_ref' => '2', 'page_ref' => '13'), array('num_ordre' => 'asc')
         );
         $snappy = $this->get("knp_snappy.pdf");
 
@@ -133,6 +133,7 @@ class IdentiteController extends Controller
             'Content-Disposition' => 'inline; filename="' . $filename . '.pdf"'
         ));
     }
+
     /**
      *
      * @Route("/identite/domiciliations", name="seeIdentiteDomiciliations")
@@ -180,7 +181,7 @@ class IdentiteController extends Controller
             ->getRepository('docPlatformBundle:DossierAgent');
 
         $listDoss = $repository->findBy(
-            array('onglet_ref' => '2', 'page_ref' => '14'),array('num_ordre' => 'asc')
+            array('onglet_ref' => '2', 'page_ref' => '14'), array('num_ordre' => 'asc')
         );
         $snappy = $this->get("knp_snappy.pdf");
 
@@ -243,7 +244,7 @@ class IdentiteController extends Controller
             ->getRepository('docPlatformBundle:DossierAgent');
 
         $listDoss = $repository->findBy(
-            array('onglet_ref' => '2', 'page_ref' => '15'),array('num_ordre' => 'asc')
+            array('onglet_ref' => '2', 'page_ref' => '15'), array('num_ordre' => 'asc')
         );
         $snappy = $this->get("knp_snappy.pdf");
 
@@ -306,7 +307,7 @@ class IdentiteController extends Controller
             ->getRepository('docPlatformBundle:DossierAgent');
 
         $listDoss = $repository->findBy(
-            array('onglet_ref' => '2', 'page_ref' => '16'),array('num_ordre' => 'asc')
+            array('onglet_ref' => '2', 'page_ref' => '16'), array('num_ordre' => 'asc')
         );
         $snappy = $this->get("knp_snappy.pdf");
 
@@ -369,7 +370,7 @@ class IdentiteController extends Controller
             ->getRepository('docPlatformBundle:DossierAgent');
 
         $listDoss = $repository->findBy(
-            array('onglet_ref' => '2', 'page_ref' => '17'),array('num_ordre' => 'asc')
+            array('onglet_ref' => '2', 'page_ref' => '17'), array('num_ordre' => 'asc')
         );
         $snappy = $this->get("knp_snappy.pdf");
 
@@ -432,7 +433,7 @@ class IdentiteController extends Controller
             ->getRepository('docPlatformBundle:DossierAgent');
 
         $listDoss = $repository->findBy(
-            array('onglet_ref' => '2', 'page_ref' => '18'),array('num_ordre' => 'asc')
+            array('onglet_ref' => '2', 'page_ref' => '18'), array('num_ordre' => 'asc')
         );
         $snappy = $this->get("knp_snappy.pdf");
 
@@ -495,7 +496,7 @@ class IdentiteController extends Controller
             ->getRepository('docPlatformBundle:DossierAgent');
 
         $listDoss = $repository->findBy(
-            array('onglet_ref' => '2', 'page_ref' => '19'),array('num_ordre' => 'asc')
+            array('onglet_ref' => '2', 'page_ref' => '19'), array('num_ordre' => 'asc')
         );
         $snappy = $this->get("knp_snappy.pdf");
 
@@ -558,7 +559,7 @@ class IdentiteController extends Controller
             ->getRepository('docPlatformBundle:DossierAgent');
 
         $listDoss = $repository->findBy(
-            array('onglet_ref' => '2', 'page_ref' => '20'),array('num_ordre' => 'asc')
+            array('onglet_ref' => '2', 'page_ref' => '20'), array('num_ordre' => 'asc')
         );
         $snappy = $this->get("knp_snappy.pdf");
 
@@ -621,7 +622,7 @@ class IdentiteController extends Controller
             ->getRepository('docPlatformBundle:DossierAgent');
 
         $listDoss = $repository->findBy(
-            array('onglet_ref' => '2', 'page_ref' => '21'),array('num_ordre' => 'asc')
+            array('onglet_ref' => '2', 'page_ref' => '21'), array('num_ordre' => 'asc')
         );
         $snappy = $this->get("knp_snappy.pdf");
 
@@ -684,7 +685,7 @@ class IdentiteController extends Controller
             ->getRepository('docPlatformBundle:DossierAgent');
 
         $listDoss = $repository->findBy(
-            array('onglet_ref' => '2', 'page_ref' => '22'),array('num_ordre' => 'asc')
+            array('onglet_ref' => '2', 'page_ref' => '22'), array('num_ordre' => 'asc')
         );
         $snappy = $this->get("knp_snappy.pdf");
 
@@ -747,7 +748,7 @@ class IdentiteController extends Controller
             ->getRepository('docPlatformBundle:DossierAgent');
 
         $listDoss = $repository->findBy(
-            array('onglet_ref' => '2', 'page_ref' => '23'),array('num_ordre' => 'asc')
+            array('onglet_ref' => '2', 'page_ref' => '23'), array('num_ordre' => 'asc')
         );
         $snappy = $this->get("knp_snappy.pdf");
 
@@ -811,7 +812,7 @@ class IdentiteController extends Controller
             ->getRepository('docPlatformBundle:DossierAgent');
 
         $listDoss = $repository->findBy(
-            array('onglet_ref' => '2', 'page_ref' => '24'),array('num_ordre' => 'asc')
+            array('onglet_ref' => '2', 'page_ref' => '24'), array('num_ordre' => 'asc')
         );
         $snappy = $this->get("knp_snappy.pdf");
 
@@ -874,7 +875,7 @@ class IdentiteController extends Controller
             ->getRepository('docPlatformBundle:DossierAgent');
 
         $listDoss = $repository->findBy(
-            array('onglet_ref' => '2', 'page_ref' => '25'),array('num_ordre' => 'asc')
+            array('onglet_ref' => '2', 'page_ref' => '25'), array('num_ordre' => 'asc')
         );
         $snappy = $this->get("knp_snappy.pdf");
 
@@ -889,7 +890,5 @@ class IdentiteController extends Controller
             'Content-Disposition' => 'inline; filename="' . $filename . '.pdf"'
         ));
     }
-
-
 
 }
