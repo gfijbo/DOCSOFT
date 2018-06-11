@@ -27,7 +27,7 @@
 						{% for doss in listDoss %}
 						<td><a class="dropdown-item"
 							href="/seechamp/{{doss.getId() }}">{{ doss.getChamp() }}</a></td>
-						{% if loop.index%3 == 0 %}
+						{% if loop.index%2 == 0 %}
 					</tr>
 					<tr>
 						{% endif %}
