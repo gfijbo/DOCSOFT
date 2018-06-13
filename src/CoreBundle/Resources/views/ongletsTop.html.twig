@@ -1,12 +1,89 @@
 {% block ongletsTop %}
 <ul class="navbar-nav ml-auto">
-<li><a href="/allonglets/gestion"> Gestion </a></li>
+{# <li><a href="/allonglets/gestion"> Gestion </a></li>#}
+ <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Gestion
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="/allonglets/gestion">Agent</a>
+          <a class="dropdown-item" href="#">Recrutement</a>
+          <a class="dropdown-item" href="#">Effectif et Poste (emploi)</a>
+          <a class="dropdown-item" href="#">Métier</a>
+          <a class="dropdown-item" href="#">Simulation</a>
+          <a class="dropdown-item" href="#">Suppléance</a>
+          <a class="dropdown-item" href="#">Evaluation</a>
+        </div>
 </ul>
 <ul class="navbar-nav ml-auto">
-<li><a href="/allonglets/referentiel"> Référentiel </a></li>
+{# <li><a href="/allonglets/referentiel"> Référentiel </a></li>#}
+<li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Référentiel
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="/allonglets/referentiel">Général</a>
+          <a class="dropdown-item" href="#">Abscences</a>
+          <a class="dropdown-item" href="#">Accident de travail</a>
+          <a class="dropdown-item" href="#">Carrière</a>
+          <a class="dropdown-item" href="#">Agent</a>
+          <a class="dropdown-item" href="#">Gestion modèles</a>
+          <a class="dropdown-item" href="#">Editions</a>
+          <a class="dropdown-item" href="#">Rémunération</a>
+          <a class="dropdown-item" href="#">Recrutement</a>
+          <a class="dropdown-item" href="#">Effectif et Poste (emploi)</a>
+          <a class="dropdown-item" href="#">Alertes</a>
+          <a class="dropdown-item" href="#">Interface harpège</a>
+          <a class="dropdown-item" href="#">Interface</a>
+          <a class="dropdown-item" href="#">Prestation</a>
+          <a class="dropdown-item" href="#">Simulation</a>
+          <a class="dropdown-item" href="#">Suppléance</a>
+          <a class="dropdown-item" href="#">Gestion Fichier</a>
+          <a class="dropdown-item" href="#">Cohérence des données</a>
+          <a class="dropdown-item" href="#">Déclaration CIR</a>
+          <a class="dropdown-item" href="#">Evaluation</a>
+        </div>
 </ul>
 <ul class="navbar-nav ml-auto">
-<li><a href="/allonglets/traitement"> Traitements </a></li>
+<li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Traitement
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+        <table>
+          <tr><td><a class="dropdown-item" href="/allonglets/traitement">Identité</a></td>
+          <td><a class="dropdown-item" href="#">Agent</a></td></tr>
+          <tr><td><a class="dropdown-item" href="#">Carrière</a></td>
+          <td><a class="dropdown-item" href="#">Abscences</a></td></tr>
+          <tr><td><a class="dropdown-item" href="#">Droit individuel formation</a></td>
+          <td><a class="dropdown-item" href="#">Rémunération</a></td></tr>
+          <tr><td><a class="dropdown-item" href="#">Listes agents</a></td>
+          <td><a class="dropdown-item" href="#">Editions référentiel</a></td></tr>
+          <tr><td><a class="dropdown-item" href="#">Exploitation</a></td>
+          <td><a class="dropdown-item" href="#">Traitements Groupés</a></td></tr>
+          <tr><td><a class="dropdown-item" href="#">Epurations</a></td>
+          <td><a class="dropdown-item" href="#">Interface</a></td></tr>
+          <tr><td><a class="dropdown-item" href="#">Liaison bureautique</a></td>
+          <td><a class="dropdown-item" href="#">Astrator</a></td></tr>
+          <tr><td><a class="dropdown-item" href="#">Effectif et poste (emploi)</a></td>
+          <td><a class="dropdown-item" href="#">Suppléance</a></td></tr>
+          <tr><td><a class="dropdown-item" href="#">DSN/PASRAU</a></td>
+          <td><a class="dropdown-item" href="#">N4DS</a></td></tr>
+          <tr><td><a class="dropdown-item" href="#">DADS-U</a></td>
+          <td><a class="dropdown-item" href="#">DN-AC</a></td></tr>
+          <tr><td><a class="dropdown-item" href="#">Prestation</a></td>
+          <td><a class="dropdown-item" href="#">Alerte</a></td></tr>
+          <tr><td><a class="dropdown-item" href="#">Simulation</a></td>
+          <td><a class="dropdown-item" href="#">Rapport Annuel</a></td></tr>
+          <tr><td><a class="dropdown-item" href="#">DUE</a></td>
+          <td><a class="dropdown-item" href="#">Antériorité</a></td></tr>
+          <tr><td><a class="dropdown-item" href="#">Export - Import</a></td>
+          <td><a class="dropdown-item" href="#">Modules complémentaires</a></td></tr>
+          <tr><td><a class="dropdown-item" href="#">Préparation Masse Salariale</a></td>
+          <td><a class="dropdown-item" href="#">Pilotage Masse Salariale</a></td></tr>
+          <tr><td><a class="dropdown-item" href="#">Déclaration CIR</a></td></tr>
+          </table>
+        </div>
 </ul>
 <ul class="navbar-nav ml-auto">
 <li><a href="/document"> Documents </a></li>
