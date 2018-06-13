@@ -8,14 +8,14 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 class MenuController extends Controller{
     /**
      *
-     * @Route("/allonglets", name="allOnglets")
+     * @Route("/allonglets/gestion", name="allOngletsGestion")
      */
-    public function allOngletsAction()
+    public function allOngletsGestionAction()
     {
         $repository = $this->getdoctrine()
         ->getManager()
         ->getRepository('docPlatformBundle:Onglet');
-        $listOnglets = $repository->findAll();
+        $listOnglets = $repository->findByType('gestion');
         
         for($i=0;$i<sizeof($listOnglets);$i++){
             $repository = $this->getdoctrine()
@@ -37,6 +37,67 @@ class MenuController extends Controller{
         return $html;
     }
     
+    /**
+     *
+     * @Route("/allonglets/referentiel", name="allOngletsReferentiel")
+     */
+    public function allOngletsReferentielAction()
+    {
+        $repository = $this->getdoctrine()
+        ->getManager()
+        ->getRepository('docPlatformBundle:Onglet');
+        $listOnglets = $repository->findByType('referentiel');
+        
+        for($i=0;$i<sizeof($listOnglets);$i++){
+            $repository = $this->getdoctrine()
+            ->getManager()
+            ->getRepository('docPlatformBundle:Page');
+            
+            $listPages = $repository->findBy(
+                array('onglet_ref'=> $listOnglets[$i]->getId()
+                ));
+            $listOnglets[$i]->setPages($listPages);
+        }
+        if(!isset($_SESSION)){
+            session_start();
+        }
+        
+        $_SESSION['listOnglets'] = $listOnglets;
+        
+        $html = $this->redirectToRoute('alloperation');
+        return $html;
+    }
+    
+    /**
+     *
+     * @Route("/allonglets/traitement", name="allOngletsTraitement")
+     */
+    public function allOngletsTraitementAction()
+    {
+        $repository = $this->getdoctrine()
+        ->getManager()
+        ->getRepository('docPlatformBundle:Onglet');
+        $listOnglets = $repository->findByType('traitement');
+        
+        for($i=0;$i<sizeof($listOnglets);$i++){
+            $repository = $this->getdoctrine()
+            ->getManager()
+            ->getRepository('docPlatformBundle:Page');
+            
+            $listPages = $repository->findBy(
+                array('onglet_ref'=> $listOnglets[$i]->getId()
+                ));
+            $listOnglets[$i]->setPages($listPages);
+        }
+        if(!isset($_SESSION)){
+            session_start();
+        }
+        
+        $_SESSION['listOnglets'] = $listOnglets;
+        
+        $html = $this->redirectToRoute('alloperation');
+        return $html;
+    }
     /**
      *
      * @Route("/menudoc/{id}", name="menuDoc")

@@ -49,6 +49,12 @@ class Onglet
     {
         return $this->glyphicon;
     }
+    
+    /**
+     * @ORM\Column(type="string")
+     * @var string
+     */
+    private $type;
 
     /**
      * @param string $glyphicon

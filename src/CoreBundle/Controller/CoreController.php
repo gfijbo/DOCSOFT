@@ -24,7 +24,7 @@ class CoreController extends Controller
                 'alert' => ''
             ));
         } else {
-            $html = $this->redirectToRoute('allOnglets');
+            $html = $this->redirectToRoute('allOngletsGestion');
         }
 
         return $html;
