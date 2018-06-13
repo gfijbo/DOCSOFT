@@ -5,25 +5,20 @@
     {% block li%}
       {% if listOnglets is defined %}
     {% for onglet in listOnglets %}
-    {% if (onglet.getPages()|length) >1 %}
-        	<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Link">
-        <a class="nav-link" href="/menudoc/{{ onglet.getId() }}">
-            <i class="{{ onglet.getGlyphicon() }}"></i>
+     <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle"  id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="{{ onglet.getGlyphicon() }}"></i>
             <span class="nav-link-text">{{ onglet.getOnglet()}}</span>
         </a>
-    </li>
-    {% else %}
-    {% for page in onglet.getPages() %}
-    <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Link">
-    	
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+        {% for page in onglet.getPages() %}
         <a class="nav-link" href="{{ page.getUrl() }}">
             <i class="{{ onglet.getGlyphicon() }}"></i>
-            <span class="nav-link-text">{{ onglet.getOnglet()}}</span>
+            <span class="nav-link-text">{{ page.getPage()}}</span>
         </a>
-    </li>
-    {% endfor %}
-    {% endif %}
-    {% endfor %}
+   {% endfor %}
+{#     {% endif %}#}
+    {% endfor %}    
   </ul>
 {% endif %}
  </ul>
