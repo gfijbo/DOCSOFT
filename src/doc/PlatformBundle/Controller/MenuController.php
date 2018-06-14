@@ -15,7 +15,7 @@ class MenuController extends Controller{
         $repository = $this->getdoctrine()
         ->getManager()
         ->getRepository('docPlatformBundle:Onglet');
-        $listOnglets = $repository->findByType('gestion');
+        $listOnglets = $repository->findByType('gestion/agent');
         
         for($i=0;$i<sizeof($listOnglets);$i++){
             $repository = $this->getdoctrine()
