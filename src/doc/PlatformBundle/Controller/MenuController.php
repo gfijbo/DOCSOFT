@@ -46,7 +46,7 @@ class MenuController extends Controller{
         $repository = $this->getdoctrine()
         ->getManager()
         ->getRepository('docPlatformBundle:Onglet');
-        $listOnglets = $repository->findByType('referentiel');
+        $listOnglets = $repository->findByType('referentiel/general');
         
         for($i=0;$i<sizeof($listOnglets);$i++){
             $repository = $this->getdoctrine()
