@@ -4,21 +4,21 @@
     <!--  Onglets à gauche -->
     {% block li%}
       {% if listOnglets is defined %}
-      <li class="nav-item dropdown"><a href="/" class="nav-link"> Accueil </a></li>
+      <li class="nav-item"><a href="/" class="nav-link"><i class="fa fa-home"></i> Accueil </a></li>
     {% for onglet in listOnglets %}
      <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle"  id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <i class="{{ onglet.getGlyphicon() }}"></i>
+        	<i class="{{ onglet.getGlyphicon() }}"></i>
             <span class="nav-link-text">{{ onglet.getOnglet()}}</span>
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-         <table class="table-bordered table-responsive">
-         <tr>
+        <table class="table-condensed">
+        <tr>
         {% for page in onglet.getPages() %}
         <td><a class="nav-link" href="{{ page.getUrl() }}">
-            <i class="{{ onglet.getGlyphicon() }}"></i>
-            <span class="nav-link-text">{{ page.getPage()}}</span>
-        </a></td>
+            <span class="nav-link-text">{{ page.getPage() }}</span>
+        	</a>
+        </td>
         {% if loop.index%2 == 0 %}
         </tr>
         {% else %}
@@ -26,28 +26,19 @@
        {% endfor %}
        </table>
     {% endfor %}
-   
-        
-            <li class="nav-item dropdown"><a href="/document" class="nav-link"> Documents </a></li>
-            <li class="nav-item dropdown"><a href="/formation" class="nav-link"> Formations </a></li>
-            
-            <li class="nav-item dropdown"><a href="/tutoriel" class="nav-link"> Tutoriels </a></li>
-            
-            <li class="nav-item dropdown"><a href="https://www.gfi.world/fr/" class="nav-link"> GFI </a></li>
-            
-            <li class="nav-item dropdown"><a href="http://forumastrerh.gfi.fr/" class="nav-link"> Forum Astre RH </a></li>
+           	<li class="nav-item"><a href="/document" class="nav-link"><i class="fa fa-briefcase"></i> Documents </a></li>
+            <li class="nav-item"><a href="/formation" class="nav-link"><i class="fa fa-book"></i> Formations </a></li>
+            <li class="nav-item"><a href="/tutoriel" class="nav-link"><i class="fa fa-video-camera"></i> Tutoriels </a></li>
+            <li class="nav-item"><a href="https://www.gfi.world/fr/" class="nav-link"><i class="fa fa-internet-explorer"></i> GFI </a></li>
+            <li class="nav-item"><a href="http://forumastrerh.gfi.fr/" class="nav-link"><i class="fa fa-users"></i> Forum Astre RH </a></li>
 		</div>
 {% else %}
-
-  	<li class="nav-item dropdown"><a href="/" class="nav-link"> Accueil </a></li>
-  	<li class="nav-item dropdown"><a href="/document" class="nav-link"> Documents </a></li>
-	<li class="nav-item dropdown"><a href="/formation" class="nav-link"> Formations </a></li>
-
-	<li class="nav-item dropdown"><a href="/tutoriel" class="nav-link"> Tutoriels </a></li>
-
-	<li class="nav-item dropdown"><a href="https://www.gfi.world/fr/" class="nav-link"> GFI </a></li>
-
-	<li class="nav-item dropdown"><a href="http://forumastrerh.gfi.fr/" class="nav-link"> Forum Astre RH </a></li>
+  	<li class="nav-item"><a href="/" class="nav-link"><i class="fa fa-home"></i> Accueil </a></li>
+  	<li class="nav-item"><a href="/document" class="nav-link"><i class="fa fa-briefcase"></i> Documents </a></li>
+	<li class="nav-item"><a href="/formation" class="nav-link"><i class="fa fa-book"> Formations </a></li>
+	<li class="nav-item"><a href="/tutoriel" class="nav-link"><i class="fa fa-video-camera"></i> Tutoriels </a></li>
+	<li class="nav-item"><a href="https://www.gfi.world/fr/" class="nav-link"><i class="fa fa-internet-explorer"></i> GFI </a></li>
+	<li class="nav-item"><a href="http://forumastrerh.gfi.fr/" class="nav-link"><i class="fa fa-users"></i> Forum Astre RH </a></li>
 </ul>
 {% endif %}
     {% endblock %}
