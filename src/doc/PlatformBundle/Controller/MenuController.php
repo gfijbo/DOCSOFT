@@ -6,67 +6,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 
 class MenuController extends Controller{
-    /**
-     *
-     * @Route("/allonglets/gestion", name="allOngletsGestion")
-     */
-    public function allOngletsGestionAction()
-    {
-        $repository = $this->getdoctrine()
-        ->getManager()
-        ->getRepository('docPlatformBundle:Onglet');
-        $listOnglets = $repository->findByType('gestion/agent');
-        
-        for($i=0;$i<sizeof($listOnglets);$i++){
-            $repository = $this->getdoctrine()
-            ->getManager()
-            ->getRepository('docPlatformBundle:Page');
-            
-            $listPages = $repository->findBy(
-                array('onglet_ref'=> $listOnglets[$i]->getId()
-                ));
-           $listOnglets[$i]->setPages($listPages);
-        }
-        if(!isset($_SESSION)){
-            session_start();
-        }
-        
-        $_SESSION['listOnglets'] = $listOnglets;
-        
-        $html = $this->redirectToRoute('alloperation');
-        return $html;
-    }
-    
-    /**
-     *
-     * @Route("/allonglets/referentiel", name="allOngletsReferentiel")
-     */
-    public function allOngletsReferentielAction()
-    {
-        $repository = $this->getdoctrine()
-        ->getManager()
-        ->getRepository('docPlatformBundle:Onglet');
-        $listOnglets = $repository->findByType('referentiel/general');
-        
-        for($i=0;$i<sizeof($listOnglets);$i++){
-            $repository = $this->getdoctrine()
-            ->getManager()
-            ->getRepository('docPlatformBundle:Page');
-            
-            $listPages = $repository->findBy(
-                array('onglet_ref'=> $listOnglets[$i]->getId()
-                ));
-            $listOnglets[$i]->setPages($listPages);
-        }
-        if(!isset($_SESSION)){
-            session_start();
-        }
-        
-        $_SESSION['listOnglets'] = $listOnglets;
-        
-        $html = $this->redirectToRoute('alloperation');
-        return $html;
-    }
+   
     
     /**
      *
