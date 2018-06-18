@@ -1,7 +1,6 @@
 {% block ongletsTop %}
 <ul class="navbar-nav ml-auto">
-{# <li><a href="/allonglets/gestion"> Gestion </a></li>#}
- <li class="nav-item dropdown">
+ 	<li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
          <i class="fa fa-folder"></i> Gestion
         </a>
@@ -16,9 +15,10 @@
           <tr><td><a class="dropdown-item" href="/gestion/evaluation">Evaluation</a></td></tr>
         </table>
         </div>
+ 	</li>
 </ul>
 <ul class="navbar-nav ml-auto">
-<li class="nav-item dropdown">
+	<li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
          <i class="fa fa-folder"></i> Référentiel
         </a>
@@ -46,9 +46,10 @@
           <td><a class="dropdown-item" href="/referentiel/evaluation">Evaluation</a></td></tr>
         </table>
         </div>
+	</li>
 </ul>
 <ul class="navbar-nav ml-auto">
-<li class="nav-item dropdown">
+	<li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
          <i class="fa fa-folder"></i> Traitement
         </a>
@@ -87,6 +88,7 @@
           <tr><td><a class="dropdown-item" href="/traitement/declaration">Déclaration CIR</a></td></tr>
           </table>
         </div>
+	</li>
 </ul>
 
 <ul class="navbar-nav ml-auto">
@@ -99,6 +101,7 @@
         
     {# Onglet du bloc des alerts #}
     {{ include ("CoreBundle::alerts.html.twig") }}
+    </li>
     {# Fin du bloc des alertes #}
     
     {# Onglet de recherche du site #}

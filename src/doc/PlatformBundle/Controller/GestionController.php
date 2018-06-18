@@ -8,7 +8,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 class GestionController extends Controller{
     /**
      *
-     * @Route("/gestion/agent", name="allOngletsGestionAgent")
+     * @Route("/gestion/agent", name="allOngletsGestion")
      */
     public function allOngletsGestionAgentAction()
     {

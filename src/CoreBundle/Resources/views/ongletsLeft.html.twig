@@ -32,13 +32,18 @@
             <li class="nav-item"><a href="https://www.gfi.world/fr/" class="nav-link"><i class="fa fa-internet-explorer"></i> GFI </a></li>
             <li class="nav-item"><a href="http://forumastrerh.gfi.fr/" class="nav-link"><i class="fa fa-users"></i> Forum Astre RH </a></li>
 		</div>
+		</li>
 {% else %}
-  	<li class="nav-item"><a href="/" class="nav-link"><i class="fa fa-home"></i> Accueil </a></li>
-  	<li class="nav-item"><a href="/document" class="nav-link"><i class="fa fa-briefcase"></i> Documents </a></li>
-	<li class="nav-item"><a href="/formation" class="nav-link"><i class="fa fa-book"> Formations </a></li>
-	<li class="nav-item"><a href="/tutoriel" class="nav-link"><i class="fa fa-video-camera"></i> Tutoriels </a></li>
-	<li class="nav-item"><a href="https://www.gfi.world/fr/" class="nav-link"><i class="fa fa-internet-explorer"></i> GFI </a></li>
-	<li class="nav-item"><a href="http://forumastrerh.gfi.fr/" class="nav-link"><i class="fa fa-users"></i> Forum Astre RH </a></li>
+ <li class="nav-item dropdown">
+  	<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+      	<li class="nav-item"><a href="/" class="nav-link"><i class="fa fa-home"></i> Accueil </a></li>
+      	<li class="nav-item"><a href="/document" class="nav-link"><i class="fa fa-briefcase"></i> Documents </a></li>
+    	<li class="nav-item"><a href="/formation" class="nav-link"><i class="fa fa-book"></i> Formations </a></li>
+    	<li class="nav-item"><a href="/tutoriel" class="nav-link"><i class="fa fa-video-camera"></i> Tutoriels </a></li>
+    	<li class="nav-item"><a href="https://www.gfi.world/fr/" class="nav-link"><i class="fa fa-internet-explorer"></i> GFI </a></li>
+    	<li class="nav-item"><a href="http://forumastrerh.gfi.fr/" class="nav-link"><i class="fa fa-users"></i> Forum Astre RH </a></li>
+	</div>
+	</li>
 </ul>
 {% endif %}
     {% endblock %}

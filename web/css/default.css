@@ -33,9 +33,12 @@ p {
 	margin-right: 30%;
 }
 
+a {
+
+}
 a:hover, a:focus, a {
 	color: black;
-}
+}	
 
 .grad_nav {
 	background: linear-gradient(to top left, #ffc966, #ffaa55);
