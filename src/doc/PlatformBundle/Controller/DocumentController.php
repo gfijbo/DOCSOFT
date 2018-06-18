@@ -222,7 +222,7 @@ class DocumentController extends Controller
         if ($_SESSION['type'] != "del_doc") {
             $_SESSION['type'] = "del_doc";
             unset($_SESSION['com']);
-            $_SESSION['doc'] = $doc;
+            $_SESSION['doc'] = $id;
             $_SESSION['id'] = $id;
 
             return $this->redirectToRoute('operation');

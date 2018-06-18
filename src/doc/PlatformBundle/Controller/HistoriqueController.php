@@ -92,7 +92,7 @@ class HistoriqueController extends Controller
             $repository = $this->getdoctrine()
                 ->getManager()
                 ->getRepository('docPlatformBundle:Document');
-
+            
             $document = $repository->find($_SESSION['doc']);
             $documentName = $document->getDocumentName();
             $documentSize = $document->getDocumentSize();

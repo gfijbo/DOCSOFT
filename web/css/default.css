@@ -33,8 +33,8 @@ p {
 	margin-right: 30%;
 }
 
-a {
-
+li{
+	line-height : 12pt;
 }
 a:hover, a:focus, a {
 	color: black;
