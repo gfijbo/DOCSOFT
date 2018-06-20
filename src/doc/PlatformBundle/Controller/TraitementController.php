@@ -100,14 +100,14 @@ class TraitementController extends Controller{
     
     /**
      *
-     * @Route("/traitement/abscences", name="allOngletsTraitementAbscences")
+     * @Route("/traitement/absences", name="allOngletsTraitementAbsences")
      */
-    public function allOngletsTraitementAbscencesAction()
+    public function allOngletsTraitementAbsencesAction()
     {
         $repository = $this->getdoctrine()
         ->getManager()
         ->getRepository('docPlatformBundle:Onglet');
-        $listOnglets = $repository->findByType('traitement/abscences');
+        $listOnglets = $repository->findByType('traitement/absences');
         
         for($i=0;$i<sizeof($listOnglets);$i++){
             $repository = $this->getdoctrine()

@@ -66,8 +66,8 @@ class DossierAgent
 
     /**
      *
-     * @ORM\Column(type="integer", nullable=true)
-     * @var int
+     * @ORM\Column(type="string", nullable=true)
+     * @var string
      */
     private $num_ordre;
 

@@ -6,8 +6,10 @@ use doc\PlatformBundle\Entity\Tutoriel;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 use doc\PlatformBundle\Entity\Document;
 use doc\PlatformBundle\Form\TutorielType;
+use Symfony\Component\HttpFoundation\File\File;
 use doc\PlatformBundle\Form\DocumentType;
 
 

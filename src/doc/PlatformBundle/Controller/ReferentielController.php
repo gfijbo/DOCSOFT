@@ -39,14 +39,14 @@ class ReferentielController extends Controller{
     
     /**
      *
-     * @Route("/referentiel/abscences", name="allOngletsReferentielAbscences")
+     * @Route("/referentiel/absences", name="allOngletsReferentielAbscences")
      */
     public function allOngletsReferentielAbscencesAction()
     {
         $repository = $this->getdoctrine()
         ->getManager()
         ->getRepository('docPlatformBundle:Onglet');
-        $listOnglets = $repository->findByType('referentiel/abscences');
+        $listOnglets = $repository->findByType('referentiel/absences');
         
         for($i=0;$i<sizeof($listOnglets);$i++){
             $repository = $this->getdoctrine()
