@@ -14,6 +14,7 @@ class IdentiteController extends Controller
      */
     public function IdentiteEtatcivilAction()
     {
+        return $this->listChamp("Identité / Etat Civil","gestion/identite/etatcivil/pdf",'2', '2');
         $menu = "Gestion";
         $page = "Identité / Etat Civil";
         $urlPage = "menudoc/2";

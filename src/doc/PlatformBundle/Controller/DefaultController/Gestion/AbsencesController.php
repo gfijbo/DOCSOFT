@@ -15,7 +15,7 @@ class AbsencesController extends ListPage
      */
     public function SeeabsencesMaladiesAction()
     {
-        return $this->listChamp("Absences / Maladies","gestion/absences/maladies/pdf",'5', '11');
+        return $this->listChamp("Absences / Maladies","gestion/absences/maladies/pdf",'5', '11',"Gestion", "5");
     }
     /**
      *
@@ -23,7 +23,7 @@ class AbsencesController extends ListPage
      */
     public function SeeabsencesMaladiesPdfAction()
     {
-        return $this->listChampPdf("Absences / Maladies",'5', '11');
+        return $this->listChampPdf("Absences / Maladies",'5', '11',"Gestion");
     }
     /**
      *
@@ -31,7 +31,7 @@ class AbsencesController extends ListPage
      */
     public function SeeabsencesMaternitesAction()
     {
-        return $this->listChamp("Absences / Maternites","gestion/absences/maternites/pdf",'5', '48');
+        return $this->listChamp("Absences / Maternites","gestion/absences/maternites/pdf",'5', '48',"Gestion", "5");
     }
     /**
      *
@@ -39,7 +39,7 @@ class AbsencesController extends ListPage
      */
     public function SeeabsencesMaternitesPdfAction()
     {
-        return $this->listChampPdf("Absences / Maternites",'5', '48');
+        return $this->listChampPdf("Absences / Maternites",'5', '48',"Gestion");
     }
     /**
      *
@@ -47,7 +47,7 @@ class AbsencesController extends ListPage
      */
     public function SeeabsencesAdoptionsAction()
     {
-        return $this->listChamp("Absences / Adoptions","gestion/absences/adoptions/pdf",'5', '49');
+        return $this->listChamp("Absences / Adoptions","gestion/absences/adoptions/pdf",'5', '49',"Gestion", "5");
     }
     /**
      *
@@ -55,7 +55,7 @@ class AbsencesController extends ListPage
      */
     public function SeeabsencesAdoptionsPdfAction()
     {
-        return $this->listChampPdf("Absences / Adoptions",'5', '49');
+        return $this->listChampPdf("Absences / Adoptions",'5', '49',"Gestion");
     }
     
     /**
@@ -64,7 +64,7 @@ class AbsencesController extends ListPage
      */
     public function SeeabsencesAutarrAction()
     {
-        return $this->listChamp("Absences / Autres Ar.","gestion/absences/autarr/pdf",'5', '50');
+        return $this->listChamp("Absences / Autres Ar.","gestion/absences/autarr/pdf",'5', '50',"Gestion", "5");
     }
     
     /**
@@ -73,7 +73,7 @@ class AbsencesController extends ListPage
      */
     public function SeeabsencesAdoptioansPdfAction()
     {
-        return $this->listChampPdf("Absences / Autres Ar.",'5', '50');
+        return $this->listChampPdf("Absences / Autres Ar.",'5', '50',"Gestion");
     }
     /**
      *
@@ -81,7 +81,7 @@ class AbsencesController extends ListPage
      */
     public function SeeabsencesDroitsAction()
     {
-        return $this->listChamp("Absences / Droits","gestion/absences/droits/pdf",'5', '51');
+        return $this->listChamp("Absences / Droits","gestion/absences/droits/pdf",'5', '51',"Gestion", "5");
     }
     /**
      *
@@ -89,7 +89,7 @@ class AbsencesController extends ListPage
      */
     public function SeeabsencesDroitsPdfAction()
     {
-        return $this->listChampPdf("Absences / Droits",'5', '51');
+        return $this->listChampPdf("Absences / Droits",'5', '51',"Gestion");
     }
     
     /**
@@ -98,30 +98,7 @@ class AbsencesController extends ListPage
      */
     public function SeeabsencesAcctraAction()
     {
-        $menu = "Gestion";
-        $page = "absences / Accidents du travail";
-        $urlPage = "menudoc/5";
-        $urlPdf = "absences/acctra/pdf";
-        
-        $repository = $this->getdoctrine()
-        ->getManager()
-        ->getRepository('docPlatformBundle:DossierAgent');
-        
-        $listDoss = $repository->findBy(
-            array('onglet_ref' => '5', 'page_ref' => '52'),array('num_ordre' => 'asc')
-            );
-        $html = $this->render('docPlatformBundle:DossierAgent:indexAgent.html.twig', array(
-            'listDoss' => $listDoss,
-            'page' => $page,
-            'menu' => $menu,
-            'urlPage' => $urlPage,
-            'urlPdf' => $urlPdf,
-            'listOnglets' => $_SESSION['listOnglets'],
-            'compteur' => count($_SESSION['listAlerts']),
-            'listAlerts' => $_SESSION['listAlerts']
-        ));
-        
-        return $html;
+        return $this->listChamp("Absences / Accidents du travail","gestion/absences/acctra/pdf",'5', '52',"Gestion", "5");
     }
     
     /**
@@ -130,29 +107,7 @@ class AbsencesController extends ListPage
      */
     public function SeeabsencesAcctrasPdfAction()
     {
-        $snappy = $this->get('knp_snappy.pdf');
-        $filename = 'myFirstSnappyPDF';
-        $menu = "Gestion";
-        $page = "absences / Accidents du travail";
-        $repository = $this->getdoctrine()
-        ->getManager()
-        ->getRepository('docPlatformBundle:DossierAgent');
-        
-        $listDoss = $repository->findBy(
-            array('onglet_ref' => '5', 'page_ref' => '52'),array('num_ordre' => 'asc')
-            );
-        $snappy = $this->get("knp_snappy.pdf");
-        
-        $html = $this->renderView('docPlatformBundle:DossierAgent:pdf.html.twig', array(
-            'listDoss' => $listDoss,
-            'page' => $page,
-            'menu' => $menu
-        ));
-        
-        return new Response($snappy->getOutputFromHtml($html), 200, array(
-            'Content-Type' => 'application/pdf',
-            'Content-Disposition' => 'inline; filename="' . $filename . '.pdf"'
-        ));
+        return $this->listChampPdf("Absences / Accidents du travail",'5', '52',"Gestion");
     }
     
     /**
@@ -161,30 +116,7 @@ class AbsencesController extends ListPage
      */
     public function SeeabsencesCalmalAction()
     {
-        $menu = "Gestion";
-        $page = "absences / Cal. maladie";
-        $urlPage = "menudoc/5";
-        $urlPdf = "absences/calmal/pdf";
-        
-        $repository = $this->getdoctrine()
-        ->getManager()
-        ->getRepository('docPlatformBundle:DossierAgent');
-        
-        $listDoss = $repository->findBy(
-            array('onglet_ref' => '5', 'page_ref' => '53'),array('num_ordre' => 'asc')
-            );
-        $html = $this->render('docPlatformBundle:DossierAgent:indexAgent.html.twig', array(
-            'listDoss' => $listDoss,
-            'page' => $page,
-            'menu' => $menu,
-            'urlPage' => $urlPage,
-            'urlPdf' => $urlPdf,
-            'listOnglets' => $_SESSION['listOnglets'],
-            'compteur' => count($_SESSION['listAlerts']),
-            'listAlerts' => $_SESSION['listAlerts']
-        ));
-        
-        return $html;
+        return $this->listChamp("Absences / Cal. maladie","gestion/absences/calmal/pdf",'5', '53',"Gestion", "5");
     }
     
     /**
@@ -193,29 +125,7 @@ class AbsencesController extends ListPage
      */
     public function SeeabsencesCalmalPdfAction()
     {
-        $snappy = $this->get('knp_snappy.pdf');
-        $filename = 'myFirstSnappyPDF';
-        $menu = "Gestion";
-        $page = "absences / Cal. maladie";
-        $repository = $this->getdoctrine()
-        ->getManager()
-        ->getRepository('docPlatformBundle:DossierAgent');
-        
-        $listDoss = $repository->findBy(
-            array('onglet_ref' => '5', 'page_ref' => '53'),array('num_ordre' => 'asc')
-            );
-        $snappy = $this->get("knp_snappy.pdf");
-        
-        $html = $this->renderView('docPlatformBundle:DossierAgent:pdf.html.twig', array(
-            'listDoss' => $listDoss,
-            'page' => $page,
-            'menu' => $menu
-        ));
-        
-        return new Response($snappy->getOutputFromHtml($html), 200, array(
-            'Content-Type' => 'application/pdf',
-            'Content-Disposition' => 'inline; filename="' . $filename . '.pdf"'
-        ));
+        return $this->listChampPdf("Absences / Cal. maladie",'5', '53',"Gestion");
     }
     
     /**
@@ -224,30 +134,7 @@ class AbsencesController extends ListPage
      */
     public function SeeabsencesGescetAction()
     {
-        $menu = "Gestion";
-        $page = "absences / Gestion CET";
-        $urlPage = "menudoc/5";
-        $urlPdf = "absences/gescet/pdf";
-        
-        $repository = $this->getdoctrine()
-        ->getManager()
-        ->getRepository('docPlatformBundle:DossierAgent');
-        
-        $listDoss = $repository->findBy(
-            array('onglet_ref' => '5', 'page_ref' => '54'),array('num_ordre' => 'asc')
-            );
-        $html = $this->render('docPlatformBundle:DossierAgent:indexAgent.html.twig', array(
-            'listDoss' => $listDoss,
-            'page' => $page,
-            'menu' => $menu,
-            'urlPage' => $urlPage,
-            'urlPdf' => $urlPdf,
-            'listOnglets' => $_SESSION['listOnglets'],
-            'compteur' => count($_SESSION['listAlerts']),
-            'listAlerts' => $_SESSION['listAlerts']
-        ));
-        
-        return $html;
+        return $this->listChamp("Absences / Gestion CET","gestion/absences/gescet/pdf",'5', '54',"Gestion", "5");
     }
     
     /**
@@ -256,29 +143,7 @@ class AbsencesController extends ListPage
      */
     public function SeeabsencesGescetPdfAction()
     {
-        $snappy = $this->get('knp_snappy.pdf');
-        $filename = 'myFirstSnappyPDF';
-        $menu = "Gestion";
-        $page = "absences / Gestion CET";
-        $repository = $this->getdoctrine()
-        ->getManager()
-        ->getRepository('docPlatformBundle:DossierAgent');
-        
-        $listDoss = $repository->findBy(
-            array('onglet_ref' => '5', 'page_ref' => '54'),array('num_ordre' => 'asc')
-            );
-        $snappy = $this->get("knp_snappy.pdf");
-        
-        $html = $this->renderView('docPlatformBundle:DossierAgent:pdf.html.twig', array(
-            'listDoss' => $listDoss,
-            'page' => $page,
-            'menu' => $menu
-        ));
-        
-        return new Response($snappy->getOutputFromHtml($html), 200, array(
-            'Content-Type' => 'application/pdf',
-            'Content-Disposition' => 'inline; filename="' . $filename . '.pdf"'
-        ));
+        return $this->listChampPdf("Absences / Gestion CET",'5', '54',"Gestion");
     }
     
     /**
@@ -287,30 +152,7 @@ class AbsencesController extends ListPage
      */
     public function SeeabsencesSitdifAction()
     {
-        $menu = "Gestion";
-        $page = "absences / Situation DIF";
-        $urlPage = "menudoc/5";
-        $urlPdf = "absences/sitdif/pdf";
-        
-        $repository = $this->getdoctrine()
-        ->getManager()
-        ->getRepository('docPlatformBundle:DossierAgent');
-        
-        $listDoss = $repository->findBy(
-            array('onglet_ref' => '5', 'page_ref' => '55'),array('num_ordre' => 'asc')
-            );
-        $html = $this->render('docPlatformBundle:DossierAgent:indexAgent.html.twig', array(
-            'listDoss' => $listDoss,
-            'page' => $page,
-            'menu' => $menu,
-            'urlPage' => $urlPage,
-            'urlPdf' => $urlPdf,
-            'listOnglets' => $_SESSION['listOnglets'],
-            'compteur' => count($_SESSION['listAlerts']),
-            'listAlerts' => $_SESSION['listAlerts']
-        ));
-        
-        return $html;
+        return $this->listChamp("Absences / Situation DIF","gestion/absences/sitdif/pdf",'5', '55',"Gestion", "5");
     }
     
     /**
@@ -319,29 +161,7 @@ class AbsencesController extends ListPage
      */
     public function SeeabsencesSitdifPdfAction()
     {
-        $snappy = $this->get('knp_snappy.pdf');
-        $filename = 'myFirstSnappyPDF';
-        $menu = "Gestion";
-        $page = "absences / Situation DIF";
-        $repository = $this->getdoctrine()
-        ->getManager()
-        ->getRepository('docPlatformBundle:DossierAgent');
-        
-        $listDoss = $repository->findBy(
-            array('onglet_ref' => '5', 'page_ref' => '55'),array('num_ordre' => 'asc')
-            );
-        $snappy = $this->get("knp_snappy.pdf");
-        
-        $html = $this->renderView('docPlatformBundle:DossierAgent:pdf.html.twig', array(
-            'listDoss' => $listDoss,
-            'page' => $page,
-            'menu' => $menu
-        ));
-        
-        return new Response($snappy->getOutputFromHtml($html), 200, array(
-            'Content-Type' => 'application/pdf',
-            'Content-Disposition' => 'inline; filename="' . $filename . '.pdf"'
-        ));
+        return $this->listChampPdf("Absences / Situation DIF",'5', '55',"Gestion");
     }
     
     /**
@@ -350,30 +170,7 @@ class AbsencesController extends ListPage
      */
     public function SeeabsencesSitcpaAction()
     {
-        $menu = "Gestion";
-        $page = "absences / Situation CPA";
-        $urlPage = "menudoc/5";
-        $urlPdf = "absences/sitcpa/pdf";
-        
-        $repository = $this->getdoctrine()
-        ->getManager()
-        ->getRepository('docPlatformBundle:DossierAgent');
-        
-        $listDoss = $repository->findBy(
-            array('onglet_ref' => '5', 'page_ref' => '56'),array('num_ordre' => 'asc')
-            );
-        $html = $this->render('docPlatformBundle:DossierAgent:indexAgent.html.twig', array(
-            'listDoss' => $listDoss,
-            'page' => $page,
-            'menu' => $menu,
-            'urlPage' => $urlPage,
-            'urlPdf' => $urlPdf,
-            'listOnglets' => $_SESSION['listOnglets'],
-            'compteur' => count($_SESSION['listAlerts']),
-            'listAlerts' => $_SESSION['listAlerts']
-        ));
-        
-        return $html;
+        return $this->listChamp("Absences / Situation CPA","gestion/absences/sitcpa/pdf",'5', '56',"Gestion", "5");
     }
     
     /**
@@ -382,28 +179,6 @@ class AbsencesController extends ListPage
      */
     public function SeeabsencesSitcpaPdfAction()
     {
-        $snappy = $this->get('knp_snappy.pdf');
-        $filename = 'myFirstSnappyPDF';
-        $menu = "Gestion";
-        $page = "absences / Situation CPA";
-        $repository = $this->getdoctrine()
-        ->getManager()
-        ->getRepository('docPlatformBundle:DossierAgent');
-        
-        $listDoss = $repository->findBy(
-            array('onglet_ref' => '5', 'page_ref' => '56'),array('num_ordre' => 'asc')
-            );
-        $snappy = $this->get("knp_snappy.pdf");
-        
-        $html = $this->renderView('docPlatformBundle:DossierAgent:pdf.html.twig', array(
-            'listDoss' => $listDoss,
-            'page' => $page,
-            'menu' => $menu
-        ));
-        
-        return new Response($snappy->getOutputFromHtml($html), 200, array(
-            'Content-Type' => 'application/pdf',
-            'Content-Disposition' => 'inline; filename="' . $filename . '.pdf"'
-        ));
+        return $this->listChampPdf("Absences / Situation CPA",'5', '56',"Gestion");
     }
 }

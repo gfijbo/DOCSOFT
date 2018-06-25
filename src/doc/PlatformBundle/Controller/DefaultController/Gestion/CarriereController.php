@@ -17,7 +17,7 @@ class CarriereController extends ListPage
      */
     public function CarriereSituationAction()
     {
-       return $this->listChamp("Carrière / Situation","gestion/carriere/situation/pdf",'4', '6');
+       return $this->listChamp("Carrière / Situation","gestion/carriere/situation/pdf",'4', '6', "Gestion", "4");
     }
     /**
      *
@@ -25,7 +25,7 @@ class CarriereController extends ListPage
      */
     public function CarriereSituationPdfAction()
     {
-        return $this->listChampPdf("Carrière / Situation",'4', '6');
+        return $this->listChampPdf("Carrière / Situation",'4', '6', "Gestion", "4", "Gestion");
     }
 
     /**
@@ -34,7 +34,7 @@ class CarriereController extends ListPage
      */
     public function CarriereContratAction()
     {
-        return $this->listChamp("Carrière / Contrat","gestion/carriere/contrat/pdf",'4', '33');
+        return $this->listChamp("Carrière / Contrat","gestion/carriere/contrat/pdf",'4', '33', "Gestion", "4");
     }
     /**
      *
@@ -42,7 +42,7 @@ class CarriereController extends ListPage
      */
     public function CarriereContratPdfAction()
     {
-        return $this->listChampPdf("Carrière / Contrat",'4', '33');
+        return $this->listChampPdf("Carrière / Contrat",'4', '33', "Gestion", "4", "Gestion");
     }
     /**
      *
@@ -50,7 +50,7 @@ class CarriereController extends ListPage
      */
     public function CarriereNotationAction()
     {
-        return $this->listChamp("Carrière / Notation","gestion/carriere/notation/pdf",'4', '34');
+        return $this->listChamp("Carrière / Notation","gestion/carriere/notation/pdf",'4', '34', "Gestion", "4");
     }
     /**
      *
@@ -58,7 +58,7 @@ class CarriereController extends ListPage
      */
     public function CarriereNotationPdfAction()
     {
-        return $this->listChampPdf("Carrière / Notation",'4', '34');
+        return $this->listChampPdf("Carrière / Notation",'4', '34', "Gestion", "4", "Gestion");
     }
     /**
      *
@@ -74,7 +74,7 @@ class CarriereController extends ListPage
      */
     public function CarriereProavaPdfAction()
     {
-        return $this->listChampPdf("Carrière / Propositions avancement",'4', '35');
+        return $this->listChampPdf("Carrière / Propositions avancement",'4', '35', "Gestion", "4", "Gestion");
     }
     /**
      *
@@ -90,7 +90,7 @@ class CarriereController extends ListPage
      */
     public function CarriereArravaPdfAction()
     {
-        return $this->listChampPdf("Carrière / Arretés d'avancements",'4', '36');
+        return $this->listChampPdf("Carrière / Arretés d'avancements",'4', '36', "Gestion", "4");
     }
     /**
      *
@@ -106,7 +106,7 @@ class CarriereController extends ListPage
      */
     public function CarriereDemandesPdfAction()
     {
-        return $this->listChampPdf("Carrière / Notation",'4', '37');
+        return $this->listChampPdf("Carrière / Notation",'4', '37', "Gestion", "4", "Gestion");
     }
     
     /**
@@ -124,7 +124,7 @@ class CarriereController extends ListPage
      */
     public function CarriereDemtemparPdfAction()
     {
-        return $this->listChampPdf("Carrière / Demande de temps partiel",'4', '38');
+        return $this->listChampPdf("Carrière / Demande de temps partiel",'4', '38', "Gestion", "4", "Gestion");
     }
     /**
      *
@@ -140,7 +140,7 @@ class CarriereController extends ListPage
      */
     public function CarriereVismedPdfAction()
     {
-        return $this->listChampPdf("Carrière / Visites médicales",'4', '39');
+        return $this->listChampPdf("Carrière / Visites médicales",'4', '39', "Gestion", "4", "Gestion");
     }
     /**
      *
@@ -156,7 +156,7 @@ class CarriereController extends ListPage
      */
     public function CarriereVaccinationPdfAction()
     {
-        return $this->listChampPdf("Carrière / Vaccination",'4', '40');
+        return $this->listChampPdf("Carrière / Vaccination",'4', '40', "Gestion", "4", "Gestion", "Gestion");
     }
     /**
      *
@@ -172,7 +172,7 @@ class CarriereController extends ListPage
      */
     public function CarriereHistoriquePdfAction()
     {
-        return $this->listChampPdf("Carrière / Historique",'4', '41');
+        return $this->listChampPdf("Carrière / Historique",'4', '41', "Gestion", "4");
     }
     /**
      *
@@ -188,7 +188,7 @@ class CarriereController extends ListPage
      */
     public function CarriereHisevePdfAction()
     {
-        return $this->listChampPdf("Carrière / Historique évènements",'4', '42');
+        return $this->listChampPdf("Carrière / Historique évènements",'4', '42', "Gestion", "4");
     }
     /**
      *
@@ -196,7 +196,7 @@ class CarriereController extends ListPage
      */
     public function CarriereMedailleAction()
     {
-        return $this->listChamp("Carrière / Médaille","gestion/carriere/medaille/pdf",'4', '43');
+        return $this->listChamp("Carrière / Médaille","gestion/carriere/medaille/pdf",'4', '43', "Gestion", "4");
     }
     /**
      *
@@ -204,7 +204,7 @@ class CarriereController extends ListPage
      */
     public function CarriereMedaillePdfAction()
     {
-        return $this->listChampPdf("Carrière / Médaille",'4', '43');
+        return $this->listChampPdf("Carrière / Médaille",'4', '43', "Gestion", "4");
     }
     /**
      *
@@ -220,7 +220,7 @@ class CarriereController extends ListPage
      */
     public function CarriereInfmedPdfAction()
     {
-        return $this->listChampPdf("Carrière / Infos médaille",'4', '44');
+        return $this->listChampPdf("Carrière / Infos médaille",'4', '44', "Gestion", "4");
     }
     /**
      *
@@ -236,7 +236,7 @@ class CarriereController extends ListPage
      */
     public function CarriereSanctionPdfAction()
     {
-        return $this->listChampPdf("Carrière / Sanction",'4', '45');
+        return $this->listChampPdf("Carrière / Sanction",'4', '45', "Gestion", "4");
     }
     /**
      *
@@ -252,7 +252,7 @@ class CarriereController extends ListPage
      */
     public function CarriereDoucarPdfAction()
     {
-        return $this->listChampPdf("Carrière / Double carrière",'4', '46');
+        return $this->listChampPdf("Carrière / Double carrière",'4', '46', "Gestion", "4");
     }
     /**
      *
@@ -268,6 +268,6 @@ class CarriereController extends ListPage
      */
     public function CarriereChrevePdfAction()
     {
-        return $this->listChampPdf("Carrière / Chronologie des évènements",'4', '47');
+        return $this->listChampPdf("Carrière / Chronologie des évènements",'4', '47', "Gestion", "4");
     }
 }
