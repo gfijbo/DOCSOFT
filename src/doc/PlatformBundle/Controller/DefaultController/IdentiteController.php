@@ -17,7 +17,7 @@ class IdentiteController extends Controller
         $menu = "Gestion";
         $page = "Identité / Etat Civil";
         $urlPage = "menudoc/2";
-        $urlPdf = "identite/etatcivil/pdf";
+        $urlPdf = "gestion/identite/etatcivil/pdf";
 
         $repository = $this->getdoctrine()
             ->getManager()

@@ -48,7 +48,7 @@ class ListPage extends Controller
             ->getRepository('docPlatformBundle:DossierAgent');
 
         $listDoss = $repository->findBy(
-            array('onglet_ref' => '$v3', 'page_ref' => '$v4'), array('num_ordre' => 'asc')
+            array('onglet_ref' => $v3, 'page_ref' => $v4), array('num_ordre' => 'asc')
         );
         $snappy = $this->get("knp_snappy.pdf");
 
