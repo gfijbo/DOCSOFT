@@ -19,12 +19,18 @@
 			{% endif %}{{ nb }} r&eacute;sultat(s) trouv&eacute;(s)</h1>
 			
 				<table class="table">
-					
+					{% set test1 = '(' %}
+					{% set test2 = ')' %}
+					{% set test = test1~data~test2 %}
 					<tbody>
 						{% for result in results %}
 						<tr>
-							<td><p>{{ result.onglet }} / {{ result.page }} : 
-							<a href="/formation/see/{{ result.id }}">{{ result.nom_form }}</a></p></td>
+							<td><p>{{ result.page }} : 
+							<a href="/formation/see/{{ result.id }}">
+							<strong>{{ result.nom_form| replace({(data):(test),
+                            (data)|upper:(test)|upper,
+							(data)|lower:(test)|lower,
+							(data)|title:(test)|title}) }}</strong></a></p></td>
 						</tr>
 						{% endfor %}
 					</tbody>

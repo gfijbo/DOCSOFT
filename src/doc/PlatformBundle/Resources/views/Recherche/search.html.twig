@@ -35,8 +35,11 @@
 							{%  set url = '/tutoriel/see/' %}
 						{% endif %}
 						
-						<tr>
-							<td><p>{{ result.onglet }} / {{ result.page }} : 
+						<tr>{% if result.champ %}
+							<td><p>{{ result.onglet }} / {{ result.page }} :
+							{% else %} 
+							<td><p>{{ result.page }} :
+							{% endif %} 
 							{# permet d'entourer la chaîne recherchée par des parenthèses #}
 							<a href="{{ url }}{{ result.id }}">
 							<strong>{{ result.champ|replace({(data):(test),

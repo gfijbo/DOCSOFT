@@ -77,8 +77,8 @@ class RechercheController extends Controller
         
         $sql = "SELECT t.id, t.nom_tuto, p.page, o.onglet "
             . "FROM tutoriel AS t, page AS p, onglet AS o "
-                . "WHERE p.id = '9' "
-                    . "AND o.id = '7' ";
+                . "WHERE p.id = '7' "
+                    . "AND o.id = '9' ";
                         
                 // dans le cas d'une recherche approximative d'un champ
                 if ($search == "tuto") {
@@ -127,7 +127,7 @@ class RechercheController extends Controller
         
         $sql = "SELECT f.id, f.nom_form, p.page, o.onglet "
             . "FROM formation AS f, page AS p, onglet AS o "
-                . "WHERE p.id = '10' " . "AND o.id = '6'"; 
+                . "WHERE p.id = '8' " . "AND o.id = '8'"; 
                     // dans le cas d'une recherche approximative d'un champ
                     if ($search == "forma") {
                         $sql = $sql . "AND f.nom_form LIKE '%" . $data . "%'";
@@ -218,7 +218,7 @@ class RechercheController extends Controller
         $data = $_SESSION['data'];
         $sql = "SELECT d.id, d.document_name, p.page, o.onglet " 
         . "FROM document AS d, page AS p, onglet AS o " 
-        . "WHERE p.id = '3' " . "AND o.id = '5' " 
+        . "WHERE p.id = '3' " . "AND o.id = '7' " 
         . "AND d.document_name LIKE '%" . $data . "%'";
 
         $stmt = $this->getDoctrine()

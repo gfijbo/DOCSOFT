@@ -19,12 +19,18 @@
 			{% endif %}{{ nb }} résultat(s) trouvé(s)</h1>
 			
 				<table class="table">
-					
+			        {% set test1 = '(' %}
+					{% set test2 = ')' %}
+					{% set test = test1~data~test2 %}
 					<tbody>
 						{% for result in results %}
 						<tr>
-							<td><p>{{ result.onglet }} / {{ result.page }} : 
-							<a href="/document/download/{{ result.id }}" target=_blank>{{ result.document_name }}</a></p></td>
+							<td><p>{{ result.page }} : 
+							<a href="/document/download/{{ result.id }}" target=_blank>
+							<strong>{{ result.document_name| replace({(data):(test),
+                            (data)|upper:(test)|upper,
+							(data)|lower:(test)|lower,
+							(data)|title:(test)|title}) }}</strong></a></p></td>
 						</tr>
 						{% endfor %}
 					</tbody>
