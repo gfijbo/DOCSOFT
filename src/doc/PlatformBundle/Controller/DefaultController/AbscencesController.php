@@ -1,6 +1,6 @@
 <?php
 // src\doc\PlatformBundle\Controller\AbscencesController.php
-namespace doc\PlatformBundle\Controller;
+namespace doc\PlatformBundle\Controller\DefaultController;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
@@ -10,7 +10,7 @@ class AbscencesController extends Controller
 {
     /**
      *
-     * @Route("/abscences/maladies", name="seeAbscencesMaladies")
+     * @Route("/gestion/abscences/maladies", name="seeAbscencesMaladies")
      */
     public function SeeAbscencesMaladiesAction()
     {
@@ -42,7 +42,7 @@ class AbscencesController extends Controller
 
     /**
      *
-     * @Route("/abscences/maladies/pdf", name="seeAbscencesMaladiesPdf")
+     * @Route("/gestion/abscences/maladies/pdf", name="seeAbscencesMaladiesPdf")
      */
     public function SeeAbscencesMaladiesPdfAction()
     {
@@ -73,7 +73,7 @@ class AbscencesController extends Controller
     
     /**
      *
-     * @Route("/abscences/maternites", name="seeAbscencesMaternites")
+     * @Route("/gestion/abscences/maternites", name="seeAbscencesMaternites")
      */
     public function SeeAbscencesMaternitesAction()
     {
@@ -105,7 +105,7 @@ class AbscencesController extends Controller
     
     /**
      *
-     * @Route("/abscences/maternites/pdf", name="seeAbscencesMaternitesPdf")
+     * @Route("/gestion/abscences/maternites/pdf", name="seeAbscencesMaternitesPdf")
      */
     public function SeeAbscencesMaternitesPdfAction()
     {
@@ -136,7 +136,7 @@ class AbscencesController extends Controller
     
     /**
      *
-     * @Route("/abscences/adoptions", name="seeAbscencesAdoptions")
+     * @Route("/gestion/abscences/adoptions", name="seeAbscencesAdoptions")
      */
     public function SeeAbscencesAdoptionsAction()
     {
@@ -168,7 +168,7 @@ class AbscencesController extends Controller
     
     /**
      *
-     * @Route("/abscences/adoptions/pdf", name="seeAbscencesAdoptionsPdf")
+     * @Route("/gestion/abscences/adoptions/pdf", name="seeAbscencesAdoptionsPdf")
      */
     public function SeeAbscencesAdoptionsPdfAction()
     {
@@ -199,7 +199,7 @@ class AbscencesController extends Controller
     
     /**
      *
-     * @Route("/abscences/autarr", name="seeAbscencesAutarr")
+     * @Route("/gestion/abscences/autarr", name="seeAbscencesAutarr")
      */
     public function SeeAbscencesAutarrAction()
     {
@@ -231,7 +231,7 @@ class AbscencesController extends Controller
     
     /**
      *
-     * @Route("/abscences/autarr/pdf", name="seeAbscencesAutarrsPdf")
+     * @Route("/gestion/abscences/autarr/pdf", name="seeAbscencesAutarrsPdf")
      */
     public function SeeAbscencesAdoptioansPdfAction()
     {
@@ -262,7 +262,7 @@ class AbscencesController extends Controller
     
     /**
      *
-     * @Route("/abscences/droits", name="seeAbscencesDroits")
+     * @Route("/gestion/abscences/droits", name="seeAbscencesDroits")
      */
     public function SeeAbscencesDroitsAction()
     {
@@ -294,7 +294,7 @@ class AbscencesController extends Controller
     
     /**
      *
-     * @Route("/abscences/droits/pdf", name="seeAbscencesDroitsPdf")
+     * @Route("/gestion/abscences/droits/pdf", name="seeAbscencesDroitsPdf")
      */
     public function SeeAbscencesDroitsPdfAction()
     {
@@ -325,7 +325,7 @@ class AbscencesController extends Controller
     
     /**
      *
-     * @Route("/abscences/acctra", name="seeAbscencesAcctra")
+     * @Route("/gestion/abscences/acctra", name="seeAbscencesAcctra")
      */
     public function SeeAbscencesAcctraAction()
     {
@@ -357,7 +357,7 @@ class AbscencesController extends Controller
     
     /**
      *
-     * @Route("/abscences/acctra/pdf", name="seeAbscencesAcctraPdf")
+     * @Route("/gestion/abscences/acctra/pdf", name="seeAbscencesAcctraPdf")
      */
     public function SeeAbscencesAcctrasPdfAction()
     {
@@ -388,7 +388,7 @@ class AbscencesController extends Controller
     
     /**
      *
-     * @Route("/abscences/calmal", name="seeAbscencesCalmal")
+     * @Route("/gestion/abscences/calmal", name="seeAbscencesCalmal")
      */
     public function SeeAbscencesCalmalAction()
     {
@@ -420,7 +420,7 @@ class AbscencesController extends Controller
     
     /**
      *
-     * @Route("/abscences/calmal/pdf", name="seeAbscencesCalmalPdf")
+     * @Route("/gestion/abscences/calmal/pdf", name="seeAbscencesCalmalPdf")
      */
     public function SeeAbscencesCalmalPdfAction()
     {
@@ -451,7 +451,7 @@ class AbscencesController extends Controller
     
     /**
      *
-     * @Route("/abscences/gescet", name="seeAbscencesgescet")
+     * @Route("/gestion/abscences/gescet", name="seeAbscencesgescet")
      */
     public function SeeAbscencesGescetAction()
     {
@@ -483,7 +483,7 @@ class AbscencesController extends Controller
     
     /**
      *
-     * @Route("/abscences/gescet/pdf", name="seeAbscencesGescetPdf")
+     * @Route("/gestion/abscences/gescet/pdf", name="seeAbscencesGescetPdf")
      */
     public function SeeAbscencesGescetPdfAction()
     {
@@ -514,7 +514,7 @@ class AbscencesController extends Controller
     
     /**
      *
-     * @Route("/abscences/sitdif", name="seeAbscencesSitdif")
+     * @Route("/gestion/abscences/sitdif", name="seeAbscencesSitdif")
      */
     public function SeeAbscencesSitdifAction()
     {
@@ -546,7 +546,7 @@ class AbscencesController extends Controller
     
     /**
      *
-     * @Route("/abscences/sitdif/pdf", name="seeAbscencesSitdifPdf")
+     * @Route("/gestion/abscences/sitdif/pdf", name="seeAbscencesSitdifPdf")
      */
     public function SeeAbscencesSitdifPdfAction()
     {
@@ -577,7 +577,7 @@ class AbscencesController extends Controller
     
     /**
      *
-     * @Route("/abscences/sitcpa", name="seeAbscencesSitcpa")
+     * @Route("/gestion/abscences/sitcpa", name="seeAbscencesSitcpa")
      */
     public function SeeAbscencesSitcpaAction()
     {
@@ -609,7 +609,7 @@ class AbscencesController extends Controller
     
     /**
      *
-     * @Route("/abscences/sitcpa/pdf", name="seeAbscencesSitcpaPdf")
+     * @Route("/gestion/abscences/sitcpa/pdf", name="seeAbscencesSitcpaPdf")
      */
     public function SeeAbscencesSitcpaPdfAction()
     {

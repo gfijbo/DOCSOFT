@@ -1,6 +1,6 @@
 <?php
 // src\doc\PlatformBundle\Controller\DossierAgentController.php
-namespace doc\PlatformBundle\Controller;
+namespace doc\PlatformBundle\Controller\DefaultController;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
@@ -8,7 +8,6 @@ use Symfony\Component\HttpFoundation\Response;
 
 class DossierAgentController extends Controller
 {
-    
     /**
      *
      * @Route("/seechamp/{id}", name="seechamp")

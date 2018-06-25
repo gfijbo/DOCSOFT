@@ -1,6 +1,6 @@
 <?php
 // src\doc\PlatformBundle\Controller\RechercheController.php
-namespace doc\PlatformBundle\Controller;
+namespace doc\PlatformBundle\Controller\General;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;

@@ -10,6 +10,12 @@ fos_user:
     resource: "@FOSUserBundle/Resources/config/routing/all.xml"
 
 #pour activer les annotation des routes dans le dossier Controller    
-app:    
+app:
     resource: "@docPlatformBundle/Controller"
+    type:     annotation
+app1:
+    resource: "@docPlatformBundle/Controller/General"
+    type:     annotation
+app2:
+    resource: "@docPlatformBundle/Controller/DefaultController"
     type:     annotation
