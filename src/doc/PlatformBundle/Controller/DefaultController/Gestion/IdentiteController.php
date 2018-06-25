@@ -1,6 +1,6 @@
 <?php
 // src\doc\PlatformBundle\Controller\IdentiteController.php
-namespace doc\PlatformBundle\Controller\DefaultController;
+namespace doc\PlatformBundle\Controller\DefaultController\Gestion;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;

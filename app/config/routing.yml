@@ -17,5 +17,5 @@ app1:
     resource: "@docPlatformBundle/Controller/General"
     type:     annotation
 app2:
-    resource: "@docPlatformBundle/Controller/DefaultController"
+    resource: "@docPlatformBundle/Controller/DefaultController/Gestion"
     type:     annotation
