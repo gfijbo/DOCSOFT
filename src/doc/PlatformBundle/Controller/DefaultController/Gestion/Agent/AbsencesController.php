@@ -13,7 +13,7 @@ class AbsencesController extends ListPage
      */
     public function SeeabsencesMaladiesAction()
     {
-        return $this->listChamp("Absences / Maladies","gestion/absences/maladies/pdf",'5', '11',"Gestion", "5");
+        return $this->listChamp("Absences / Maladies","gestion/absences/maladies/pdf",'5', '11',"Gestion");
     }
     /**
      *
@@ -29,7 +29,7 @@ class AbsencesController extends ListPage
      */
     public function SeeabsencesMaternitesAction()
     {
-        return $this->listChamp("Absences / Maternites","gestion/absences/maternites/pdf",'5', '48',"Gestion", "5");
+        return $this->listChamp("Absences / Maternites","gestion/absences/maternites/pdf",'5', '48',"Gestion");
     }
     /**
      *
@@ -45,7 +45,7 @@ class AbsencesController extends ListPage
      */
     public function SeeabsencesAdoptionsAction()
     {
-        return $this->listChamp("Absences / Adoptions","gestion/absences/adoptions/pdf",'5', '49',"Gestion", "5");
+        return $this->listChamp("Absences / Adoptions","gestion/absences/adoptions/pdf",'5', '49',"Gestion");
     }
     /**
      *
@@ -62,7 +62,7 @@ class AbsencesController extends ListPage
      */
     public function SeeabsencesAutarrAction()
     {
-        return $this->listChamp("Absences / Autres Ar.","gestion/absences/autarr/pdf",'5', '50',"Gestion", "5");
+        return $this->listChamp("Absences / Autres Ar.","gestion/absences/autarr/pdf",'5', '50',"Gestion");
     }
     
     /**
@@ -79,7 +79,7 @@ class AbsencesController extends ListPage
      */
     public function SeeabsencesDroitsAction()
     {
-        return $this->listChamp("Absences / Droits","gestion/absences/droits/pdf",'5', '51',"Gestion", "5");
+        return $this->listChamp("Absences / Droits","gestion/absences/droits/pdf",'5', '51',"Gestion");
     }
     /**
      *
@@ -96,7 +96,7 @@ class AbsencesController extends ListPage
      */
     public function SeeabsencesAcctraAction()
     {
-        return $this->listChamp("Absences / Accidents du travail","gestion/absences/acctra/pdf",'5', '52',"Gestion", "5");
+        return $this->listChamp("Absences / Accidents du travail","gestion/absences/acctra/pdf",'5', '52',"Gestion");
     }
     
     /**
@@ -114,7 +114,7 @@ class AbsencesController extends ListPage
      */
     public function SeeabsencesCalmalAction()
     {
-        return $this->listChamp("Absences / Cal. maladie","gestion/absences/calmal/pdf",'5', '53',"Gestion", "5");
+        return $this->listChamp("Absences / Cal. maladie","gestion/absences/calmal/pdf",'5', '53',"Gestion");
     }
     
     /**
@@ -132,7 +132,7 @@ class AbsencesController extends ListPage
      */
     public function SeeabsencesGescetAction()
     {
-        return $this->listChamp("Absences / Gestion CET","gestion/absences/gescet/pdf",'5', '54',"Gestion", "5");
+        return $this->listChamp("Absences / Gestion CET","gestion/absences/gescet/pdf",'5', '54',"Gestion");
     }
     
     /**
@@ -150,7 +150,7 @@ class AbsencesController extends ListPage
      */
     public function SeeabsencesSitdifAction()
     {
-        return $this->listChamp("Absences / Situation DIF","gestion/absences/sitdif/pdf",'5', '55',"Gestion", "5");
+        return $this->listChamp("Absences / Situation DIF","gestion/absences/sitdif/pdf",'5', '55',"Gestion");
     }
     
     /**
@@ -168,7 +168,7 @@ class AbsencesController extends ListPage
      */
     public function SeeabsencesSitcpaAction()
     {
-        return $this->listChamp("Absences / Situation CPA","gestion/absences/sitcpa/pdf",'5', '56',"Gestion", "5");
+        return $this->listChamp("Absences / Situation CPA","gestion/absences/sitcpa/pdf",'5', '56',"Gestion");
     }
     
     /**

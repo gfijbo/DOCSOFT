@@ -10,11 +10,11 @@ use Symfony\Component\HttpFoundation\Response;
 
 class ListPage extends Controller
 {
-    public function listChamp(string $v1, string $v2, int $v3, int $v4, string $v5, int $v6)
+    public function listChamp(string $v1, string $v2, int $v3, int $v4, string $v5)
     {
         $menu = $v5;
         $page = $v1;
-        $urlPage = "menudoc/".$v6;
+        $urlPage = "menudoc/".$v3;
         $urlPdf = $v2;
         $repository = $this->getdoctrine()
             ->getManager()
@@ -38,7 +38,6 @@ class ListPage extends Controller
 
     public function listChampPdf(string $v1, int $v3, int $v4, string $v5)
     {
-
         $snappy = $this->get('knp_snappy.pdf');
         $filename = 'myFirstSnappyPDF';
         $menu = $v5;

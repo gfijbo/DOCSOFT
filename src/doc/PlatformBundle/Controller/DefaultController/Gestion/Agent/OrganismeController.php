@@ -7,14 +7,13 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 
 class OrganismeController extends ListPage
 {
-
-
     /**
      *
      * @Route("/organisme/agent", name="seeOrganismeAgent")
      */
     public function OrganismeAgentAction()
     {
+        return $this->listChamp("Organisme / Agent","organisme/agent/pdf",'3', '4',"Gestion", "3");
         $menu = "Gestion";
         $page = "Organisme / Agent";
         $urlPage = "menudoc/3";
