@@ -19,3 +19,9 @@ app1:
 app2:
     resource: "@docPlatformBundle/Controller/DefaultController/Gestion"
     type:     annotation
+app3: 
+    resource: "@docPlatformBundle/Controller/DefaultController/Referentiel"
+    type:     annotation
+app4: 
+    resource: "@docPlatformBundle/Controller/DefaultController/Traitement"
+    type:     annotation

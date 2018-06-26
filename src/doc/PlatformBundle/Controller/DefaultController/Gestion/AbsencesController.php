@@ -5,7 +5,6 @@ namespace doc\PlatformBundle\Controller\DefaultController\Gestion;
 use doc\PlatformBundle\Controller\ListPage;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
-use Symfony\Component\HttpFoundation\Response;
 
 class AbsencesController extends ListPage
 {
