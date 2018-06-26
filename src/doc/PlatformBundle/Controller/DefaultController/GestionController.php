@@ -54,7 +54,7 @@ class GestionController extends Controller{
             ->getRepository('docPlatformBundle:Page');
             
             $listPages = $repository->findBy(
-                array('onglet_ref'=> $listOnglets[$i]->getId()-1
+                array('onglet_ref'=> $listOnglets[$i]->getId()
                 ));
             $listOnglets[$i]->setPages($listPages);
         }
@@ -78,14 +78,13 @@ class GestionController extends Controller{
         ->getManager()
         ->getRepository('docPlatformBundle:Onglet');
         $listOnglets = $repository->findByType('gestion/effectif');
-        
         for($i=0;$i<sizeof($listOnglets);$i++){
             $repository = $this->getdoctrine()
             ->getManager()
             ->getRepository('docPlatformBundle:Page');
             
             $listPages = $repository->findBy(
-                array('onglet_ref'=> $listOnglets[$i]->getId()-1
+                array('onglet_ref'=> $listOnglets[$i]->getId()
                 ));
             $listOnglets[$i]->setPages($listPages);
         }
@@ -116,7 +115,7 @@ class GestionController extends Controller{
             ->getRepository('docPlatformBundle:Page');
             
             $listPages = $repository->findBy(
-                array('onglet_ref'=> $listOnglets[$i]->getId()-1
+                array('onglet_ref'=> $listOnglets[$i]->getId()
                 ));
             $listOnglets[$i]->setPages($listPages);
         }
@@ -147,7 +146,7 @@ class GestionController extends Controller{
             ->getRepository('docPlatformBundle:Page');
             
             $listPages = $repository->findBy(
-                array('onglet_ref'=> $listOnglets[$i]->getId()-1
+                array('onglet_ref'=> $listOnglets[$i]->getId()
                 ));
             $listOnglets[$i]->setPages($listPages);
         }
@@ -178,7 +177,7 @@ class GestionController extends Controller{
             ->getRepository('docPlatformBundle:Page');
             
             $listPages = $repository->findBy(
-                array('onglet_ref'=> $listOnglets[$i]->getId()-1
+                array('onglet_ref'=> $listOnglets[$i]->getId()
                 ));
             $listOnglets[$i]->setPages($listPages);
         }
@@ -209,7 +208,7 @@ class GestionController extends Controller{
             ->getRepository('docPlatformBundle:Page');
             
             $listPages = $repository->findBy(
-                array('onglet_ref'=> $listOnglets[$i]->getId()-1
+                array('onglet_ref'=> $listOnglets[$i]->getId()
                 ));
             $listOnglets[$i]->setPages($listPages);
         }
