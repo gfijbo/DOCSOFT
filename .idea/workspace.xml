@@ -2,11 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="18efa3f5-76d7-4be9-8938-ab82b8c0db5a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/doc/PlatformBundle/Controller/DefaultController/Gestion/AbsencesController.php" afterPath="$PROJECT_DIR$/src/doc/PlatformBundle/Controller/DefaultController/Gestion/AbsencesController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/doc/PlatformBundle/Controller/DefaultController/Gestion/CarriereController.php" afterPath="$PROJECT_DIR$/src/doc/PlatformBundle/Controller/DefaultController/Gestion/CarriereController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/doc/PlatformBundle/Controller/DefaultController/Gestion/IdentiteController.php" afterPath="$PROJECT_DIR$/src/doc/PlatformBundle/Controller/DefaultController/Gestion/IdentiteController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/doc/PlatformBundle/Controller/DefaultController/Gestion/OrganismeController.php" afterPath="$PROJECT_DIR$/src/doc/PlatformBundle/Controller/DefaultController/Gestion/OrganismeController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/doc/PlatformBundle/Controller/DefaultController/Gestion/RemunerationController.php" afterPath="$PROJECT_DIR$/src/doc/PlatformBundle/Controller/DefaultController/Gestion/RemunerationController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Symfony.iws" />
@@ -74,7 +69,7 @@
       <file leaf-file-name="IdentiteController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/doc/PlatformBundle/Controller/DefaultController/Gestion/IdentiteController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.40274313">
+            <state vertical-scroll-proportion="2.2468827">
               <caret line="106" column="5" selection-start-line="106" selection-start-column="5" selection-end-line="106" selection-end-column="5" />
               <folding>
                 <element signature="e#134#177#0#PHP" expanded="true" />
@@ -721,7 +716,13 @@
       <option name="project" value="LOCAL" />
       <updated>1529941983854</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="commit Dossier agent">
+      <created>1530003061310</created>
+      <option name="number" value="00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1530003061310</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1156,7 +1157,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/doc/PlatformBundle/Controller/DefaultController/Gestion/IdentiteController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.40274313">
+        <state vertical-scroll-proportion="2.2468827">
           <caret line="106" column="5" selection-start-line="106" selection-start-column="5" selection-end-line="106" selection-end-column="5" />
           <folding>
             <element signature="e#134#177#0#PHP" expanded="true" />
