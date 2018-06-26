@@ -13,15 +13,177 @@ fos_user:
 app:
     resource: "@docPlatformBundle/Controller"
     type:     annotation
-app1:
+general: 
     resource: "@docPlatformBundle/Controller/General"
     type:     annotation
-app2:
+gestion1: 
     resource: "@docPlatformBundle/Controller/DefaultController/Gestion/Agent"
     type:     annotation
-app3: 
+gestion2: 
+    resource: "@docPlatformBundle/Controller/DefaultController/Gestion/Effectif"
+    type:     annotation
+gestion3: 
+    resource: "@docPlatformBundle/Controller/DefaultController/Gestion/Evaluation"
+    type:     annotation
+gestion4: 
+    resource: "@docPlatformBundle/Controller/DefaultController/Gestion/Metier"
+    type:     annotation
+gestion5: 
+    resource: "@docPlatformBundle/Controller/DefaultController/Gestion/Recrutement"
+    type:     annotation
+gestion6: 
+    resource: "@docPlatformBundle/Controller/DefaultController/Gestion/Simulation"
+    type:     annotation
+gestion7: 
+    resource: "@docPlatformBundle/Controller/DefaultController/Gestion/Suppleance"
+    type:     annotation
+referentiel: 
     resource: "@docPlatformBundle/Controller/DefaultController/Referentiel/General"
     type:     annotation
-app4: 
+referentiel1: 
+    resource: "@docPlatformBundle/Controller/DefaultController/Referentiel/Absences"
+    type:     annotation
+referentiel2: 
+    resource: "@docPlatformBundle/Controller/DefaultController/Referentiel/Accident"
+    type:     annotation
+referentiel3: 
+    resource: "@docPlatformBundle/Controller/DefaultController/Referentiel/Agent"
+    type:     annotation
+referentiel4: 
+    resource: "@docPlatformBundle/Controller/DefaultController/Referentiel/Alertes"
+    type:     annotation
+referentiel5: 
+    resource: "@docPlatformBundle/Controller/DefaultController/Referentiel/Carriere"
+    type:     annotation
+referentiel6: 
+    resource: "@docPlatformBundle/Controller/DefaultController/Referentiel/Coherence"
+    type:     annotation
+referentiel7: 
+    resource: "@docPlatformBundle/Controller/DefaultController/Referentiel/Declaration"
+    type:     annotation
+referentiel8: 
+    resource: "@docPlatformBundle/Controller/DefaultController/Referentiel/Editions"
+    type:     annotation
+referentiel9: 
+    resource: "@docPlatformBundle/Controller/DefaultController/Referentiel/Effectif"
+    type:     annotation
+referentiel10: 
+    resource: "@docPlatformBundle/Controller/DefaultController/Referentiel/Evaluation"
+    type:     annotation
+referentiel11: 
+    resource: "@docPlatformBundle/Controller/DefaultController/Referentiel/GestionFichier"
+    type:     annotation
+referentiel12: 
+    resource: "@docPlatformBundle/Controller/DefaultController/Referentiel/GestionModele"
+    type:     annotation
+referentiel13: 
+    resource: "@docPlatformBundle/Controller/DefaultController/Referentiel/Interface"
+    type:     annotation
+referentiel14: 
+    resource: "@docPlatformBundle/Controller/DefaultController/Referentiel/Prestation"
+    type:     annotation
+referentiel15: 
+    resource: "@docPlatformBundle/Controller/DefaultController/Referentiel/Recrutement"
+    type:     annotation
+referentiel16: 
+    resource: "@docPlatformBundle/Controller/DefaultController/Referentiel/Remuneration"
+    type:     annotation
+referentiel17: 
+    resource: "@docPlatformBundle/Controller/DefaultController/Referentiel/Simulation"
+    type:     annotation
+referentiel18: 
+    resource: "@docPlatformBundle/Controller/DefaultController/Referentiel/Suppleance"
+    type:     annotation
+traitement: 
     resource: "@docPlatformBundle/Controller/DefaultController/Traitement/Identite"
+    type:     annotation
+traitement1: 
+    resource: "@docPlatformBundle/Controller/DefaultController/Traitement/Absences"
+    type:     annotation
+traitement2: 
+    resource: "@docPlatformBundle/Controller/DefaultController/Traitement/Agent"
+    type:     annotation
+traitement3: 
+    resource: "@docPlatformBundle/Controller/DefaultController/Traitement/Alerte"
+    type:     annotation
+traitement4: 
+    resource: "@docPlatformBundle/Controller/DefaultController/Traitement/Anteriorite"
+    type:     annotation
+traitement5: 
+    resource: "@docPlatformBundle/Controller/DefaultController/Traitement/Astrator"
+    type:     annotation
+traitement6: 
+    resource: "@docPlatformBundle/Controller/DefaultController/Traitement/Carriere"
+    type:     annotation
+traitement7: 
+    resource: "@docPlatformBundle/Controller/DefaultController/Traitement/Dads"
+    type:     annotation
+traitement8: 
+    resource: "@docPlatformBundle/Controller/DefaultController/Traitement/Declaration"
+    type:     annotation
+traitement9: 
+    resource: "@docPlatformBundle/Controller/DefaultController/Traitement/Dn"
+    type:     annotation
+traitement10: 
+    resource: "@docPlatformBundle/Controller/DefaultController/Traitement/Droit"
+    type:     annotation
+traitement11: 
+    resource: "@docPlatformBundle/Controller/DefaultController/Traitement/Dsn"
+    type:     annotation
+traitement12: 
+    resource: "@docPlatformBundle/Controller/DefaultController/Traitement/Due"
+    type:     annotation
+traitement13: 
+    resource: "@docPlatformBundle/Controller/DefaultController/Traitement/Editions"
+    type:     annotation
+traitement14: 
+    resource: "@docPlatformBundle/Controller/DefaultController/Traitement/Effectif"
+    type:     annotation
+traitement15: 
+    resource: "@docPlatformBundle/Controller/DefaultController/Traitement/Epurations"
+    type:     annotation
+traitement16: 
+    resource: "@docPlatformBundle/Controller/DefaultController/Traitement/Exploitation"
+    type:     annotation
+traitement17: 
+    resource: "@docPlatformBundle/Controller/DefaultController/Traitement/Export"
+    type:     annotation
+traitement18: 
+    resource: "@docPlatformBundle/Controller/DefaultController/Traitement/Interface"
+    type:     annotation
+traitement19: 
+    resource: "@docPlatformBundle/Controller/DefaultController/Traitement/Liaison"
+    type:     annotation
+traitement20: 
+    resource: "@docPlatformBundle/Controller/DefaultController/Traitement/Listes"
+    type:     annotation
+traitement21: 
+    resource: "@docPlatformBundle/Controller/DefaultController/Traitement/Modules"
+    type:     annotation
+traitement22: 
+    resource: "@docPlatformBundle/Controller/DefaultController/Traitement/N4ds"
+    type:     annotation
+traitement23: 
+    resource: "@docPlatformBundle/Controller/DefaultController/Traitement/Pilotage"
+    type:     annotation
+traitement24: 
+    resource: "@docPlatformBundle/Controller/DefaultController/Traitement/Preparation"
+    type:     annotation
+traitement25: 
+    resource: "@docPlatformBundle/Controller/DefaultController/Traitement/Prestation"
+    type:     annotation
+traitement26: 
+    resource: "@docPlatformBundle/Controller/DefaultController/Traitement/Rapport"
+    type:     annotation
+traitement27: 
+    resource: "@docPlatformBundle/Controller/DefaultController/Traitement/Remuneration"
+    type:     annotation
+traitement28: 
+    resource: "@docPlatformBundle/Controller/DefaultController/Traitement/Simulation"
+    type:     annotation
+traitement29: 
+    resource: "@docPlatformBundle/Controller/DefaultController/Traitement/Suppleance"
+    type:     annotation
+traitement30: 
+    resource: "@docPlatformBundle/Controller/DefaultController/Traitement/Traitement"
     type:     annotation

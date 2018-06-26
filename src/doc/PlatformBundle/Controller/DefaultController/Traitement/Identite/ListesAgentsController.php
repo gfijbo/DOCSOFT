@@ -1,11 +1,11 @@
 <?php
-// src\doc\PlatformBundle\Controller\DefaultController\Traitement\IdentiteController.php
+// src\doc\PlatformBundle\Controller\DefaultController\Traitement\ListesAgentsController.php
 namespace doc\PlatformBundle\Controller\DefaultController\Traitement\Identite;
 
 use doc\PlatformBundle\Controller\ListPage;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 
-class IdentiteController extends ListPage
+class ListesAgentsController extends ListPage
 {
     /**
      *

@@ -1,11 +1,11 @@
 <?php
-// src\doc\PlatformBundle\Controller\DefaultController\Referentiel\GeneralController.php
+// src\doc\PlatformBundle\Controller\DefaultController\Referentiel\DonneesController.php
 namespace doc\PlatformBundle\Controller\DefaultController\Referentiel\General;
 
 use doc\PlatformBundle\Controller\ListPage;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 
-class GeneralController extends ListPage
+class DonneesController extends ListPage
 {
     /**
      *
