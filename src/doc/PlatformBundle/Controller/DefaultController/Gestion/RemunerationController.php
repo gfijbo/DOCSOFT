@@ -2,11 +2,10 @@
 // src\doc\PlatformBundle\Controller\RemunerationController.php
 namespace doc\PlatformBundle\Controller\DefaultController\Gestion;
 
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use doc\PlatformBundle\Controller\ListPage;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
-use Symfony\Component\HttpFoundation\Response;
 
-class RemunerationController extends Controller
+class RemunerationController extends ListPage
 {
     /**
      *

@@ -2,11 +2,10 @@
 // src\doc\PlatformBundle\Controller\OrganismeController.php
 namespace doc\PlatformBundle\Controller\DefaultController\Gestion;
 
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use doc\PlatformBundle\Controller\ListPage;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
-use Symfony\Component\HttpFoundation\Response;
 
-class OrganismeController extends Controller
+class OrganismeController extends ListPage
 {
 
 
