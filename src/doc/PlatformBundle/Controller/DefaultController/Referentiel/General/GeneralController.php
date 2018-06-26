@@ -1,13 +1,9 @@
 <?php
 // src\doc\PlatformBundle\Controller\DefaultController\Referentiel\GeneralController.php
-namespace doc\PlatformBundle\Controller\DefaultController\Referentiel;
+namespace doc\PlatformBundle\Controller\DefaultController\Referentiel\General;
 
 use doc\PlatformBundle\Controller\ListPage;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
-use Symfony\Component\HttpFoundation\Response;
-
-
 
 class GeneralController extends ListPage
 {

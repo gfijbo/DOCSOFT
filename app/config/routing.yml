@@ -17,11 +17,11 @@ app1:
     resource: "@docPlatformBundle/Controller/General"
     type:     annotation
 app2:
-    resource: "@docPlatformBundle/Controller/DefaultController/Gestion"
+    resource: "@docPlatformBundle/Controller/DefaultController/Gestion/Agent"
     type:     annotation
 app3: 
-    resource: "@docPlatformBundle/Controller/DefaultController/Referentiel"
+    resource: "@docPlatformBundle/Controller/DefaultController/Referentiel/General"
     type:     annotation
 app4: 
-    resource: "@docPlatformBundle/Controller/DefaultController/Traitement"
+    resource: "@docPlatformBundle/Controller/DefaultController/Traitement/Identite"
     type:     annotation

@@ -1,6 +1,6 @@
 <?php
 // src\doc\PlatformBundle\Controller\AbsencesController.php
-namespace doc\PlatformBundle\Controller\DefaultController\Gestion;
+namespace doc\PlatformBundle\Controller\DefaultController\Gestion\Agent;
 
 use doc\PlatformBundle\Controller\ListPage;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
