@@ -23,4 +23,21 @@ class GeneralController extends ListPage
     {
         return $this->listChampPdf("Général arrêt / Types arrêts",'18', '110', "Référentiel", "110", "Référentiel");
     }
+    
+    /**
+     *
+     * @Route("/referentiel/absences/gen/cod", name="seeAbsencesGenCod")
+     */
+    public function AbsencesGenCodAction()
+    {
+        return $this->listChamp("Général arrêt / Codes arrêts","referentiel/absences/gen/cod/pdf",'18', '111', "Référentiel");
+    }
+    /**
+     *
+     * @Route("/referentiel/absences/gen/cod/pdf", name="seeAbsencesGenCodpdf")
+     */
+    public function AbsencesGenCodPdfAction()
+    {
+        return $this->listChampPdf("Général arrêt / Codes arrêts",'18', '111', "Référentiel");
+    }
 }

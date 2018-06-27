@@ -14,7 +14,7 @@ class ListPage extends Controller
     {
         $menu = $v5;
         $page = $v1;
-        $urlPage = "menudoc/".$v3;
+        $urlPage = "menudoc/".$v5."/".$v3;
         $urlPdf = $v2;
         $repository = $this->getdoctrine()
             ->getManager()

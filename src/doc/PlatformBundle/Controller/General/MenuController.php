@@ -40,13 +40,13 @@ class MenuController extends Controller{
     }
     /**
      *
-     * @Route("/menudoc/{id}", name="menuDoc")
+     * @Route("/menudoc/{v1}/{id}", name="menuDoc")
      */
-    public function MenuDocAction($id)
+    public function MenuDocAction($v1,$id)
     {
-        $menu = "Gestion";
+        $menu = $v1;
         $page = "Documentation";
-        $urlPage = "menudoc/".$id;
+        $urlPage = "menudoc/".$v1."/".$id;
         $urlPdf = '';
         
         $repository = $this->getdoctrine()
