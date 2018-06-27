@@ -13,1005 +13,256 @@ class RemunerationController extends ListPage
      */
     public function SeeRemunerationElementsAction()
     {
-        $menu = "Gestion";
-        $page = "Rémunération / Eléments";
-        $urlPage = "menudoc/6";
-        $urlPdf = "remuneration/elements/pdf";
-
-        $repository = $this->getdoctrine()
-            ->getManager()
-            ->getRepository('docPlatformBundle:DossierAgent');
-
-        $listDoss = $repository->findBy(
-            array('onglet_ref' => '6', 'page_ref' => '12'),array('num_ordre' => 'asc')
-        );
-        $html = $this->render('docPlatformBundle:DossierAgent:indexAgent.html.twig', array(
-            'listDoss' => $listDoss,
-            'page' => $page,
-            'menu' => $menu,
-            'urlPage' => $urlPage,
-            'urlPdf' => $urlPdf,
-            'listOnglets' => $_SESSION['listOnglets'],
-            'compteur' => count($_SESSION['listAlerts']),
-            'listAlerts' => $_SESSION['listAlerts']
-        ));
-
-        return $html;
+        return $this->listChamp("Organisme / Eléments","organisme/elements/pdf",'6', '12',"Gestion");
     }
-
     /**
      *
      * @Route("/remuneration/elements/pdf", name="seeRemunerationElementsPdf")
      */
     public function seeRemunerationElementsPdfAction()
     {
-        $snappy = $this->get('knp_snappy.pdf');
-        $filename = 'myFirstSnappyPDF';
-        $menu = "Gestion";
-        $page = "Rémunération / Eléments";
-        $repository = $this->getdoctrine()
-            ->getManager()
-            ->getRepository('docPlatformBundle:DossierAgent');
+        return $this->listChampPdf("Organisme / Eléments",'6', '12',"Gestion");
 
-        $listDoss = $repository->findBy(
-            array('onglet_ref' => '6', 'page_ref' => '12'),array('num_ordre' => 'asc')
-        );
-        $snappy = $this->get("knp_snappy.pdf");
-
-        $html = $this->renderView('docPlatformBundle:DossierAgent:pdf.html.twig', array(
-            'listDoss' => $listDoss,
-            'page' => $page,
-            'menu' => $menu
-        ));
-
-        return new Response($snappy->getOutputFromHtml($html), 200, array(
-            'Content-Type' => 'application/pdf',
-            'Content-Disposition' => 'inline; filename="' . $filename . '.pdf"'
-        ));
     }
-    
     /**
      *
      * @Route("/remuneration/contrat", name="seeRemunerationContrat")
      */
     public function SeeRemunerationContratAction()
     {
-        $menu = "Gestion";
-        $page = "Rémunération / Contrat";
-        $urlPage = "menudoc/6";
-        $urlPdf = "remuneration/contrat/pdf";
-        
-        $repository = $this->getdoctrine()
-        ->getManager()
-        ->getRepository('docPlatformBundle:DossierAgent');
-        
-        $listDoss = $repository->findBy(
-            array('onglet_ref' => '6', 'page_ref' => '57'),array('num_ordre' => 'asc')
-            );
-        $html = $this->render('docPlatformBundle:DossierAgent:indexAgent.html.twig', array(
-            'listDoss' => $listDoss,
-            'page' => $page,
-            'menu' => $menu,
-            'urlPage' => $urlPage,
-            'urlPdf' => $urlPdf,
-            'listOnglets' => $_SESSION['listOnglets'],
-            'compteur' => count($_SESSION['listAlerts']),
-            'listAlerts' => $_SESSION['listAlerts']
-        ));
-        
-        return $html;
+        return $this->listChamp("Organisme / Contrat","organisme/contrat/pdf",'6', '57',"Gestion");
     }
-    
     /**
      *
      * @Route("/remuneration/contrat/pdf", name="seeRemunerationContratPdf")
      */
     public function seeRemunerationContratPdfAction()
     {
-        $snappy = $this->get('knp_snappy.pdf');
-        $filename = 'myFirstSnappyPDF';
-        $menu = "Gestion";
-        $page = "Rémunération / Contrat";
-        $repository = $this->getdoctrine()
-        ->getManager()
-        ->getRepository('docPlatformBundle:DossierAgent');
-        
-        $listDoss = $repository->findBy(
-            array('onglet_ref' => '6', 'page_ref' => '57'),array('num_ordre' => 'asc')
-            );
-        $snappy = $this->get("knp_snappy.pdf");
-        
-        $html = $this->renderView('docPlatformBundle:DossierAgent:pdf.html.twig', array(
-            'listDoss' => $listDoss,
-            'page' => $page,
-            'menu' => $menu
-        ));
-        
-        return new Response($snappy->getOutputFromHtml($html), 200, array(
-            'Content-Type' => 'application/pdf',
-            'Content-Disposition' => 'inline; filename="' . $filename . '.pdf"'
-        ));
+        return $this->listChampPdf("Organisme / Contrat",'6', '57',"Gestion");
+
     }
-    
     /**
      *
      * @Route("/remuneration/eledec", name="seeRemunerationEledec")
      */
     public function SeeRemunerationEledecAction()
     {
-        $menu = "Gestion";
-        $page = "Rémunération / Elém. déconcentrés";
-        $urlPage = "menudoc/6";
-        $urlPdf = "remuneration/eledec/pdf";
-        
-        $repository = $this->getdoctrine()
-        ->getManager()
-        ->getRepository('docPlatformBundle:DossierAgent');
-        
-        $listDoss = $repository->findBy(
-            array('onglet_ref' => '6', 'page_ref' => '58'),array('num_ordre' => 'asc')
-            );
-        $html = $this->render('docPlatformBundle:DossierAgent:indexAgent.html.twig', array(
-            'listDoss' => $listDoss,
-            'page' => $page,
-            'menu' => $menu,
-            'urlPage' => $urlPage,
-            'urlPdf' => $urlPdf,
-            'listOnglets' => $_SESSION['listOnglets'],
-            'compteur' => count($_SESSION['listAlerts']),
-            'listAlerts' => $_SESSION['listAlerts']
-        ));
-        
-        return $html;
+        return $this->listChamp("Organisme / Elém. déconcentrés","organisme/eledec/pdf",'6', '58',"Gestion");
     }
-    
     /**
      *
      * @Route("/remuneration/eledec/pdf", name="seeRemunerationEledecPdf")
      */
     public function seeRemunerationEledecPdfAction()
     {
-        $snappy = $this->get('knp_snappy.pdf');
-        $filename = 'myFirstSnappyPDF';
-        $menu = "Gestion";
-        $page = "Rémunération / Elém. déconcentrés";
-        $repository = $this->getdoctrine()
-        ->getManager()
-        ->getRepository('docPlatformBundle:DossierAgent');
-        
-        $listDoss = $repository->findBy(
-            array('onglet_ref' => '6', 'page_ref' => '58'),array('num_ordre' => 'asc')
-            );
-        $snappy = $this->get("knp_snappy.pdf");
-        
-        $html = $this->renderView('docPlatformBundle:DossierAgent:pdf.html.twig', array(
-            'listDoss' => $listDoss,
-            'page' => $page,
-            'menu' => $menu
-        ));
-        
-        return new Response($snappy->getOutputFromHtml($html), 200, array(
-            'Content-Type' => 'application/pdf',
-            'Content-Disposition' => 'inline; filename="' . $filename . '.pdf"'
-        ));
+        return $this->listChampPdf("Organisme / Elém. déconcentrés",'6', '58',"Gestion");
     }
-    
     /**
      *
      * @Route("/remuneration/elevarcou", name="seeRemunerationElevarcou")
      */
     public function SeeRemunerationElevarcouAction()
     {
-        $menu = "Gestion";
-        $page = "Rémunération / Elém. var. en cours";
-        $urlPage = "menudoc/6";
-        $urlPdf = "remuneration/elevarcou/pdf";
-        
-        $repository = $this->getdoctrine()
-        ->getManager()
-        ->getRepository('docPlatformBundle:DossierAgent');
-        
-        $listDoss = $repository->findBy(
-            array('onglet_ref' => '6', 'page_ref' => '59'),array('num_ordre' => 'asc')
-            );
-        $html = $this->render('docPlatformBundle:DossierAgent:indexAgent.html.twig', array(
-            'listDoss' => $listDoss,
-            'page' => $page,
-            'menu' => $menu,
-            'urlPage' => $urlPage,
-            'urlPdf' => $urlPdf,
-            'listOnglets' => $_SESSION['listOnglets'],
-            'compteur' => count($_SESSION['listAlerts']),
-            'listAlerts' => $_SESSION['listAlerts']
-        ));
-        
-        return $html;
+        return $this->listChamp("Organisme / Elém. var. en cours","organisme/elevarcou/pdf",'6', '59',"Gestion");
     }
-    
     /**
      *
      * @Route("/remuneration/elevarcou/pdf", name="seeRemunerationElevarcouPdf")
      */
     public function seeRemunerationElevarcouPdfAction()
     {
-        $snappy = $this->get('knp_snappy.pdf');
-        $filename = 'myFirstSnappyPDF';
-        $menu = "Gestion";
-        $page = "Rémunération / Elém. var. en cours";
-        $repository = $this->getdoctrine()
-        ->getManager()
-        ->getRepository('docPlatformBundle:DossierAgent');
-        
-        $listDoss = $repository->findBy(
-            array('onglet_ref' => '6', 'page_ref' => '59'),array('num_ordre' => 'asc')
-            );
-        $snappy = $this->get("knp_snappy.pdf");
-        
-        $html = $this->renderView('docPlatformBundle:DossierAgent:pdf.html.twig', array(
-            'listDoss' => $listDoss,
-            'page' => $page,
-            'menu' => $menu
-        ));
-        
-        return new Response($snappy->getOutputFromHtml($html), 200, array(
-            'Content-Type' => 'application/pdf',
-            'Content-Disposition' => 'inline; filename="' . $filename . '.pdf"'
-        ));
+        return $this->listChampPdf("Organisme / Elém. var. en cours",'6', '59',"Gestion");
     }
-    
     /**
      *
      * @Route("/remuneration/elevarhis", name="seeRemunerationElevarhis")
      */
     public function SeeRemunerationElevarhisAction()
     {
-        $menu = "Gestion";
-        $page = "Rémunération / Elém. var. historique";
-        $urlPage = "menudoc/6";
-        $urlPdf = "remuneration/elevarhis/pdf";
-        
-        $repository = $this->getdoctrine()
-        ->getManager()
-        ->getRepository('docPlatformBundle:DossierAgent');
-        
-        $listDoss = $repository->findBy(
-            array('onglet_ref' => '6', 'page_ref' => '60'),array('num_ordre' => 'asc')
-            );
-        $html = $this->render('docPlatformBundle:DossierAgent:indexAgent.html.twig', array(
-            'listDoss' => $listDoss,
-            'page' => $page,
-            'menu' => $menu,
-            'urlPage' => $urlPage,
-            'urlPdf' => $urlPdf,
-            'listOnglets' => $_SESSION['listOnglets'],
-            'compteur' => count($_SESSION['listAlerts']),
-            'listAlerts' => $_SESSION['listAlerts']
-        ));
-        
-        return $html;
+        return $this->listChamp("Organisme / Elém. var. historique","organisme/elevarhis/pdf",'6', '60',"Gestion");
     }
-    
     /**
      *
      * @Route("/remuneration/elevarhis/pdf", name="seeRemunerationElevarhisPdf")
      */
     public function seeRemunerationElevarhisPdfAction()
     {
-        $snappy = $this->get('knp_snappy.pdf');
-        $filename = 'myFirstSnappyPDF';
-        $menu = "Gestion";
-        $page = "Rémunération / Elém. var. historique";
-        $repository = $this->getdoctrine()
-        ->getManager()
-        ->getRepository('docPlatformBundle:DossierAgent');
-        
-        $listDoss = $repository->findBy(
-            array('onglet_ref' => '6', 'page_ref' => '60'),array('num_ordre' => 'asc')
-            );
-        $snappy = $this->get("knp_snappy.pdf");
-        
-        $html = $this->renderView('docPlatformBundle:DossierAgent:pdf.html.twig', array(
-            'listDoss' => $listDoss,
-            'page' => $page,
-            'menu' => $menu
-        ));
-        
-        return new Response($snappy->getOutputFromHtml($html), 200, array(
-            'Content-Type' => 'application/pdf',
-            'Content-Disposition' => 'inline; filename="' . $filename . '.pdf"'
-        ));
+        return $this->listChampPdf("Organisme / Elém. var. historique",'6', '60',"Gestion");
     }
-    
     /**
      *
      * @Route("/remuneration/ticres", name="seeRemunerationTicres")
      */
     public function SeeRemunerationTicresAction()
     {
-        $menu = "Gestion";
-        $page = "Rémunération / Tickets restaurant";
-        $urlPage = "menudoc/6";
-        $urlPdf = "remuneration/ticres/pdf";
-        
-        $repository = $this->getdoctrine()
-        ->getManager()
-        ->getRepository('docPlatformBundle:DossierAgent');
-        
-        $listDoss = $repository->findBy(
-            array('onglet_ref' => '6', 'page_ref' => '61'),array('num_ordre' => 'asc')
-            );
-        $html = $this->render('docPlatformBundle:DossierAgent:indexAgent.html.twig', array(
-            'listDoss' => $listDoss,
-            'page' => $page,
-            'menu' => $menu,
-            'urlPage' => $urlPage,
-            'urlPdf' => $urlPdf,
-            'listOnglets' => $_SESSION['listOnglets'],
-            'compteur' => count($_SESSION['listAlerts']),
-            'listAlerts' => $_SESSION['listAlerts']
-        ));
-        
-        return $html;
+        return $this->listChamp("Organisme / Tickets restaurant","organisme/ticres/pdf",'6', '61',"Gestion");
     }
-    
     /**
      *
      * @Route("/remuneration/ticres/pdf", name="seeRemunerationTicresPdf")
      */
     public function seeRemunerationTicresPdfAction()
     {
-        $snappy = $this->get('knp_snappy.pdf');
-        $filename = 'myFirstSnappyPDF';
-        $menu = "Gestion";
-        $page = "Rémunération / Tickets restaurant";
-        $repository = $this->getdoctrine()
-        ->getManager()
-        ->getRepository('docPlatformBundle:DossierAgent');
-        
-        $listDoss = $repository->findBy(
-            array('onglet_ref' => '6', 'page_ref' => '61'),array('num_ordre' => 'asc')
-            );
-        $snappy = $this->get("knp_snappy.pdf");
-        
-        $html = $this->renderView('docPlatformBundle:DossierAgent:pdf.html.twig', array(
-            'listDoss' => $listDoss,
-            'page' => $page,
-            'menu' => $menu
-        ));
-        
-        return new Response($snappy->getOutputFromHtml($html), 200, array(
-            'Content-Type' => 'application/pdf',
-            'Content-Disposition' => 'inline; filename="' . $filename . '.pdf"'
-        ));
+        return $this->listChampPdf("Organisme / Tickets restaurant",'6', '61',"Gestion");
     }
-    
     /**
      *
      * @Route("/remuneration/mesbul", name="seeRemunerationMesbul")
      */
     public function SeeRemunerationMesbullAction()
     {
-        $menu = "Gestion";
-        $page = "Rémunération / Mess. bulletin";
-        $urlPage = "menudoc/6";
-        $urlPdf = "remuneration/mesbul/pdf";
-        
-        $repository = $this->getdoctrine()
-        ->getManager()
-        ->getRepository('docPlatformBundle:DossierAgent');
-        
-        $listDoss = $repository->findBy(
-            array('onglet_ref' => '6', 'page_ref' => '62'),array('num_ordre' => 'asc')
-            );
-        $html = $this->render('docPlatformBundle:DossierAgent:indexAgent.html.twig', array(
-            'listDoss' => $listDoss,
-            'page' => $page,
-            'menu' => $menu,
-            'urlPage' => $urlPage,
-            'urlPdf' => $urlPdf,
-            'listOnglets' => $_SESSION['listOnglets'],
-            'compteur' => count($_SESSION['listAlerts']),
-            'listAlerts' => $_SESSION['listAlerts']
-        ));
-        
-        return $html;
+        return $this->listChamp("Organisme / Mess. bulletin","organisme/mesbul/pdf",'6', '62',"Gestion");
     }
-    
     /**
      *
      * @Route("/remuneration/mesbul/pdf", name="seeRemunerationMesbulPdf")
      */
     public function seeRemunerationMesbullpdfAction()
     {
-        $snappy = $this->get('knp_snappy.pdf');
-        $filename = 'myFirstSnappyPDF';
-        $menu = "Gestion";
-        $page = "Rémunération / Mess. bulletin";
-        $repository = $this->getdoctrine()
-        ->getManager()
-        ->getRepository('docPlatformBundle:DossierAgent');
-        
-        $listDoss = $repository->findBy(
-            array('onglet_ref' => '6', 'page_ref' => '62'),array('num_ordre' => 'asc')
-            );
-        $snappy = $this->get("knp_snappy.pdf");
-        
-        $html = $this->renderView('docPlatformBundle:DossierAgent:pdf.html.twig', array(
-            'listDoss' => $listDoss,
-            'page' => $page,
-            'menu' => $menu
-        ));
-        
-        return new Response($snappy->getOutputFromHtml($html), 200, array(
-            'Content-Type' => 'application/pdf',
-            'Content-Disposition' => 'inline; filename="' . $filename . '.pdf"'
-        ));
+        return $this->listChampPdf("Organisme / Mess. bulletin",'6', '62',"Gestion");
     }
-    
     /**
      *
      * @Route("/remuneration/bulletins", name="seeRemunerationBulletins")
      */
     public function SeeRemunerationBulletinsAction()
     {
-        $menu = "Gestion";
-        $page = "Rémunération / Bulletins";
-        $urlPage = "menudoc/6";
-        $urlPdf = "remuneration/bulletins/pdf";
-        
-        $repository = $this->getdoctrine()
-        ->getManager()
-        ->getRepository('docPlatformBundle:DossierAgent');
-        
-        $listDoss = $repository->findBy(
-            array('onglet_ref' => '6', 'page_ref' => '63'),array('num_ordre' => 'asc')
-            );
-        $html = $this->render('docPlatformBundle:DossierAgent:indexAgent.html.twig', array(
-            'listDoss' => $listDoss,
-            'page' => $page,
-            'menu' => $menu,
-            'urlPage' => $urlPage,
-            'urlPdf' => $urlPdf,
-            'listOnglets' => $_SESSION['listOnglets'],
-            'compteur' => count($_SESSION['listAlerts']),
-            'listAlerts' => $_SESSION['listAlerts']
-        ));
-        
-        return $html;
+        return $this->listChamp("Organisme / Bulletins","organisme/bulletins/pdf",'6', '63',"Gestion");
     }
-    
     /**
      *
      * @Route("/remuneration/bulletins/pdf", name="seeRemunerationBulletinsPdf")
      */
     public function seeRemunerationBulletinsPdfAction()
     {
-        $snappy = $this->get('knp_snappy.pdf');
-        $filename = 'myFirstSnappyPDF';
-        $menu = "Gestion";
-        $page = "Rémunération / Elém. var. en cours";
-        $repository = $this->getdoctrine()
-        ->getManager()
-        ->getRepository('docPlatformBundle:DossierAgent');
-        
-        $listDoss = $repository->findBy(
-            array('onglet_ref' => '6', 'page_ref' => '63'),array('num_ordre' => 'asc')
-            );
-        $snappy = $this->get("knp_snappy.pdf");
-        
-        $html = $this->renderView('docPlatformBundle:DossierAgent:pdf.html.twig', array(
-            'listDoss' => $listDoss,
-            'page' => $page,
-            'menu' => $menu
-        ));
-        
-        return new Response($snappy->getOutputFromHtml($html), 200, array(
-            'Content-Type' => 'application/pdf',
-            'Content-Disposition' => 'inline; filename="' . $filename . '.pdf"'
-        ));
+        return $this->listChampPdf("Organisme / Bulletins",'6', '63',"Gestion");
     }
-    
     /**
      *
      * @Route("/remuneration/cumuls", name="seeRemunerationCumuls")
      */
     public function SeeRemunerationCumulsAction()
     {
-        $menu = "Gestion";
-        $page = "Rémunération / Cumuls";
-        $urlPage = "menudoc/6";
-        $urlPdf = "remuneration/cumuls/pdf";
-        
-        $repository = $this->getdoctrine()
-        ->getManager()
-        ->getRepository('docPlatformBundle:DossierAgent');
-        
-        $listDoss = $repository->findBy(
-            array('onglet_ref' => '6', 'page_ref' => '64'),array('num_ordre' => 'asc')
-            );
-        $html = $this->render('docPlatformBundle:DossierAgent:indexAgent.html.twig', array(
-            'listDoss' => $listDoss,
-            'page' => $page,
-            'menu' => $menu,
-            'urlPage' => $urlPage,
-            'urlPdf' => $urlPdf,
-            'listOnglets' => $_SESSION['listOnglets'],
-            'compteur' => count($_SESSION['listAlerts']),
-            'listAlerts' => $_SESSION['listAlerts']
-        ));
-        
-        return $html;
+        return $this->listChamp("Organisme / Cumuls","organisme/cumuls/pdf",'6', '64',"Gestion");
     }
-    
     /**
      *
      * @Route("/remuneration/cumuls/pdf", name="seeRemunerationCumulsPdf")
      */
     public function seeRemunerationCumulsPdfAction()
     {
-        $snappy = $this->get('knp_snappy.pdf');
-        $filename = 'myFirstSnappyPDF';
-        $menu = "Gestion";
-        $page = "Rémunération / Cumuls";
-        $repository = $this->getdoctrine()
-        ->getManager()
-        ->getRepository('docPlatformBundle:DossierAgent');
-        
-        $listDoss = $repository->findBy(
-            array('onglet_ref' => '6', 'page_ref' => '64'),array('num_ordre' => 'asc')
-            );
-        $snappy = $this->get("knp_snappy.pdf");
-        
-        $html = $this->renderView('docPlatformBundle:DossierAgent:pdf.html.twig', array(
-            'listDoss' => $listDoss,
-            'page' => $page,
-            'menu' => $menu
-        ));
-        
-        return new Response($snappy->getOutputFromHtml($html), 200, array(
-            'Content-Type' => 'application/pdf',
-            'Content-Disposition' => 'inline; filename="' . $filename . '.pdf"'
-        ));
+        return $this->listChampPdf("Organisme / Cumuls",'6', '64',"Gestion");
     }
-    
     /**
      *
      * @Route("/remuneration/echeance", name="seeRemunerationEcheance")
      */
     public function SeeRemunerationEcheanceAction()
     {
-        $menu = "Gestion";
-        $page = "Rémunération / Echéance";
-        $urlPage = "menudoc/6";
-        $urlPdf = "remuneration/echeance/pdf";
-        
-        $repository = $this->getdoctrine()
-        ->getManager()
-        ->getRepository('docPlatformBundle:DossierAgent');
-        
-        $listDoss = $repository->findBy(
-            array('onglet_ref' => '6', 'page_ref' => '65'),array('num_ordre' => 'asc')
-            );
-        $html = $this->render('docPlatformBundle:DossierAgent:indexAgent.html.twig', array(
-            'listDoss' => $listDoss,
-            'page' => $page,
-            'menu' => $menu,
-            'urlPage' => $urlPage,
-            'urlPdf' => $urlPdf,
-            'listOnglets' => $_SESSION['listOnglets'],
-            'compteur' => count($_SESSION['listAlerts']),
-            'listAlerts' => $_SESSION['listAlerts']
-        ));
-        
-        return $html;
+        return $this->listChamp("Organisme / Echéance","organisme/echeance/pdf",'6', '65',"Gestion");
     }
-    
     /**
      *
      * @Route("/remuneration/echeance/pdf", name="seeRemunerationEcheancePdf")
      */
     public function seeRemunerationEcheancePdfAction()
     {
-        $snappy = $this->get('knp_snappy.pdf');
-        $filename = 'myFirstSnappyPDF';
-        $menu = "Gestion";
-        $page = "Rémunération / Echéance";
-        $repository = $this->getdoctrine()
-        ->getManager()
-        ->getRepository('docPlatformBundle:DossierAgent');
-        
-        $listDoss = $repository->findBy(
-            array('onglet_ref' => '6', 'page_ref' => '65'),array('num_ordre' => 'asc')
-            );
-        $snappy = $this->get("knp_snappy.pdf");
-        
-        $html = $this->renderView('docPlatformBundle:DossierAgent:pdf.html.twig', array(
-            'listDoss' => $listDoss,
-            'page' => $page,
-            'menu' => $menu
-        ));
-        
-        return new Response($snappy->getOutputFromHtml($html), 200, array(
-            'Content-Type' => 'application/pdf',
-            'Content-Disposition' => 'inline; filename="' . $filename . '.pdf"'
-        ));
+        return $this->listChampPdf("Organisme / Echéance",'6', '65',"Gestion");
     }
-    
     /**
      *
      * @Route("/remuneration/repartition", name="seeRemunerationRepartition")
      */
     public function SeeRemunerationRepartitionAction()
     {
-        $menu = "Gestion";
-        $page = "Rémunération / Répartition";
-        $urlPage = "menudoc/6";
-        $urlPdf = "remuneration/repartition/pdf";
-        
-        $repository = $this->getdoctrine()
-        ->getManager()
-        ->getRepository('docPlatformBundle:DossierAgent');
-        
-        $listDoss = $repository->findBy(
-            array('onglet_ref' => '6', 'page_ref' => '66'),array('num_ordre' => 'asc')
-            );
-        $html = $this->render('docPlatformBundle:DossierAgent:indexAgent.html.twig', array(
-            'listDoss' => $listDoss,
-            'page' => $page,
-            'menu' => $menu,
-            'urlPage' => $urlPage,
-            'urlPdf' => $urlPdf,
-            'listOnglets' => $_SESSION['listOnglets'],
-            'compteur' => count($_SESSION['listAlerts']),
-            'listAlerts' => $_SESSION['listAlerts']
-        ));
-        
-        return $html;
+        return $this->listChamp("Organisme / Répartition","organisme/repartition/pdf",'6', '66',"Gestion");
     }
-    
     /**
      *
      * @Route("/remuneration/repartition/pdf", name="seeRemunerationRepartitionPdf")
      */
     public function seeRemunerationRepartitionPdfAction()
     {
-        $snappy = $this->get('knp_snappy.pdf');
-        $filename = 'myFirstSnappyPDF';
-        $menu = "Gestion";
-        $page = "Rémunération / Répartition";
-        $repository = $this->getdoctrine()
-        ->getManager()
-        ->getRepository('docPlatformBundle:DossierAgent');
-        
-        $listDoss = $repository->findBy(
-            array('onglet_ref' => '6', 'page_ref' => '66'),array('num_ordre' => 'asc')
-            );
-        $snappy = $this->get("knp_snappy.pdf");
-        
-        $html = $this->renderView('docPlatformBundle:DossierAgent:pdf.html.twig', array(
-            'listDoss' => $listDoss,
-            'page' => $page,
-            'menu' => $menu
-        ));
-        
-        return new Response($snappy->getOutputFromHtml($html), 200, array(
-            'Content-Type' => 'application/pdf',
-            'Content-Disposition' => 'inline; filename="' . $filename . '.pdf"'
-        ));
+        return $this->listChampPdf("Organisme / Répartition",'6', '66',"Gestion");
     }
-    
     /**
      *
      * @Route("/remuneration/hisrep", name="seeRemunerationHisrep")
      */
     public function SeeRemunerationHisrepAction()
     {
-        $menu = "Gestion";
-        $page = "Rémunération / Historique des répartitions";
-        $urlPage = "menudoc/6";
-        $urlPdf = "remuneration/hisrep/pdf";
-        
-        $repository = $this->getdoctrine()
-        ->getManager()
-        ->getRepository('docPlatformBundle:DossierAgent');
-        
-        $listDoss = $repository->findBy(
-            array('onglet_ref' => '6', 'page_ref' => '67'),array('num_ordre' => 'asc')
-            );
-        $html = $this->render('docPlatformBundle:DossierAgent:indexAgent.html.twig', array(
-            'listDoss' => $listDoss,
-            'page' => $page,
-            'menu' => $menu,
-            'urlPage' => $urlPage,
-            'urlPdf' => $urlPdf,
-            'listOnglets' => $_SESSION['listOnglets'],
-            'compteur' => count($_SESSION['listAlerts']),
-            'listAlerts' => $_SESSION['listAlerts']
-        ));
-        
-        return $html;
+        return $this->listChamp("Organisme / Historique des répartitions","organisme/hisrep/pdf",'6', '67',"Gestion");
     }
-    
     /**
      *
      * @Route("/remuneration/hisrep/pdf", name="seeRemunerationHisrepPdf")
      */
     public function seeRemunerationHisrepPdfAction()
     {
-        $snappy = $this->get('knp_snappy.pdf');
-        $filename = 'myFirstSnappyPDF';
-        $menu = "Gestion";
-        $page = "Rémunération / Historique des répartitions";
-        $repository = $this->getdoctrine()
-        ->getManager()
-        ->getRepository('docPlatformBundle:DossierAgent');
-        
-        $listDoss = $repository->findBy(
-            array('onglet_ref' => '6', 'page_ref' => '67'),array('num_ordre' => 'asc')
-            );
-        $snappy = $this->get("knp_snappy.pdf");
-        
-        $html = $this->renderView('docPlatformBundle:DossierAgent:pdf.html.twig', array(
-            'listDoss' => $listDoss,
-            'page' => $page,
-            'menu' => $menu
-        ));
-        
-        return new Response($snappy->getOutputFromHtml($html), 200, array(
-            'Content-Type' => 'application/pdf',
-            'Content-Disposition' => 'inline; filename="' . $filename . '.pdf"'
-        ));
+        return $this->listChampPdf("Organisme / Historique des répartitions",'6', '67',"Gestion");
     }
-    
     /**
      *
      * @Route("/remuneration/rappels", name="seeRemunerationRappels")
      */
     public function SeeRemunerationRappelsAction()
     {
-        $menu = "Gestion";
-        $page = "Rémunération / Rappels";
-        $urlPage = "menudoc/6";
-        $urlPdf = "remuneration/rappels/pdf";
-        
-        $repository = $this->getdoctrine()
-        ->getManager()
-        ->getRepository('docPlatformBundle:DossierAgent');
-        
-        $listDoss = $repository->findBy(
-            array('onglet_ref' => '6', 'page_ref' => '68'),array('num_ordre' => 'asc')
-            );
-        $html = $this->render('docPlatformBundle:DossierAgent:indexAgent.html.twig', array(
-            'listDoss' => $listDoss,
-            'page' => $page,
-            'menu' => $menu,
-            'urlPage' => $urlPage,
-            'urlPdf' => $urlPdf,
-            'listOnglets' => $_SESSION['listOnglets'],
-            'compteur' => count($_SESSION['listAlerts']),
-            'listAlerts' => $_SESSION['listAlerts']
-        ));
-        
-        return $html;
+        return $this->listChamp("Organisme / Rappels","organisme/rappels/pdf",'6', '68',"Gestion");
     }
-    
     /**
      *
      * @Route("/remuneration/rappels/pdf", name="seeRemunerationRappelsPdf")
      */
     public function seeRemunerationRappelsPdfAction()
     {
-        $snappy = $this->get('knp_snappy.pdf');
-        $filename = 'myFirstSnappyPDF';
-        $menu = "Gestion";
-        $page = "Rémunération / Rappels";
-        $repository = $this->getdoctrine()
-        ->getManager()
-        ->getRepository('docPlatformBundle:DossierAgent');
-        
-        $listDoss = $repository->findBy(
-            array('onglet_ref' => '6', 'page_ref' => '68'),array('num_ordre' => 'asc')
-            );
-        $snappy = $this->get("knp_snappy.pdf");
-        
-        $html = $this->renderView('docPlatformBundle:DossierAgent:pdf.html.twig', array(
-            'listDoss' => $listDoss,
-            'page' => $page,
-            'menu' => $menu
-        ));
-        
-        return new Response($snappy->getOutputFromHtml($html), 200, array(
-            'Content-Type' => 'application/pdf',
-            'Content-Disposition' => 'inline; filename="' . $filename . '.pdf"'
-        ));
+        return $this->listChampPdf("Organisme / Rappels",'6', '68',"Gestion");
     }
-    
     /**
      *
      * @Route("/remuneration/analytique", name="seeRemunerationAnalytique")
      */
     public function SeeRemunerationAnalytiqueAction()
     {
-        $menu = "Gestion";
-        $page = "Rémunération / Analytique";
-        $urlPage = "menudoc/6";
-        $urlPdf = "remuneration/analytique/pdf";
-        
-        $repository = $this->getdoctrine()
-        ->getManager()
-        ->getRepository('docPlatformBundle:DossierAgent');
-        
-        $listDoss = $repository->findBy(
-            array('onglet_ref' => '6', 'page_ref' => '69'),array('num_ordre' => 'asc')
-            );
-        $html = $this->render('docPlatformBundle:DossierAgent:indexAgent.html.twig', array(
-            'listDoss' => $listDoss,
-            'page' => $page,
-            'menu' => $menu,
-            'urlPage' => $urlPage,
-            'urlPdf' => $urlPdf,
-            'listOnglets' => $_SESSION['listOnglets'],
-            'compteur' => count($_SESSION['listAlerts']),
-            'listAlerts' => $_SESSION['listAlerts']
-        ));
-        
-        return $html;
+        return $this->listChamp("Organisme / Analytique","organisme/analytique/pdf",'6', '69',"Gestion");
     }
-    
     /**
      *
      * @Route("/remuneration/analytique/pdf", name="seeRemunerationAnalytiquePdf")
      */
     public function seeRemunerationAnalytiquePdfAction()
     {
-        $snappy = $this->get('knp_snappy.pdf');
-        $filename = 'myFirstSnappyPDF';
-        $menu = "Gestion";
-        $page = "Rémunération / Analytique";
-        $repository = $this->getdoctrine()
-        ->getManager()
-        ->getRepository('docPlatformBundle:DossierAgent');
-        
-        $listDoss = $repository->findBy(
-            array('onglet_ref' => '6', 'page_ref' => '69'),array('num_ordre' => 'asc')
-            );
-        $snappy = $this->get("knp_snappy.pdf");
-        
-        $html = $this->renderView('docPlatformBundle:DossierAgent:pdf.html.twig', array(
-            'listDoss' => $listDoss,
-            'page' => $page,
-            'menu' => $menu
-        ));
-        
-        return new Response($snappy->getOutputFromHtml($html), 200, array(
-            'Content-Type' => 'application/pdf',
-            'Content-Disposition' => 'inline; filename="' . $filename . '.pdf"'
-        ));
+        return $this->listChampPdf("Organisme / Analytique",'6', '69',"Gestion");
     }
-    
     /**
      *
      * @Route("/remuneration/refacturation", name="seeRemunerationRefacturation")
      */
     public function SeeRemunerationRefacturationAction()
     {
-        $menu = "Gestion";
-        $page = "Rémunération / Refacturation";
-        $urlPage = "menudoc/6";
-        $urlPdf = "remuneration/refacturation/pdf";
-        
-        $repository = $this->getdoctrine()
-        ->getManager()
-        ->getRepository('docPlatformBundle:DossierAgent');
-        
-        $listDoss = $repository->findBy(
-            array('onglet_ref' => '6', 'page_ref' => '70'),array('num_ordre' => 'asc')
-            );
-        $html = $this->render('docPlatformBundle:DossierAgent:indexAgent.html.twig', array(
-            'listDoss' => $listDoss,
-            'page' => $page,
-            'menu' => $menu,
-            'urlPage' => $urlPage,
-            'urlPdf' => $urlPdf,
-            'listOnglets' => $_SESSION['listOnglets'],
-            'compteur' => count($_SESSION['listAlerts']),
-            'listAlerts' => $_SESSION['listAlerts']
-        ));
-        
-        return $html;
+        return $this->listChamp("Organisme / Refacturation","organisme/refacturation/pdf",'6', '70',"Gestion");
     }
-    
     /**
      *
      * @Route("/remuneration/refacturation/pdf", name="seeRemunerationRefacturationPdf")
      */
     public function seeRemunerationRefacturationPdfAction()
     {
-        $snappy = $this->get('knp_snappy.pdf');
-        $filename = 'myFirstSnappyPDF';
-        $menu = "Gestion";
-        $page = "Rémunération / Refacturation";
-        $repository = $this->getdoctrine()
-        ->getManager()
-        ->getRepository('docPlatformBundle:DossierAgent');
-        
-        $listDoss = $repository->findBy(
-            array('onglet_ref' => '6', 'page_ref' => '70'),array('num_ordre' => 'asc')
-            );
-        $snappy = $this->get("knp_snappy.pdf");
-        
-        $html = $this->renderView('docPlatformBundle:DossierAgent:pdf.html.twig', array(
-            'listDoss' => $listDoss,
-            'page' => $page,
-            'menu' => $menu
-        ));
-        
-        return new Response($snappy->getOutputFromHtml($html), 200, array(
-            'Content-Type' => 'application/pdf',
-            'Content-Disposition' => 'inline; filename="' . $filename . '.pdf"'
-        ));
+        return $this->listChampPdf("Organisme / Refacturation",'6', '70',"Gestion");
     }
-    
     /**
      *
      * @Route("/remuneration/retsou", name="seeRemunerationRetsou")
      */
     public function SeeRemunerationRetsouAction()
     {
-        $menu = "Gestion";
-        $page = "Rémunération / Retenue à la source";
-        $urlPage = "menudoc/6";
-        $urlPdf = "remuneration/retsou/pdf";
-        
-        $repository = $this->getdoctrine()
-        ->getManager()
-        ->getRepository('docPlatformBundle:DossierAgent');
-        
-        $listDoss = $repository->findBy(
-            array('onglet_ref' => '6', 'page_ref' => '71'),array('num_ordre' => 'asc')
-            );
-        $html = $this->render('docPlatformBundle:DossierAgent:indexAgent.html.twig', array(
-            'listDoss' => $listDoss,
-            'page' => $page,
-            'menu' => $menu,
-            'urlPage' => $urlPage,
-            'urlPdf' => $urlPdf,
-            'listOnglets' => $_SESSION['listOnglets'],
-            'compteur' => count($_SESSION['listAlerts']),
-            'listAlerts' => $_SESSION['listAlerts']
-        ));
-        
-        return $html;
+        return $this->listChamp("Organisme / Retenue à la source","organisme/retsou/pdf",'6', '71',"Gestion");
     }
-    
     /**
      *
      * @Route("/remuneration/retsou/pdf", name="seeRemunerationRetsouPdf")
      */
     public function seeRemunerationRetsouPdfAction()
     {
-        $snappy = $this->get('knp_snappy.pdf');
-        $filename = 'myFirstSnappyPDF';
-        $menu = "Gestion";
-        $page = "Rémunération / Retenue à la source";
-        $repository = $this->getdoctrine()
-        ->getManager()
-        ->getRepository('docPlatformBundle:DossierAgent');
-        
-        $listDoss = $repository->findBy(
-            array('onglet_ref' => '6', 'page_ref' => '71'),array('num_ordre' => 'asc')
-            );
-        $snappy = $this->get("knp_snappy.pdf");
-        
-        $html = $this->renderView('docPlatformBundle:DossierAgent:pdf.html.twig', array(
-            'listDoss' => $listDoss,
-            'page' => $page,
-            'menu' => $menu
-        ));
-        
-        return new Response($snappy->getOutputFromHtml($html), 200, array(
-            'Content-Type' => 'application/pdf',
-            'Content-Disposition' => 'inline; filename="' . $filename . '.pdf"'
-        ));
+        return $this->listChampPdf("Organisme / Retenue à la source",'6', '71',"Gestion");
     }
 }
