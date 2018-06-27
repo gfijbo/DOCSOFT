@@ -6,7 +6,6 @@ use doc\PlatformBundle\Controller\ListPage;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 
 
-
 class CarriereController extends ListPage
 {
     /**

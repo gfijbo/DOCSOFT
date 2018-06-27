@@ -9,7 +9,7 @@ class OrganismeController extends ListPage
 {
     /**
      *
-     * @Route("/organisme/agent", name="seeOrganismeAgent")
+     * @Route("/gestion/organisme/agent", name="seeOrganismeAgent")
      */
     public function OrganismeAgentAction()
     {
@@ -17,7 +17,7 @@ class OrganismeController extends ListPage
     }
     /**
      *
-     * @Route("/organisme/agent/pdf", name="seeOrganismeAgentpdf")
+     * @Route("/gestion/organisme/agent/pdf", name="seeOrganismeAgentpdf")
      */
     public function OrganismeAgentPdfAction()
     {
@@ -25,7 +25,7 @@ class OrganismeController extends ListPage
     }
     /**
      *
-     * @Route("/organisme/affectation", name="seeOrganismeAffectation")
+     * @Route("/gestion/organisme/affectation", name="seeOrganismeAffectation")
      */
     public function OrganismeAffectationAction()
     {
@@ -33,7 +33,7 @@ class OrganismeController extends ListPage
     }
     /**
      *
-     * @Route("/organisme/affectation/pdf", name="seeOrganismeAffectationpdf")
+     * @Route("/gestion/organisme/affectation/pdf", name="seeOrganismeAffectationpdf")
      */
     public function OrganismeAffectationPdfAction()
     {
@@ -41,7 +41,7 @@ class OrganismeController extends ListPage
     }
     /**
      *
-     * @Route("/organisme/demmodaff", name="seeDemModAff")
+     * @Route("/gestion/organisme/demmodaff", name="seeDemModAff")
      */
     public function OrganismeDemModAffAction()
     {
@@ -49,7 +49,7 @@ class OrganismeController extends ListPage
     }
     /**
      *
-     * @Route("/organisme/demmodaff/pdf", name="seeOrganismeDemModAffpdf")
+     * @Route("/gestion/organisme/demmodaff/pdf", name="seeOrganismeDemModAffpdf")
      */
     public function OrganismeDemModAffPdfAction()
     {
@@ -57,7 +57,7 @@ class OrganismeController extends ListPage
     }
     /**
      *
-     * @Route("/organisme/contrat", name="seeOrgCon")
+     * @Route("/gestion/organisme/contrat", name="seeOrgCon")
      */
     public function OrganismeContratAction()
     {
@@ -65,7 +65,7 @@ class OrganismeController extends ListPage
     }
     /**
      *
-     * @Route("/organisme/contrat/pdf", name="seeOrgConpdf")
+     * @Route("/gestion/organisme/contrat/pdf", name="seeOrgConpdf")
      */
     public function OrganismeContratPdfAction()
     {
@@ -74,7 +74,7 @@ class OrganismeController extends ListPage
     }
     /**
      *
-     * @Route("/organisme/remplacements", name="seeOrganismeRemplacements")
+     * @Route("/gestion/organisme/remplacements", name="seeOrganismeRemplacements")
      */
     public function OrganismeRemplacementsAction()
     {
@@ -82,7 +82,7 @@ class OrganismeController extends ListPage
     }
     /**
      *
-     * @Route("/organisme/remplacements/pdf", name="seeOrganismeRemplacementspdf")
+     * @Route("/gestion/organisme/remplacements/pdf", name="seeOrganismeRemplacementspdf")
      */
     public function OrganismeRemplacementsPdfAction()
     {
@@ -90,7 +90,7 @@ class OrganismeController extends ListPage
     }
     /**
      *
-     * @Route("/organisme/infpru", name="seeOrganismeInfPru")
+     * @Route("/gestion/organisme/infpru", name="seeOrganismeInfPru")
      */
     public function OrganismeInfPruAction()
     {
@@ -98,7 +98,7 @@ class OrganismeController extends ListPage
     }
     /**
      *
-     * @Route("/organisme/infpru/pdf", name="seeOrganismeInfPrupdf")
+     * @Route("/gestion/organisme/infpru/pdf", name="seeOrganismeInfPrupdf")
      */
     public function OrganismeInfPruPdfAction()
     {
@@ -106,7 +106,7 @@ class OrganismeController extends ListPage
     }
     /**
      *
-     * @Route("/organisme/mutdep", name="seeOrganismeMutDep")
+     * @Route("/gestion/organisme/mutdep", name="seeOrganismeMutDep")
      */
     public function OrganismeMutDepAction()
     {
@@ -114,7 +114,7 @@ class OrganismeController extends ListPage
     }
     /**
      *
-     * @Route("/organisme/mutdep/pdf", name="seeOrganismeMutDeppdf")
+     * @Route("/gestion/organisme/mutdep/pdf", name="seeOrganismeMutDeppdf")
      */
     public function OrganismeMutDepPdfAction()
     {
@@ -123,7 +123,7 @@ class OrganismeController extends ListPage
     }
     /**
      *
-     * @Route("/organisme/comage", name="seeOrganismeContrat")
+     * @Route("/gestion/organisme/comage", name="seeOrganismeContrat")
      */
     public function OrganismeComAgeAction()
     {
@@ -131,7 +131,7 @@ class OrganismeController extends ListPage
     }
     /**
      *
-     * @Route("/organisme/comage/pdf", name="seeOrganismeComAgepdf")
+     * @Route("/gestion/organisme/comage/pdf", name="seeOrganismeComAgepdf")
      */
     public function OrganismeComAgePdfAction()
     {
@@ -139,20 +139,18 @@ class OrganismeController extends ListPage
     }
     /**
      *
-     * @Route("/organisme/premutass", name="seeOrganismePreMutAss")
+     * @Route("/gestion/organisme/premutass", name="seeOrganismePreMutAss")
      */
     public function OrganismePreMutAssAction()
     {
         return $this->listChamp("Organisme / Prévoyance-Mutuelle-Assurance","organisme/premutass/pdf",'3', '32',"Gestion");
     }
-
     /**
      *
-     * @Route("/organisme/premutass/pdf", name="seeOrganismePreMutAsspdf")
+     * @Route("/gestion/organisme/premutass/pdf", name="seeOrganismePreMutAsspdf")
      */
     public function OrganismePreMutAssPdfAction()
     {
         return $this->listChampPdf("Organisme / Prévoyance-Mutuelle-Assurance",'3', '32',"Gestion");
     }
-
 }

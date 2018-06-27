@@ -9,7 +9,7 @@ class RemunerationController extends ListPage
 {
     /**
      *
-     * @Route("/remuneration/elements", name="seeRemunerationElements")
+     * @Route("/gestion/remuneration/elements", name="seeRemunerationElements")
      */
     public function SeeRemunerationElementsAction()
     {
@@ -17,7 +17,7 @@ class RemunerationController extends ListPage
     }
     /**
      *
-     * @Route("/remuneration/elements/pdf", name="seeRemunerationElementsPdf")
+     * @Route("/gestion/remuneration/elements/pdf", name="seeRemunerationElementsPdf")
      */
     public function seeRemunerationElementsPdfAction()
     {
@@ -26,7 +26,7 @@ class RemunerationController extends ListPage
     }
     /**
      *
-     * @Route("/remuneration/contrat", name="seeRemunerationContrat")
+     * @Route("/gestion/remuneration/contrat", name="seeRemunerationContrat")
      */
     public function SeeRemunerationContratAction()
     {
@@ -34,7 +34,7 @@ class RemunerationController extends ListPage
     }
     /**
      *
-     * @Route("/remuneration/contrat/pdf", name="seeRemunerationContratPdf")
+     * @Route("/gestion/remuneration/contrat/pdf", name="seeRemunerationContratPdf")
      */
     public function seeRemunerationContratPdfAction()
     {
@@ -43,7 +43,7 @@ class RemunerationController extends ListPage
     }
     /**
      *
-     * @Route("/remuneration/eledec", name="seeRemunerationEledec")
+     * @Route("/gestion/remuneration/eledec", name="seeRemunerationEledec")
      */
     public function SeeRemunerationEledecAction()
     {
@@ -51,7 +51,7 @@ class RemunerationController extends ListPage
     }
     /**
      *
-     * @Route("/remuneration/eledec/pdf", name="seeRemunerationEledecPdf")
+     * @Route("/gestion/remuneration/eledec/pdf", name="seeRemunerationEledecPdf")
      */
     public function seeRemunerationEledecPdfAction()
     {
@@ -59,7 +59,7 @@ class RemunerationController extends ListPage
     }
     /**
      *
-     * @Route("/remuneration/elevarcou", name="seeRemunerationElevarcou")
+     * @Route("/gestion/remuneration/elevarcou", name="seeRemunerationElevarcou")
      */
     public function SeeRemunerationElevarcouAction()
     {
@@ -67,7 +67,7 @@ class RemunerationController extends ListPage
     }
     /**
      *
-     * @Route("/remuneration/elevarcou/pdf", name="seeRemunerationElevarcouPdf")
+     * @Route("/gestion/remuneration/elevarcou/pdf", name="seeRemunerationElevarcouPdf")
      */
     public function seeRemunerationElevarcouPdfAction()
     {
@@ -75,7 +75,7 @@ class RemunerationController extends ListPage
     }
     /**
      *
-     * @Route("/remuneration/elevarhis", name="seeRemunerationElevarhis")
+     * @Route("/gestion/remuneration/elevarhis", name="seeRemunerationElevarhis")
      */
     public function SeeRemunerationElevarhisAction()
     {
@@ -83,7 +83,7 @@ class RemunerationController extends ListPage
     }
     /**
      *
-     * @Route("/remuneration/elevarhis/pdf", name="seeRemunerationElevarhisPdf")
+     * @Route("/gestion/remuneration/elevarhis/pdf", name="seeRemunerationElevarhisPdf")
      */
     public function seeRemunerationElevarhisPdfAction()
     {
@@ -91,7 +91,7 @@ class RemunerationController extends ListPage
     }
     /**
      *
-     * @Route("/remuneration/ticres", name="seeRemunerationTicres")
+     * @Route("/gestion/remuneration/ticres", name="seeRemunerationTicres")
      */
     public function SeeRemunerationTicresAction()
     {
@@ -99,7 +99,7 @@ class RemunerationController extends ListPage
     }
     /**
      *
-     * @Route("/remuneration/ticres/pdf", name="seeRemunerationTicresPdf")
+     * @Route("/gestion/remuneration/ticres/pdf", name="seeRemunerationTicresPdf")
      */
     public function seeRemunerationTicresPdfAction()
     {
@@ -107,7 +107,7 @@ class RemunerationController extends ListPage
     }
     /**
      *
-     * @Route("/remuneration/mesbul", name="seeRemunerationMesbul")
+     * @Route("/gestion/remuneration/mesbul", name="seeRemunerationMesbul")
      */
     public function SeeRemunerationMesbullAction()
     {
@@ -115,7 +115,7 @@ class RemunerationController extends ListPage
     }
     /**
      *
-     * @Route("/remuneration/mesbul/pdf", name="seeRemunerationMesbulPdf")
+     * @Route("/gestion/remuneration/mesbul/pdf", name="seeRemunerationMesbulPdf")
      */
     public function seeRemunerationMesbullpdfAction()
     {
@@ -123,7 +123,7 @@ class RemunerationController extends ListPage
     }
     /**
      *
-     * @Route("/remuneration/bulletins", name="seeRemunerationBulletins")
+     * @Route("/gestion/remuneration/bulletins", name="seeRemunerationBulletins")
      */
     public function SeeRemunerationBulletinsAction()
     {
@@ -131,7 +131,7 @@ class RemunerationController extends ListPage
     }
     /**
      *
-     * @Route("/remuneration/bulletins/pdf", name="seeRemunerationBulletinsPdf")
+     * @Route("/gestion/remuneration/bulletins/pdf", name="seeRemunerationBulletinsPdf")
      */
     public function seeRemunerationBulletinsPdfAction()
     {
@@ -139,7 +139,7 @@ class RemunerationController extends ListPage
     }
     /**
      *
-     * @Route("/remuneration/cumuls", name="seeRemunerationCumuls")
+     * @Route("/gestion/remuneration/cumuls", name="seeRemunerationCumuls")
      */
     public function SeeRemunerationCumulsAction()
     {
@@ -147,7 +147,7 @@ class RemunerationController extends ListPage
     }
     /**
      *
-     * @Route("/remuneration/cumuls/pdf", name="seeRemunerationCumulsPdf")
+     * @Route("/gestion/remuneration/cumuls/pdf", name="seeRemunerationCumulsPdf")
      */
     public function seeRemunerationCumulsPdfAction()
     {
@@ -155,7 +155,7 @@ class RemunerationController extends ListPage
     }
     /**
      *
-     * @Route("/remuneration/echeance", name="seeRemunerationEcheance")
+     * @Route("/gestion/remuneration/echeance", name="seeRemunerationEcheance")
      */
     public function SeeRemunerationEcheanceAction()
     {
@@ -163,7 +163,7 @@ class RemunerationController extends ListPage
     }
     /**
      *
-     * @Route("/remuneration/echeance/pdf", name="seeRemunerationEcheancePdf")
+     * @Route("/gestion/remuneration/echeance/pdf", name="seeRemunerationEcheancePdf")
      */
     public function seeRemunerationEcheancePdfAction()
     {
@@ -171,7 +171,7 @@ class RemunerationController extends ListPage
     }
     /**
      *
-     * @Route("/remuneration/repartition", name="seeRemunerationRepartition")
+     * @Route("/gestion/remuneration/repartition", name="seeRemunerationRepartition")
      */
     public function SeeRemunerationRepartitionAction()
     {
@@ -179,7 +179,7 @@ class RemunerationController extends ListPage
     }
     /**
      *
-     * @Route("/remuneration/repartition/pdf", name="seeRemunerationRepartitionPdf")
+     * @Route("/gestion/remuneration/repartition/pdf", name="seeRemunerationRepartitionPdf")
      */
     public function seeRemunerationRepartitionPdfAction()
     {
@@ -187,7 +187,7 @@ class RemunerationController extends ListPage
     }
     /**
      *
-     * @Route("/remuneration/hisrep", name="seeRemunerationHisrep")
+     * @Route("/gestion/remuneration/hisrep", name="seeRemunerationHisrep")
      */
     public function SeeRemunerationHisrepAction()
     {
@@ -195,7 +195,7 @@ class RemunerationController extends ListPage
     }
     /**
      *
-     * @Route("/remuneration/hisrep/pdf", name="seeRemunerationHisrepPdf")
+     * @Route("/gestion/remuneration/hisrep/pdf", name="seeRemunerationHisrepPdf")
      */
     public function seeRemunerationHisrepPdfAction()
     {
@@ -203,7 +203,7 @@ class RemunerationController extends ListPage
     }
     /**
      *
-     * @Route("/remuneration/rappels", name="seeRemunerationRappels")
+     * @Route("/gestion/remuneration/rappels", name="seeRemunerationRappels")
      */
     public function SeeRemunerationRappelsAction()
     {
@@ -211,7 +211,7 @@ class RemunerationController extends ListPage
     }
     /**
      *
-     * @Route("/remuneration/rappels/pdf", name="seeRemunerationRappelsPdf")
+     * @Route("/gestion/remuneration/rappels/pdf", name="seeRemunerationRappelsPdf")
      */
     public function seeRemunerationRappelsPdfAction()
     {
@@ -219,7 +219,7 @@ class RemunerationController extends ListPage
     }
     /**
      *
-     * @Route("/remuneration/analytique", name="seeRemunerationAnalytique")
+     * @Route("/gestion/remuneration/analytique", name="seeRemunerationAnalytique")
      */
     public function SeeRemunerationAnalytiqueAction()
     {
@@ -227,7 +227,7 @@ class RemunerationController extends ListPage
     }
     /**
      *
-     * @Route("/remuneration/analytique/pdf", name="seeRemunerationAnalytiquePdf")
+     * @Route("/gestion/remuneration/analytique/pdf", name="seeRemunerationAnalytiquePdf")
      */
     public function seeRemunerationAnalytiquePdfAction()
     {
@@ -235,7 +235,7 @@ class RemunerationController extends ListPage
     }
     /**
      *
-     * @Route("/remuneration/refacturation", name="seeRemunerationRefacturation")
+     * @Route("/gestion/remuneration/refacturation", name="seeRemunerationRefacturation")
      */
     public function SeeRemunerationRefacturationAction()
     {
@@ -243,7 +243,7 @@ class RemunerationController extends ListPage
     }
     /**
      *
-     * @Route("/remuneration/refacturation/pdf", name="seeRemunerationRefacturationPdf")
+     * @Route("/gestion/remuneration/refacturation/pdf", name="seeRemunerationRefacturationPdf")
      */
     public function seeRemunerationRefacturationPdfAction()
     {
@@ -251,7 +251,7 @@ class RemunerationController extends ListPage
     }
     /**
      *
-     * @Route("/remuneration/retsou", name="seeRemunerationRetsou")
+     * @Route("/gestion/remuneration/retsou", name="seeRemunerationRetsou")
      */
     public function SeeRemunerationRetsouAction()
     {
@@ -259,7 +259,7 @@ class RemunerationController extends ListPage
     }
     /**
      *
-     * @Route("/remuneration/retsou/pdf", name="seeRemunerationRetsouPdf")
+     * @Route("/gestion/remuneration/retsou/pdf", name="seeRemunerationRetsouPdf")
      */
     public function seeRemunerationRetsouPdfAction()
     {
