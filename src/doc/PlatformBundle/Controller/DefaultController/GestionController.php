@@ -2,39 +2,17 @@
 // src\doc\PlatformBundle\Controller\GestionController.php
 namespace doc\PlatformBundle\Controller\DefaultController;
 
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use doc\PlatformBundle\Controller\ListPage;
 
-class GestionController extends Controller{
+class GestionController extends ListPage{
     /**
      *
      * @Route("/gestion/agent", name="allOngletsGestion")
      */
     public function allOngletsGestionAgentAction()
     {
-        $repository = $this->getdoctrine()
-        ->getManager()
-        ->getRepository('docPlatformBundle:Onglet');
-        $listOnglets = $repository->findByType('gestion/agent');
-        
-        for($i=0;$i<sizeof($listOnglets);$i++){
-            $repository = $this->getdoctrine()
-            ->getManager()
-            ->getRepository('docPlatformBundle:Page');
-            
-            $listPages = $repository->findBy(
-                array('onglet_ref'=> $listOnglets[$i]->getId()-1
-                ));
-            $listOnglets[$i]->setPages($listPages);
-        }
-        if(!isset($_SESSION)){
-            session_start();
-        }
-        
-        $_SESSION['listOnglets'] = $listOnglets;
-        
-        $html = $this->redirectToRoute('alloperation');
-        return $html;
+        return $this->listOnglets('gestion/agent', -1);
     }
     
     /**
@@ -43,29 +21,7 @@ class GestionController extends Controller{
      */
     public function allOngletsGestionRecrutementAction()
     {
-        $repository = $this->getdoctrine()
-        ->getManager()
-        ->getRepository('docPlatformBundle:Onglet');
-        $listOnglets = $repository->findByType('gestion/recrutement');
-        
-        for($i=0;$i<sizeof($listOnglets);$i++){
-            $repository = $this->getdoctrine()
-            ->getManager()
-            ->getRepository('docPlatformBundle:Page');
-            
-            $listPages = $repository->findBy(
-                array('onglet_ref'=> $listOnglets[$i]->getId()
-                ));
-            $listOnglets[$i]->setPages($listPages);
-        }
-        if(!isset($_SESSION)){
-            session_start();
-        }
-        
-        $_SESSION['listOnglets'] = $listOnglets;
-        
-        $html = $this->redirectToRoute('alloperation');
-        return $html;
+        return $this->listOnglets('gestion/recrutement', 0);
     }
     
     /**
@@ -74,28 +30,7 @@ class GestionController extends Controller{
      */
     public function allOngletsGestionEffectifAction()
     {
-        $repository = $this->getdoctrine()
-        ->getManager()
-        ->getRepository('docPlatformBundle:Onglet');
-        $listOnglets = $repository->findByType('gestion/effectif');
-        for($i=0;$i<sizeof($listOnglets);$i++){
-            $repository = $this->getdoctrine()
-            ->getManager()
-            ->getRepository('docPlatformBundle:Page');
-            
-            $listPages = $repository->findBy(
-                array('onglet_ref'=> $listOnglets[$i]->getId()
-                ));
-            $listOnglets[$i]->setPages($listPages);
-        }
-        if(!isset($_SESSION)){
-            session_start();
-        }
-        
-        $_SESSION['listOnglets'] = $listOnglets;
-        
-        $html = $this->redirectToRoute('alloperation');
-        return $html;
+        return $this->listOnglets('gestion/effectif', 0);
     }
     
     /**
@@ -104,29 +39,7 @@ class GestionController extends Controller{
      */
     public function allOngletsGestionMetierAction()
     {
-        $repository = $this->getdoctrine()
-        ->getManager()
-        ->getRepository('docPlatformBundle:Onglet');
-        $listOnglets = $repository->findByType('gestion/metier');
-        
-        for($i=0;$i<sizeof($listOnglets);$i++){
-            $repository = $this->getdoctrine()
-            ->getManager()
-            ->getRepository('docPlatformBundle:Page');
-            
-            $listPages = $repository->findBy(
-                array('onglet_ref'=> $listOnglets[$i]->getId()
-                ));
-            $listOnglets[$i]->setPages($listPages);
-        }
-        if(!isset($_SESSION)){
-            session_start();
-        }
-        
-        $_SESSION['listOnglets'] = $listOnglets;
-        
-        $html = $this->redirectToRoute('alloperation');
-        return $html;
+        return $this->listOnglets('gestion/metier', 0);
     }
     
     /**
@@ -135,29 +48,7 @@ class GestionController extends Controller{
      */
     public function allOngletsGestionSimulationAction()
     {
-        $repository = $this->getdoctrine()
-        ->getManager()
-        ->getRepository('docPlatformBundle:Onglet');
-        $listOnglets = $repository->findByType('gestion/simulation');
-        
-        for($i=0;$i<sizeof($listOnglets);$i++){
-            $repository = $this->getdoctrine()
-            ->getManager()
-            ->getRepository('docPlatformBundle:Page');
-            
-            $listPages = $repository->findBy(
-                array('onglet_ref'=> $listOnglets[$i]->getId()
-                ));
-            $listOnglets[$i]->setPages($listPages);
-        }
-        if(!isset($_SESSION)){
-            session_start();
-        }
-        
-        $_SESSION['listOnglets'] = $listOnglets;
-        
-        $html = $this->redirectToRoute('alloperation');
-        return $html;
+        return $this->listOnglets('gestion/simulation', 0);
     }
     
     /**
@@ -166,29 +57,7 @@ class GestionController extends Controller{
      */
     public function allOngletsGestionSuppleanceAction()
     {
-        $repository = $this->getdoctrine()
-        ->getManager()
-        ->getRepository('docPlatformBundle:Onglet');
-        $listOnglets = $repository->findByType('gestion/suppleance');
-        
-        for($i=0;$i<sizeof($listOnglets);$i++){
-            $repository = $this->getdoctrine()
-            ->getManager()
-            ->getRepository('docPlatformBundle:Page');
-            
-            $listPages = $repository->findBy(
-                array('onglet_ref'=> $listOnglets[$i]->getId()
-                ));
-            $listOnglets[$i]->setPages($listPages);
-        }
-        if(!isset($_SESSION)){
-            session_start();
-        }
-        
-        $_SESSION['listOnglets'] = $listOnglets;
-        
-        $html = $this->redirectToRoute('alloperation');
-        return $html;
+        return $this->listOnglets('gestion/suppleance', 0);
     }
     
     /**
@@ -197,28 +66,6 @@ class GestionController extends Controller{
      */
     public function allOngletsGestionEvaluationAction()
     {
-        $repository = $this->getdoctrine()
-        ->getManager()
-        ->getRepository('docPlatformBundle:Onglet');
-        $listOnglets = $repository->findByType('gestion/evaluation');
-        
-        for($i=0;$i<sizeof($listOnglets);$i++){
-            $repository = $this->getdoctrine()
-            ->getManager()
-            ->getRepository('docPlatformBundle:Page');
-            
-            $listPages = $repository->findBy(
-                array('onglet_ref'=> $listOnglets[$i]->getId()
-                ));
-            $listOnglets[$i]->setPages($listPages);
-        }
-        if(!isset($_SESSION)){
-            session_start();
-        }
-        
-        $_SESSION['listOnglets'] = $listOnglets;
-        
-        $html = $this->redirectToRoute('alloperation');
-        return $html;
+        return $this->listOnglets('gestion/evaluation', 0);
     }
 }

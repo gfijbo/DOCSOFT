@@ -2,39 +2,17 @@
 // src\doc\PlatformBundle\Controller\ReferentielController.php
 namespace doc\PlatformBundle\Controller\DefaultController;
 
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use doc\PlatformBundle\Controller\ListPage;
 
-class ReferentielController extends Controller{
+class ReferentielController extends ListPage{
     /**
      *
      * @Route("/referentiel/general", name="allOngletsReferentielGeneral")
      */
     public function allOngletsReferentielGeneralAction()
     {
-        $repository = $this->getdoctrine()
-        ->getManager()
-        ->getRepository('docPlatformBundle:Onglet');
-        $listOnglets = $repository->findByType('referentiel/general');
-        
-        for($i=0;$i<sizeof($listOnglets);$i++){
-            $repository = $this->getdoctrine()
-            ->getManager()
-            ->getRepository('docPlatformBundle:Page');
-            
-            $listPages = $repository->findBy(
-                array('onglet_ref'=> $listOnglets[$i]->getId()
-                ));
-            $listOnglets[$i]->setPages($listPages);
-        }
-        if(!isset($_SESSION)){
-            session_start();
-        }
-        
-        $_SESSION['listOnglets'] = $listOnglets;
-        
-        $html = $this->redirectToRoute('alloperation');
-        return $html;
+        return $this->listOnglets('referentiel/general', 0);
     }
     
     /**
@@ -43,29 +21,7 @@ class ReferentielController extends Controller{
      */
     public function allOngletsReferentielAbscencesAction()
     {
-        $repository = $this->getdoctrine()
-        ->getManager()
-        ->getRepository('docPlatformBundle:Onglet');
-        $listOnglets = $repository->findByType('referentiel/absences');
-        
-        for($i=0;$i<sizeof($listOnglets);$i++){
-            $repository = $this->getdoctrine()
-            ->getManager()
-            ->getRepository('docPlatformBundle:Page');
-            
-            $listPages = $repository->findBy(
-                array('onglet_ref'=> $listOnglets[$i]->getId()
-                ));
-            $listOnglets[$i]->setPages($listPages);
-        }
-        if(!isset($_SESSION)){
-            session_start();
-        }
-        
-        $_SESSION['listOnglets'] = $listOnglets;
-        
-        $html = $this->redirectToRoute('alloperation');
-        return $html;
+        return $this->listOnglets('referentiel/absences', 0);
     }
     
     /**
@@ -74,29 +30,7 @@ class ReferentielController extends Controller{
      */
     public function allOngletsReferentielAccidentDuTravailAction()
     {
-        $repository = $this->getdoctrine()
-        ->getManager()
-        ->getRepository('docPlatformBundle:Onglet');
-        $listOnglets = $repository->findByType('referentiel/accidentdutravail');
-        
-        for($i=0;$i<sizeof($listOnglets);$i++){
-            $repository = $this->getdoctrine()
-            ->getManager()
-            ->getRepository('docPlatformBundle:Page');
-            
-            $listPages = $repository->findBy(
-                array('onglet_ref'=> $listOnglets[$i]->getId()
-                ));
-            $listOnglets[$i]->setPages($listPages);
-        }
-        if(!isset($_SESSION)){
-            session_start();
-        }
-        
-        $_SESSION['listOnglets'] = $listOnglets;
-        
-        $html = $this->redirectToRoute('alloperation');
-        return $html;
+        return $this->listOnglets('referentiel/accidentdutravail', 0);
     }
     
     /**
@@ -105,29 +39,7 @@ class ReferentielController extends Controller{
      */
     public function allOngletsReferentielCarriereAction()
     {
-        $repository = $this->getdoctrine()
-        ->getManager()
-        ->getRepository('docPlatformBundle:Onglet');
-        $listOnglets = $repository->findByType('referentiel/carriere');
-        
-        for($i=0;$i<sizeof($listOnglets);$i++){
-            $repository = $this->getdoctrine()
-            ->getManager()
-            ->getRepository('docPlatformBundle:Page');
-            
-            $listPages = $repository->findBy(
-                array('onglet_ref'=> $listOnglets[$i]->getId()
-                ));
-            $listOnglets[$i]->setPages($listPages);
-        }
-        if(!isset($_SESSION)){
-            session_start();
-        }
-        
-        $_SESSION['listOnglets'] = $listOnglets;
-        
-        $html = $this->redirectToRoute('alloperation');
-        return $html;
+        return $this->listOnglets('referentiel/carriere', 0);
     }
     
     /**
@@ -136,29 +48,7 @@ class ReferentielController extends Controller{
      */
     public function allOngletsReferentielAgentAction()
     {
-        $repository = $this->getdoctrine()
-        ->getManager()
-        ->getRepository('docPlatformBundle:Onglet');
-        $listOnglets = $repository->findByType('referentiel/agent');
-        
-        for($i=0;$i<sizeof($listOnglets);$i++){
-            $repository = $this->getdoctrine()
-            ->getManager()
-            ->getRepository('docPlatformBundle:Page');
-            
-            $listPages = $repository->findBy(
-                array('onglet_ref'=> $listOnglets[$i]->getId()
-                ));
-            $listOnglets[$i]->setPages($listPages);
-        }
-        if(!isset($_SESSION)){
-            session_start();
-        }
-        
-        $_SESSION['listOnglets'] = $listOnglets;
-        
-        $html = $this->redirectToRoute('alloperation');
-        return $html;
+        return $this->listOnglets('referentiel/agent', 0);
     }
     
     /**
@@ -167,29 +57,7 @@ class ReferentielController extends Controller{
      */
     public function allOngletsReferentielGestionModeleAction()
     {
-        $repository = $this->getdoctrine()
-        ->getManager()
-        ->getRepository('docPlatformBundle:Onglet');
-        $listOnglets = $repository->findByType('referentiel/gestionmodele');
-        
-        for($i=0;$i<sizeof($listOnglets);$i++){
-            $repository = $this->getdoctrine()
-            ->getManager()
-            ->getRepository('docPlatformBundle:Page');
-            
-            $listPages = $repository->findBy(
-                array('onglet_ref'=> $listOnglets[$i]->getId()
-                ));
-            $listOnglets[$i]->setPages($listPages);
-        }
-        if(!isset($_SESSION)){
-            session_start();
-        }
-        
-        $_SESSION['listOnglets'] = $listOnglets;
-        
-        $html = $this->redirectToRoute('alloperation');
-        return $html;
+        return $this->listOnglets('referentiel/gestionmodele', 0);
     }
     
     /**
@@ -198,29 +66,7 @@ class ReferentielController extends Controller{
      */
     public function allOngletsReferentielEditionsAction()
     {
-        $repository = $this->getdoctrine()
-        ->getManager()
-        ->getRepository('docPlatformBundle:Onglet');
-        $listOnglets = $repository->findByType('referentiel/editions');
-        
-        for($i=0;$i<sizeof($listOnglets);$i++){
-            $repository = $this->getdoctrine()
-            ->getManager()
-            ->getRepository('docPlatformBundle:Page');
-            
-            $listPages = $repository->findBy(
-                array('onglet_ref'=> $listOnglets[$i]->getId()
-                ));
-            $listOnglets[$i]->setPages($listPages);
-        }
-        if(!isset($_SESSION)){
-            session_start();
-        }
-        
-        $_SESSION['listOnglets'] = $listOnglets;
-        
-        $html = $this->redirectToRoute('alloperation');
-        return $html;
+        return $this->listOnglets('referentiel/editions', 0);
     }
     
     /**
@@ -229,29 +75,7 @@ class ReferentielController extends Controller{
      */
     public function allOngletsReferentielRemuneration()
     {
-        $repository = $this->getdoctrine()
-        ->getManager()
-        ->getRepository('docPlatformBundle:Onglet');
-        $listOnglets = $repository->findByType('referentiel/remuneration');
-        
-        for($i=0;$i<sizeof($listOnglets);$i++){
-            $repository = $this->getdoctrine()
-            ->getManager()
-            ->getRepository('docPlatformBundle:Page');
-            
-            $listPages = $repository->findBy(
-                array('onglet_ref'=> $listOnglets[$i]->getId()
-                ));
-            $listOnglets[$i]->setPages($listPages);
-        }
-        if(!isset($_SESSION)){
-            session_start();
-        }
-        
-        $_SESSION['listOnglets'] = $listOnglets;
-        
-        $html = $this->redirectToRoute('alloperation');
-        return $html;
+        return $this->listOnglets('referentiel/remuneration', 0);
     }
     
     /**
@@ -260,29 +84,7 @@ class ReferentielController extends Controller{
      */
     public function allOngletsReferentielRecrutementAction()
     {
-        $repository = $this->getdoctrine()
-        ->getManager()
-        ->getRepository('docPlatformBundle:Onglet');
-        $listOnglets = $repository->findByType('referentiel/recrutement');
-        
-        for($i=0;$i<sizeof($listOnglets);$i++){
-            $repository = $this->getdoctrine()
-            ->getManager()
-            ->getRepository('docPlatformBundle:Page');
-            
-            $listPages = $repository->findBy(
-                array('onglet_ref'=> $listOnglets[$i]->getId()
-                ));
-            $listOnglets[$i]->setPages($listPages);
-        }
-        if(!isset($_SESSION)){
-            session_start();
-        }
-        
-        $_SESSION['listOnglets'] = $listOnglets;
-        
-        $html = $this->redirectToRoute('alloperation');
-        return $html;
+        return $this->listOnglets('referentiel/recrutement', 0);
     }
     
     /**
@@ -291,29 +93,7 @@ class ReferentielController extends Controller{
      */
     public function allOngletsReferentielEffectifAction()
     {
-        $repository = $this->getdoctrine()
-        ->getManager()
-        ->getRepository('docPlatformBundle:Onglet');
-        $listOnglets = $repository->findByType('referentiel/effectif');
-        
-        for($i=0;$i<sizeof($listOnglets);$i++){
-            $repository = $this->getdoctrine()
-            ->getManager()
-            ->getRepository('docPlatformBundle:Page');
-            
-            $listPages = $repository->findBy(
-                array('onglet_ref'=> $listOnglets[$i]->getId()
-                ));
-            $listOnglets[$i]->setPages($listPages);
-        }
-        if(!isset($_SESSION)){
-            session_start();
-        }
-        
-        $_SESSION['listOnglets'] = $listOnglets;
-        
-        $html = $this->redirectToRoute('alloperation');
-        return $html;
+        return $this->listOnglets('referentiel/effectif', 0);
     }
     
     /**
@@ -322,29 +102,7 @@ class ReferentielController extends Controller{
      */
     public function allOngletsReferentielAlertesAction()
     {
-        $repository = $this->getdoctrine()
-        ->getManager()
-        ->getRepository('docPlatformBundle:Onglet');
-        $listOnglets = $repository->findByType('referentiel/alertes');
-        
-        for($i=0;$i<sizeof($listOnglets);$i++){
-            $repository = $this->getdoctrine()
-            ->getManager()
-            ->getRepository('docPlatformBundle:Page');
-            
-            $listPages = $repository->findBy(
-                array('onglet_ref'=> $listOnglets[$i]->getId()
-                ));
-            $listOnglets[$i]->setPages($listPages);
-        }
-        if(!isset($_SESSION)){
-            session_start();
-        }
-        
-        $_SESSION['listOnglets'] = $listOnglets;
-        
-        $html = $this->redirectToRoute('alloperation');
-        return $html;
+        return $this->listOnglets('referentiel/alertes', 0);
     }
     
     /**

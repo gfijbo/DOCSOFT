@@ -2,7 +2,6 @@
 // src\doc\PlatformBundle\Controller\TraitementController.php
 namespace doc\PlatformBundle\Controller\DefaultController;
 
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use doc\PlatformBundle\Controller\ListPage;
 
