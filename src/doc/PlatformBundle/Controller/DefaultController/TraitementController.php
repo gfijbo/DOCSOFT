@@ -4,37 +4,16 @@ namespace doc\PlatformBundle\Controller\DefaultController;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use doc\PlatformBundle\Controller\ListPage;
 
-class TraitementController extends Controller{
+class TraitementController extends ListPage{
     /**
      *
      * @Route("/traitement/identite", name="allOngletsTraitementIdentite")
      */
     public function allOngletsTraitementIdentiteAction()
     {
-        $repository = $this->getdoctrine()
-        ->getManager()
-        ->getRepository('docPlatformBundle:Onglet');
-        $listOnglets = $repository->findByType('traitement/identite');
-        
-        for($i=0;$i<sizeof($listOnglets);$i++){
-            $repository = $this->getdoctrine()
-            ->getManager()
-            ->getRepository('docPlatformBundle:Page');
-            
-            $listPages = $repository->findBy(
-                array('onglet_ref'=> $listOnglets[$i]->getId()
-                ));
-            $listOnglets[$i]->setPages($listPages);
-        }
-        if(!isset($_SESSION)){
-            session_start();
-        }
-        
-        $_SESSION['listOnglets'] = $listOnglets;
-        
-        $html = $this->redirectToRoute('alloperation');
-        return $html;
+        return $this->listOnglets('traitement/identite', 0);
     }
     
     /**
@@ -43,29 +22,7 @@ class TraitementController extends Controller{
      */
     public function allOngletsTraitementAgentAction()
     {
-        $repository = $this->getdoctrine()
-        ->getManager()
-        ->getRepository('docPlatformBundle:Onglet');
-        $listOnglets = $repository->findByType('traitement/agent');
-        
-        for($i=0;$i<sizeof($listOnglets);$i++){
-            $repository = $this->getdoctrine()
-            ->getManager()
-            ->getRepository('docPlatformBundle:Page');
-            
-            $listPages = $repository->findBy(
-                array('onglet_ref'=> $listOnglets[$i]->getId()
-                ));
-            $listOnglets[$i]->setPages($listPages);
-        }
-        if(!isset($_SESSION)){
-            session_start();
-        }
-        
-        $_SESSION['listOnglets'] = $listOnglets;
-        
-        $html = $this->redirectToRoute('alloperation');
-        return $html;
+        return $this->listOnglets('traitement/agent', 0);
     }
     /**
      *
@@ -73,29 +30,7 @@ class TraitementController extends Controller{
      */
     public function allOngletsTraitementCarriereAction()
     {
-        $repository = $this->getdoctrine()
-        ->getManager()
-        ->getRepository('docPlatformBundle:Onglet');
-        $listOnglets = $repository->findByType('traitement/carriere');
-        
-        for($i=0;$i<sizeof($listOnglets);$i++){
-            $repository = $this->getdoctrine()
-            ->getManager()
-            ->getRepository('docPlatformBundle:Page');
-            
-            $listPages = $repository->findBy(
-                array('onglet_ref'=> $listOnglets[$i]->getId()
-                ));
-            $listOnglets[$i]->setPages($listPages);
-        }
-        if(!isset($_SESSION)){
-            session_start();
-        }
-        
-        $_SESSION['listOnglets'] = $listOnglets;
-        
-        $html = $this->redirectToRoute('alloperation');
-        return $html;
+        return $this->listOnglets('traitement/carriere', 0);
     }
     
     /**
@@ -104,29 +39,7 @@ class TraitementController extends Controller{
      */
     public function allOngletsTraitementAbsencesAction()
     {
-        $repository = $this->getdoctrine()
-        ->getManager()
-        ->getRepository('docPlatformBundle:Onglet');
-        $listOnglets = $repository->findByType('traitement/absences');
-        
-        for($i=0;$i<sizeof($listOnglets);$i++){
-            $repository = $this->getdoctrine()
-            ->getManager()
-            ->getRepository('docPlatformBundle:Page');
-            
-            $listPages = $repository->findBy(
-                array('onglet_ref'=> $listOnglets[$i]->getId()
-                ));
-            $listOnglets[$i]->setPages($listPages);
-        }
-        if(!isset($_SESSION)){
-            session_start();
-        }
-        
-        $_SESSION['listOnglets'] = $listOnglets;
-        
-        $html = $this->redirectToRoute('alloperation');
-        return $html;
+        return $this->listOnglets('traitement/absences', 0);
     }
     
     /**
@@ -135,29 +48,7 @@ class TraitementController extends Controller{
      */
     public function allOngletsTraitementDroitAction()
     {
-        $repository = $this->getdoctrine()
-        ->getManager()
-        ->getRepository('docPlatformBundle:Onglet');
-        $listOnglets = $repository->findByType('traitement/droit');
-        
-        for($i=0;$i<sizeof($listOnglets);$i++){
-            $repository = $this->getdoctrine()
-            ->getManager()
-            ->getRepository('docPlatformBundle:Page');
-            
-            $listPages = $repository->findBy(
-                array('onglet_ref'=> $listOnglets[$i]->getId()
-                ));
-            $listOnglets[$i]->setPages($listPages);
-        }
-        if(!isset($_SESSION)){
-            session_start();
-        }
-        
-        $_SESSION['listOnglets'] = $listOnglets;
-        
-        $html = $this->redirectToRoute('alloperation');
-        return $html;
+        return $this->listOnglets('traitement/droit', 0);
     }
     
     /**
@@ -166,29 +57,7 @@ class TraitementController extends Controller{
      */
     public function allOngletsTraitementRemunerationAction()
     {
-        $repository = $this->getdoctrine()
-        ->getManager()
-        ->getRepository('docPlatformBundle:Onglet');
-        $listOnglets = $repository->findByType('traitement/remuneration');
-        
-        for($i=0;$i<sizeof($listOnglets);$i++){
-            $repository = $this->getdoctrine()
-            ->getManager()
-            ->getRepository('docPlatformBundle:Page');
-            
-            $listPages = $repository->findBy(
-                array('onglet_ref'=> $listOnglets[$i]->getId()
-                ));
-            $listOnglets[$i]->setPages($listPages);
-        }
-        if(!isset($_SESSION)){
-            session_start();
-        }
-        
-        $_SESSION['listOnglets'] = $listOnglets;
-        
-        $html = $this->redirectToRoute('alloperation');
-        return $html;
+        return $this->listOnglets('traitement/remuneration', 0);
     }
     
     /**
@@ -197,29 +66,7 @@ class TraitementController extends Controller{
      */
     public function allOngletsTraitementListesAction()
     {
-        $repository = $this->getdoctrine()
-        ->getManager()
-        ->getRepository('docPlatformBundle:Onglet');
-        $listOnglets = $repository->findByType('traitement/listes');
-        
-        for($i=0;$i<sizeof($listOnglets);$i++){
-            $repository = $this->getdoctrine()
-            ->getManager()
-            ->getRepository('docPlatformBundle:Page');
-            
-            $listPages = $repository->findBy(
-                array('onglet_ref'=> $listOnglets[$i]->getId()
-                ));
-            $listOnglets[$i]->setPages($listPages);
-        }
-        if(!isset($_SESSION)){
-            session_start();
-        }
-        
-        $_SESSION['listOnglets'] = $listOnglets;
-        
-        $html = $this->redirectToRoute('alloperation');
-        return $html;
+        return $this->listOnglets('traitement/listes', 0);
     }
     
     /**
@@ -228,29 +75,7 @@ class TraitementController extends Controller{
      */
     public function allOngletsTraitementEditionsAction()
     {
-        $repository = $this->getdoctrine()
-        ->getManager()
-        ->getRepository('docPlatformBundle:Onglet');
-        $listOnglets = $repository->findByType('traitement/editions');
-        
-        for($i=0;$i<sizeof($listOnglets);$i++){
-            $repository = $this->getdoctrine()
-            ->getManager()
-            ->getRepository('docPlatformBundle:Page');
-            
-            $listPages = $repository->findBy(
-                array('onglet_ref'=> $listOnglets[$i]->getId()
-                ));
-            $listOnglets[$i]->setPages($listPages);
-        }
-        if(!isset($_SESSION)){
-            session_start();
-        }
-        
-        $_SESSION['listOnglets'] = $listOnglets;
-        
-        $html = $this->redirectToRoute('alloperation');
-        return $html;
+        return $this->listOnglets('traitement/editions', 0);
     }
     
     /**
@@ -259,29 +84,7 @@ class TraitementController extends Controller{
      */
     public function allOngletsTraitementExploitationAction()
     {
-        $repository = $this->getdoctrine()
-        ->getManager()
-        ->getRepository('docPlatformBundle:Onglet');
-        $listOnglets = $repository->findByType('traitement/exploitation');
-        
-        for($i=0;$i<sizeof($listOnglets);$i++){
-            $repository = $this->getdoctrine()
-            ->getManager()
-            ->getRepository('docPlatformBundle:Page');
-            
-            $listPages = $repository->findBy(
-                array('onglet_ref'=> $listOnglets[$i]->getId()
-                ));
-            $listOnglets[$i]->setPages($listPages);
-        }
-        if(!isset($_SESSION)){
-            session_start();
-        }
-        
-        $_SESSION['listOnglets'] = $listOnglets;
-        
-        $html = $this->redirectToRoute('alloperation');
-        return $html;
+        return $this->listOnglets('traitement/exploitation', 0);
     }
     
     /**
@@ -290,29 +93,7 @@ class TraitementController extends Controller{
      */
     public function allOngletsTraitementGroupesAction()
     {
-        $repository = $this->getdoctrine()
-        ->getManager()
-        ->getRepository('docPlatformBundle:Onglet');
-        $listOnglets = $repository->findByType('traitement/groupes');
-        
-        for($i=0;$i<sizeof($listOnglets);$i++){
-            $repository = $this->getdoctrine()
-            ->getManager()
-            ->getRepository('docPlatformBundle:Page');
-            
-            $listPages = $repository->findBy(
-                array('onglet_ref'=> $listOnglets[$i]->getId()
-                ));
-            $listOnglets[$i]->setPages($listPages);
-        }
-        if(!isset($_SESSION)){
-            session_start();
-        }
-        
-        $_SESSION['listOnglets'] = $listOnglets;
-        
-        $html = $this->redirectToRoute('alloperation');
-        return $html;
+        return $this->listOnglets('traitement/groupes', 0);
     }
     /**
      *
@@ -320,29 +101,7 @@ class TraitementController extends Controller{
      */
     public function allOngletsTraitementEpurationsAction()
     {
-        $repository = $this->getdoctrine()
-        ->getManager()
-        ->getRepository('docPlatformBundle:Onglet');
-        $listOnglets = $repository->findByType('traitement/epurations');
-        
-        for($i=0;$i<sizeof($listOnglets);$i++){
-            $repository = $this->getdoctrine()
-            ->getManager()
-            ->getRepository('docPlatformBundle:Page');
-            
-            $listPages = $repository->findBy(
-                array('onglet_ref'=> $listOnglets[$i]->getId()
-                ));
-            $listOnglets[$i]->setPages($listPages);
-        }
-        if(!isset($_SESSION)){
-            session_start();
-        }
-        
-        $_SESSION['listOnglets'] = $listOnglets;
-        
-        $html = $this->redirectToRoute('alloperation');
-        return $html;
+        return $this->listOnglets('traitement/epurations', 0);
     }
     
     /**
@@ -351,29 +110,7 @@ class TraitementController extends Controller{
      */
     public function allOngletsTraitementInterfaceAction()
     {
-        $repository = $this->getdoctrine()
-        ->getManager()
-        ->getRepository('docPlatformBundle:Onglet');
-        $listOnglets = $repository->findByType('traitement/interface');
-        
-        for($i=0;$i<sizeof($listOnglets);$i++){
-            $repository = $this->getdoctrine()
-            ->getManager()
-            ->getRepository('docPlatformBundle:Page');
-            
-            $listPages = $repository->findBy(
-                array('onglet_ref'=> $listOnglets[$i]->getId()
-                ));
-            $listOnglets[$i]->setPages($listPages);
-        }
-        if(!isset($_SESSION)){
-            session_start();
-        }
-        
-        $_SESSION['listOnglets'] = $listOnglets;
-        
-        $html = $this->redirectToRoute('alloperation');
-        return $html;
+        return $this->listOnglets('traitement/interface', 0);
     }
     
     /**
@@ -382,29 +119,7 @@ class TraitementController extends Controller{
      */
     public function allOngletsTraitementLiaisonAction()
     {
-        $repository = $this->getdoctrine()
-        ->getManager()
-        ->getRepository('docPlatformBundle:Onglet');
-        $listOnglets = $repository->findByType('traitement/liaison');
-        
-        for($i=0;$i<sizeof($listOnglets);$i++){
-            $repository = $this->getdoctrine()
-            ->getManager()
-            ->getRepository('docPlatformBundle:Page');
-            
-            $listPages = $repository->findBy(
-                array('onglet_ref'=> $listOnglets[$i]->getId()
-                ));
-            $listOnglets[$i]->setPages($listPages);
-        }
-        if(!isset($_SESSION)){
-            session_start();
-        }
-        
-        $_SESSION['listOnglets'] = $listOnglets;
-        
-        $html = $this->redirectToRoute('alloperation');
-        return $html;
+        return $this->listOnglets('traitement/liaison', 0);
     }
     
     /**
@@ -413,29 +128,7 @@ class TraitementController extends Controller{
      */
     public function allOngletsTraitementAstratorAction()
     {
-        $repository = $this->getdoctrine()
-        ->getManager()
-        ->getRepository('docPlatformBundle:Onglet');
-        $listOnglets = $repository->findByType('traitement/astrator');
-        
-        for($i=0;$i<sizeof($listOnglets);$i++){
-            $repository = $this->getdoctrine()
-            ->getManager()
-            ->getRepository('docPlatformBundle:Page');
-            
-            $listPages = $repository->findBy(
-                array('onglet_ref'=> $listOnglets[$i]->getId()
-                ));
-            $listOnglets[$i]->setPages($listPages);
-        }
-        if(!isset($_SESSION)){
-            session_start();
-        }
-        
-        $_SESSION['listOnglets'] = $listOnglets;
-        
-        $html = $this->redirectToRoute('alloperation');
-        return $html;
+        return $this->listOnglets('traitement/astrator', 0);
     }
     
     /**
@@ -444,29 +137,7 @@ class TraitementController extends Controller{
      */
     public function allOngletsTraitementEffectifAction()
     {
-        $repository = $this->getdoctrine()
-        ->getManager()
-        ->getRepository('docPlatformBundle:Onglet');
-        $listOnglets = $repository->findByType('traitement/effectif');
-        
-        for($i=0;$i<sizeof($listOnglets);$i++){
-            $repository = $this->getdoctrine()
-            ->getManager()
-            ->getRepository('docPlatformBundle:Page');
-            
-            $listPages = $repository->findBy(
-                array('onglet_ref'=> $listOnglets[$i]->getId()
-                ));
-            $listOnglets[$i]->setPages($listPages);
-        }
-        if(!isset($_SESSION)){
-            session_start();
-        }
-        
-        $_SESSION['listOnglets'] = $listOnglets;
-        
-        $html = $this->redirectToRoute('alloperation');
-        return $html;
+        return $this->listOnglets('traitement/effectif', 0);
     }
     
     /**
@@ -475,29 +146,7 @@ class TraitementController extends Controller{
      */
     public function allOngletsTraitementSuppleanceAction()
     {
-        $repository = $this->getdoctrine()
-        ->getManager()
-        ->getRepository('docPlatformBundle:Onglet');
-        $listOnglets = $repository->findByType('traitement/suppleance');
-        
-        for($i=0;$i<sizeof($listOnglets);$i++){
-            $repository = $this->getdoctrine()
-            ->getManager()
-            ->getRepository('docPlatformBundle:Page');
-            
-            $listPages = $repository->findBy(
-                array('onglet_ref'=> $listOnglets[$i]->getId()
-                ));
-            $listOnglets[$i]->setPages($listPages);
-        }
-        if(!isset($_SESSION)){
-            session_start();
-        }
-        
-        $_SESSION['listOnglets'] = $listOnglets;
-        
-        $html = $this->redirectToRoute('alloperation');
-        return $html;
+        return $this->listOnglets('traitement/suppleance', 0);
     }
     
     /**
@@ -506,29 +155,7 @@ class TraitementController extends Controller{
      */
     public function allOngletsTraitementDsnAction()
     {
-        $repository = $this->getdoctrine()
-        ->getManager()
-        ->getRepository('docPlatformBundle:Onglet');
-        $listOnglets = $repository->findByType('traitement/dsn');
-        
-        for($i=0;$i<sizeof($listOnglets);$i++){
-            $repository = $this->getdoctrine()
-            ->getManager()
-            ->getRepository('docPlatformBundle:Page');
-            
-            $listPages = $repository->findBy(
-                array('onglet_ref'=> $listOnglets[$i]->getId()
-                ));
-            $listOnglets[$i]->setPages($listPages);
-        }
-        if(!isset($_SESSION)){
-            session_start();
-        }
-        
-        $_SESSION['listOnglets'] = $listOnglets;
-        
-        $html = $this->redirectToRoute('alloperation');
-        return $html;
+        return $this->listOnglets('traitement/dsn', 0);
     }
     
     /**
@@ -537,29 +164,7 @@ class TraitementController extends Controller{
      */
     public function allOngletsTraitementN4dsAction()
     {
-        $repository = $this->getdoctrine()
-        ->getManager()
-        ->getRepository('docPlatformBundle:Onglet');
-        $listOnglets = $repository->findByType('traitement/n4ds');
-        
-        for($i=0;$i<sizeof($listOnglets);$i++){
-            $repository = $this->getdoctrine()
-            ->getManager()
-            ->getRepository('docPlatformBundle:Page');
-            
-            $listPages = $repository->findBy(
-                array('onglet_ref'=> $listOnglets[$i]->getId()
-                ));
-            $listOnglets[$i]->setPages($listPages);
-        }
-        if(!isset($_SESSION)){
-            session_start();
-        }
-        
-        $_SESSION['listOnglets'] = $listOnglets;
-        
-        $html = $this->redirectToRoute('alloperation');
-        return $html;
+        return $this->listOnglets('traitement/n4ds', 0);
     }
     
     /**
@@ -568,29 +173,7 @@ class TraitementController extends Controller{
      */
     public function allOngletsTraitementDadsAction()
     {
-        $repository = $this->getdoctrine()
-        ->getManager()
-        ->getRepository('docPlatformBundle:Onglet');
-        $listOnglets = $repository->findByType('traitement/dads');
-        
-        for($i=0;$i<sizeof($listOnglets);$i++){
-            $repository = $this->getdoctrine()
-            ->getManager()
-            ->getRepository('docPlatformBundle:Page');
-            
-            $listPages = $repository->findBy(
-                array('onglet_ref'=> $listOnglets[$i]->getId()
-                ));
-            $listOnglets[$i]->setPages($listPages);
-        }
-        if(!isset($_SESSION)){
-            session_start();
-        }
-        
-        $_SESSION['listOnglets'] = $listOnglets;
-        
-        $html = $this->redirectToRoute('alloperation');
-        return $html;
+        return $this->listOnglets('traitement/dads', 0);
     }
     
     /**
@@ -599,29 +182,7 @@ class TraitementController extends Controller{
      */
     public function allOngletsTraitementDnAction()
     {
-        $repository = $this->getdoctrine()
-        ->getManager()
-        ->getRepository('docPlatformBundle:Onglet');
-        $listOnglets = $repository->findByType('traitement/dn');
-        
-        for($i=0;$i<sizeof($listOnglets);$i++){
-            $repository = $this->getdoctrine()
-            ->getManager()
-            ->getRepository('docPlatformBundle:Page');
-            
-            $listPages = $repository->findBy(
-                array('onglet_ref'=> $listOnglets[$i]->getId()
-                ));
-            $listOnglets[$i]->setPages($listPages);
-        }
-        if(!isset($_SESSION)){
-            session_start();
-        }
-        
-        $_SESSION['listOnglets'] = $listOnglets;
-        
-        $html = $this->redirectToRoute('alloperation');
-        return $html;
+        return $this->listOnglets('traitement/dn', 0);
     }
     
     /**
@@ -630,29 +191,7 @@ class TraitementController extends Controller{
      */
     public function allOngletsTraitementPrestationAction()
     {
-        $repository = $this->getdoctrine()
-        ->getManager()
-        ->getRepository('docPlatformBundle:Onglet');
-        $listOnglets = $repository->findByType('traitement/prestation');
-        
-        for($i=0;$i<sizeof($listOnglets);$i++){
-            $repository = $this->getdoctrine()
-            ->getManager()
-            ->getRepository('docPlatformBundle:Page');
-            
-            $listPages = $repository->findBy(
-                array('onglet_ref'=> $listOnglets[$i]->getId()
-                ));
-            $listOnglets[$i]->setPages($listPages);
-        }
-        if(!isset($_SESSION)){
-            session_start();
-        }
-        
-        $_SESSION['listOnglets'] = $listOnglets;
-        
-        $html = $this->redirectToRoute('alloperation');
-        return $html;
+        return $this->listOnglets('traitement/prestation', 0);
     }
     
     /**
@@ -661,29 +200,7 @@ class TraitementController extends Controller{
      */
     public function allOngletsTraitementAlerteAction()
     {
-        $repository = $this->getdoctrine()
-        ->getManager()
-        ->getRepository('docPlatformBundle:Onglet');
-        $listOnglets = $repository->findByType('traitement/alerte');
-        
-        for($i=0;$i<sizeof($listOnglets);$i++){
-            $repository = $this->getdoctrine()
-            ->getManager()
-            ->getRepository('docPlatformBundle:Page');
-            
-            $listPages = $repository->findBy(
-                array('onglet_ref'=> $listOnglets[$i]->getId()
-                ));
-            $listOnglets[$i]->setPages($listPages);
-        }
-        if(!isset($_SESSION)){
-            session_start();
-        }
-        
-        $_SESSION['listOnglets'] = $listOnglets;
-        
-        $html = $this->redirectToRoute('alloperation');
-        return $html;
+        return $this->listOnglets('traitement/alerte', 0);
     }
     
     /**
@@ -692,29 +209,7 @@ class TraitementController extends Controller{
      */
     public function allOngletsTraitementSimulationAction()
     {
-        $repository = $this->getdoctrine()
-        ->getManager()
-        ->getRepository('docPlatformBundle:Onglet');
-        $listOnglets = $repository->findByType('traitement/simulation');
-        
-        for($i=0;$i<sizeof($listOnglets);$i++){
-            $repository = $this->getdoctrine()
-            ->getManager()
-            ->getRepository('docPlatformBundle:Page');
-            
-            $listPages = $repository->findBy(
-                array('onglet_ref'=> $listOnglets[$i]->getId()
-                ));
-            $listOnglets[$i]->setPages($listPages);
-        }
-        if(!isset($_SESSION)){
-            session_start();
-        }
-        
-        $_SESSION['listOnglets'] = $listOnglets;
-        
-        $html = $this->redirectToRoute('alloperation');
-        return $html;
+        return $this->listOnglets('traitement/simulation', 0);
     }
     
     /**
@@ -723,29 +218,7 @@ class TraitementController extends Controller{
      */
     public function allOngletsTraitementRapportAction()
     {
-        $repository = $this->getdoctrine()
-        ->getManager()
-        ->getRepository('docPlatformBundle:Onglet');
-        $listOnglets = $repository->findByType('traitement/rapport');
-        
-        for($i=0;$i<sizeof($listOnglets);$i++){
-            $repository = $this->getdoctrine()
-            ->getManager()
-            ->getRepository('docPlatformBundle:Page');
-            
-            $listPages = $repository->findBy(
-                array('onglet_ref'=> $listOnglets[$i]->getId()
-                ));
-            $listOnglets[$i]->setPages($listPages);
-        }
-        if(!isset($_SESSION)){
-            session_start();
-        }
-        
-        $_SESSION['listOnglets'] = $listOnglets;
-        
-        $html = $this->redirectToRoute('alloperation');
-        return $html;
+        return $this->listOnglets('traitement/rapport', 0);
     }
     
     /**
@@ -754,29 +227,7 @@ class TraitementController extends Controller{
      */
     public function allOngletsTraitementDueAction()
     {
-        $repository = $this->getdoctrine()
-        ->getManager()
-        ->getRepository('docPlatformBundle:Onglet');
-        $listOnglets = $repository->findByType('traitement/due');
-        
-        for($i=0;$i<sizeof($listOnglets);$i++){
-            $repository = $this->getdoctrine()
-            ->getManager()
-            ->getRepository('docPlatformBundle:Page');
-            
-            $listPages = $repository->findBy(
-                array('onglet_ref'=> $listOnglets[$i]->getId()
-                ));
-            $listOnglets[$i]->setPages($listPages);
-        }
-        if(!isset($_SESSION)){
-            session_start();
-        }
-        
-        $_SESSION['listOnglets'] = $listOnglets;
-        
-        $html = $this->redirectToRoute('alloperation');
-        return $html;
+        return $this->listOnglets('traitement/due', 0);
     }
     
     /**
@@ -785,29 +236,7 @@ class TraitementController extends Controller{
      */
     public function allOngletsTraitementAnterioriteAction()
     {
-        $repository = $this->getdoctrine()
-        ->getManager()
-        ->getRepository('docPlatformBundle:Onglet');
-        $listOnglets = $repository->findByType('traitement/anteriorite');
-        
-        for($i=0;$i<sizeof($listOnglets);$i++){
-            $repository = $this->getdoctrine()
-            ->getManager()
-            ->getRepository('docPlatformBundle:Page');
-            
-            $listPages = $repository->findBy(
-                array('onglet_ref'=> $listOnglets[$i]->getId()
-                ));
-            $listOnglets[$i]->setPages($listPages);
-        }
-        if(!isset($_SESSION)){
-            session_start();
-        }
-        
-        $_SESSION['listOnglets'] = $listOnglets;
-        
-        $html = $this->redirectToRoute('alloperation');
-        return $html;
+        return $this->listOnglets('traitement/anteriorite', 0);
     }
     
     /**
@@ -816,29 +245,7 @@ class TraitementController extends Controller{
      */
     public function allOngletsTraitementExportAction()
     {
-        $repository = $this->getdoctrine()
-        ->getManager()
-        ->getRepository('docPlatformBundle:Onglet');
-        $listOnglets = $repository->findByType('traitement/export');
-        
-        for($i=0;$i<sizeof($listOnglets);$i++){
-            $repository = $this->getdoctrine()
-            ->getManager()
-            ->getRepository('docPlatformBundle:Page');
-            
-            $listPages = $repository->findBy(
-                array('onglet_ref'=> $listOnglets[$i]->getId()
-                ));
-            $listOnglets[$i]->setPages($listPages);
-        }
-        if(!isset($_SESSION)){
-            session_start();
-        }
-        
-        $_SESSION['listOnglets'] = $listOnglets;
-        
-        $html = $this->redirectToRoute('alloperation');
-        return $html;
+        return $this->listOnglets('traitement/export', 0);
     }
     
     /**
@@ -847,29 +254,7 @@ class TraitementController extends Controller{
      */
     public function allOngletsTraitementModulesAction()
     {
-        $repository = $this->getdoctrine()
-        ->getManager()
-        ->getRepository('docPlatformBundle:Onglet');
-        $listOnglets = $repository->findByType('traitement/modules');
-        
-        for($i=0;$i<sizeof($listOnglets);$i++){
-            $repository = $this->getdoctrine()
-            ->getManager()
-            ->getRepository('docPlatformBundle:Page');
-            
-            $listPages = $repository->findBy(
-                array('onglet_ref'=> $listOnglets[$i]->getId()
-                ));
-            $listOnglets[$i]->setPages($listPages);
-        }
-        if(!isset($_SESSION)){
-            session_start();
-        }
-        
-        $_SESSION['listOnglets'] = $listOnglets;
-        
-        $html = $this->redirectToRoute('alloperation');
-        return $html;
+        return $this->listOnglets('traitement/modules', 0);
     }
     
     /**
@@ -878,29 +263,7 @@ class TraitementController extends Controller{
      */
     public function allOngletsTraitementPreparationAction()
     {
-        $repository = $this->getdoctrine()
-        ->getManager()
-        ->getRepository('docPlatformBundle:Onglet');
-        $listOnglets = $repository->findByType('traitement/preparation');
-        
-        for($i=0;$i<sizeof($listOnglets);$i++){
-            $repository = $this->getdoctrine()
-            ->getManager()
-            ->getRepository('docPlatformBundle:Page');
-            
-            $listPages = $repository->findBy(
-                array('onglet_ref'=> $listOnglets[$i]->getId()
-                ));
-            $listOnglets[$i]->setPages($listPages);
-        }
-        if(!isset($_SESSION)){
-            session_start();
-        }
-        
-        $_SESSION['listOnglets'] = $listOnglets;
-        
-        $html = $this->redirectToRoute('alloperation');
-        return $html;
+        return $this->listOnglets('traitement/preparation', 0);
     }
     
     /**
@@ -909,29 +272,7 @@ class TraitementController extends Controller{
      */
     public function allOngletsTraitementPilotageAction()
     {
-        $repository = $this->getdoctrine()
-        ->getManager()
-        ->getRepository('docPlatformBundle:Onglet');
-        $listOnglets = $repository->findByType('traitement/pilotage');
-        
-        for($i=0;$i<sizeof($listOnglets);$i++){
-            $repository = $this->getdoctrine()
-            ->getManager()
-            ->getRepository('docPlatformBundle:Page');
-            
-            $listPages = $repository->findBy(
-                array('onglet_ref'=> $listOnglets[$i]->getId()
-                ));
-            $listOnglets[$i]->setPages($listPages);
-        }
-        if(!isset($_SESSION)){
-            session_start();
-        }
-        
-        $_SESSION['listOnglets'] = $listOnglets;
-        
-        $html = $this->redirectToRoute('alloperation');
-        return $html;
+        return $this->listOnglets('traitement/pilotage', 0);
     }
     
     /**
@@ -940,28 +281,6 @@ class TraitementController extends Controller{
      */
     public function allOngletsTraitementDeclarationAction()
     {
-        $repository = $this->getdoctrine()
-        ->getManager()
-        ->getRepository('docPlatformBundle:Onglet');
-        $listOnglets = $repository->findByType('traitement/declaration');
-        
-        for($i=0;$i<sizeof($listOnglets);$i++){
-            $repository = $this->getdoctrine()
-            ->getManager()
-            ->getRepository('docPlatformBundle:Page');
-            
-            $listPages = $repository->findBy(
-                array('onglet_ref'=> $listOnglets[$i]->getId()
-                ));
-            $listOnglets[$i]->setPages($listPages);
-        }
-        if(!isset($_SESSION)){
-            session_start();
-        }
-        
-        $_SESSION['listOnglets'] = $listOnglets;
-        
-        $html = $this->redirectToRoute('alloperation');
-        return $html;
+        return $this->listOnglets('traitement/declaration', 0);
     }
 }

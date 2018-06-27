@@ -113,4 +113,30 @@ class ListPage extends Controller
             'Content-Disposition' => 'inline; filename="' . $filename . '.pdf"'
         ));
     }
+    
+    public function listOnglets(string $type, int $v1){
+        $repository = $this->getdoctrine()
+        ->getManager()
+        ->getRepository('docPlatformBundle:Onglet');
+        $listOnglets = $repository->findByType($type);
+        
+        for($i=0;$i<sizeof($listOnglets);$i++){
+            $repository = $this->getdoctrine()
+            ->getManager()
+            ->getRepository('docPlatformBundle:Page');
+            
+            $listPages = $repository->findBy(
+                array('onglet_ref'=> $listOnglets[$i]->getId()+$v1
+                ));
+            $listOnglets[$i]->setPages($listPages);
+        }
+        if(!isset($_SESSION)){
+            session_start();
+        }
+        
+        $_SESSION['listOnglets'] = $listOnglets;
+        
+        $html = $this->redirectToRoute('alloperation');
+        return $html;
+    }
 }
