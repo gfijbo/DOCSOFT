@@ -2,6 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="18efa3f5-76d7-4be9-8938-ab82b8c0db5a" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/doc/PlatformBundle/Controller/DefaultController/Traitement/Absences/CetController.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/doc/PlatformBundle/Controller/DefaultController/Traitement/Absences/ConstitutionsController.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/doc/PlatformBundle/Controller/DefaultController/Traitement/Absences/EditionsController.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/doc/PlatformBundle/Controller/DefaultController/Traitement/Absences/JourneeController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/doc/PlatformBundle/Controller/DefaultController/Traitement/Absences/SaisiesController.php" afterPath="$PROJECT_DIR$/src/doc/PlatformBundle/Controller/DefaultController/Traitement/Absences/SaisiesController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Symfony.iws" />
@@ -24,91 +29,73 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="ListPage.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/doc/PlatformBundle/Controller/ListPage.php">
+      <file leaf-file-name="TraitementController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/doc/PlatformBundle/Controller/DefaultController/TraitementController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-2.6153846">
+              <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="59" />
+              <folding>
+                <element signature="e#128#187#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SaisiesController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/doc/PlatformBundle/Controller/DefaultController/Traitement/Absences/SaisiesController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-0.65384614">
-              <caret line="39" column="5" selection-start-line="39" selection-start-column="5" selection-end-line="39" selection-end-column="5" />
+              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
               <folding>
-                <element signature="e#98#155#0#PHP" expanded="true" />
+                <element signature="e#87#146#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CarriereController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/doc/PlatformBundle/Controller/DefaultController/Gestion/Agent/CarriereController.php">
+      <file leaf-file-name="EditionsController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/doc/PlatformBundle/Controller/DefaultController/Traitement/Absences/EditionsController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.9230769">
-              <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+            <state vertical-scroll-proportion="-6.8461537">
+              <caret line="18" column="7" selection-start-line="10" selection-start-column="3" selection-end-line="25" selection-end-column="5" />
               <folding>
-                <element signature="e#140#183#0#PHP" expanded="true" />
+                <element signature="e#87#130#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AbsencesController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/doc/PlatformBundle/Controller/DefaultController/Gestion/Agent/AbsencesController.php">
+      <file leaf-file-name="ConstitutionsController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/doc/PlatformBundle/Controller/DefaultController/Traitement/Absences/ConstitutionsController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-96.42308">
-              <caret line="170" column="108" selection-start-line="170" selection-start-column="108" selection-end-line="170" selection-end-column="108" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="IdentiteController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/doc/PlatformBundle/Controller/DefaultController/Gestion/Agent/IdentiteController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-152.34616">
-              <caret line="233" column="103" selection-start-line="233" selection-start-column="103" selection-end-line="233" selection-end-column="103" />
+            <state vertical-scroll-proportion="-16.346153">
+              <caret line="30" column="5" selection-start-line="15" selection-start-column="4" selection-end-line="30" selection-end-column="5" />
               <folding>
-                <element signature="e#140#183#0#PHP" expanded="true" />
+                <element signature="e#174#217#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="OrganismeController.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/doc/PlatformBundle/Controller/DefaultController/Gestion/Agent/OrganismeController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.38405797">
-              <caret line="141" column="28" selection-start-line="141" selection-start-column="28" selection-end-line="141" selection-end-column="28" />
-              <folding>
-                <element signature="e#141#184#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="security.yml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/config/security.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CalendrierController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/doc/PlatformBundle/Controller/DefaultController/Referentiel/Absences/CalendrierController.php">
+      <file leaf-file-name="CetController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/doc/PlatformBundle/Controller/DefaultController/Traitement/Absences/CetController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
+              <caret line="0" column="5" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
+              <folding>
+                <element signature="e#87#146#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RemunerationController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/doc/PlatformBundle/Controller/DefaultController/Gestion/Agent/RemunerationController.php">
+      <file leaf-file-name="JourneeController.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/doc/PlatformBundle/Controller/DefaultController/Traitement/Absences/JourneeController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-19.923077">
-              <caret line="267" column="1" selection-start-line="267" selection-start-column="1" selection-end-line="267" selection-end-column="1" />
+            <state vertical-scroll-proportion="0.2155797">
+              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
               <folding>
-                <element signature="e#144#187#0#PHP" expanded="true" />
+                <element signature="e#87#146#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -122,12 +109,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/doc/PlatformBundle/Resources/views/DossierAgent/seeChamp.html.twig" />
-        <option value="$PROJECT_DIR$/src/doc/PlatformBundle/Resources/views/Formation/seeFormations.html.twig" />
-        <option value="$PROJECT_DIR$/src/doc/PlatformBundle/Resources/views/Document/seeDocument.html.twig" />
-        <option value="$PROJECT_DIR$/src/doc/PlatformBundle/Resources/views/Document/seeDocuments.html.twig" />
-        <option value="$PROJECT_DIR$/src/doc/PlatformBundle/Controller/HistoriqueController.php" />
-        <option value="$PROJECT_DIR$/src/doc/PlatformBundle/Resources/views/Formation/indexFormation.html.twig" />
         <option value="$PROJECT_DIR$/src/doc/PlatformBundle/Resources/views/Document/indexDocument.html.twig" />
         <option value="$PROJECT_DIR$/src/doc/PlatformBundle/Controller/RemunerationController.php" />
         <option value="$PROJECT_DIR$/src/doc/PlatformBundle/Controller/OrganismeController.php" />
@@ -146,7 +127,6 @@
         <option value="$PROJECT_DIR$/src/doc/PlatformBundle/Controller/DefaultController/OrganismeController.php" />
         <option value="$PROJECT_DIR$/src/doc/PlatformBundle/Controller/DefaultController/ReferentielController.php" />
         <option value="$PROJECT_DIR$/src/doc/PlatformBundle/Controller/DefaultController/RemunerationController.php" />
-        <option value="$PROJECT_DIR$/src/doc/PlatformBundle/Controller/DefaultController/TraitementController.php" />
         <option value="$PROJECT_DIR$/src/doc/PlatformBundle/Controller/General/CommentaireController.php" />
         <option value="$PROJECT_DIR$/src/doc/PlatformBundle/Controller/General/DocumentController.php" />
         <option value="$PROJECT_DIR$/src/doc/PlatformBundle/Controller/General/FormationController.php" />
@@ -173,6 +153,13 @@
         <option value="$PROJECT_DIR$/src/doc/PlatformBundle/Controller/DefaultController/Gestion/Agent/CarriereController.php" />
         <option value="$PROJECT_DIR$/src/doc/PlatformBundle/Controller/DefaultController/Gestion/Agent/OrganismeController.php" />
         <option value="$PROJECT_DIR$/src/doc/PlatformBundle/Controller/DefaultController/Gestion/Agent/RemunerationController.php" />
+        <option value="$PROJECT_DIR$/src/doc/PlatformBundle/Controller/DefaultController/TraitementController.php" />
+        <option value="$PROJECT_DIR$/src/doc/PlatformBundle/Controller/DefaultController/Traitement/Absences/AbsencesController.php" />
+        <option value="$PROJECT_DIR$/src/doc/PlatformBundle/Controller/DefaultController/Traitement/Absences/SaisiesController.php" />
+        <option value="$PROJECT_DIR$/src/doc/PlatformBundle/Controller/DefaultController/Traitement/Absences/EditionsController.php" />
+        <option value="$PROJECT_DIR$/src/doc/PlatformBundle/Controller/DefaultController/Traitement/Absences/ConstitutionsController.php" />
+        <option value="$PROJECT_DIR$/src/doc/PlatformBundle/Controller/DefaultController/Traitement/Absences/CetController.php" />
+        <option value="$PROJECT_DIR$/src/doc/PlatformBundle/Controller/DefaultController/Traitement/Absences/JourneeController.php" />
       </list>
     </option>
   </component>
@@ -391,7 +378,83 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="Referentiel" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Absences" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Symfony" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Symfony" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="doc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PlatformBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Controller" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DefaultController" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="Gestion" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Symfony" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Symfony" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="doc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PlatformBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Controller" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DefaultController" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Gestion" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Agent" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -420,6 +483,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Symfony" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Symfony" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="config" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -477,10 +558,7 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="UPDATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/doc/PlatformBundle/Controller/DefaultController/GestionController.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/doc/PlatformBundle/Controller/DefaultController/ReferentielController.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/doc/PlatformBundle/Controller/DefaultController/TraitementController.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/doc/PlatformBundle/Controller/ListPage.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/doc/PlatformBundle/Controller/DefaultController/Referentiel/Carriere/ClassificationController.php</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Created" />
@@ -488,6 +566,8 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="CREATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/doc/PlatformBundle/Controller/DefaultController/Referentiel/Carriere/NomenclaturesController.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/doc/PlatformBundle/Controller/DefaultController/Referentiel/Carriere/VisaController.php</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Deleted" />
@@ -614,12 +694,6 @@
       <created>1525857153889</created>
       <option name="number" value="Default" />
       <updated>1525857153889</updated>
-    </task>
-    <task id="LOCAL-00001" summary="maj see All operations">
-      <created>1526291787503</created>
-      <option name="number" value="00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1526291787503</updated>
     </task>
     <task id="LOCAL-00002" summary="maj see All operations">
       <created>1526301368772</created>
@@ -909,14 +983,20 @@
       <option name="project" value="LOCAL" />
       <updated>1530111263658</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="commit Dossier agent">
+      <created>1530174057669</created>
+      <option name="number" value="00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1530174057729</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28916544" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28916544" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32861635" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32861635" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
@@ -968,55 +1048,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/doc/PlatformBundle/Resources/views/Formation/modFormation.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="46" selection-start-line="0" selection-start-column="46" selection-end-line="0" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/doc/PlatformBundle/Form/FormationType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.65384614">
-          <caret line="1" column="40" selection-start-line="1" selection-start-column="40" selection-end-line="1" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/doc/PlatformBundle/Form/UserType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.65384614">
-          <caret line="1" column="35" selection-start-line="1" selection-start-column="35" selection-end-line="1" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/doc/PlatformBundle/Entity/DossierAgent.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.19362187">
-          <caret line="11" column="18" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/doc/PlatformBundle/Entity/Document.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.1548975">
-          <caret line="106" column="5" selection-start-line="106" selection-start-column="5" selection-end-line="106" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/doc/PlatformBundle/Entity/Commentaire.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5615034">
-          <caret line="30" column="6" selection-start-line="30" selection-start-column="6" selection-end-line="30" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/doc/PlatformBundle/Form/TutorielType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.019362187">
-          <caret line="1" column="39" selection-start-line="1" selection-start-column="39" selection-end-line="1" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/doc/PlatformBundle/Resources/views/Tutoriel/modTutoriel.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1181,14 +1212,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/doc/PlatformBundle/Controller/DefaultController/TraitementController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.3076923">
-          <caret line="2" column="57" selection-start-line="2" selection-start-column="57" selection-end-line="2" selection-end-column="57" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/doc/PlatformBundle/Controller/General/CommentaireController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-1.3076923">
@@ -1253,37 +1276,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/doc/PlatformBundle/Controller/DefaultController/GestionController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.292">
-          <caret line="2" column="57" selection-start-line="2" selection-start-column="57" selection-end-line="2" selection-end-column="57" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/doc/PlatformBundle/Controller/DefaultController/ReferentielController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.068">
-          <caret line="2" column="57" selection-start-line="2" selection-start-column="57" selection-end-line="2" selection-end-column="57" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/doc/PlatformBundle/Controller/ListPage.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.65384614">
-          <caret line="39" column="5" selection-start-line="39" selection-start-column="5" selection-end-line="39" selection-end-column="5" />
+          <caret line="40" column="5" selection-start-line="40" selection-start-column="5" selection-end-line="40" selection-end-column="5" />
           <folding>
             <element signature="e#98#155#0#PHP" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/doc/PlatformBundle/Controller/DefaultController/Gestion/Agent/AbsencesController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-96.42308">
-          <caret line="170" column="108" selection-start-line="170" selection-start-column="108" selection-end-line="170" selection-end-column="108" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1303,16 +1302,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/doc/PlatformBundle/Controller/DefaultController/Gestion/Agent/CarriereController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.9230769">
-          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding>
-            <element signature="e#140#183#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/doc/PlatformBundle/Controller/DefaultController/Gestion/Agent/IdentiteController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-152.34616">
@@ -1323,26 +1312,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/doc/PlatformBundle/Controller/DefaultController/Referentiel/Absences/CalendrierController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/config/security.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/routing.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.32352942">
-          <caret line="20" column="24" selection-start-line="20" selection-start-column="24" selection-end-line="20" selection-end-column="24" />
           <folding />
         </state>
       </provider>
@@ -1359,10 +1332,136 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/doc/PlatformBundle/Controller/DefaultController/Gestion/Agent/OrganismeController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.38405797">
-          <caret line="141" column="28" selection-start-line="141" selection-start-column="28" selection-end-line="141" selection-end-column="28" />
+        <state vertical-scroll-proportion="-90.88461">
+          <caret line="139" column="7" selection-start-line="139" selection-start-column="7" selection-end-line="139" selection-end-column="7" />
           <folding>
             <element signature="e#141#184#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/doc/PlatformBundle/Controller/DefaultController/Referentiel/Absences/GeneralController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/doc/PlatformBundle/Controller/DefaultController/Referentiel/Absences/MaladieController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="7.8461537">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/doc/PlatformBundle/Controller/DefaultController/GestionController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="3.2692308">
+          <caret line="2" column="57" selection-start-line="2" selection-start-column="57" selection-end-line="2" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/doc/PlatformBundle/Controller/DefaultController/ReferentielController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.058419243">
+          <caret line="2" column="57" selection-start-line="2" selection-start-column="57" selection-end-line="2" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/doc/PlatformBundle/Controller/DefaultController/Gestion/Agent/CarriereController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.61340207">
+          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+          <folding>
+            <element signature="e#140#183#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/doc/PlatformBundle/Controller/DefaultController/Referentiel/Absences/CalendrierController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.807693">
+          <caret line="19" column="65" selection-start-line="19" selection-start-column="65" selection-end-line="19" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/doc/PlatformBundle/Controller/DefaultController/Gestion/Agent/AbsencesController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.2692308">
+          <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="24" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/routing.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="20" column="24" selection-start-line="20" selection-start-column="24" selection-end-line="20" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/doc/PlatformBundle/Controller/DefaultController/Traitement/Absences/SaisiesController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.65384614">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding>
+            <element signature="e#87#146#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/doc/PlatformBundle/Controller/DefaultController/TraitementController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.6153846">
+          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="59" />
+          <folding>
+            <element signature="e#128#187#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/doc/PlatformBundle/Controller/DefaultController/Traitement/Absences/EditionsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.8461537">
+          <caret line="18" column="7" selection-start-line="10" selection-start-column="3" selection-end-line="25" selection-end-column="5" />
+          <folding>
+            <element signature="e#87#130#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/doc/PlatformBundle/Controller/DefaultController/Traitement/Absences/ConstitutionsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-16.346153">
+          <caret line="30" column="5" selection-start-line="15" selection-start-column="4" selection-end-line="30" selection-end-column="5" />
+          <folding>
+            <element signature="e#174#217#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/doc/PlatformBundle/Controller/DefaultController/Traitement/Absences/CetController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="5" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
+          <folding>
+            <element signature="e#87#146#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/doc/PlatformBundle/Controller/DefaultController/Traitement/Absences/JourneeController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2155797">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding>
+            <element signature="e#87#146#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
