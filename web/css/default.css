@@ -52,4 +52,9 @@ a:hover, a:focus, a {
 	width: auto;
 	height: auto;
 }
+
+table {   
+    table-layout: fixed;
+}
+
 ;
