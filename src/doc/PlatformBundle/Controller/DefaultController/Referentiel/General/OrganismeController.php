@@ -125,4 +125,123 @@ class OrganismeController extends ListPage
     {
         return $this->listChampPdf("Organisme / Modes de paiement",'15', '97', "Référentiel");
     }
+    
+    /**
+     *
+     * @Route("/referentiel/general/organisme/sec", name="seeGeneralOrganismeSec")
+     */
+    public function GeneralOrganismeSecAction()
+    {
+        return $this->listChamp("Organisme / Secteurs","referentiel/general/organisme/sec/pdf",'15', '98', "Référentiel");
+    }
+    /**
+     *
+     * @Route("/referentiel/general/organisme/sec/pdf", name="seeGeneralOrganismeSecpdf")
+     */
+    public function GeneralOrganismeSecPdfAction()
+    {
+        return $this->listChampPdf("Organisme / Secteurs",'15', '98', "Référentiel");
+    }
+    
+    /**
+     *
+     * @Route("/referentiel/general/organisme/typbud", name="seeGeneralOrganismeTypbud")
+     */
+    public function GeneralOrganismeTypbudAction()
+    {
+        return $this->listChamp("Organisme / Types de budget","referentiel/general/organisme/typbud/pdf",'15', '99', "Référentiel");
+    }
+    /**
+     *
+     * @Route("/referentiel/general/organisme/typbud/pdf", name="seeGeneralOrganismeTypbudpdf")
+     */
+    public function GeneralOrganismeTypbudPdfAction()
+    {
+        return $this->listChampPdf("Organisme / Types de budget",'15', '99', "Référentiel");
+    }
+    
+    /**
+     *
+     * @Route("/referentiel/general/organisme/bud", name="seeGeneralOrganismeBud")
+     */
+    public function GeneralOrganismeBudAction()
+    {
+        return $this->listChamp("Organisme / Budgets","referentiel/general/organisme/bud/pdf",'15', '100', "Référentiel");
+    }
+    /**
+     *
+     * @Route("/referentiel/general/organisme/bud/pdf", name="seeGeneralOrganismeBudpdf")
+     */
+    public function GeneralOrganismeBudPdfAction()
+    {
+        return $this->listChampPdf("Organisme / Budgets",'15', '100', "Référentiel");
+    }
+    
+    /**
+     *
+     * @Route("/referentiel/general/organisme/exe", name="seeGeneralOrganismeExe")
+     */
+    public function GeneralOrganismeExeAction()
+    {
+        return $this->listChamp("Organisme / Exercices","referentiel/general/organisme/exe/pdf",'15', '101', "Référentiel");
+    }
+    /**
+     *
+     * @Route("/referentiel/general/organisme/exe/pdf", name="seeGeneralOrganismeExepdf")
+     */
+    public function GeneralOrganismeExePdfAction()
+    {
+        return $this->listChampPdf("Organisme / Exercices",'15', '101', "Référentiel");
+    }
+    
+    /**
+     *
+     * @Route("/referentiel/general/organisme/ind/def", name="seeGeneralOrganismeIndDef")
+     */
+    public function GeneralOrganismeIndDefAction()
+    {
+        return $this->listChamp("Organisme / Indicateurs organisme / Définition indicateurs","referentiel/general/organisme/ind/def/pdf",'15', '102', "Référentiel");
+    }
+    /**
+     *
+     * @Route("/referentiel/general/organisme/ind/def/pdf", name="seeGeneralOrganismeIndDefpdf")
+     */
+    public function GeneralOrganismeIndDefPdfAction()
+    {
+        return $this->listChampPdf("Organisme / Indicateurs organisme / Définition indicateurs",'15', '102', "Référentiel");
+    }
+    
+    /**
+     *
+     * @Route("/referentiel/general/organisme/ind/sai", name="seeGeneralOrganismeIndSai")
+     */
+    public function GeneralOrganismeIndSaiAction()
+    {
+        return $this->listChamp("Organisme / Indicateurs organisme / Saisie des indicateurs","referentiel/general/organisme/ind/sai/pdf",'15', '103', "Référentiel");
+    }
+    /**
+     *
+     * @Route("/referentiel/general/organisme/ind/sai/pdf", name="seeGeneralOrganismeIndSaipdf")
+     */
+    public function GeneralOrganismeIndSaiPdfAction()
+    {
+        return $this->listChampPdf("Organisme / Indicateurs organisme / Saisie des indicateurs",'15', '103', "Référentiel");
+    }
+    
+    /**
+     *
+     * @Route("/referentiel/general/organisme/ind/val", name="seeGeneralOrganismeIndVal")
+     */
+    public function GeneralOrganismeIndValAction()
+    {
+        return $this->listChamp("Organisme / Indicateurs organisme /  Valeurs indicateurs","referentiel/general/organisme/ind/val/pdf",'15', '104', "Référentiel");
+    }
+    /**
+     *
+     * @Route("/referentiel/general/organisme/ind/val/pdf", name="seeGeneralOrganismeIndValpdf")
+     */
+    public function GeneralOrganismeIndValPdfAction()
+    {
+        return $this->listChampPdf("Organisme / Indicateurs organisme /  Valeurs indicateurs",'15', '104', "Référentiel");
+    }
 }
