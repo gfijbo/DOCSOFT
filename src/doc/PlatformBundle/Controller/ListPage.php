@@ -136,7 +136,9 @@ class ListPage extends Controller
         
         $_SESSION['listOnglets'] = $listOnglets;
         
-        $html = $this->redirectToRoute('alloperation');
+        $html = $this->redirectToRoute('alloperation', array(
+            $menu = $type
+        ));
         return $html;
     }
 }
