@@ -77,7 +77,7 @@ referentiel12:
     resource: "@docPlatformBundle/Controller/DefaultController/Referentiel/GestionModele"
     type:     annotation
 referentiel13: 
-    resource: "@docPlatformBundle/Controller/DefaultController/Referentiel/Interface"
+    resource: "@docPlatformBundle/Controller/DefaultController/Referentiel/Interfaces"
     type:     annotation
 referentiel14: 
     resource: "@docPlatformBundle/Controller/DefaultController/Referentiel/Prestation"
