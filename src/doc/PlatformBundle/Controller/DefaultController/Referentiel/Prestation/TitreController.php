@@ -13,7 +13,7 @@ class TitreController extends ListPage
      */
     public function PrestationTitStrAction()
     {
-        return $this->listChamp("Titres Repas / Structure Livraison","referentiel/prestation/tit/str/pdf",'86', '361', "Référentiel");
+        return $this->listChamp("Titres Repas / Structure Livraison","referentiel/prestation/tit/str/pdf",'86', '357', "Référentiel");
     }
     /**
      *
@@ -21,6 +21,6 @@ class TitreController extends ListPage
      */
     public function PrestationTitStrPdfAction()
     {
-        return $this->listChampPdf("Titres Repas / Structure Livraison",'86', '361', "Référentiel");
+        return $this->listChampPdf("Titres Repas / Structure Livraison",'86', '357', "Référentiel");
     }
 }
