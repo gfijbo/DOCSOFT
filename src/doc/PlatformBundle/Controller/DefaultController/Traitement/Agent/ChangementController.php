@@ -6,7 +6,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use doc\PlatformBundle\Controller\ListPage;
 
 
-class ChangementController extends \doc\PlatformBundle\Controller\ListPage
+class ChangementController extends ListPage
 {
     /**
      *
