@@ -18,16 +18,10 @@
     {# fin block de stylsheets #}
 </head>
 
-<body class="fixed-nav sticky-footer grad_menu" id="page-top">
+<body class="fixed-nav grad_menu" id="page-top">
 
 <nav class="navbar navbar-expand-lg fixed-top grad_nav" id="mainNav">
     <a class="navbar-brand" href="{{ path('core_homepage') }}">DOCSOFT</a>
-    <button class="navbar-toggler navbar-toggler-right" type="button"
-            data-toggle="collapse" data-target="#navbarResponsive"
-            aria-controls="navbarResponsive" aria-expanded="false"
-            aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
     <div class="collapse navbar-collapse" id="navbarResponsive">
     {# block des onglets à gauche #}
         {{ include("CoreBundle::ongletsLeft.html.twig") }}
@@ -38,28 +32,14 @@
 
 	{# fin du block des onglets en haut #}
     </div>
+   
 </nav>
-
-{#iiiiiiiiiii#}
-<nav class="navbar  grad_nav" id="mainNav">
-<div class="collapse navbar-collapse" id="navbarResponsiveRight">
-    <ul class="nav navbar-nav navbar-right">
-    <li class="nav-item dropdown">
-            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <li class="nav-item"><a href="/document" class="nav-link"><i class="fa fa-briefcase"></i> Documents </a></li>
-                <li class="nav-item"><a href="/formation" class="nav-link"><i class="fa fa-book"></i> Formations </a></li>
-                <li class="nav-item"><a href="/tutoriel" class="nav-link"><i class="fa fa-video-camera"></i> Tutoriels </a></li>
-                <li class="nav-item"><a href="https://www.gfi.world/fr/" class="nav-link"><i class="fa fa-internet-explorer"></i> GFI </a></li>
-                <li class="nav-item"><a href="http://forumastrerh.gfi.fr/" class="nav-link"><i class="fa fa-users"></i> Forum Astre RH </a></li>
-            </div>
-        </li>
-    </ul>
-</div>
-</nav>
-{#Fin iiiiiiiiiiiiii#}
 
 <div class="content-wrapper">
-    <div class="container-fluid ">
+	<div class="container-fluid">
+	<nav class="navbar navbar-expand-lg" id="secondaryNav">
+         {{ include("CoreBundle::ongletsRight.html.twig") }}
+	</nav>
         <!-- Breadcrumbs-->
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="{{ path('core_homepage') }}">DOCSOFT</a></li>
@@ -76,10 +56,10 @@
                     <li class="breadcrumb-item active">Accueil</li>
             {% endif %}
         </ol>
+       
         {% block body %}
         {% endblock %}
-        <!-- /.container-fluid-->
-        <!-- /.content-wrapper-->
+        
         <footer class="sticky-footer">
             <div class="container">
                 <div class="text-center">
