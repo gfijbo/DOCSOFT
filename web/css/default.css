@@ -37,6 +37,9 @@ p {
 li{
 	line-height : 12pt;
 }
+span{
+	font-size: 13px;
+}
 a:hover, a:focus, a {
 	color: black;
 }	
