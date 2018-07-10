@@ -56,8 +56,4 @@ a:hover, a:focus, a {
 	height: auto;
 }
 
-table {   
-    table-layout: fixed;
-}
-
 body {padding-bottom: 70px;} 
