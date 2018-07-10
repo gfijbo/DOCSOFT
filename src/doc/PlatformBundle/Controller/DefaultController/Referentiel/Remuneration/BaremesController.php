@@ -313,4 +313,72 @@ class BaremesController extends ListPage
         return $this->listChampPdf("Barèmes / Paramètres Xemelios (XEM)",'48', '231', "Référentiel");
     }
     
+    /**
+     *
+     * @Route("/referentiel/remuneration/bar/parale", name="seeRemunerationBarParale")
+     */
+    public function RemunerationBarParaleAction()
+    {
+        return $this->listChamp("Barèmes / Paramètres alertes (ALE)","referentiel/remuneration/bar/parale/pdf",'48', '232', "Référentiel");
+    }
+    /**
+     *
+     * @Route("/referentiel/remuneration/bar/parale/pdf", name="seeRemunerationBarParalepdf")
+     */
+    public function RemunerationBarParalePdfAction()
+    {
+        return $this->listChampPdf("Barèmes / Paramètres alertes (ALE)",'48', '232', "Référentiel");
+    }
+    
+    /**
+     *
+     * @Route("/referentiel/remuneration/bar/parchr", name="seeRemunerationBarParchr")
+     */
+    public function RemunerationBarParchrAction()
+    {
+        return $this->listChamp("Barèmes / Paramètres Chronotime (CHR)","referentiel/remuneration/bar/parchr/pdf",'48', '233', "Référentiel");
+    }
+    /**
+     *
+     * @Route("/referentiel/remuneration/bar/parchr/pdf", name="seeRemunerationBarParchrpdf")
+     */
+    public function RemunerationBarParchrPdfAction()
+    {
+        return $this->listChampPdf("Barèmes / Paramètres Chronotime (CHR)",'48', '233', "Référentiel");
+    }
+    
+    /**
+     *
+     * @Route("/referentiel/remuneration/bar/paralf", name="seeRemunerationBarParalf")
+     */
+    public function RemunerationBarParalfAction()
+    {
+        return $this->listChamp("Barèmes / Paramètres ALF","referentiel/remuneration/bar/paralf/pdf",'48', '234', "Référentiel");
+    }
+    /**
+     *
+     * @Route("/referentiel/remuneration/bar/paralf/pdf", name="seeRemunerationBarParalfpdf")
+     */
+    public function RemunerationBarParalfPdfAction()
+    {
+        return $this->listChampPdf("Barèmes / Paramètres ALF",'48', '234', "Référentiel");
+    }
+    
+    /**
+     *
+     * @Route("/referentiel/remuneration/bar/parcogctl", name="seeRemunerationBarParcogctl")
+     */
+    public function RemunerationBarParcogctlAction()
+    {
+        return $this->listChamp("Barèmes / Paramètres Cohérence (CTL)","referentiel/remuneration/bar/parcogctl/pdf",'48', '235', "Référentiel");
+    }
+    /**
+     *
+     * @Route("/referentiel/remuneration/bar/parcogctl/pdf", name="seeRemunerationBarParcogctlpdf")
+     */
+    public function RemunerationBarParcogctlPdfAction()
+    {
+        return $this->listChampPdf("Barèmes / Paramètres Cohérence (CTL)",'48', '235', "Référentiel");
+    }
+    
 }
