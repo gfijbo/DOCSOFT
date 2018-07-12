@@ -35,7 +35,7 @@ p {
 }
 
 li{
-	line-height : 12pt;
+	line-height : 10pt;
 }
 span{
 	font-size: 13px;
@@ -56,4 +56,4 @@ a:hover, a:focus, a {
 	height: auto;
 }
 
-body {padding-bottom: 70px;} 
+body {padding-bottom: 70px;}

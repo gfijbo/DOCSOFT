@@ -175,7 +175,7 @@ class IdentiteController extends ListPage
      */
     public function IdentiteHandicapsAction()
     {
-        return $this->listChamp("Identité / Handicaps","gestion/handicaps/pdf",'2', '22',"Gestion");
+        return $this->listChamp("Identité / Handicaps","gestion/identite/handicaps/pdf",'2', '22',"Gestion");
     }
     /**
      *
@@ -191,7 +191,7 @@ class IdentiteController extends ListPage
      */
     public function IdentiteResAptAction()
     {
-        return $this->listChamp("Identité / Réserve d'aptitude","gestion/resapt/pdf",'2', '23',"Gestion");
+        return $this->listChamp("Identité / Réserve d'aptitude","gestion/identite/resapt/pdf",'2', '23',"Gestion");
     }
     /**
      *
@@ -207,7 +207,7 @@ class IdentiteController extends ListPage
      */
     public function IdentiteMensAction()
     {
-        return $this->listChamp("Identité / Mensurations","gestion/mensurations/pdf",'2', '24',"Gestion");
+        return $this->listChamp("Identité / Mensurations","gestion/identite/mensurations/pdf",'2', '24',"Gestion");
     }
     /**
      *
@@ -223,7 +223,7 @@ class IdentiteController extends ListPage
      */
     public function IdentiteInfAlocFAction()
     {
-        return $this->listChamp("Identité / Informations Allocations Familiales","gestion/infallfam/pdf",'2', '25',"Gestion");
+        return $this->listChamp("Identité / Informations Allocations Familiales","gestion/identite/infallfam/pdf",'2', '25',"Gestion");
     }
     /**
      *

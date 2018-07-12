@@ -13,7 +13,7 @@ class OrganismeController extends ListPage
      */
     public function OrganismeAgentAction()
     {
-        return $this->listChamp("Organisme / Agent","organisme/agent/pdf",'3', '4',"Gestion");
+        return $this->listChamp("Organisme / Agent","gestion/organisme/agent/pdf",'3', '4',"Gestion");
     }
     /**
      *
@@ -29,7 +29,7 @@ class OrganismeController extends ListPage
      */
     public function OrganismeAffectationAction()
     {
-        return $this->listChamp("Organisme / Affectation","organisme/affectation/pdf",'3', '5',"Gestion");
+        return $this->listChamp("Organisme / Affectation","gestion/organisme/affectation/pdf",'3', '5',"Gestion");
     }
     /**
      *
@@ -45,7 +45,7 @@ class OrganismeController extends ListPage
      */
     public function OrganismeDemModAffAction()
     {
-        return $this->listChamp("Organisme / Demandes de modifications d'affectations","organisme/demmodaff/pdf",'3', '26',"Gestion");
+        return $this->listChamp("Organisme / Demandes de modifications d'affectations","gestion/organisme/demmodaff/pdf",'3', '26',"Gestion");
     }
     /**
      *
@@ -61,7 +61,7 @@ class OrganismeController extends ListPage
      */
     public function OrganismeContratAction()
     {
-        return $this->listChamp("Organisme / Contrat","organisme/contrat/pdf",'3', '27',"Gestion");
+        return $this->listChamp("Organisme / Contrat","gestion/organisme/contrat/pdf",'3', '27',"Gestion");
     }
     /**
      *
@@ -78,7 +78,7 @@ class OrganismeController extends ListPage
      */
     public function OrganismeRemplacementsAction()
     {
-        return $this->listChamp("Organisme / Remplacements","organisme/remplacements/pdf",'3', '28',"Gestion");
+        return $this->listChamp("Organisme / Remplacements","gestion/organisme/remplacements/pdf",'3', '28',"Gestion");
     }
     /**
      *
@@ -94,7 +94,7 @@ class OrganismeController extends ListPage
      */
     public function OrganismeInfPruAction()
     {
-        return $this->listChamp("Organisme / Information Prud'homme","organisme/infpru/pdf",'3', '29',"Gestion");
+        return $this->listChamp("Organisme / Information Prud'homme","gestion/organisme/infpru/pdf",'3', '29',"Gestion");
     }
     /**
      *
@@ -110,7 +110,7 @@ class OrganismeController extends ListPage
      */
     public function OrganismeMutDepAction()
     {
-        return $this->listChamp("Organisme / Mutation départ","organisme/mutdep/pdf",'3', '30',"Gestion");
+        return $this->listChamp("Organisme / Mutation départ","gestion/organisme/mutdep/pdf",'3', '30',"Gestion");
     }
     /**
      *
@@ -127,7 +127,7 @@ class OrganismeController extends ListPage
      */
     public function OrganismeComAgeAction()
     {
-        return $this->listChamp("Organisme / Complément agent","organisme/comage/pdf",'3', '31',"Gestion");
+        return $this->listChamp("Organisme / Complément agent","gestion/organisme/comage/pdf",'3', '31',"Gestion");
     }
     /**
      *
@@ -143,7 +143,7 @@ class OrganismeController extends ListPage
      */
     public function OrganismePreMutAssAction()
     {
-        return $this->listChamp("Organisme / Prévoyance-Mutuelle-Assurance","organisme/premutass/pdf",'3', '32',"Gestion");
+        return $this->listChamp("Organisme / Prévoyance-Mutuelle-Assurance","gestion/organisme/premutass/pdf",'3', '32',"Gestion");
     }
     /**
      *

@@ -13,7 +13,7 @@ class RemunerationController extends ListPage
      */
     public function SeeRemunerationElementsAction()
     {
-        return $this->listChamp("Organisme / Eléments","organisme/elements/pdf",'6', '12',"Gestion");
+        return $this->listChamp("Organisme / Eléments","gestion/remuneration/elements/pdf",'6', '12',"Gestion");
     }
     /**
      *
@@ -30,7 +30,7 @@ class RemunerationController extends ListPage
      */
     public function SeeRemunerationContratAction()
     {
-        return $this->listChamp("Organisme / Contrat","organisme/contrat/pdf",'6', '57',"Gestion");
+        return $this->listChamp("Organisme / Contrat","gestion/remuneration/contrat/pdf",'6', '57',"Gestion");
     }
     /**
      *
@@ -47,7 +47,7 @@ class RemunerationController extends ListPage
      */
     public function SeeRemunerationEledecAction()
     {
-        return $this->listChamp("Organisme / Elém. déconcentrés","organisme/eledec/pdf",'6', '58',"Gestion");
+        return $this->listChamp("Organisme / Elém. déconcentrés","gestion/remuneration/eledec/pdf",'6', '58',"Gestion");
     }
     /**
      *
@@ -63,7 +63,7 @@ class RemunerationController extends ListPage
      */
     public function SeeRemunerationElevarcouAction()
     {
-        return $this->listChamp("Organisme / Elém. var. en cours","organisme/elevarcou/pdf",'6', '59',"Gestion");
+        return $this->listChamp("Organisme / Elém. var. en cours","gestion/remuneration/elevarcou/pdf",'6', '59',"Gestion");
     }
     /**
      *
@@ -79,7 +79,7 @@ class RemunerationController extends ListPage
      */
     public function SeeRemunerationElevarhisAction()
     {
-        return $this->listChamp("Organisme / Elém. var. historique","organisme/elevarhis/pdf",'6', '60',"Gestion");
+        return $this->listChamp("Organisme / Elém. var. historique","gestion/remuneration/elevarhis/pdf",'6', '60',"Gestion");
     }
     /**
      *
@@ -95,7 +95,7 @@ class RemunerationController extends ListPage
      */
     public function SeeRemunerationTicresAction()
     {
-        return $this->listChamp("Organisme / Tickets restaurant","organisme/ticres/pdf",'6', '61',"Gestion");
+        return $this->listChamp("Organisme / Tickets restaurant","gestion/remuneration/ticres/pdf",'6', '61',"Gestion");
     }
     /**
      *
@@ -111,7 +111,7 @@ class RemunerationController extends ListPage
      */
     public function SeeRemunerationMesbullAction()
     {
-        return $this->listChamp("Organisme / Mess. bulletin","organisme/mesbul/pdf",'6', '62',"Gestion");
+        return $this->listChamp("Organisme / Mess. bulletin","gestion/remuneration/mesbul/pdf",'6', '62',"Gestion");
     }
     /**
      *
@@ -127,7 +127,7 @@ class RemunerationController extends ListPage
      */
     public function SeeRemunerationBulletinsAction()
     {
-        return $this->listChamp("Organisme / Bulletins","organisme/bulletins/pdf",'6', '63',"Gestion");
+        return $this->listChamp("Organisme / Bulletins","gestion/remuneration/bulletins/pdf",'6', '63',"Gestion");
     }
     /**
      *
@@ -143,7 +143,7 @@ class RemunerationController extends ListPage
      */
     public function SeeRemunerationCumulsAction()
     {
-        return $this->listChamp("Organisme / Cumuls","organisme/cumuls/pdf",'6', '64',"Gestion");
+        return $this->listChamp("Organisme / Cumuls","gestion/remuneration/cumuls/pdf",'6', '64',"Gestion");
     }
     /**
      *
@@ -159,7 +159,7 @@ class RemunerationController extends ListPage
      */
     public function SeeRemunerationEcheanceAction()
     {
-        return $this->listChamp("Organisme / Echéance","organisme/echeance/pdf",'6', '65',"Gestion");
+        return $this->listChamp("Organisme / Echéance","gestion/remuneration/echeance/pdf",'6', '65',"Gestion");
     }
     /**
      *
@@ -175,7 +175,7 @@ class RemunerationController extends ListPage
      */
     public function SeeRemunerationRepartitionAction()
     {
-        return $this->listChamp("Organisme / Répartition","organisme/repartition/pdf",'6', '66',"Gestion");
+        return $this->listChamp("Organisme / Répartition","gestion/remuneration/repartition/pdf",'6', '66',"Gestion");
     }
     /**
      *
@@ -191,7 +191,7 @@ class RemunerationController extends ListPage
      */
     public function SeeRemunerationHisrepAction()
     {
-        return $this->listChamp("Organisme / Historique des répartitions","organisme/hisrep/pdf",'6', '67',"Gestion");
+        return $this->listChamp("Organisme / Historique des répartitions","gestion/remuneration/hisrep/pdf",'6', '67',"Gestion");
     }
     /**
      *
@@ -207,7 +207,7 @@ class RemunerationController extends ListPage
      */
     public function SeeRemunerationRappelsAction()
     {
-        return $this->listChamp("Organisme / Rappels","organisme/rappels/pdf",'6', '68',"Gestion");
+        return $this->listChamp("Organisme / Rappels","gestion/remuneration/rappels/pdf",'6', '68',"Gestion");
     }
     /**
      *
@@ -223,7 +223,7 @@ class RemunerationController extends ListPage
      */
     public function SeeRemunerationAnalytiqueAction()
     {
-        return $this->listChamp("Organisme / Analytique","organisme/analytique/pdf",'6', '69',"Gestion");
+        return $this->listChamp("Organisme / Analytique","gestion/remuneration/analytique/pdf",'6', '69',"Gestion");
     }
     /**
      *
@@ -239,7 +239,7 @@ class RemunerationController extends ListPage
      */
     public function SeeRemunerationRefacturationAction()
     {
-        return $this->listChamp("Organisme / Refacturation","organisme/refacturation/pdf",'6', '70',"Gestion");
+        return $this->listChamp("Organisme / Refacturation","gestion/remuneration/refacturation/pdf",'6', '70',"Gestion");
     }
     /**
      *
@@ -255,7 +255,7 @@ class RemunerationController extends ListPage
      */
     public function SeeRemunerationRetsouAction()
     {
-        return $this->listChamp("Organisme / Retenue à la source","organisme/retsou/pdf",'6', '71',"Gestion");
+        return $this->listChamp("Organisme / Retenue à la source","gestion/remuneration/retsou/pdf",'6', '71',"Gestion");
     }
     /**
      *
