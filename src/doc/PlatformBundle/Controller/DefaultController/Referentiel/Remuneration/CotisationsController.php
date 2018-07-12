@@ -74,4 +74,106 @@ class CotisationsController extends ListPage
     {
         return $this->listChampPdf("Valeurs / Taux des types de cotisations",'50', '247', "Référentiel");
     }
+    
+    /**
+     *
+     * @Route("/referentiel/remuneration/cot/val/val", name="seeRemunerationCotValVal")
+     */
+    public function RemunerationCotValValAction()
+    {
+        return $this->listChamp("Valeurs / Valeurs des plafonds","referentiel/remuneration/cot/val/val/pdf",'50', '248', "Référentiel");
+    }
+    /**
+     *
+     * @Route("/referentiel/remuneration/cot/val/val/pdf", name="seeRemunerationCotValValpdf")
+     */
+    public function RemunerationCotValValPdfAction()
+    {
+        return $this->listChampPdf("Valeurs / Valeurs des plafonds",'50', '248', "Référentiel");
+    }
+    
+    /**
+     *
+     * @Route("/referentiel/remuneration/cot/reg/regcot", name="seeRemunerationCotRegRegcot")
+     */
+    public function RemunerationCotRegRegcotAction()
+    {
+        return $this->listChamp("Régimes / Régimes de cotisations","/referentiel/remuneration/cot/reg/regcot/pdf",'50', '249', "Référentiel");
+    }
+    /**
+     *
+     * @Route("/referentiel/remuneration/cot/reg/regcot/pdf", name="seeRemunerationCotRegRegcotpdf")
+     */
+    public function RemunerationCotRegRegcotPdfAction()
+    {
+        return $this->listChampPdf("Régimes / Régimes de cotisations",'50', '249', "Référentiel");
+    }
+    
+    /**
+     *
+     * @Route("/referentiel/remuneration/cot/reg/asscot", name="seeRemunerationCotRegAsscot")
+     */
+    public function RemunerationCotRegAsscotAction()
+    {
+        return $this->listChamp("Régimes / Association Régimes / Cotisation","referentiel/remuneration/cot/reg/asscot/pdf",'50', '250', "Référentiel");
+    }
+    /**
+     *
+     * @Route("/referentiel/remuneration/cot/reg/asscot/pdf", name="seeRemunerationCotRegAsscotpdf")
+     */
+    public function RemunerationCotRegAsscotPdfAction()
+    {
+        return $this->listChampPdf("Régimes / Association Régimes / Cotisation",'50', '250', "Référentiel");
+    }
+    
+    /**
+     *
+     * @Route("/referentiel/remuneration/cot/reg/assrub", name="seeRemunerationCotRegAssrub")
+     */
+    public function RemunerationCotRegAssrubAction()
+    {
+        return $this->listChamp("Régimes / Association AOT / Rubriques","referentiel/remuneration/cot/reg/assrub/pdf",'50', '251', "Référentiel");
+    }
+    /**
+     *
+     * @Route("/referentiel/remuneration/cot/reg/assrub/pdf", name="seeRemunerationCotRegAssrubpdf")
+     */
+    public function RemunerationCotRegAssrubPdfAction()
+    {
+        return $this->listChampPdf("Régimes / Association AOT / Rubriques",'50', '251', "Référentiel");
+    }
+    
+    /**
+     *
+     * @Route("/referentiel/remuneration/cot/pro/cri", name="seeRemunerationCotProCri")
+     */
+    public function RemunerationCotProCriAction()
+    {
+        return $this->listChamp("Profils / Critères des profils","referentiel/remuneration/cot/pro/cri/pdf",'50', '252', "Référentiel");
+    }
+    /**
+     *
+     * @Route("/referentiel/remuneration/cot/pro/cri/pdf", name="seeRemunerationCotProCripdf")
+     */
+    public function RemunerationCotProCriPdfAction()
+    {
+        return $this->listChampPdf("Profils / Critères des profils",'50', '252', "Référentiel");
+    }
+    
+    /**
+     *
+     * @Route("/referentiel/remuneration/cot/pro/com", name="seeRemunerationCotProCom")
+     */
+    public function RemunerationCotProComAction()
+    {
+        return $this->listChamp("Profils / Composition des profils","referentiel/remuneration/cot/pro/com/pdf",'50', '253', "Référentiel");
+    }
+    /**
+     *
+     * @Route("/referentiel/remuneration/cot/pro/com/pdf", name="seeRemunerationCotProCompdf")
+     */
+    public function RemunerationCotProComPdfAction()
+    {
+        return $this->listChampPdf("Profils / Composition des profils",'50', '253', "Référentiel");
+    }
 }
