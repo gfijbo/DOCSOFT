@@ -11,7 +11,7 @@ namespace doc\PlatformBundle\Controller\DefaultController\Traitement\Agent;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use doc\PlatformBundle\Controller\ListPage;
 
-class MuationController extends ListPage
+class MutationController extends ListPage
 {
     /**
      *

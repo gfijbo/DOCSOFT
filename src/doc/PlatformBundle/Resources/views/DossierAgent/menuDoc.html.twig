@@ -22,12 +22,19 @@
 					</tr>
 					<tr>
 						{% for page in listDoss %}
+						
 						<td><a class="dropdown-item"
 							href="{{ page.getUrl() }}">{{ page.getPage() }}</a></td>
-						{% if loop.index%2 == 0 %}
-					</tr>
-					<tr>
-						{% endif %}
+								{% if (page.getPage()|length) < 60 %}
+						        {% if loop.index%2 == 0 %}
+					 			</tr>
+					 			{% endif %}
+					        {% else %}
+						        {% if loop.index%1 == 0 %}
+								</tr>
+						        {% endif %}
+						<tr>
+						    {% endif %}
 						{% endfor %}
 					</tr>
 				</table>
