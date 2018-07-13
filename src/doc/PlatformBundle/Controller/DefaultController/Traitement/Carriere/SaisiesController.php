@@ -103,4 +103,84 @@ class SaisiesController extends ListPage
     {
         return $this->listChampPdf("Saisies / Consultations / Quotas Prises en compte",'126', '419', "Traitement");
     }
+    /**
+     *
+     * @Route("/traitement/carriere/sai/con/sui", name="seeCarriereSaiSui")
+     */
+    public function CarriereSaiSuiAction()
+    {
+        return $this->listChamp("Saisies / Consultations / Suivi des arrêtés","/traitement/carriere/sai/con/sui/pdf",'126', '420', "Traitement");
+    }
+    /**
+     *
+     * @Route("/traitement/carriere/sai/con/sui/pdf", name="seeCarriereSaiSuipdf")
+     */
+    public function CarriereSaiSuiPdfAction()
+    {
+        return $this->listChampPdf("Saisies / Consultations / Suivi des arrêtés",'126', '420', "Traitement");
+    }
+    /**
+     *
+     * @Route("/traitement/carriere/sai/con/arr", name="seeCarriereSaiArr")
+     */
+    public function CarriereSaiArrAction()
+    {
+        return $this->listChamp("Saisies / Consultations / Arrêtés avancement","/traitement/carriere/sai/con/arr/pdf",'126', '421', "Traitement");
+    }
+    /**
+     *
+     * @Route("/traitement/carriere/sai/con/arr/pdf", name="seeCarriereSaiArrpdf")
+     */
+    public function CarriereSaiArrPdfAction()
+    {
+        return $this->listChampPdf("Saisies / Consultations / Arrêtés avancement",'126', '421', "Traitement");
+    }
+    /**
+     *
+     * @Route("/traitement/carriere/sai/con/mis", name="seeCarriereSaiMis")
+     */
+    public function CarriereSaiMisAction()
+    {
+        return $this->listChamp("Saisies / Consultations /  Mise à jour des indices","/traitement/carriere/sai/con/mis/pdf",'126', '422', "Traitement");
+    }
+    /**
+     *
+     * @Route("/traitement/carriere/sai/con/mis/pdf", name="seeCarriereSaiMispdf")
+     */
+    public function CarriereSaiMisPdfAction()
+    {
+        return $this->listChampPdf("Saisies / Consultations /  Mise à jour des indices",'126', '422', "Traitement");
+    }
+    /**
+     *
+     * @Route("/traitement/carriere/sai/con/probon", name="seeCarriereSaiProBon")
+     */
+    public function CarriereSaiProBonAction()
+    {
+        return $this->listChamp("Saisies / Consultations /  Propositions de bonifications hospitalières","/traitement/carriere/sai/con/probon/pdf",'126', '423', "Traitement");
+    }
+    /**
+     *
+     * @Route("/traitement/carriere/sai/con/probon/pdf", name="seeCarriereSaiProBonpdf")
+     */
+    public function CarriereSaiProBonPdfAction()
+    {
+        return $this->listChampPdf("Saisies / Consultations /  Propositions de bonifications hospitalières",'126', '423', "Traitement");
+    }
+    /**
+     *
+     * @Route("/traitement/carriere/sai/con/dem", name="seeCarriereSaiDem")
+     */
+    public function CarriereSaiDemAction()
+    {
+        return $this->listChamp("Saisies / Consultations /  Demandes de modifications d'affectations","/traitement/carriere/sai/con/dem/pdf",'126', '424', "Traitement");
+    }
+    /**
+     *
+     * @Route("/traitement/carriere/sai/con/dem/pdf", name="seeCarriereSaiDempdf")
+     */
+    public function CarriereSaiDemPdfAction()
+    {
+        return $this->listChampPdf("Saisies / Consultations /  Demandes de modifications d'affectations",'126', '424', "Traitement");
+    }
 }
