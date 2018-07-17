@@ -149,7 +149,7 @@ traitement17:
     resource: "@docPlatformBundle/Controller/DefaultController/Traitement/Export"
     type:     annotation
 traitement18: 
-    resource: "@docPlatformBundle/Controller/DefaultController/Traitement/Interface"
+    resource: "@docPlatformBundle/Controller/DefaultController/Traitement/InterfaceAstre"
     type:     annotation
 traitement19: 
     resource: "@docPlatformBundle/Controller/DefaultController/Traitement/Liaison"

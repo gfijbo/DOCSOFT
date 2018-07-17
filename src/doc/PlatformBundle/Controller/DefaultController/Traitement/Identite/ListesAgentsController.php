@@ -71,20 +71,4 @@ class ListesAgentsController extends ListPage
     {
         return $this->listChampPdf("Listes Agents / Organisation",'118', '405', "Traitement");
     }
-    /**
-     *
-     * @Route("/traitement/identite/lisenf/dro", name="seeIdentiteLisenfDro")
-     */
-    public function IdentiteLisenfDroAction()
-    {
-        return $this->listChamp("Listes Enfants / Droit SFT","/traitement/identite/lisenf/dro/pdf",'118', '406', "Traitement");
-    }
-    /**
-     *
-     * @Route("/traitement/identite/lisenf/dro/pdf", name="seeIdentiteLisenfDropdf")
-     */
-    public function IdentiteLisenfDroPdfAction()
-    {
-        return $this->listChampPdf("Listes Enfants / Droit SFT",'118', '406', "Traitement");
-    }
 }
