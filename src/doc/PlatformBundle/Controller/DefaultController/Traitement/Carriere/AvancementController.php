@@ -183,4 +183,20 @@ class AvancementController extends ListPage
     {
         return $this->listChampPdf("Avancements / Basculement des bonifications",'128', '437', "Traitement");
     }
+    /**
+     *
+     * @Route("/traitement/carriere/ava/edi", name="seeCarriereAvaEdi")
+     */
+    public function CarriereAvaEdiAction()
+    {
+        return $this->listChamp("Avancements / Edition des bonifications attribuées","/traitement/carriere/ava/basbon/pdf",'128', '438', "Traitement");
+    }
+    /**
+     *
+     * @Route("/traitement/carriere/ava/edi/pdf", name="seeCarriereAvaEdipdf")
+     */
+    public function CarriereAvaEdiPdfAction()
+    {
+        return $this->listChampPdf("Avancements / Edition des bonifications attribuées",'128', '438', "Traitement");
+    }
 }
