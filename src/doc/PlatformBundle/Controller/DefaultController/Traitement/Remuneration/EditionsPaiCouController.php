@@ -278,4 +278,72 @@ class EditionsPaiCouController extends ListPage
     {
         return $this->listChampPdf("Editions paie en cours / == Résultats des éditions actuate ==",'145', '530', "Traitement");
     }
+    
+    /**
+     *
+     * @Route("/traitement/remuneration/edipai/etacot/con", name="seeRemunerationEdipaiEtacotCon")
+     */
+    public function RemunerationEdipaiEtacotConAction()
+    {
+        return $this->listChamp("Editions paie en cours / Etats de cotisations réparties / Consultation des cotisations réparties","traitement/remuneration/edipai/etacot/con/pdf",'145', '531', "Traitement");
+    }
+    /**
+     *
+     * @Route("/traitement/remuneration/edipai/etacot/con/pdf", name="seeRemunerationEdipaiEtacotConpdf")
+     */
+    public function RemunerationEdipaiEtacotConPdfAction()
+    {
+        return $this->listChampPdf("Editions paie en cours / Etats de cotisations réparties / Consultation des cotisations réparties",'145', '531', "Traitement");
+    }
+    
+    /**
+     *
+     * @Route("/traitement/remuneration/edipai/etacot/etacotrub", name="seeRemunerationEdipaiEtacotrub")
+     */
+    public function RemunerationEdipaiEtacotrubAction()
+    {
+        return $this->listChamp("Editions paie en cours / Etats de cotisations réparties / Etat de cotisations par rubrique","traitement/remuneration/edipai/etacot/etacotrub/pdf",'145', '532', "Traitement");
+    }
+    /**
+     *
+     * @Route("/traitement/remuneration/edipai/etacot/etacotrub/pdf", name="seeRemunerationEdipaiEtacotrubpdf")
+     */
+    public function RemunerationEdipaiEtacotrubPdfAction()
+    {
+        return $this->listChampPdf("Editions paie en cours / Etats de cotisations réparties / Etat de cotisations par rubrique",'145', '532', "Traitement");
+    }
+    
+    /**
+     *
+     * @Route("/traitement/remuneration/edipai/etacot/etacotpop", name="seeRemunerationEdipaiEtacotpop")
+     */
+    public function RemunerationEdipaiEtacotpopAction()
+    {
+        return $this->listChamp("Editions paie en cours / Etats de cotisations réparties / Etat de cotisations par population","traitement/remuneration/edipai/etacot/etacotpop/pdf",'145', '533', "Traitement");
+    }
+    /**
+     *
+     * @Route("/traitement/remuneration/edipai/etacot/etacotpop/pdf", name="seeRemunerationEdipaiEtacotpoppdf")
+     */
+    public function RemunerationEdipaiEtacotpopPdfAction()
+    {
+        return $this->listChampPdf("Editions paie en cours / Etats de cotisations réparties / Etat de cotisations par population",'145', '533', "Traitement");
+    }
+    
+    /**
+     *
+     * @Route("/traitement/remuneration/edipai/syn", name="seeRemunerationEdipaiSyn")
+     */
+    public function RemunerationEdipaiSynAction()
+    {
+        return $this->listChamp("Editions paie en cours / Synthèse des refacturations","traitement/remuneration/edipai/syn/pdf",'145', '534', "Traitement");
+    }
+    /**
+     *
+     * @Route("/traitement/remuneration/edipai/syn/pdf", name="seeRemunerationEdipaiSynpdf")
+     */
+    public function RemunerationEdipaiSynPdfAction()
+    {
+        return $this->listChampPdf("Editions paie en cours / Synthèse des refacturations",'145', '534', "Traitement");
+    }
 }
