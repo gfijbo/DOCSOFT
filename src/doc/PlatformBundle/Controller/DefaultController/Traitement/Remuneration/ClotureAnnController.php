@@ -23,4 +23,21 @@ class ClotureAnnController extends ListPage
     {
         return $this->listChampPdf("Clôture annuelle / Initialisation des cumuls annuels",'151', '574', "Traitement");
     }
+    
+    /**
+     *
+     * @Route("/traitement/remuneration/cloann/eta", name="seeRemunerationCloannEta")
+     */
+    public function RemunerationCloannEtaAction()
+    {
+        return $this->listChamp("Clôture annuelle / Etat du personnel","traitement/remuneration/cloann/eta/pdf",'151', '575', "Traitement");
+    }
+    /**
+     *
+     * @Route("/traitement/remuneration/cloann/eta/pdf", name="seeRemunerationCloannEtapdf")
+     */
+    public function RemunerationCloannEtaPdfAction()
+    {
+        return $this->listChampPdf("Clôture annuelle / Etat du personnel",'151', '575', "Traitement");
+    }
 }
