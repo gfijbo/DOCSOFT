@@ -56,5 +56,52 @@ a:hover, a:focus, a {
 	width: auto;
 	height: auto;
 }
+.champ{
+	color : #2E8B57;
+	font-weight : bold;
+	font-style : normal;
+	font-size: 15px;
+	position: relative;
+	cursor : help;
+}
 
+.champ:hover::after, .origine:hover::after, .format:hover::after {
+  content: attr(aria-label);  /* on affiche aria-label */
+  color: grey;
+  position: absolute;
+  background : orange;
+  top: -1.5em;
+  left: 50%;
+  font-size: 12px;
+  transform: translateX(-50%); /* on centre horizontalement  */
+  z-index: 1; /* pour s'afficher au dessus des éléments en position relative */
+  white-space: nowrap;  /* on interdit le retour à la ligne */
+}
+
+.ordre{
+	font-weight : bold;
+	font-style : oblique;
+	font-size: 15px;
+}
+
+.origine{
+	color : #800080;
+	font-weight : bold;
+	font-style : normal;
+	font-size: 15px;
+	cursor: help;
+	position: relative;
+}
+
+.format{
+	color : #BA55D3;
+	font-weight : bold;
+	font-style : normal;
+	cursor: help;
+	position: relative;	
+}
+ .libelle{
+	color : blue;
+	font-style : normal;
+ }
 body {padding-bottom: 70px;}

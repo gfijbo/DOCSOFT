@@ -20,21 +20,10 @@
 					<tr class="table-active">
 						<th colspan="2" align="center">Menu </td>
 					</tr>
-					<tr>
 						{% for page in listDoss %}
-						
-						<td><a class="dropdown-item"
-							href="{{ page.getUrl() }}">{{ page.getPage() }}</a></td>
-								{% if (page.getPage()|length) < 30 %}
-						        {% if loop.index%2 == 0 %}
-					 			</tr>
-					 			{% endif %}
-					        {% else %}
-						        {% if loop.index%1 == 0 %}
-								</tr>
-						        {% endif %}
-						<tr>
-						    {% endif %}
+							<tr>
+								<td><a class="dropdown-item" href="{{ page.getUrl() }}">{{ page.getPage() }}</a></td>
+							</tr>
 						{% endfor %}
 					</tr>
 				</table>

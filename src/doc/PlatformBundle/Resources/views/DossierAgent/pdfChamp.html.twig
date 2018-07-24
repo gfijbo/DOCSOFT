@@ -12,8 +12,8 @@
 <style>
 h1 {
 	background: #ffc966;
-	font-size: 30px;
-	font-style: bold;
+	font-size: 25px;
+	font-weight: bold;
 	text-align: center;
 	width: auto;
 }
@@ -21,14 +21,22 @@ h1 {
 h3 {
 	/* background: #ffc966; */
 	color: #798933;
-	font-size: 25px;
-	font-style: bold;
+	font-size: 20px;
+	font-weight: bold;
 	text-decoration: underline;
 }
 
+h4{
+	font-size: 12px;
+	font-weight: bold;
+}
+
+h5{
+	background: #ffc966;
+}
 p {
 	font-size: 15px;
-	font-style: italique;
+	font-style: italic;
 	text-align: justify;
 }
 
@@ -38,9 +46,16 @@ p {
 	margin-right: 30%;
 }
 
-a:hover, a {
-	color: black;
+li{
+	line-height : 10pt;
 }
+
+span{
+	font-size: 13px;
+}
+a:hover, a:focus, a {
+	color: black;
+}	
 
 .grad_nav {
 	background: linear-gradient(to top left, #ffc966, #ffaa55);
@@ -53,6 +68,53 @@ a:hover, a {
 	width: auto;
 	height: auto;
 }
+.champ{
+	color : green;
+	font-weight : bold;
+	font-style : normal;
+	font-size: 16px;
+	position: relative;
+	cursor : help;
+}
+
+.champ:hover::after, .origine:hover::after, .format:hover::after {
+  content: attr(aria-label);  /* on affiche aria-label */
+  color: grey;
+  top: -70%;
+  font-size: 12px;
+  transform: translateX(-50%); /* on centre horizontalement  */
+  z-index: 1; /* pour s'afficher au dessus des éléments en position relative */
+  white-space: nowrap;  /* on interdit le retour à la ligne */
+}
+
+.ordre{
+	font-weight : bold;
+	font-style : oblique;
+	font-size: 16px;
+}
+
+.origine{
+	color : #BA55D3;
+	font-weight : bold;
+	font-style : normal;
+	font-size: 16px;
+	cursor: help;
+	position: relative;
+}
+
+.format{
+	color : #BA55D3;
+	font-weight : bold;
+	font-style : normal;
+	cursor: help;
+	position: relative;	
+}
+ .libelle{
+ 	font-size: 16px;
+	color : blue;
+	font-style : normal;
+ }
+body {padding-bottom: 70px;}
 ;
 </style>
 </head>
@@ -61,55 +123,17 @@ a:hover, a {
 	<div class="container">
 		<div class="row">
 			<div class="col-md-8 col-lg-12">
-
 				<h1>
 					{{ doss.getChamp() }}
 				</h1>
-				<div id={{doss.getId() }}>
-					<!-- <br>
-					**************************************************************************************************************************
-					<br>-->
+				<div id={{doss.getId() }}
+					<p><span class="ordre"> Num&eacute;ro d'ordre : {{ doss.getNum_ordre() }}</span></p>
+					<p><span class="champ" aria-label=": champ d'Astre RH">{{ doss.getChamp() }}</span><span class="origine" aria-label=": origine du champ"> {{ doss.getOrigine() }}</span> <span class="format" aria-label=": format du champ"><sup>{{ doss.getFormat() }}</sup></span> : <span class="libelle">{{ doss.getLibelle() }}</span>
+				</p>
 				</div>
-				<h3>Champ:</h3>
-				<p>
-					{{ doss.getChamp() }}
-				</p>
-
-				{% if doss.getOrigine() %}
-				<h3>Origine:</h3>
-				<p>
-					{{ doss.getOrigine() }}
-				</p>
-				{% else %}
-				{% endif %}
-
-				{% if doss.getFormat() %}
-				<h3>Format:</h3>
-				<p>
-					{{ doss.getFormat() }}
-				</p>
-				{% else %}
-				{% endif %}
-
-				{% if doss.getLibelle() %}
-				<h3>Libell&eacute;:</h3>
-				<p>
-					{{ doss.getLibelle() }}
-				</p>
-				{% else %}
-				{% endif %}
-
-				{% if doss.getNum_ordre() %}
-				<h3>Num&eacute;ro d'ordre:</h3>
-				<p>
-					{{ doss.getNum_ordre() }}
-				</p>
-				{% else %}
-				{% endif %}
-
 			</div>
 		</div>
 	</div>
-
+</body>
 	{% endblock %}
 </html>
