@@ -55,7 +55,14 @@ class Document implements \Serializable
      * @var string
      */
     private $documentMimeType;
-
+    
+    
+    /**
+     *
+     * @ORM\Column(type="string", length=255)
+     * @var string
+     */
+    private $type;
     /**
      *
      * @ORM\Column(type="datetime")
@@ -238,6 +245,24 @@ class Document implements \Serializable
     {
         $this->user = $user;
     }
+    
+    
+    /**
+     * @return string
+     */
+    public function getType()
+    {
+        return $this->type;
+    }
+
+    /**
+     * @param string $type
+     */
+    public function setType($type)
+    {
+        $this->type = $type;
+    }
+
     public function serialize()
     {
       /*   return serialize(array(

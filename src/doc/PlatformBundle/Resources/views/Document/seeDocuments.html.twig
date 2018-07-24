@@ -24,6 +24,7 @@
 					<thead>
 						<tr>
 							<td>Nom</td>
+							<td>Type</td>
 							<td colspan="2">Taille</td>
 						</tr>
 					</thead>
@@ -53,6 +54,7 @@
 									<i class="fa fa-file-o float-right" style="font-size: 24px"></i>
 									{% endif %}
 								</p></td>
+								<td>{{ document.getType() }}</td>
 							<td colspan="2">
 								{% if document.getDocumentSize() > 10000 %}
 										{{ (document.getDocumentSize()/1000000) |round(2, 'floor')  }} Mo

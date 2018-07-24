@@ -57,8 +57,15 @@ class FormationController extends Controller
         $docForm = $this->createForm(DocumentType::class, $doc);
         $docForm->handleRequest($request);
         if ($docForm->isSubmitted() && $docForm->isValid()) {
+            if (isset($_POST["type"])){
+                $type = $_POST["type"];
+            }
+            else{
+                $type = "";
+            }
             $doc->setForm_ref($formation);
-            $doc->setUser($this->getUser());            
+            $doc->setUser($this->getUser()); 
+            $doc->setType($type);
             $em = $this->getDoctrine()->getManager();
             $em->persist($doc);
             $em->flush();

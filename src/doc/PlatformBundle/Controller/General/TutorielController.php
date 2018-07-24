@@ -99,8 +99,15 @@ class TutorielController extends Controller
         $docTuto = $this->createForm(DocumentType::class, $doc);
         $docTuto->handleRequest($request);
         if ($docTuto->isSubmitted() && $docTuto->isValid()) {
+            if (isset($_POST["type"])){
+                $type = $_POST["type"];
+            }
+            else{
+                $type = "";
+            }
             $doc->setTuto_ref($tutoriel);
             $doc->setUser($this->getUser());
+            $doc->setType($type);
             $em = $this->getDoctrine()->getManager();
             $em->persist($doc);
             $em->flush();

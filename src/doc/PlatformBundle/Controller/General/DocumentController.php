@@ -110,6 +110,7 @@ class DocumentController extends Controller
             $fileName = $file->getClientOriginalName();
             $fileSize = $file->getClientSize();
             $fileMimeType = $file->getClientMimeType();
+            $type = $_POST["type"];
 
             // Move the file to the directory where documents are stored
 
@@ -125,6 +126,7 @@ class DocumentController extends Controller
             $document->setDocumentSize($fileSize);
             $document->setDocumentMimeType($fileMimeType);
             $document->setUser($user);
+            $document->setType($type);
 
             for ($i = 0; $i < sizeof($listDocs); $i ++) {
                 // si le fichier existe deja, modifie le fichier
