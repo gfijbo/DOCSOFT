@@ -234,6 +234,7 @@ class DocumentController extends Controller
         // delete linked mediaEntity
         $em = $this->getDoctrine()->getManager();
         $em->remove($doc);
+        //pour supprimer le fichier dans le cas des formations et des tutoriels
         @unlink($fichier.$doc->getUrl());
         $em->flush();
         
