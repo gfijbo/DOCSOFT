@@ -44,6 +44,12 @@ class Document implements \Serializable
 
     /**
      *
+     * @ORM\Column(type="string", length=255, nullable=true)
+     * @var string
+     */
+    private $url;
+    /**
+     *
      * @ORM\Column(type="integer")
      * @var integer
      */
@@ -286,6 +292,24 @@ class Document implements \Serializable
             $this->id
             ) = unserialize($serialized,['allowed_classes' => false]); */
     }
+    /**
+     * @return string
+     */
+    public function getUrl()
+    {
+        return $this->url;
+    }
+
+    /**
+     * @param string $url
+     */
+    public function setUrl($url)
+    {
+        $this->url = $url;
+    }
+
+    
+    
 
 }
 

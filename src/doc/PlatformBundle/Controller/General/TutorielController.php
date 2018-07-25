@@ -109,9 +109,13 @@ class TutorielController extends Controller
             $doc->setTuto_ref($tutoriel);
             $doc->setUser($this->getUser());
             $doc->setType($type);
+            
             $em = $this->getDoctrine()->getManager();
             $em->persist($doc);
+            $doc->setUrl($doc->getDocumentName());
             $doc->setDocumentName($fileName);
+            
+            $em->persist($doc);
             $em->flush();
         }
         $menu = "Tutoriel";

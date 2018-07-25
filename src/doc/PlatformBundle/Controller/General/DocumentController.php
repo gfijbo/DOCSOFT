@@ -73,7 +73,7 @@ class DocumentController extends Controller
             ->getRepository('docPlatformBundle:Document');
         $doc = $repository->find($id);
         if (! empty($doc)) {
-            $fichier = $doc->getDocumentName();
+            $fichier = $doc->getUrl();
             $chemin = "C:/wamp/www/Symfony/web/uploads/documents";
             $response = new Response();
             $response->setContent(file_get_contents($chemin . "/" . $fichier));
@@ -127,6 +127,7 @@ class DocumentController extends Controller
             $document->setDocumentMimeType($fileMimeType);
             $document->setUser($user);
             $document->setType($type);
+            $document->setUrl($document->getDocumentName());
 
             for ($i = 0; $i < sizeof($listDocs); $i ++) {
                 // si le fichier existe deja, modifie le fichier
@@ -229,10 +230,11 @@ class DocumentController extends Controller
 
             return $this->redirectToRoute('operation');
         }
-        $this->get('kernel')->getRootDir() . '/../web/uploads/documents/';
+        $fichier = $this->get('kernel')->getRootDir() . '/../web/uploads/documents/';
         // delete linked mediaEntity
         $em = $this->getDoctrine()->getManager();
         $em->remove($doc);
+        @unlink($fichier.$doc->getUrl());
         $em->flush();
         
         return $this->redirectToRoute('alloperation');
