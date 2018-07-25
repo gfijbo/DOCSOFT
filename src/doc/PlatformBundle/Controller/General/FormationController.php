@@ -57,6 +57,7 @@ class FormationController extends Controller
         $docForm = $this->createForm(DocumentType::class, $doc);
         $docForm->handleRequest($request);
         if ($docForm->isSubmitted() && $docForm->isValid()) {
+            $fileName = $doc->getDocumentFile()->getClientOriginalName();
             if (isset($_POST["type"])){
                 $type = $_POST["type"];
             }
@@ -66,8 +67,10 @@ class FormationController extends Controller
             $doc->setForm_ref($formation);
             $doc->setUser($this->getUser()); 
             $doc->setType($type);
+            
             $em = $this->getDoctrine()->getManager();
             $em->persist($doc);
+            $doc->setDocumentName($fileName);
             $em->flush();
             /* $_SESSION['type'] = "add_doc_form";
             $_SESSION['com'] = '';

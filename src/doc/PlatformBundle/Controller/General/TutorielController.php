@@ -99,6 +99,7 @@ class TutorielController extends Controller
         $docTuto = $this->createForm(DocumentType::class, $doc);
         $docTuto->handleRequest($request);
         if ($docTuto->isSubmitted() && $docTuto->isValid()) {
+            $fileName = $doc->getDocumentFile()->getClientOriginalName();
             if (isset($_POST["type"])){
                 $type = $_POST["type"];
             }
@@ -110,6 +111,7 @@ class TutorielController extends Controller
             $doc->setType($type);
             $em = $this->getDoctrine()->getManager();
             $em->persist($doc);
+            $doc->setDocumentName($fileName);
             $em->flush();
         }
         $menu = "Tutoriel";

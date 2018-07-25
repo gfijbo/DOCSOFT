@@ -33,8 +33,6 @@ class DocumentUploadListener
         if (!$entity instanceof Document) {
             return;
         }
-        
-        $entityManager = $args->getEntityManager();
     }
     
 public function preUpdate(PreUpdateEventArgs $args)
