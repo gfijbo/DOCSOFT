@@ -17,6 +17,66 @@
 				<a class="btn btn-success"
 					href="{{ asset('/pdfchamp/') }}{{ doss.getId() }}" target=_blank>Imprimer</a>
 					<br><br>
+					{% if is_granted('ROLE_GFI') %}
+					<table class="table table-sm table-responsive-sm table-active table-bordered">
+					<tr>
+    					<td>Champ</td>
+    					<td>Ordre</td>
+					</tr>
+					<tr>
+					<td>
+						<form action="/modchamp" method="post">
+    						<input type="hidden" name="idchamps" value="{{ doss.getId() }}">
+    						<input name="champ" placeholder="{{doss.getChamp()}}">
+    						<input type="submit" class="button btn-success"
+    							href="{{ asset('/modchamp') }}" value="Modifier le champ"></a>
+						</form>
+					</td>
+					<td>
+						<form action="/modordre" method="post">
+    						<input type="hidden" name="idchamps" value="{{ doss.getId() }}">
+    						<input name="ordre" placeholder="{{doss.getNum_ordre()}}">
+    						<input type="submit" class="button btn-success"
+    							href="{{ asset('/modordre') }}" value="Modifier l'ordre"></a>
+						</form>
+					</td>
+					</tr>
+					<tr>
+    					<td>Origine</td>
+    					<td>Format</td>
+					</tr>
+					<tr>
+					<td>
+						<form action="/modorigine" method="post">
+        					<input type="hidden" name="idchamps" value="{{ doss.getId() }}">
+        					<input name="origine" placeholder="{{doss.getOrigine()}}">
+        					<input type="submit" class="button btn-success"
+        						href="{{ asset('/modorigine') }}" value="Modifier l'origine"></a>
+						</form>
+					</td>
+					<td>
+    					<form action="/modformat" method="post">
+        					<input type="hidden" name="idchamps" value="{{ doss.getId() }}">
+        					<input name="format" placeholder="{{doss.getFormat()}}">
+        					<input type="submit" class="button btn-success"
+        						href="{{ asset('/modformat') }}" value="Modifier le format"></a>
+    					</form>
+    				</td></tr>
+					<tr>
+						<td colspan="2">Libellé</td>
+					</tr>
+					<tr>
+					<td colspan="2">
+    					<form action="/modlibelle" method="post">
+        					<input type="hidden" name="idchamps" value="{{ doss.getId() }}">
+        					<textarea name="libelle" rows="6" cols="60" placeholder="{{doss.getLibelle()}}"></textarea>
+        					<input type="submit" class="button btn-success"
+        						href="{{ asset('/modlibelle') }}" value="Modifier le libellé"></a>
+    					</form>
+    				</td>
+    				</tr>
+					</table>
+					{% else %}
 				<h1>
 					{{ doss.getChamp() }}
 				</h1>
@@ -62,6 +122,7 @@
 				{% endif %}
 				{% endfor %}
 				</ul>
+				{% endif %}
 			</div>
 		</div>
 	</div>

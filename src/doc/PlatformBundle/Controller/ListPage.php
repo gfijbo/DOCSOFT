@@ -89,6 +89,151 @@ class ListPage extends Controller
     
     /**
      *
+     * @Route("/modchamp", name="modchamp")
+     */
+    public function modChampAction()
+    {
+        $repository = $this->getdoctrine()
+        ->getManager()
+        ->getRepository('docPlatformBundle:DossierAgent');
+        if(isset($_POST["idchamps"])){
+            $doss = $repository->find($_POST["idchamps"]);
+        }
+        $menu = "Documentation";
+        if(isset($_POST["champ"])){
+            $doss->setChamp($_POST["champ"]);
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($doss);
+            $em->flush();
+        }
+        $urlPage = "";
+        
+        return $this->redirectToRoute("seechamp", array(
+            'doss' => $doss,
+            'id'=>$_POST["idchamps"],
+            'listOnglets' => $_SESSION['listOnglets'],
+            'listAlerts' => $_SESSION['listAlerts']
+        ));
+    }
+    
+    /**
+     *
+     * @Route("/modordre", name="modOrdre")
+     */
+    public function modOrdreAction()
+    {
+        $repository = $this->getdoctrine()
+        ->getManager()
+        ->getRepository('docPlatformBundle:DossierAgent');
+        if(isset($_POST["idchamps"])){
+            $doss = $repository->find($_POST["idchamps"]);
+        }
+        $menu = "Documentation";
+        if(isset($_POST["ordre"])){
+            $doss->setNum_ordre($_POST["ordre"]);
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($doss);
+            $em->flush();
+        }
+        $urlPage = "";
+        
+        return $this->redirectToRoute("seechamp", array(
+            'doss' => $doss,
+            'id'=>$_POST["idchamps"],
+            'listOnglets' => $_SESSION['listOnglets'],
+            'listAlerts' => $_SESSION['listAlerts']
+        ));
+    }
+    
+    /**
+     *
+     * @Route("/modorigine", name="modOrigine")
+     */
+    public function modOrigineAction()
+    {
+        $repository = $this->getdoctrine()
+        ->getManager()
+        ->getRepository('docPlatformBundle:DossierAgent');
+        if(isset($_POST["idchamps"])){
+            $doss = $repository->find($_POST["idchamps"]);
+        }
+        $menu = "Documentation";
+        if(isset($_POST["origine"])){
+            $doss->setOrigine($_POST["origine"]);
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($doss);
+            $em->flush();
+        }
+        $urlPage = "";
+        
+        return $this->redirectToRoute("seechamp", array(
+            'doss' => $doss,
+            'id'=>$_POST["idchamps"],
+            'listOnglets' => $_SESSION['listOnglets'],
+            'listAlerts' => $_SESSION['listAlerts']
+        ));
+    }
+    
+    /**
+     *
+     * @Route("/modformat", name="modFormat")
+     */
+    public function modFormatAction()
+    {
+        $repository = $this->getdoctrine()
+        ->getManager()
+        ->getRepository('docPlatformBundle:DossierAgent');
+        if(isset($_POST["idchamps"])){
+            $doss = $repository->find($_POST["idchamps"]);
+        }
+        $menu = "Documentation";
+        if(isset($_POST["format"])){
+            $doss->setFormat($_POST["format"]);
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($doss);
+            $em->flush();
+        }
+        $urlPage = "";
+        
+        return $this->redirectToRoute("seechamp", array(
+            'doss' => $doss,
+            'id'=>$_POST["idchamps"],
+            'listOnglets' => $_SESSION['listOnglets'],
+            'listAlerts' => $_SESSION['listAlerts']
+        ));
+    }
+    
+    /**
+     *
+     * @Route("/modlibelle", name="modLibelle")
+     */
+    public function modLibelleAction()
+    {
+        $repository = $this->getdoctrine()
+        ->getManager()
+        ->getRepository('docPlatformBundle:DossierAgent');
+        if(isset($_POST["idchamps"])){
+            $doss = $repository->find($_POST["idchamps"]);
+        }
+        $menu = "Documentation";
+        if(isset($_POST["libelle"])){
+            $doss->setLibelle($_POST["libelle"]);
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($doss);
+            $em->flush();
+        }
+        $urlPage = "";
+        
+        return $this->redirectToRoute("seechamp", array(
+            'doss' => $doss,
+            'id'=>$_POST["idchamps"],
+            'listOnglets' => $_SESSION['listOnglets'],
+            'listAlerts' => $_SESSION['listAlerts']
+        ));
+    }
+    
+    /**
+     *
      * @Route("/pdfchamp/{id}", name="seechamppdf")
      */
     public function pdfChampAction($id)
