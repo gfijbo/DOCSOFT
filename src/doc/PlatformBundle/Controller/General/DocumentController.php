@@ -75,9 +75,9 @@ class DocumentController extends Controller
         if (! empty($doc)) {
             $fichier = $doc->getUrl();
             //pour wampserverX86
-            //$chemin = "C:/wamp/www/Symfony/web/uploads/documents";
+            $chemin = "C:/wamp/www/Symfony/web/uploads/documents";
             //pour wampserverX64
-            $chemin = "C:/wamp64/www/Symfony/web/uploads/documents";
+            //$chemin = "C:/wamp64/www/Symfony/web/uploads/documents";
             $response = new Response();
             $response->setContent(file_get_contents($chemin . "/" . $fichier));
             $response->headers->set('Content-Type', $doc->getDocumentMimeType() // type mime du fichier
