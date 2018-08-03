@@ -18,7 +18,69 @@
 					target=_blank>Imprimer</a><br><br>
 	
 				<h1>{{ menu }} : {{ page }}</h1>
+                {% if is_granted('ROLE_GFI') %}
+               <table
+					class="table table-sm table-responsive-sm table-active table-bordered">
+  					<a class="btn btn-link"data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+						Ajouter un champ</a>
+			   </table>
+			<div class="collapse" id="collapseExample">
+  				<table class="table table-sm table-responsive-sm table-active table-bordered">
+   					<tr>
+						<td>Champ</td>
+						<td>Numéro d'ordre</td>
+					</tr>
+					<form action="/addchamp" method="post">
+					<input type="hidden" name="page_ref" value="{{ page }}">
+					<tr>
+						<td><input name="champ"></td>
+						<td><input name="ordre"></td>
+    					
+    				</tr>
+    				<tr>
+    					<td>Origine</td>
+    					<td>Format</td>
+    				</tr>
+    				<tr>
+    					<td><input name="origine"></td>
+    					<td><input name="format"></td>
+    				</tr>
+    				<tr>
+    					<td colspan="2">Libellé</td>
+    				</tr>
+    				<tr>
+    					<td colspan="2">
+        					<textarea name="libelle" rows="6" cols="60"></textarea>
+        				</td>
+        			</tr>
+        			<tr>
+    					<td colspan="2"><input type="submit" class="button btn-success"
+    							href="{{ asset('/addchamp') }}" value="Ajouter le champ dans la page : {{ menu }} : {{ page }}"></a>
+						</td>
+					</tr>
+				</table>
+			</div>
+					
 				<table
+					class="table table-sm table-responsive-sm table-active">
+					<tr class="table-active">
+						<th colspan="4" align="center">Menu </td>
+					</tr>
+					<tr>
+						{% for doss in listDoss %}
+						<td><a class="dropdown-item"
+							href="/seechamp/{{doss.getId() }}">{{ doss.getChamp() }}</a></td>
+							<td><a class="fa fa-trash" style="font-size:30px;color:orange"
+							href="/dropchamp/{{doss.getId() }}"></a></td>
+						{% if loop.index%2 == 0 %}
+					</tr>
+					<tr>
+						{% endif %}
+						{% endfor %}
+					</tr>
+				</table>
+					{% else %}
+					<table
 					class="table table-sm table-responsive-sm table-active table-bordered">
 					<tr class="table-active">
 						<th colspan="2" align="center">Menu </td>
@@ -34,44 +96,11 @@
 						{% endfor %}
 					</tr>
 				</table>
-
-				<!--{% for doss in listDoss %}
-			<div id={{doss.getId() }}>
-			<br>
-			**************************************************************************************************************************
-			<br>
-			</div>
-			<h3>Champ</h3>
-			<p>{{ doss.getChamp() }}</p>
-			{% if doss.getOrigine() %}
-			<h3>Origine</h3>
-			<p>{{ doss.getOrigine() }}</p>
-			{% else %}
-			{% endif %}
-			
-			{% if doss.getFormat() %}
-			<h3>Format</h3>
-			<p>{{ doss.getFormat() }}</p>
-			{% else %}
-			{% endif %}
-			
-			{% if doss.getLibelle() %}
-			<h3>Libell&eacute;</h3>
-			<p>{{ doss.getLibelle() }}</p>
-			{% else %}
-			{% endif %}
-			
-			{% if doss.getNum_ordre() %}
-			<h3>Num&eacute;ro d'ordre</h3>
-			<p>{{ doss.getNum_ordre() }}</p>
-			{% else %}
-			{% endif %}
-
-			{% endfor %}--></div>
-		</div>
-		{#<div class="pagination justify-content-center">{{
-		knp_pagination_render(listDocs) }}</div>#}
+				{% endif %}
 	</div>
+	</div>
+	</div>
+	</body>
 
 	{% endblock %}
 

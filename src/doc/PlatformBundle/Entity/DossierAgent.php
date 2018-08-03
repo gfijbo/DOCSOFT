@@ -112,7 +112,7 @@ class DossierAgent
      */
     public function getOnglet_ref()
     {
-        return $this->onglet;
+        return $this->onglet_ref;
     }
 
     /**
@@ -121,7 +121,7 @@ class DossierAgent
      */
     public function getPage_ref()
     {
-        return $this->page;
+        return $this->page_ref;
     }
 
     /**
@@ -175,7 +175,7 @@ class DossierAgent
      */
     public function setOnglet_ref($onglet)
     {
-        $this->onglet = $onglet;
+        $this->onglet_ref = $onglet;
     }
 
     /**
@@ -184,7 +184,7 @@ class DossierAgent
      */
     public function setPage_ref($page)
     {
-        $this->page = $page;
+        $this->page_ref = $page;
     }
 
     /**

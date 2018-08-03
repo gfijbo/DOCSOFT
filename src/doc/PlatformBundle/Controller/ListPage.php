@@ -5,6 +5,7 @@ namespace doc\PlatformBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Response;
+use doc\PlatformBundle\Entity\DossierAgent;
 
 
 
@@ -63,6 +64,7 @@ class ListPage extends Controller
         ));
     }
     
+    //pour afficher un champ
     /**
      *
      * @Route("/seechamp/{id}", name="seechamp")
@@ -86,7 +88,54 @@ class ListPage extends Controller
             'listAlerts' => $_SESSION['listAlerts']
         ));
     }
+    //pour ajouter un champ
+    /**
+     *
+     * @Route("/addchamp", name="addChamp")
+     */
+    public function addChampAction()
+    {           
+        if(isset($_POST["page_ref"])){
+            $repository = $this->getdoctrine()
+            ->getManager()
+            ->getRepository('docPlatformBundle:Page');
+            $page = $repository->findByPage($_POST['page_ref']);
+        }
+        $doss = new DossierAgent();
+        
+        if(isset($_POST["champ"])){
+            $doss->setChamp($_POST["champ"]);
+        }
+        if(isset($_POST["ordre"])){
+            $doss->setNum_ordre($_POST["ordre"]);
+        }
+        if(isset($_POST["origine"])){
+            $doss->setOrigine($_POST["origine"]);
+        }
+        if(isset($_POST["format"])){
+            $doss->setFormat($_POST["format"]);
+        }
+        if(isset($_POST["libelle"])){
+            $doss->setLibelle($_POST["libelle"]);
+        }
+        
+        $doss->setOnglet_ref($page[0]->getOnglet_ref());
+        $doss->setPage_ref($page[0]->getId());
+        
+        $em = $this->getDoctrine()->getManager();
+        $em->persist($doss);
+        
+        $em->flush();
+        
+        return $this->redirectToRoute("seechamp", array(
+            'doss' => $doss,
+            'id'=>$doss->getId(),
+            'listOnglets' => $_SESSION['listOnglets'],
+            'listAlerts' => $_SESSION['listAlerts']
+        ));
+    }
     
+    //pour modifier le champ
     /**
      *
      * @Route("/modchamp", name="modchamp")
@@ -99,14 +148,12 @@ class ListPage extends Controller
         if(isset($_POST["idchamps"])){
             $doss = $repository->find($_POST["idchamps"]);
         }
-        $menu = "Documentation";
         if(isset($_POST["champ"])){
             $doss->setChamp($_POST["champ"]);
             $em = $this->getDoctrine()->getManager();
             $em->persist($doss);
             $em->flush();
         }
-        $urlPage = "";
         
         return $this->redirectToRoute("seechamp", array(
             'doss' => $doss,
@@ -116,6 +163,40 @@ class ListPage extends Controller
         ));
     }
     
+    //pour supprimer le champ
+    /**
+     *
+     * @Route("/dropchamp/{id}", name="dropChamp")
+     */
+    public function dropChampAction($id)
+    {
+        
+        $repository = $this->getdoctrine()
+        ->getManager()
+        ->getRepository('docPlatformBundle:DossierAgent');
+        $doss = $repository->find($id);
+        $menu_id = $doss->getOnglet_ref();
+            
+        $repository = $this->getdoctrine()
+        ->getManager()
+        ->getRepository('docPlatformBundle:Onglet');
+        $onglet = $repository->find($menu_id);
+        $menu = $onglet->getOnglet();
+            
+        $em = $this->getDoctrine()->getManager();
+        $em->remove($doss);
+        $em->flush();
+           
+        
+            $html = $this->redirectToRoute('menuDoc', array(
+                'v1'=> $menu,
+                'id'=>$menu_id,
+                'listAlerts' => $_SESSION['listAlerts']
+            ));
+            return $html;
+    }
+    
+    //pour modifier l'ordre
     /**
      *
      * @Route("/modordre", name="modOrdre")
@@ -128,14 +209,12 @@ class ListPage extends Controller
         if(isset($_POST["idchamps"])){
             $doss = $repository->find($_POST["idchamps"]);
         }
-        $menu = "Documentation";
         if(isset($_POST["ordre"])){
             $doss->setNum_ordre($_POST["ordre"]);
             $em = $this->getDoctrine()->getManager();
             $em->persist($doss);
             $em->flush();
         }
-        $urlPage = "";
         
         return $this->redirectToRoute("seechamp", array(
             'doss' => $doss,
@@ -145,6 +224,7 @@ class ListPage extends Controller
         ));
     }
     
+    //pour modifier l'origine
     /**
      *
      * @Route("/modorigine", name="modOrigine")
@@ -157,14 +237,12 @@ class ListPage extends Controller
         if(isset($_POST["idchamps"])){
             $doss = $repository->find($_POST["idchamps"]);
         }
-        $menu = "Documentation";
         if(isset($_POST["origine"])){
             $doss->setOrigine($_POST["origine"]);
             $em = $this->getDoctrine()->getManager();
             $em->persist($doss);
             $em->flush();
         }
-        $urlPage = "";
         
         return $this->redirectToRoute("seechamp", array(
             'doss' => $doss,
@@ -174,6 +252,7 @@ class ListPage extends Controller
         ));
     }
     
+    //pour modifier le format
     /**
      *
      * @Route("/modformat", name="modFormat")
@@ -186,14 +265,12 @@ class ListPage extends Controller
         if(isset($_POST["idchamps"])){
             $doss = $repository->find($_POST["idchamps"]);
         }
-        $menu = "Documentation";
         if(isset($_POST["format"])){
             $doss->setFormat($_POST["format"]);
             $em = $this->getDoctrine()->getManager();
             $em->persist($doss);
             $em->flush();
         }
-        $urlPage = "";
         
         return $this->redirectToRoute("seechamp", array(
             'doss' => $doss,
@@ -203,6 +280,7 @@ class ListPage extends Controller
         ));
     }
     
+    //pour modifier le libellé
     /**
      *
      * @Route("/modlibelle", name="modLibelle")
@@ -215,14 +293,12 @@ class ListPage extends Controller
         if(isset($_POST["idchamps"])){
             $doss = $repository->find($_POST["idchamps"]);
         }
-        $menu = "Documentation";
         if(isset($_POST["libelle"])){
             $doss->setLibelle($_POST["libelle"]);
             $em = $this->getDoctrine()->getManager();
             $em->persist($doss);
             $em->flush();
         }
-        $urlPage = "";
         
         return $this->redirectToRoute("seechamp", array(
             'doss' => $doss,
@@ -232,6 +308,7 @@ class ListPage extends Controller
         ));
     }
     
+    //pour afficher le champ au format pdf
     /**
      *
      * @Route("/pdfchamp/{id}", name="seechamppdf")
@@ -281,9 +358,7 @@ class ListPage extends Controller
         
         $_SESSION['listOnglets'] = $listOnglets;
         
-        $html = $this->redirectToRoute('alloperation', array(
-            $menu = $type
-        ));
+        $html = $this->redirectToRoute('alloperation');
         return $html;
     }
 }
