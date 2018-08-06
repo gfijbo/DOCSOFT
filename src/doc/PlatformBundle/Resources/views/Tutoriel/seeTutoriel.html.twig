@@ -34,6 +34,9 @@
 						<a class="fa fa-info-circle" style="font-size:24px; color:orange"
 							href="{{ asset('/document/download/') }}{{doc.getId()}}"
 						target=_blank /></a>
+						{% if is_granted('ROLE_GFI') %}
+                        <a class="fa fa-trash" style="font-size:30px;color:orange" href="/document/delete/{{ doc.getId() }}"></a>
+						{% endif %}
 						</li>
 					{% endfor %}
 					</ul>

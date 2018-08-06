@@ -46,6 +46,9 @@
 						<a class="fa fa-info-circle" style="font-size:24px; color:orange"
 							href="{{ asset('/document/download/') }}{{doc.getId()}}"
 						target=_blank /></a>
+                        {% if is_granted('ROLE_GFI') %}
+                        <a class="fa fa-trash" style="font-size:30px;color:orange" href="/document/delete/{{ doc.getId() }}"></a>
+						{% endif %}
 						</li>
 					{% endfor %}
 					</ul>
@@ -55,7 +58,7 @@
 						<tr>
 							<td>{{ form_row(forma.documentFile) }}</td>
 							<input type="hidden" name="type" value="Support de formation"/>
-							<td><input class="btn btn-success" type="submit" value="Ajouter" /></td>
+							<td><input class="btn btn-success" type="submit" value="Ajouter un document" /></td>
 							<td><a class="btn btn-success"
 							href="{{ asset('/document/see') }}">Voir les documents</a></td>
 			                {{ form_end(forma) }}

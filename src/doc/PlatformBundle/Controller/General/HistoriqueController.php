@@ -43,6 +43,13 @@ class HistoriqueController extends Controller
             unset($_SESSION['majop']);            
             $html = $this->redirectToRoute('seeDocuments');
         }
+        
+        if (isset($_SESSION['majop'])
+            && $_SESSION['majop'] == 'del_form_doc'
+            || $_SESSION['type'] == 'del_doc') {
+                unset($_SESSION['majop']);
+                $html = $this->redirectToRoute('seeDocuments');
+            }
      
         if (isset($_SESSION['majop']) 
             && $_SESSION['majop'] == 'form' 
@@ -57,24 +64,7 @@ class HistoriqueController extends Controller
             unset($_SESSION['majop']);
             $html = $this->redirectToRoute('seeTutoriels');
         }
-       /*  if (isset($_SESSION['majop']) && $_SESSION['majop'] == 'doc_form') {
-            if (isset($_SESSION['forms'])) {
-                $form = $_SESSION['forms'];
-                unset($_SESSION['forms']);
-                $html = $this->redirectToRoute('seeFormation', array(
-                    'id' => $form
-                ));
-            }
-        } */
-       /*  if (isset($_SESSION['majop']) && $_SESSION['majop'] == 'doc_tuto') {
-            if (isset($_SESSION['tutos'])) {
-                $tuto = $_SESSION['tutos'];
-                unset($_SESSION['tutos']);
-                $html = $this->redirectToRoute('seeTutoriel', array(
-                    'id' => $tuto
-                ));
-            }
-        } */
+      
         unset($_SESSION['majop']);
         unset($_SESSION['type']);
         return $html;
@@ -232,8 +222,15 @@ class HistoriqueController extends Controller
             $_SESSION['majop'] = 'doc_form';
         }
         
-        if($document != null && $_SESSION['type'] == "add_doc_form"){
+        if($document != null && $_SESSION['type'] == "add_doc_tuto"){
             $_SESSION['majop'] = 'doc_tuto';
+        }
+        if($document != null && $_SESSION['type'] == "del_doc_form"){
+            $_SESSION['majop'] = 'del_doc_form';
+        }
+        
+        if($document != null && $_SESSION['type'] == "del_doc_tuto"){
+            $_SESSION['majop'] = 'del_doc_tuto';
         }
         if($_SESSION['type'] == 'del_doc'){
             return $this->redirectToRoute('deleteDoc', array(

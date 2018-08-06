@@ -19,11 +19,8 @@
 	
 				<h1>{{ menu }} : {{ page }}</h1>
                 {% if is_granted('ROLE_GFI') %}
-               <table
-					class="table table-sm table-responsive-sm table-active table-bordered">
-  					<a class="btn btn-info"data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-						Ajouter un champ</a>
-			   </table>
+				<a class="btn btn-info" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+					Ajouter un champ</a>
 			<div class="collapse" id="collapseExample">
   				<table class="table table-sm table-responsive-sm table-active table-bordered">
    					<tr>

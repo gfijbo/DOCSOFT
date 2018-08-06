@@ -67,19 +67,11 @@ class FormationController extends Controller
             $doc->setForm_ref($formation);
             $doc->setUser($this->getUser()); 
             $doc->setType($type);
-            
             $em = $this->getDoctrine()->getManager();
             $em->persist($doc);
             $doc->setUrl($doc->getDocumentName());
             $doc->setDocumentName($fileName);
             $em->flush();
-            /* $_SESSION['type'] = "add_doc_form";
-            $_SESSION['com'] = '';
-            $_SESSION['doc'] = $doc;
-            $_SESSION['id'] = '';
-            $_SESSION['forms'] = $id;
-            
-            return $this->redirectToRoute('operation', array());*/
         }
         $menu = "Formation";
         $urlPage = "formation";
@@ -164,11 +156,6 @@ class FormationController extends Controller
             
             $html = $this->redirectToRoute('operation');
             
-           /*  $html = $this->redirectToRoute('seeFormations', array(
-                'compteur' => count($_SESSION['listAlerts']),
-                'listOnglets' => $_SESSION['listOnglets'],
-                'listAlerts' => $_SESSION['listAlerts']
-            )); */
             return $html;
             
         }
