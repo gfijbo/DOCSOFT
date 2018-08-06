@@ -76,8 +76,13 @@ class ListPage extends Controller
         ->getRepository('docPlatformBundle:DossierAgent');
         
         $doss = $repository->find($id);
+        
+        $repository = $this->getdoctrine()
+        ->getManager()
+        ->getRepository('docPlatformBundle:Page');
+        $page = $repository->find($doss->getPage_ref())->getUrl();
         $menu = "Documentation";
-        $urlPage = "";
+        $urlPage = "/localhost:8000".$page;
         
         return $this->render('docPlatformBundle:DossierAgent:seeChamp.html.twig', array(
             'doss' => $doss,
@@ -175,24 +180,20 @@ class ListPage extends Controller
         ->getManager()
         ->getRepository('docPlatformBundle:DossierAgent');
         $doss = $repository->find($id);
-        $menu_id = $doss->getOnglet_ref();
+        $page_id = $doss->getPage_ref();
             
         $repository = $this->getdoctrine()
         ->getManager()
-        ->getRepository('docPlatformBundle:Onglet');
-        $onglet = $repository->find($menu_id);
-        $menu = $onglet->getOnglet();
+        ->getRepository('docPlatformBundle:Page');
+        $page = $repository->find($page_id);
+        $urlPage = "http://localhost:8000".$page->getUrl();
             
         $em = $this->getDoctrine()->getManager();
         $em->remove($doss);
         $em->flush();
            
         
-            $html = $this->redirectToRoute('menuDoc', array(
-                'v1'=> $menu,
-                'id'=>$menu_id,
-                'listAlerts' => $_SESSION['listAlerts']
-            ));
+            $html = $this->redirect($urlPage);
             return $html;
     }
     

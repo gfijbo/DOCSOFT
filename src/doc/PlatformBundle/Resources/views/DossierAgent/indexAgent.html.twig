@@ -21,7 +21,7 @@
                 {% if is_granted('ROLE_GFI') %}
                <table
 					class="table table-sm table-responsive-sm table-active table-bordered">
-  					<a class="btn btn-link"data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+  					<a class="btn btn-info"data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
 						Ajouter un champ</a>
 			   </table>
 			<div class="collapse" id="collapseExample">
@@ -54,7 +54,7 @@
         				</td>
         			</tr>
         			<tr>
-    					<td colspan="2"><input type="submit" class="button btn-success"
+    					<td colspan="2"><input type="submit" class="btn btn-primary"
     							href="{{ asset('/addchamp') }}" value="Ajouter le champ dans la page : {{ menu }} : {{ page }}"></a>
 						</td>
 					</tr>
