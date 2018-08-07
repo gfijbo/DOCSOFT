@@ -46,9 +46,12 @@ class HistoriqueController extends Controller
         
         if (isset($_SESSION['majop'])
             && $_SESSION['majop'] == 'del_form_doc'
-            || $_SESSION['type'] == 'del_doc') {
+            || $_SESSION['type'] == 'del_doc_form') {
                 unset($_SESSION['majop']);
-                $html = $this->redirectToRoute('seeDocuments');
+                $id = $_SESSION['form'];
+                $html = $this->redirectToRoute('seeFormation', array(
+                    'id'=>$id
+                ));
             }
      
         if (isset($_SESSION['majop']) 
@@ -179,8 +182,14 @@ class HistoriqueController extends Controller
             case "add_doc_form":
                 $action = "Ajout d'un document dans une formation";
                 break;
+            case "del_doc_form":
+                $action = "Suppression d'un document dans une formation";
+                break;
             case "add_doc_tuto":
                 $action = "Ajout d'un document dans un tutoriel";
+                break;
+            case "del_doc_tuto":
+                $action = "Suppression d'un document dans un tutoriel";
                 break;
             default:
                 $action = "Opération inconnue";
@@ -236,6 +245,11 @@ class HistoriqueController extends Controller
             return $this->redirectToRoute('deleteDoc', array(
                 'id' =>$_SESSION['id']));
         }
+        
+        if($_SESSION['type'] == 'del_doc_tuto'){
+            return $this->redirectToRoute('deleteDocTutoriel', array(
+                'id' =>$_SESSION['id']));
+        }
         if($_SESSION['type'] == 'del_tuto'){
             return $this->redirectToRoute('deleteTutoriel', array(
                 'id' =>$_SESSION['id']));
@@ -245,6 +259,13 @@ class HistoriqueController extends Controller
             return $this->redirectToRoute('deleteFormation', array(
                 'id' =>$_SESSION['id']));
         }
+        
+        if($_SESSION['type'] == 'del_doc_form'){
+            return $this->redirectToRoute('formationDeldoc', array(
+                'id' =>$_SESSION['id']
+            ));        
+        }
+            
         
         $html = $this->redirectToRoute('alloperation');
         return $html;

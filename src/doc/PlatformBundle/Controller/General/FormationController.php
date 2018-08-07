@@ -177,7 +177,7 @@ class FormationController extends Controller
     /**
      * @Route("/formation/del/{id}",name="deleteFormation", requirements={"id"="\d+"})
      */
-    public function deleteFormationAction(Request $request, $id){
+    public function deleteFormationAction($id){
         $repository = $this->getdoctrine()
         ->getManager()
         ->getRepository('docPlatformBundle:Formation');
@@ -196,6 +196,40 @@ class FormationController extends Controller
         
         $em = $this->getDoctrine()->getManager();
         $em->remove($formation);
+        $em->flush();
+        
+        return $this->redirectToRoute('alloperation');
+    }
+    /**
+     *
+     * @Route("/formation/deldoc/{id}", name="formationDeldoc", requirements={"id"="\d+"})
+     */
+    public function formationDeldocAction($id)
+    {
+        $repository = $this->getdoctrine()
+        ->getManager()
+        ->getRepository('docPlatformBundle:Document');
+        
+        $doc = $repository->find($id);
+        if(!isset($_SESSION['type'])){
+            $_SESSION['type'] = "";
+        }
+        
+        if ($_SESSION['type'] != "del_doc_form") {
+            $_SESSION['type'] = "del_doc_form";
+            unset($_SESSION['com']);
+            $_SESSION['doc'] = $id;
+            $_SESSION['form'] = $doc->getForm_ref()->getId();
+            $_SESSION['id'] = $id;
+            
+            return $this->redirectToRoute('operation');
+        }
+        $fichier = $this->get('kernel')->getRootDir() . '/../web/uploads/documents/';
+        // delete linked mediaEntity
+        $em = $this->getDoctrine()->getManager();
+        $em->remove($doc);
+        //pour supprimer le fichier dans le cas des formations et des tutoriels
+        @unlink($fichier.$doc->getUrl());
         $em->flush();
         
         return $this->redirectToRoute('alloperation');
