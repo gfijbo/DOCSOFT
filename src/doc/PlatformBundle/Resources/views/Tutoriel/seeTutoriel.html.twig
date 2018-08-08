@@ -35,7 +35,7 @@
 							href="{{ asset('/document/download/') }}{{doc.getId()}}"
 						target=_blank /></a>
 						{% if is_granted('ROLE_GFI') %}
-                        <a class="fa fa-trash" style="font-size:30px;color:orange" href="/document/delete/{{ doc.getId() }}"></a>
+                        <a class="fa fa-trash" style="font-size:30px;color:orange" href="/tutoriel/deldoc/{{ doc.getId() }}"></a>
 						{% endif %}
 						</li>
 					{% endfor %}

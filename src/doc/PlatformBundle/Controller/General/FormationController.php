@@ -56,6 +56,8 @@ class FormationController extends Controller
         $doc = new Document();
         $docForm = $this->createForm(DocumentType::class, $doc);
         $docForm->handleRequest($request);
+        $_SESSION['forms']= $id;
+        $_SESSION['form']= $id;
         if ($docForm->isSubmitted() && $docForm->isValid()) {
             $fileName = $doc->getDocumentFile()->getClientOriginalName();
             if (isset($_POST["type"])){
@@ -72,6 +74,11 @@ class FormationController extends Controller
             $doc->setUrl($doc->getDocumentName());
             $doc->setDocumentName($fileName);
             $em->flush();
+            $_SESSION['doc']= $doc->getId();
+            $_SESSION['type']="add_doc_form";
+            unset($_SESSION['tutos']);
+            $html = $this->redirectToRoute('operation');
+            return $html;
         }
         $menu = "Formation";
         $urlPage = "formation";
@@ -218,6 +225,7 @@ class FormationController extends Controller
         if ($_SESSION['type'] != "del_doc_form") {
             $_SESSION['type'] = "del_doc_form";
             unset($_SESSION['com']);
+            unset($_SESSION['tutos']);
             $_SESSION['doc'] = $id;
             $_SESSION['form'] = $doc->getForm_ref()->getId();
             $_SESSION['id'] = $id;

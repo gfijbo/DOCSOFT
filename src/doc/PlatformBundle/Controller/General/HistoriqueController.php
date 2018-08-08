@@ -52,7 +52,36 @@ class HistoriqueController extends Controller
                 $html = $this->redirectToRoute('seeFormation', array(
                     'id'=>$id
                 ));
+        }
+        if (isset($_SESSION['majop'])
+                && $_SESSION['majop'] == 'add_form_doc'
+                || $_SESSION['type'] == 'add_doc_form') {
+                    unset($_SESSION['majop']);
+                    $id = $_SESSION['form'];
+                    $html = $this->redirectToRoute('seeFormation', array(
+                        'id'=>$id
+                    ));
+        }
+        
+        if (isset($_SESSION['majop'])
+            && $_SESSION['majop'] == 'del_doc_tuto'
+            || $_SESSION['type'] == 'del_doc_tuto') {
+                unset($_SESSION['majop']);
+                $id = $_SESSION['tuto'];
+                unset($_SESSION['tuto']);
+                $html = $this->redirectToRoute('seeTutoriel', array(
+                    'id'=>$id
+                ));
             }
+            if (isset($_SESSION['majop'])
+                && $_SESSION['majop'] == 'add_tuto_doc'
+                || $_SESSION['type'] == 'add_doc_tuto') {
+                    unset($_SESSION['majop']);
+                    $id = $_SESSION['tuto'];
+                    $html = $this->redirectToRoute('seeTutoriel', array(
+                        'id'=>$id
+                    ));
+                }
      
         if (isset($_SESSION['majop']) 
             && $_SESSION['majop'] == 'form' 
@@ -80,34 +109,6 @@ class HistoriqueController extends Controller
     public function operationAction()
     {
         $type = $_SESSION['type'];
-        // si document est défini
-        if (isset($_SESSION['doc'])&& !empty($_SESSION['doc'])) {
-            $repository = $this->getdoctrine()
-                ->getManager()
-                ->getRepository('docPlatformBundle:Document');
-            
-            $document = $repository->find($_SESSION['doc']);
-            $documentName = $document->getDocumentName();
-            $documentSize = $document->getDocumentSize();
-            $documentMimeType = $document->getDocumentMimeType();
-            unset($_SESSION['doc']);
-        } else {
-            $document = '';
-            $documentName = '';
-            $documentSize = 0;
-            $documentMimeType = '';
-        }
-        if (isset($_SESSION['com']) && !empty($_SESSION['com'])) {
-            $repository = $this->getdoctrine()
-                ->getManager()
-                ->getRepository('docPlatformBundle:Commentaire');
-
-            $commentaire = $repository->find($_SESSION['com']);
-            $commentaire = $commentaire->getCommentaire();
-            unset($_SESSION['com']);
-        } else {
-            $commentaire = '';
-        }
         
         if (isset($_SESSION['forms']) && !empty($_SESSION['forms'])) {
             $repository = $this->getdoctrine()
@@ -121,7 +122,7 @@ class HistoriqueController extends Controller
             $documentName = '';
             $documentSize = 0;
             $documentMimeType = '';
-            unset($_SESSION['forms']);
+            //unset($_SESSION['forms']);
         } else {
             $formName = '';
             $formDeb = null;
@@ -140,11 +141,41 @@ class HistoriqueController extends Controller
             $documentName = '';
             $documentSize = 0;
             $documentMimeType = '';
-            unset($_SESSION['tutos']);
+            //unset($_SESSION['tutos']);
         } else {
             $tutoName = '';
             $tutoDetails = '';
         }
+        // si document est défini
+        if (isset($_SESSION['doc'])&& !empty($_SESSION['doc'])) {
+            $repository = $this->getdoctrine()
+                ->getManager()
+                ->getRepository('docPlatformBundle:Document');
+            
+            $document = $repository->find($_SESSION['doc']);
+            $documentName = $document->getDocumentName();
+            $documentSize = $document->getDocumentSize();
+            $documentMimeType = $document->getDocumentMimeType();
+            //unset($_SESSION['doc']);
+        } else {
+            $document = '';
+            $documentName = '';
+            $documentSize = 0;
+            $documentMimeType = '';
+        }
+        if (isset($_SESSION['com']) && !empty($_SESSION['com'])) {
+            $repository = $this->getdoctrine()
+                ->getManager()
+                ->getRepository('docPlatformBundle:Commentaire');
+
+            $commentaire = $repository->find($_SESSION['com']);
+            $commentaire = $commentaire->getCommentaire();
+            //unset($_SESSION['com']);
+        } else {
+            $commentaire = '';
+        }
+        
+       
         switch ($type) {
             case "add_doc":
                 $action = "Ajout d'un document";
@@ -210,6 +241,10 @@ class HistoriqueController extends Controller
         $em = $this->getDoctrine()->getManager();
         $em->persist($his);
         $em->flush();
+        unset($_SESSION['forms']);
+        unset($_SESSION['tutos']);
+        unset($_SESSION['doc']);
+        unset($_SESSION['com']);
         
         if ($commentaire != null) {
             $_SESSION['majop'] = 'com';
@@ -247,7 +282,7 @@ class HistoriqueController extends Controller
         }
         
         if($_SESSION['type'] == 'del_doc_tuto'){
-            return $this->redirectToRoute('deleteDocTutoriel', array(
+            return $this->redirectToRoute('tutorielDeldoc', array(
                 'id' =>$_SESSION['id']));
         }
         if($_SESSION['type'] == 'del_tuto'){

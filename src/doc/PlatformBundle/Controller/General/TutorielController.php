@@ -16,7 +16,7 @@ use doc\PlatformBundle\Form\DocumentType;
 class TutorielController extends Controller
 {
     /**
-     * @Route("/tutoriel/add",name="addlTutoriel")
+     * @Route("/tutoriel/add",name="addTutoriel")
      */
     public function addTutorielAction(Request $request){
         $menu = "Tutoriel";
@@ -99,6 +99,8 @@ class TutorielController extends Controller
         $docTuto = $this->createForm(DocumentType::class, $doc);
         $docTuto->handleRequest($request);
         if ($docTuto->isSubmitted() && $docTuto->isValid()) {
+            $_SESSION['tutos'] = $id;
+            $_SESSION['tuto'] = $id;
             $fileName = $doc->getDocumentFile()->getClientOriginalName();
             if (isset($_POST["type"])){
                 $type = $_POST["type"];
@@ -106,6 +108,7 @@ class TutorielController extends Controller
             else{
                 $type = "";
             }
+            
             $doc->setTuto_ref($tutoriel);
             $doc->setUser($this->getUser());
             $doc->setType($type);
@@ -117,6 +120,13 @@ class TutorielController extends Controller
             
             $em->persist($doc);
             $em->flush();
+            $_SESSION['doc']= $doc->getId();
+            $_SESSION['type']="add_doc_tuto";
+            if(isset($_SESSION['forms'])){
+                unset($_SESSION['forms']);
+            }
+            $html = $this->redirectToRoute('operation');
+            return $html;
         }
         $menu = "Tutoriel";
         $urlPage = "tutoriel";
@@ -195,6 +205,9 @@ class TutorielController extends Controller
             $_SESSION['type'] = 'del_tuto';
             $_SESSION['id'] = $id;
             $_SESSION['tutos'] = $tutoriel;
+            if(isset($_SESSION['forms'])){
+                unset($_SESSION['forms']);
+            }
             
             return $this->redirectToRoute('operation');
         }
@@ -203,6 +216,43 @@ class TutorielController extends Controller
         $em->flush();
 
         return $this->redirectToRoute("alloperation");
+    }
+    
+    /**
+     *
+     * @Route("/tutoriel/deldoc/{id}", name="tutorielDeldoc", requirements={"id"="\d+"})
+     */
+    public function tutorielDeldocAction($id)
+    {
+        $repository = $this->getdoctrine()
+        ->getManager()
+        ->getRepository('docPlatformBundle:Document');
+        
+        $doc = $repository->find($id);
+        if(!isset($_SESSION['type'])){
+            $_SESSION['type'] = "";
+        }
+        
+        if ($_SESSION['type'] != "del_doc_tuto") {
+            $_SESSION['type'] = "del_doc_tuto";
+            unset($_SESSION['com']);
+            $_SESSION['doc'] = $id;
+            $_SESSION['tutos'] = $doc->getTuto_ref()->getId();
+            $_SESSION['id'] = $id;
+            if(isset($_SESSION['forms'])){
+                unset($_SESSION['forms']);
+            }
+            return $this->redirectToRoute('operation');
+        }
+        $fichier = $this->get('kernel')->getRootDir() . '/../web/uploads/documents/';
+        // delete linked mediaEntity
+        $em = $this->getDoctrine()->getManager();
+        $em->remove($doc);
+        //pour supprimer le fichier dans le cas des formations et des tutoriels
+        @unlink($fichier.$doc->getUrl());
+        $em->flush();
+        
+        return $this->redirectToRoute('alloperation');
     }
 
 }

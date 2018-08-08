@@ -9,7 +9,9 @@
 				{% if alert.getActionName() == "Ajout d'un document" 
 				or alert.getActionName() == "Ajout d'un commentaire"  
 				or alert.getActionName() == "Ajout d'une formation" 
-				or alert.getActionName() == "Ajout d'un tutoriel" %}
+				or alert.getActionName() == "Ajout d'un tutoriel"
+				or alert.getActionName() == "Ajout d'un document dans un tutoriel"
+				or alert.getActionName() == "Ajout d'un document dans une formation" %}
 					<span class="text-success">
 					<strong> <i class="fa fa-long-arrow-up fa-fw"></i>
 				{% elseif alert.getActionName() == "Modification d'un document" 
