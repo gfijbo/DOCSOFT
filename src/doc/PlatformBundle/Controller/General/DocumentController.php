@@ -109,6 +109,12 @@ class DocumentController extends Controller
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            if(isset($_SESSION['forms'])){
+                unset($_SESSION['forms']);
+            }
+            if(isset($_SESSION['tutos'])){
+                unset($_SESSION['tutos']);
+            }
             $file = $document->getDocumentFile();
             $fileName = $file->getClientOriginalName();
             $fileSize = $file->getClientSize();
